@@ -1,0 +1,21 @@
+(undo-tree-save-format-version . 1)
+"7b27fc54fb3943feec12b9b9a79d63f42ff6de17"
+[nil nil nil nil (26469 21679 929201 836000) 0 nil]
+([nil nil ((1214 . 1220) (1193 . 1214) (1188 . 1193) (t 26164 64028 103143 18000)) nil (26469 21679 929198 548000) 0 nil])
+([nil nil ((1196 . 1198) (#("r" 0 1 (fontified t)) . -1196) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (#("o" 0 1 (fontified t)) . -1197) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 1198 (t 26469 21679 936622 265000)) nil (26469 21698 758777 148000) 0 nil])
+([nil nil ((1193 . 1194) (t 26469 21698 764844 387000)) nil (26469 21724 735388 75000) 0 nil])
+([nil nil ((#("#" 0 1 (fontified t face font-lock-comment-delimiter-face)) . -1193) (undo-tree-id4 . -1) (undo-tree-id5 . -1) 1194 (t 26469 21724 737151 138000)) nil (26469 21755 860042 484000) 0 nil])
+([nil nil ((#("    	#if caseall==\"AOAp130SDAp360SGPp040SOLn018\":
+" 0 5 (fontified t) 5 6 (fontified t face font-lock-comment-delimiter-face) 6 18 (fontified t face font-lock-comment-face) 18 19 (fontified t syntax-table (15) face font-lock-comment-face) 19 47 (fontified t face font-lock-comment-face) 47 48 (fontified t syntax-table (15) face font-lock-comment-face) 48 50 (fontified t face font-lock-comment-face)) . 969) (undo-tree-id12 . -30) (undo-tree-id13 . -30) 999 (t 26469 21755 861519 246000)) nil (26469 21992 716786 675000) 0 nil])
+([nil nil ((#("        #    plt.plot(dataall.iloc[:,1], dataall.iloc[:,2], ls='-', lw=2.0,
+" 0 2 (fontified t) 2 8 (fontified t) 8 13 (fontified t face font-lock-comment-delimiter-face) 13 63 (fontified t face font-lock-comment-face) 63 64 (fontified t syntax-table (15) face font-lock-comment-face) 64 65 (fontified t face font-lock-comment-face) 65 66 (fontified t syntax-table (15) face font-lock-comment-face) 66 75 (fontified t face font-lock-comment-face) 75 76 (fontified t face font-lock-comment-face)) . 969) (undo-tree-id9 . -33) (undo-tree-id10 . -75) (undo-tree-id11 . -33) 1002) nil (26469 21992 716781 689000) 0 nil])
+([nil nil ((#("        #             color='green', label=\"Case 04\")
+" 0 8 (fontified t) 8 22 (fontified t face font-lock-comment-delimiter-face) 22 28 (fontified t face font-lock-comment-face) 28 29 (fontified t syntax-table (15) face font-lock-comment-face) 29 34 (fontified t face font-lock-comment-face) 34 35 (fontified t syntax-table (15) face font-lock-comment-face) 35 43 (fontified t face font-lock-comment-face) 43 44 (fontified t syntax-table (15) face font-lock-comment-face) 44 51 (fontified t face font-lock-comment-face) 51 52 (fontified t syntax-table (15) face font-lock-comment-face) 52 53 (fontified t face font-lock-comment-face) 53 54 (fontified t face font-lock-comment-face)) . 969) (undo-tree-id6 . -33) (undo-tree-id7 . -53) (undo-tree-id8 . -33) 1002) nil (26469 21992 716775 970000) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 969)) nil (26469 21992 716761 85000) 0 nil])
+([nil nil ((#("    import pdb; pdb.set_trace()
+" 0 4 (fontified t) 4 10 (face font-lock-keyword-face fontified t) 10 13 (fontified t) 13 32 (fontified t)) . 1008) (undo-tree-id0 . -28) (undo-tree-id1 . -28) (undo-tree-id2 . -28) 1036 (t 26469 21992 724335 866000)) nil (26469 33247 369251 961000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 567 . 568) (nil fontified nil 187 . 568) (187 . 568) (t 26469 33247 375173 773000)) nil (26469 41951 494327 836000) 0 nil])
+([nil nil ((nil rear-nonsticky nil 1905 . 1906) (nil fontified nil 1756 . 1906) (1756 . 1906) 1755) nil (26469 41951 494326 492000) 0 nil])
+([nil current ((#("    " 0 4 (fontified t)) . -1756) (undo-tree-id0 . -4) (undo-tree-id1 . -4) (undo-tree-id2 . -4) (undo-tree-id3 . -4) (undo-tree-id4 . -4) 1760) nil (26469 41951 494322 358000) 0 nil])
+nil
