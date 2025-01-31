@@ -2042,10 +2042,11 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/amurali/Desktop/Shared_Newton/AOA18 Compare CP/Cp_comparison_OnlyAoA18_WithWT.png
+	filename /home/amurali/Desktop/Shared_Newton/AOA18 Compare CP/Cp_comparison_OnlyAoA18.png
 	lyxscale 20
 	width 15cm
 	height 15cm
+	keepAspectRatio
 
 \end_inset
 
@@ -2076,144 +2077,6 @@ name "fig:Coefficient-of-pressure-1-1"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float figure
-placement t
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename chapter06_figs/WindTunnel.png
-	lyxscale 40
-	width 15cm
-	height 15cm
-	keepAspectRatio
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-The simulation domain of the wind tunnel geometry with the tunnel and HLD
- installed.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:simdomain"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float figure
-placement t
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename chapter06_figs/WindTunnel2.png
-	lyxscale 40
-	width 7cm
-	height 7cm
-	keepAspectRatio
-
-\end_inset
-
- 
-\begin_inset space \qquad{}
-\end_inset
-
-
-\begin_inset Graphics
-	filename chapter06_figs/WindTunnelDrawing.png
-	lyxscale 30
-	width 7cm
-	height 7cm
-	keepAspectRatio
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Left: The HLD mockup geometry installed on the wind tunnel using lateral
- sides plates.
- Right: A drawing of the dimensions of the wind tunnel nozzle exit.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-As such, simulation of the VALIANT experimental setup has the following
- difference from the free flow simulation setup that is used as standard
- in this thesis:
-\end_layout
-
-\begin_layout Enumerate
-The spanwise length of the domain is 1 chord length, i.e.
- 
-\begin_inset Formula $0.3m$
-\end_inset
-
- whereas in the free flow simulations, spanwise length is 
-\begin_inset Formula $0.2m$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Enumerate
-Spanwise boundary conditions are set to wall boundaries with no slip at
- the wall surface and uses a wall model for the cells adjacent to the wall
- surface.
- In free flow simulation, periodic conditions are applied on spanwise boundaries
- to mimic an infinite spanwise domain.
-\end_layout
-
-\begin_layout Enumerate
-The experimental setup has a nozzle geometry which creates an unsteady shear
- layer around the airfoil where as the free flow simulations have only the
- airfoil surface as a solid generating turbulence and vorticity.
-\end_layout
-
-\begin_layout Enumerate
-For the case of simulation with the inclusion of tunnel geometry, the coordinate
-s axis are chosen differently since the flow is now aligned such that the
- downstream axis is along the X-coordinate axis and the spanwise direction
- is along the Y-coordinate axis.
- 
 \end_layout
 
 \begin_layout Standard

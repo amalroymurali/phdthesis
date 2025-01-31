@@ -1,6 +1,8 @@
 [Dolphin]
-Timestamp=2025,1,28,15,20,33
+SortOrder=1
+Timestamp=2025,1,28,16,28,17
 Version=4
+ViewMode=1
 
 [Settings]
 HiddenFilesShown=true
