@@ -2217,6 +2217,813 @@ s axis are chosen differently since the flow is now aligned such that the
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement ph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/Wall_Pressure_prob locations.png
+	lyxscale 10
+	width 6.5cm
+	height 6.5cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1204bp 954bp
+	clip
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wall pressure sensor locations on the slat wall.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_coords_slat-2-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe1_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe3_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe5_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe6_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 6
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe9_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 9
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe10_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe11_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 13
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wall pressure spectra for select probes on the slat wall placed along the
+ spanwise center plane.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_spectras_slat-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement ph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement ph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/Wall_Pressure_prob locations_mainelement.png
+	lyxscale 10
+	width 11.5cm
+	height 11.5cm
+	keepAspectRatio
+	BoundingBox 90bp 0bp 2294bp 1003bp
+	clip
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Select wall pressure sensor locations on the main element.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_coords_mainelement-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe14_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 14
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe16_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 16
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe19_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 19
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe20_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 20
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe21_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 21
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe23_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 23
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wall pressure spectra for select probes on the main element wall and on
+ spanwise center plane.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_spectras-mainelement-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe24_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 24
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe25_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 25
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe26_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 26
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe27_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 27
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wall pressure spectra for select probes on the main element wall and on
+ spanwise center plane.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_spectras_mainelement2-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 

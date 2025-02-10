@@ -203,29 +203,97 @@ bursting
 .
  
 \color black
-This was the case when the slat position is standard without additional
+The exact variation of Strouhal number however is postulated only to depend
+ on velocity ratio between the free-stream and the recirculation based on
+ the theory that the spanwise wave numbers are determined by centrifugal
+ instability, and hence proportional to cavity depth, making the Strouhal
+ number, more probably than not, independent of the characteristic length
+ scale.
+ This was the case when the slat position is standard without additional
  deformation of the shear layer by variation of the slat position with respect
  to main element.
 \end_layout
 
 \begin_layout Standard
-To understand this low frequency oscillation and its effects, the unsteady
- velocity inside the cove has to be studied.
- Since the cove flow and the impingement location have quasi-periodic oscillator
-y motions
+However, the velocity ratio is not only difficult to measure precisely but
+ also depends on the nuances in the shear layer shape.
+ The average velocity inside the cove is determined by the position of the
+ impingement location of the shear layer near the slat trailing edge, which
+ in turn determine the mass flow fraction that is being recirculated.
+ Since this location have quasi-periodic oscillatory motion, obtaining the
+ time-averaged velocity ratio becomes a stiff problem.
+ In a simulation, the numerical accuracy of recirculation velocity also
+ becomes dependent on the fidelity with which the shear layer development
+ is captured.
+ At larger scales, the effect of ambient free stream velocity and shape
+ of cavity between the slat and the main element also have non-trivial contribut
+ions.
+ These factors hence need to be studied case by case to obtain a better
+ understanding of the bursting phenomena and since our dataset is made based
+ on stochastic sampling, a large variety of shear layer shapes are available
+ enabling a comparative analysis.
+ This will be one objective of the discussion in this chapter.
+\end_layout
+
+\begin_layout Standard
+Apart from the dynamics of the flow, implications of spanwise modes on acoustics
+ arise not from the spatial modes themselves but from the above mentioned
+ periodic bursting.
+ The spanwise coherence of impinging vortex is the first necessary condition
+ for aeroacoustic resonance to occur since the Rossiter mechanism is a largely
+ 2D phenomenon with the strength of resonance decreasing progressively with
+ spanwise coherence 
 \begin_inset CommandInset citation
 LatexCommand citep
+key "HamiltonSmith2024,Souza2019"
+literal "false"
+
+\end_inset
+
+.
+ Hence, if the spanwise coherence is broken periodically at a frequency
+ lower than the first Rossiter tone, the strength of resonance will also
+ be modulated, which means that the acoustic tones are not sourced by ideally
+ periodic fluctuations but are amplitude modulated by the bursting frequency.
+ Such an amplitude modulation can be detected in the spectral domain as
+ appearance of side bands which we conjecture as the reason for the first
+ Rossiter tone to appear broadband due to contribution from sideband frequencies.
+ This is however observable only if the span to chord ratio of the simulation
+ is sufficiently large such that the centrifugally driven spanwise mode
+ oscillations are prominent, as in the case of experiment by 
+\begin_inset CommandInset citation
+LatexCommand citet
 key "KamliyaJawahar2021"
 literal "false"
 
 \end_inset
 
- the time-averaged velocity field removes relevant information.
- Hence the unsteady velocity fluctuations need to be studied using the spanwise
- variation of its spectral components which can be computed using probe
- recordings and used to extract the behavior in parametric cases as the
- slat position is varied.
- This will be one objective of the discussions in this chapter.
+.
+ The same effect will also vitiate the periodicity of the noise source character
+istics rendering them as intermittent or quasi-periodic if analyzed close
+ to the diverging planes.
+ This is promptly underlined in the work of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "KamliyaJawahar2021"
+literal "false"
+
+\end_inset
+
+ which sheds light on the intermittency associated with the first Rossiter
+ tone.
+ Here it must be emphasized that the experimental investigations which selects
+ the spanwise mid-plane to place the wall pressure and hot-wire probes may
+ or may not be at the center of a diverging plane depending of the development
+ of the cells.
+ Hence, the studied characteristics will inevitably tend to diverge between
+ the experimental observations from different wind tunnel cases in view
+ of periodicity.
+ The turbulence ejection that accompanies the bursting phenomena will also
+ appear to induce intermittency in the turbulence characteristics in the
+ slat gap since the periodicity of bursting is robust only in the very early
+ shear layer near the slat cusp and the generated vorticity from each event
+ is then convected along with the rest of turbulence.
 \end_layout
 
 \begin_layout Standard
@@ -307,9 +375,11 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-For structuring the discussions we utilize Section 2 to discuss the mean
- flow fields from the dataset to understand the different flow cases and
- to identify a few particular cases for a more detailed analysis.
+For structuring the discussions we utilize the first section to explain
+ the dataset and its organization to enable any future investigators.
+ In Section 2 we discuss the mean flow fields from the dataset to understand
+ the different flow cases and to identify a few particular cases for a more
+ detailed analysis.
  In Section 3, the acoustic predictions for each of the cases are documented
  to understand how the far-field noise can be related to the mean flow fields.
  In Section 4, we extract the shear layer shape from the mean flow for each
@@ -322,7 +392,7 @@ For structuring the discussions we utilize Section 2 to discuss the mean
  layer shape and the curvature Richardson number can explain the the variability
  of the tonal nature of slat noise.
  In Section 9, we also attempt to provide an estimation of the Strouhal
- number based on the details available from the dataset.
+ number based on the details available from the datasets.
 \end_layout
 
 \begin_layout Standard
@@ -339,14 +409,7 @@ Mean shear layer shape
 \begin_layout Standard
 \align block
 The shape of the shear layer for all cases simulated are documented in Appendix
- B and a selected set is shown in Fig.
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:shearlayercomp9_11_19"
-
-\end_inset
-
-.
+ B.
  The mean velocity fields at spanwise center-plane averaged over 
 \begin_inset Formula $5$
 \end_inset
@@ -413,7 +476,7 @@ literal "false"
 placement ph
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -425,8 +488,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp130SDAp360SGPp040SOLn018.png
 	lyxscale 15
-	width 5.1cm
-	height 5.1cm
+	width 5cm
+	height 5cm
 	keepAspectRatio
 
 \end_inset
@@ -455,8 +518,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp164SDAp352SGPp043SOLn023.png
 	lyxscale 15
-	width 5.1cm
-	height 5.1cm
+	width 5cm
+	height 5cm
 	keepAspectRatio
 
 \end_inset
@@ -518,8 +581,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/fwh/FWHObserver2_AOAp130SDAp360SGPp040SOLn018.png
 	lyxscale 15
-	width 5.1cm
-	height 5.1cm
+	width 5cm
+	height 5cm
 	keepAspectRatio
 
 \end_inset
@@ -548,8 +611,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/fwh/FWHObserver2_AOAp164SDAp352SGPp043SOLn023.png
 	lyxscale 15
-	width 5.1cm
-	height 5.1cm
+	width 5cm
+	height 5cm
 	keepAspectRatio
 
 \end_inset
@@ -578,8 +641,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/fwh/FWHObserver2_AOAp180SDAp276SGPp053SOLn063.png
 	lyxscale 15
-	width 5.1cm
-	height 5.1cm
+	width 5cm
+	height 5cm
 	keepAspectRatio
 
 \end_inset
@@ -605,13 +668,11 @@ Case 19
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Top: The mean shear layer trajectory at mid-span plane.
- Bottom: Corresponding far-field noise spectrum at 
-\begin_inset Formula $90^{o}$
-\end_inset
-
- observer angle showing the variation of tone frequencies as shear layer
- shape is varied.
+Top: The shear layer shapes showing the effect of slat overlap in Case 4,
+ 11 and 19.
+ Bottom: Corresponding far-field spectra showing the development of tones
+ as the shear layer shape is progressively regularized.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:shearlayercomp9_11_19"
@@ -632,10 +693,6 @@ name "fig:shearlayercomp9_11_19"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 placement ph
 wide false
@@ -652,8 +709,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp130SDAp360SGPp040SOLn018.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -713,8 +770,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp147SDAp352SGPp093SOLp076.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -744,8 +801,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp150SDAp240SGPp070SOLn036.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -778,8 +835,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp152SDAp352SGPp063SOLp072.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -809,8 +866,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp159SDAp352SGPp067SOLp051.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -840,8 +897,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp160SDAp320SGPp082SOLn054.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -871,8 +928,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp164SDAp352SGPp043SOLn023.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -905,8 +962,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp164SDAp352SGPp043SOLp023.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -936,8 +993,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp174SDAp352SGPp085SOLn049.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -967,8 +1024,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp174SDAp352SGPp085SOLp049.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -998,8 +1055,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp239SGPp067SOLn051.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1032,8 +1089,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp240SGPp064SOLn054.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1063,8 +1120,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp240SGPp070SOLn054.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1094,8 +1151,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp255SGPp043SOLn023.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1125,8 +1182,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp276SGPp053SOLn063.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1159,8 +1216,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp286SGPp078SOLn059.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1190,8 +1247,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp340SGPp088SOLn081.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1221,8 +1278,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp340SGPp094SOLn081.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1252,8 +1309,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp347SGPp093SOLn076.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1286,8 +1343,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp360SGPp088SOLn081.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1317,8 +1374,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp365SGPp071SOLn030.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1348,8 +1405,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp393SGPp094SOLn042.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1379,8 +1436,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp181SDAp352SGPp078SOLp059.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1413,8 +1470,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp186SDAp352SGPp048SOLp032.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1444,8 +1501,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp190SDAp320SGPp064SOLn009.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1475,8 +1532,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp192SDAp352SGPp053SOLp063.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1509,8 +1566,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp195SDAp352SGPp094SOLn042.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -1556,6 +1613,9 @@ name "fig:meanshearlayershapes-1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement ph
 wide false
@@ -2476,11 +2536,6 @@ name "fig:spectra_parametric-2"
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 A particular case of high overlap is the Case 
 \begin_inset Formula $4$
@@ -2508,12 +2563,16 @@ A particular case of high overlap is the Case
 .
  This reduction of speed leads this case to have a strong deviation from
  the standard noise profile, both for the broadband levels and the Rossiter
- tones which is expected since the broadband noise trailing edge noise scales
- with 
-\begin_inset Formula $M^{5}$
-\end_inset
-
-.
+ tones.
+ This case is also particular due to the fact that the impingement point
+ is still close to the slat trailing edge thereby minimizing a strong interactio
+n of the shed vortices with the high turbulence region near impingement
+ before approaching the trailing edge.
+ 
+\color brown
+Have the impingement been located deeper into the cove, the impinging vortices
+ would have undergone a stronger disintegration leading to a complete attenuatio
+n of the broadband and tonal noise.
  
 \end_layout
 
@@ -2526,12 +2585,9 @@ In the same direction, Case
  point closer to the trailing edge.
  Hence, the latter can be expected to have a slightly improved source efficiency
  for both broadband and tonal components.
- An even further improvement on the same is Case 
-\begin_inset Formula $19$
-\end_inset
-
-, which despite having a reduced initial curvature has a more evenly distributed
- curvature with the impingement point close to the slat trailing edge.
+ An even further improvement on the same is Case 19, which despite having
+ a reduced initial curvature has a more evenly distributed curvature with
+ the impingement point close to the slat trailing edge.
  As shown from the comparison of spectra in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2608,6 +2664,59 @@ The cases with a strong characteristic broadband and tonal characteristics
 \end_layout
 
 \begin_layout Standard
+In summary, the effect of shear layer shape on acoustics is qualitatively
+ deducible from the collection of cases.
+ It can be noted that both broadband and tonal noise levels are dependent
+ on the exit velocity with additional influence from the location of impingement
+ and shear layer shape.
+ This complements the literature where a scaling law of the slat noise level
+ was established with OASPL in the characteristic frequency range proportional
+ to 
+\begin_inset Formula $M^{5}$
+\end_inset
+
+, where 
+\begin_inset Formula $M$
+\end_inset
+
+ is the free stream Mach number.
+ However, the location of impingement does not necessarily need to be stationary
+ with an increase in the free-stream velocity and neither does the maximum
+ exit velocity since the impingement location can influence both the recirculati
+on flow rate and the exit flow rate.
+ This determines the the velocity with which coherent structures are ejected
+ past the trailing edge.
+ Adding to the same complexity, the shear layer shape variation introduce
+ varying levels of centrifugal instability to the shear layer which determine
+ the vorticity transitions from spanwise coherent structures to streamwise
+ which determine the efficiency of the TE scattering leading to broadband
+ noise.
+ This explains why the canonical scaling laws based on free-stream parameters
+ alone have high uncertainties for standard slat-noise prediction models
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Guo2003,Bolivar2020"
+literal "false"
+
+\end_inset
+
+.
+ Additionally, the location of impingement being close to the trailing edge
+ is a strong indicator of the presence of characteristic noise signature
+ regardless of the shear layer shape.
+ Hence, it can be safely assumed that the the far-field power levels of
+ the characteristic noise is primarily determined by the strength of dynamics
+ at the trailing edge.
+ Given these factors, we consider that an appropriate analysis of the slat
+ noise characteristics and scaling laws must be based on the geometric parameter
+s of the shear layer rather than based on the geometric positional variables
+ of the slat or freestream parameters.
+ The former can have a non-linear relation with the shape parameters of
+ the shear layer and can hence introduce unpredictability if the noise levels
+ are modelled in terms of the former only.
+\end_layout
+
+\begin_layout Standard
 To elaborate further, we must discuss the numerical calculations based on
  the mean shear layer and before this we take a quick detour to discuss
  the details of the observed acoustic characteristics in the upcoming subsection
@@ -2637,8 +2746,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp195SDAp352SGPp094SOLp042.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -2746,10 +2855,13 @@ Far-field spectra
 
 \begin_layout Standard
 \align block
-The acoustic signature of a few parametric cases are shown in Fig.
+The acoustic signature of the parametric cases are shown in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:cases7_15_16_17"
+reference "fig:spectra_parametric"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -2786,14 +2898,48 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
+For the given VALIANT geometry and Reynolds number, the first major tone
+ can be noticed at approximately 
+\begin_inset Formula $1771\,Hz$
+\end_inset
+
+ for Case 
+\begin_inset Formula $22$
+\end_inset
+
+.
+ A lower frequency hump is also suspected at 
+\begin_inset Formula $1771/2=885\,Hz$
+\end_inset
+
+ as suggested by the first Rossiter mode calculation according to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+, however not noticeable in the experiment.
+ This hump is usually not noticeable in experimental studies since at frequencie
+s close to and less than 
+\begin_inset Formula $800\,Hz$
+\end_inset
+
+, the noise from jet shear layer issued from the wall lips of the tunnel
+ and other installation noises are prominent.
+ This noise floor is not present in the simulations of the airfoil in free-strea
+m and the low frequency hump is hence noticeable for most of the noisy cases.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
-placement t
+placement ph
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -2803,9 +2949,10 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp150SDAp240SGPp070SOLn036.png
 	lyxscale 10
-	width 5cm
-	height 5cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
+	groupId meanflow_parametric
 
 \end_inset
 
@@ -2833,9 +2980,10 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp239SGPp067SOLn051.png
 	lyxscale 10
-	width 5cm
-	height 5cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
+	groupId meanflow_parametric
 
 \end_inset
 
@@ -2861,11 +3009,43 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp240SGPp064SOLn054.png
+	lyxscale 10
+	width 3.75cm
+	height 3.75cm
+	keepAspectRatio
+	groupId meanflow_parametric
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 16
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp240SGPp070SOLn054.png
 	lyxscale 10
-	width 5cm
-	height 5cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
+	groupId meanflow_parametric
 
 \end_inset
 
@@ -2887,7 +3067,6 @@ Case 17
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -2897,9 +3076,10 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/fwh/FWHObserver2_AOAp150SDAp240SGPp070SOLn036.png
 	lyxscale 20
-	width 5cm
-	height 5cm
+	width 4.25cm
+	height 4.25cm
 	keepAspectRatio
+	groupId fwh_parametric
 
 \end_inset
 
@@ -2927,9 +3107,10 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/fwh/FWHObserver2_AOAp180SDAp239SGPp067SOLn051.png
 	lyxscale 20
-	width 5cm
-	height 5cm
+	width 4.25cm
+	height 4.25cm
 	keepAspectRatio
+	groupId fwh_parametric
 
 \end_inset
 
@@ -2955,11 +3136,43 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/fwh/FWHObserver2_AOAp180SDAp240SGPp064SOLn054.png
+	lyxscale 20
+	width 4.25cm
+	height 4.25cm
+	keepAspectRatio
+	groupId fwh_parametric
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 16
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/fwh/FWHObserver2_AOAp180SDAp240SGPp070SOLn054.png
 	lyxscale 20
-	width 5cm
-	height 5cm
+	width 4.25cm
+	height 4.25cm
 	keepAspectRatio
+	groupId fwh_parametric
 
 \end_inset
 
@@ -2984,13 +3197,8 @@ Case 17
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Top: The mean shear layer trajectory at mid-span plane.
- Bottom: Corresponding far-field noise spectrum at 
-\begin_inset Formula $90^{o}$
-\end_inset
-
- observer angle showing a different selection of tone frequencies according
- to shear layer shape variation at same spanwise simulation domain.
+The shear layer trajectory at mid-span plane obtained using time integration
+ of the mean velocity field for parametric cases in the dataset.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:cases7_15_16_17"
@@ -3011,45 +3219,20 @@ name "fig:cases7_15_16_17"
 \end_layout
 
 \begin_layout Standard
-For the given VALIANT geometry and Reynolds number, the first major tone
- can be noticed at approximately 
-\begin_inset Formula $1771\,Hz$
-\end_inset
-
- for Case 
-\begin_inset Formula $22$
-\end_inset
-
- similar to the experiment.
- A lower frequency hump is also suspected at 
-\begin_inset Formula $1771/2=885\,Hz$
-\end_inset
-
- as suggested by the first Rossiter mode calculation according to 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Terracol2016"
-literal "false"
-
-\end_inset
-
-, however not noticeable in the experiment.
- This hump is usually not noticeable in experimental studies since at frequencie
-s close to and less than 
-\begin_inset Formula $800\,Hz$
-\end_inset
-
-, the noise from jet shear layer issued from the wall lips of the tunnel
- and other installation noises are prominent.
- This noise floor is not present in the simulations of the airfoil in free-strea
-m and the low frequency hump is hence noticeable for most of the noisy cases.
-\end_layout
-
-\begin_layout Standard
 The primary observation from the comparative analyses that can be deduced
- from the full dataset (see Appendix B) is that the Rossiter mode frequencies
- can be seen to be prominent only for cases that have an impingement location
- close to the slat trailing edge.
+ from Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spectra_parametric"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is that the Rossiter mode frequencies can be seen to be prominent only
+ for cases that have an impingement location close to the slat trailing
+ edge.
  For Cases 
 \begin_inset Formula $[4,5,6,8,9,28,\text{ and }30]$
 \end_inset
@@ -3066,14 +3249,7 @@ The primary observation from the comparative analyses that can be deduced
 \begin_inset Formula $[7,15,16,\text{ and }17]$
 \end_inset
 
- (see Fig.
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:cases7_15_16_17"
-
-\end_inset
-
- and Appendix B) shows a significant shift of all the tones.
+ (see Appendix B) shows a significant shift of all the tones.
  It can also be noted that the shift of frequency of the tones are not equal
  for all the tones.
  The first five Rossiter modes which are multiples of the fundamental at
@@ -3284,19 +3460,12 @@ noprefix "false"
 
 \end_inset
 
-, leading to erroneous calculation of the curvature for all cases.
+, leading to erroneous calculation of the curvature.
  In simple terms, the inviscid assumption is too exacting in the case of
  cove flow whose shear layer undergoes a three dimensional vorticity transitions
  inside the recirculation.
  Nevertheless, the locations of impingement are clearly notable from the
- curvature inflection on the walls as shown in Fig.
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:meancurvaturecontour"
-
-\end_inset
-
-.
+ curvature inflection on the walls.
 \begin_inset Float figure
 wide false
 sideways false
@@ -4381,7 +4550,19 @@ name "fig:meancurvaturecontour-1"
 \begin_layout Standard
 The second way to calculate local curvature is by using geometrical formula
  on a select mean streamline.
- For the same, we first extract the point coordinates of the mean streamlines.
+ For the same, we first extract the point coordinates of the streamlines
+ obtained from Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:meanshearlayershapes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  The geometrical curvature is then calculated as
 \end_layout
 
@@ -4426,9 +4607,8 @@ noprefix "false"
 .
  The geometrical curvature is free from the hydrodynamic calculations and
  hence it is free from the approximations for inviscid flow.
- The computed curvature is plotted for each case and is available in Appendix
- B.
- A few select cases are given in Fig.
+ The computed curvature is plotted for each case in comparison with all
+ the cases from the dataset in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:streamlinecurvature"
@@ -5478,6 +5658,7 @@ Here, the numerical value of curvature provides a more agreeable picture
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float figure
 placement t
 wide false
@@ -5485,7 +5666,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -5495,8 +5675,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp340SGPp094SOLn081.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -5517,6 +5697,40 @@ Case 22
 \end_inset
 
 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp393SGPp094SOLn042.png
+	lyxscale 10
+	width 3.75cm
+	height 3.75cm
+	keepAspectRatio
+	groupId meanflow_parametric
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 26
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -5557,72 +5771,6 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/fwh/FWHObserver2_AOAp180SDAp340SGPp094SOLn081.png
-	lyxscale 20
-	width 4.25cm
-	height 4.25cm
-	keepAspectRatio
-	groupId fwh_parametric
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 22
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp393SGPp094SOLn042.png
-	lyxscale 10
-	width 4.25cm
-	height 4.25cm
-	keepAspectRatio
-	groupId meanflow_parametric
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 26
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp180SDAp393SGPp094SOLn042_curvr.png
 	lyxscale 10
 	width 3.75cm
@@ -5639,6 +5787,40 @@ status open
 
 \begin_layout Plain Layout
 Case 26
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/fwh/FWHObserver2_AOAp180SDAp340SGPp094SOLn081.png
+	lyxscale 20
+	width 4.25cm
+	height 4.25cm
+	keepAspectRatio
+	groupId fwh_parametric
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 22
 \end_layout
 
 \end_inset
@@ -5686,7 +5868,7 @@ Case 26
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Curvature distribution along the shear layer for Cases 22 and 26 computed
+Curvature distribution along the shear layer for all parametric cases computed
  using Eq.
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5785,13 +5967,6 @@ The curvature profiles thus analyzed is very much in agreement with the
 \begin_inset Formula $26$
 \end_inset
 
- as shown in Fig.
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:streamlinecurvature-2"
-
-\end_inset
-
 .
  For Case 
 \begin_inset Formula $22$
@@ -5810,16 +5985,17 @@ reference "fig:streamlinecurvature-2"
 
 , suggesting that the location of impingement plays a crucial role in determinin
 g the source efficiency.
- Moreover, in addition to the effect of impingement at the wall, the region
- around the impingement by nature of the centrifugal instability leads to
- a reduction of spanwise coherence of structures.
- Hence we theorized that the curvature history prior to the trailing edge
+ Nevertheless, the location of impingement is only a representation of the
+ spatial position of the curvature spike, which by nature of the centrifugal
+ instability leads to a reduction of spanwise coherence of structures that
+ approach the trailing edge.
+ Hence we propose that the curvature history prior to the trailing edge
  is the noise-determining feature and not the impingement location by itself.
 \end_layout
 
 \begin_layout Standard
 That being the observations based on raw curvature along the streamline,
- the centrifugal effects also depends on the streamline velocity.
+ the centrifugal force also depends on the streamline velocity.
  A shear layer that maintains a higher streamline velocity must therefore
  accrue a larger effect of centrifugal instability, which here is the generation
  of streamwise vortices at the expense of spanwise vorticity.
@@ -5850,8 +6026,8 @@ The Curvature Richardson Number
 
 \begin_layout Standard
 As mentioned in the introduction, an early work looking into the fundamental
- problem of the effect of curvature on the turbulence characteristics can
- be seen in attempt by 
+ problem of effect of curvature on the turbulence characteristics can be
+ seen in attempt by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Bradshaw1969"
@@ -6009,6 +6185,14 @@ Case 18
 \end_inset
 
 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
 \begin_inset Float figure
 wide false
 sideways false
@@ -6043,7 +6227,6 @@ Case 18
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -6076,6 +6259,22 @@ Case 25
 \end_inset
 
 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
 \begin_inset Float figure
 wide false
 sideways false
@@ -6105,6 +6304,14 @@ Case 25
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
 \end_inset
 
 
@@ -6214,6 +6421,22 @@ Case 20
 \end_inset
 
 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
 \begin_inset Float figure
 wide false
 sideways false
@@ -6285,9 +6508,6 @@ Case 20
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -6410,10 +6630,6 @@ Case 18
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -6523,11 +6739,6 @@ status open
 
 \begin_layout Plain Layout
 Case 23
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -6798,8 +7009,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp190SDAp320SGPp064SOLn009.png
 	lyxscale 10
-	width 4.25cm
-	height 4.25cm
+	width 3.75cm
+	height 3.75cm
 	keepAspectRatio
 	groupId meanflow_parametric
 
@@ -7086,7 +7297,7 @@ name "fig:curvature_richardson-3-1"
 \end_layout
 
 \begin_layout Standard
-In the work of 
+In the same direction, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Liou2014"
@@ -7094,8 +7305,9 @@ literal "false"
 
 \end_inset
 
- using linear stability analysis, the effect of curvature on a slightly
- curved shear layer was shown to have two important effects: first being
+ studied using linear stability analysis the effect of curvature on a slightly
+ curved shear layer.
+ It was then shown that the curvature has two important effects: first being
  a partial stabilization of the K-H instability due to the curvature and
  the other being the existence of curvature driven steady spanwise modes.
  For the latter, the curvature is particularly identified as unstable if
@@ -7178,7 +7390,8 @@ noprefix "false"
 \end_inset
 
 .
- Here we proceed to use the same for a comparative analysis.
+ Here we proceed to use the proposed definitions of curvature Richardson
+ number for a comparative analysis.
 \end_layout
 
 \begin_layout Standard
@@ -7202,6 +7415,17 @@ reference "fig:curvature_richardsonCase18"
 .
  This case clearly have a positive slat overlap with a reduced slat gap
  leading to choking of the flow.
+ The reduced exit velocity hence is expected to reduce the trailing edge
+ broadband noise which is scaled by the fifth power of velocity past the
+ trailing edge
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Howe1978"
+literal "false"
+
+\end_inset
+
+.
  However, the tonal noise components are still evident, particularly the
  third and fourth tones which show a strong SPL above the mean noise levels.
  
@@ -7223,7 +7447,7 @@ literal "false"
  Hence Case 25 also have a diminished broadband level and the third and
  the fourth tone maintains the same SPL as the most noisy Case 22.
  Interestingly these cases exhibit an increase in the curvature Richardson
- number owing to the effect of sharp curvature near the impingement.
+ number owing to the affect of sharp curvature near the impingement.
  As can be inferred from the Richardson number plot, the impingement points
  for both these cases are slightly more upstream along the wall from the
  trailing edge than the standard Case 22, and shows the non-linear tonal
@@ -7271,11 +7495,7 @@ literal "false"
  This region between the curvature inflection and the impingement is hence
  where the shear layer vorticity is unstable due to the centrifugal effects
  and therefore lead to rapid generation of streamwise structures.
- 
-\end_layout
-
-\begin_layout Standard
-On observing the same region for the Richardson numbers in the noisy cases
+ On observing the same region for the Richardson numbers in the noisy cases
  in the dataset, it can be observed that Case 
 \begin_inset Formula $22$
 \end_inset
@@ -7287,9 +7507,9 @@ On observing the same region for the Richardson numbers in the noisy cases
  Hence it can be inferred that the lowest Richardson number is one factor
  than contributes to the noise efficiency of Case 22 by allowing higher
  spanwise coherence.
- However again, to infer the contribution of curvature quantitatively requires
- a more meticulous approach since the broadband noise is primarily dependent
- on the exit velocity past the slat trailing edge.
+ However, again the contribution of curvature cannot be inferred quantitatively
+ since the broadband noise is primarily dependent on the exit velocity past
+ the slat trailing edge.
  In Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7320,7 +7540,7 @@ nt location is closer to the trailing edge.
  However, despite the exit velocity being still higher than Case 24, the
  Case 31 does not recover the same levels.
  This suggest that the effect of curvature driven decoherence holds relevance
- for the noise efficiency in addition to the exit velocity and the proximity
+ for the noise efficiency in addition the exit velocity and the proximity
  of impingement.
 \end_layout
 
@@ -10345,12 +10565,11 @@ noprefix "false"
  This leads to formation of converging and diverging planes which necessitate
  that a mass continuity is established between them.
  However, this continuity cannot be met since the outer stream entrains
- the flow from the converging planes faster than the inner low speed recirculati
-on which replenishes the diverging planes leading to periodic bursting of
+ the flow from the converging plans faster than the inner low speed recirculatio
+n which replenishes the diverging planes, leading to periodic bursting of
  the cove.
- This periodic bursting were shown to have a slat chord based Strouhal number
- of 
-\begin_inset Formula $St=0.156$
+ This periodic bursting were shown to have a Strouhal number of 
+\begin_inset Formula $0.156$
 \end_inset
 
  (
@@ -10366,10 +10585,9 @@ on which replenishes the diverging planes leading to periodic bursting of
 placement tb
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -10379,8 +10597,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp130SDAp360SGPp040SOLn018.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10410,8 +10628,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp130SDAp360SGPp040SOLn018_curvr.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10441,8 +10659,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp130SDAp360SGPp040SOLn018.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10466,7 +10684,6 @@ Case 4
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -10476,8 +10693,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp164SDAp352SGPp043SOLn023.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10507,8 +10724,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp164SDAp352SGPp043SOLn023_curvr.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10538,8 +10755,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp164SDAp352SGPp043SOLn023.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10563,7 +10780,6 @@ Case 11
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -10573,8 +10789,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp164SDAp352SGPp043SOLp023.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10604,8 +10820,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp164SDAp352SGPp043SOLp023_curvr.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10635,8 +10851,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp164SDAp352SGPp043SOLp023.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10689,10 +10905,9 @@ name "fig:spanwise_cookies"
 placement tb
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -10702,8 +10917,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp140SDAp352SGPp071SOLp030.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10733,8 +10948,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp140SDAp352SGPp071SOLp030_curvr.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10764,8 +10979,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp140SDAp352SGPp071SOLp030.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10789,7 +11004,6 @@ Case 5
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -10799,8 +11013,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp152SDAp352SGPp063SOLp072.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10830,8 +11044,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp152SDAp352SGPp063SOLp072_curvr.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10861,8 +11075,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp152SDAp352SGPp063SOLp072.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10886,7 +11100,6 @@ Case 8
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -10896,8 +11109,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp159SDAp352SGPp067SOLp051.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10927,8 +11140,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/parametric_case_images/parametric_cases/sl_path/AOAp159SDAp352SGPp067SOLp051_curvr.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -10958,8 +11171,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp159SDAp352SGPp067SOLp051.png
 	lyxscale 10
-	width 4.8cm
-	height 4.8cm
+	width 4.5cm
+	height 4.5cm
 	keepAspectRatio
 	groupId thesis_meanflow
 
@@ -11581,7 +11794,7 @@ literal "false"
 \end_inset
 
  times the step height.
- For cavity flows, the spanwise wave number was approximately one cavity
+ For cavity flows, the spanwise wave number was one approximately one cavity
  depth as suggested by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -11591,34 +11804,55 @@ literal "false"
 \end_inset
 
 .
- Complementing their suggestions, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Liou2014"
-literal "false"
+ The wave numbers are hence reasoned to be primarily influenced by initial
+ shear layer curvature with the exact value determined by the spanwise extend
+ of the simulation.
+ Regarding the latter, the periodic condition at spanwise boundaries ensure
+ that all variables have identical values on both spanwise edges at all
+ time steps.
+ This means that any standing wave pattern along spanwise direction will
+ have to select a wave number such that the flow is congruent between the
+ domain ends.
+ The wave number is thus selected as the nearest whole number that fits
+ the span length.
+ For our simulations, the spanwise wavelength is 
+\begin_inset Formula $0.2\,m$
+\end_inset
+
+ and as the slat position is varied, the degree of centrifugal modes are
+ first driven by the curvature of the shear layer and then the periodic
+ condition leads to selection of the nearest possible whole number.
+ These spanwise velocity cells for all cases are shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spanwise_cookies"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
- also demonstrated the spanwise steady modes in curved free shear layers.
- Although such a step height or cavity depth is difficult to define in the
- slat cove case, the slat chord 
-\begin_inset Formula $C_{s}=0.039m$
+.
+ As shown, when the spanwise modes exist, the number of wavelengths in the
+ spanwise domain of 
+\begin_inset Formula $0.2\,m$
 \end_inset
 
- can be taken for an equivalent diameter for a circumcircle that passes
- through both the slat cusp and the trailing edge.
- In other words, 
-\begin_inset Formula $C_{s}$
+ can vary from 
+\begin_inset Formula $3$
 \end_inset
 
- can be taken for an equivalent cavity depth.
- For the standard case we showed that the non-dimensional wave number using
- the same for spanwise modulation, 
-\begin_inset Formula $\Lambda_{z}=\frac{\lambda_{z}}{C_{s}}$
+ to 
+\begin_inset Formula $5$
 \end_inset
 
-, would then range between 
-\begin_inset Formula $1.0$
+ depending on the slat position.
+ Hence the slat chord based non-dimensional wave length 
+\begin_inset Formula $\Lambda_{z}$
+\end_inset
+
+ would vary between 
+\begin_inset Formula $1.025$
 \end_inset
 
  for 
@@ -11629,45 +11863,23 @@ literal "false"
 \begin_inset Formula $1.7$
 \end_inset
 
- for 3 cells, or zero when no cells are formed.
+ for 3 cells.
+ 
 \end_layout
 
 \begin_layout Standard
-Consequently, and following Barkley, Bres and Liou, the spanwise modulation
- in slat cove is also reasoned to be primarily influenced by initial shear
- layer curvature with the exact value determined by the snapping necessitated
- by spanwise extend of the simulation.
- The snapping occurs since although the periodic condition represents an
- infinite spatial domain for the flow, it ensures that all variables have
- identical values on both spanwise edges at all time steps.
- This means that any standing wave pattern along spanwise direction will
- have to select a wave number such that the flow is congruent between the
- domain ends.
- The wave number is thus selected as the nearest whole number that fits
- the span length.
- For our simulations, the spanwise wavelength is 
-\begin_inset Formula $0.2\,m$
-\end_inset
-
- and as the slat position is varied, the the degree of centrifugal modes
- are first driven by the curvature of the shear layer and then the periodic
- condition leads to selection of the nearest possible whole number.
- Note that the same effect occurs in the presence of walls where the Dirichlet
- condition in pressure and velocity causes the spanwise wave number to snap
- to whole numbers.
-\end_layout
-
-\begin_layout Standard
-These spanwise velocity cells for all cases are given in the Appendix B.
- Among them the Cases 
+Here Cases 
 \begin_inset Formula $[4,11,12,18,\text{ and }19]$
 \end_inset
 
- have no cells corresponding to a null wave number.
- On comparing their shear layer curvatures from Fig.
+ have no cells corresponding to null wave number.
+ On comparing the shear layer shapes from Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:spanwise_cookies"
+reference "fig:meanshearlayershapes"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -11686,10 +11898,9 @@ reference "fig:spanwise_cookies"
 , the case develops a weak spanwise homogeneous flow however not forming
  cells due to the fact that the initial curvature is low, and with a significant
 ly low exit velocity.
- The reduced exit velocity reduces both the streamline velocity along the
- shear layer and the recirculation velocity, and hence reduces the growth
- of centrifugal related instabilities.
- The same follows for Case 
+ The reduced exit velocity reduces the streamline velocity along the shear
+ layer and hence reduces the growth of centrifugal instability.
+ For Case 
 \begin_inset Formula $18$
 \end_inset
 
@@ -11697,8 +11908,8 @@ ly low exit velocity.
 \begin_inset Formula $19$
 \end_inset
 
- where the shear layers are initially parallel to the incoming flow and
- the curvature increases in the mid-trajectory to compensate the delay and
+, the shear layers are clearly initially parallel to the incoming flow and
+ the curvature increases in the mid trajectory to compensate the delay and
  redirect the flow.
  Thus, in comparison with Case 
 \begin_inset Formula $22$
@@ -11708,15 +11919,12 @@ ly low exit velocity.
 \begin_inset Formula $\Lambda_{z}=1.7$
 \end_inset
 
-, the above-mentioned cases have a lower initial curvature.
+, the above-mentioned five cases have a lower initial curvature.
  This suggest two things: one is that it is additional proof that the spanwise
  modes are driven by the curvature of the shear layer since the wave number
- varies proportional to the initial curvature.
- The second is that unlike for the vorticity conversion, only the early
- part of the shear layer is significant as a driver of the mode formation.
- This could be possibly due to the fact that the initial shear layer curvature
- determines the radial of the recirculation bubble which ultimately determines
- the strength of centrifugal effects.
+ varies proportional to the initial curvature and second is that unlike
+ for the vorticity conversion, only the early part of the shear layer is
+ significant as a driver of the mode formation.
 \end_layout
 
 \begin_layout Standard
@@ -11724,7 +11932,7 @@ Investigating this proposition further, Cases
 \begin_inset Formula $[5,8,9,14,27,\text{ and }30]$
 \end_inset
 
- have the smallest wavelength of 
+ have the smallest wave length of 
 \begin_inset Formula $\Lambda_{z}=1.025$
 \end_inset
 
@@ -11744,10 +11952,11 @@ reference "fig:spanwise_cookies-2"
  These cases can also be noted to have a low broadband and tonal characteristic
  noise (See Appendix B for spectra) and owes to the early impingement leading
  to a complete decoherence of the ejected vorticity at trailing edge.
+ 
 \color brown
 
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 This can be explained based on the curvature instability leading to a complete
@@ -11774,6 +11983,8 @@ Although not elaborated in our work, these cases can also be seen to have
 \end_inset
 
 
+\color inherit
+ 
 \end_layout
 
 \begin_layout Standard
@@ -11789,7 +12000,7 @@ In contrast, as can be noted from Cases
  Hence the presence of modes does not directly imply that the characteristic
  noise sources including the aeroacoustic resonance are significantly disrupted
  solely by presence of these modes.
- Rather, they induce additional dynamics arising from their periodicity.
+ Rather they induce additional dynamics arising from their periodicity.
  In Chapter 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -11817,64 +12028,16 @@ bursting
  This oscillation modulates the spanwise coherence of the shear layer such
  that the aeroacoustic loop is not driven by a steady shedding and impingement
  of spanwise coherent vortices but with an intermittent modulation of the
- coherence length of the impinging turbulence.
- We proposed that the resulting tones hence will also be amplitude modulated
- thereby developing side bands.
-\end_layout
-
-\begin_layout Standard
-To investigate the spanwise mode oscillations further, we now extract the
+ coherence length.
+ We proposed that the resulting tones will also be amplitude modulated thereby
+ developing a broadband nature, particularly noticeable for the low frequency
+ peaks.
+ We suggest that this is the primary reason that the first Rossiter mode
+ is broadband and significantly weakened compared to the second and higher
+ tones which are often conspicuous in the far-field spectra.
+ To investigate the spanwise mode oscillations further, we now extract the
  spanwise distribution of the velocity spectra for the modulated spanwise
  component.
- As shown in Fig.
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:spanwise_psd_probe17_1"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:spanwise_psd_probe17_2"
-
-\end_inset
-
-, the power spectra of spanwise velocity component has a localized spike
- around 
-\begin_inset Formula $200\,Hz$
-\end_inset
-
- corresponding to 
-\begin_inset Formula $St=0.156$
-\end_inset
-
- for all the cases studied.
- A particular statement can be that for the Case 15 in Fig.
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:spanwise_psd_probe17_1"
-
-\end_inset
-
-.
- Here it can be observed that the case have three wavelengths within the
- spanwise domain.
- Hence, for the region near the slat trailing edge, there are 3 diverging
- planes and 3 converging planes.
- For the figure, the power spectral densities of velocity is obtained for
- a reduced spanwise length of 
-\begin_inset Formula $0.1\,m$
-\end_inset
-
- and hence the 2 diverging planes close to the mid-plane are captured.
- Also note that for positioning of the diverging cells, the lower and upper
- array of cells in the slat cove have a shifted phase by a quarter of wavelength.
- These spikes can be noticed to occur at the locations of the diverging
- planes where the spanwise velocity is zero and increasing.
- These spanwise localization is also present in all cases that have the
- cell formation and can be deduced from the exhaustive dataset presented
- in Appendix B.
 \end_layout
 
 \begin_layout Standard
@@ -11920,744 +12083,55 @@ name "fig:spanwise_spectra_case04"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status collapsed
+As shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spanwise_psd_probe17_1"
 
-\begin_layout Plain Layout
-\begin_inset Float figure
-placement t
-wide true
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp140SDAp352SGPp071SOLp030.png
-	lyxscale 10
-	width 4.15cm
-	height 4.15cm
-	keepAspectRatio
-	BoundingBox 30mm 0bp 1440bp 867bp
-	groupId thesis_spanwisemodes
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 5
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp140SDAp352SGPp071SOLp030_probe_17.png
-	lyxscale 10
-	width 8cm
-	height 8cm
-	keepAspectRatio
-	BoundingBox 0bp 0bp 1250bp 520bp
-	groupId psd_spanwise
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 5
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp140SDAp352SGPp071SOLp030/streamline_trajectory.png
-	lyxscale 10
-	width 4.5cm
-	height 4.5cm
-	keepAspectRatio
-	groupId streamlinetraj
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp140SDAp352SGPp071SOLp030/streamline_trajetory2.png
-	lyxscale 10
-	width 3.6cm
-	height 3.6cm
-	keepAspectRatio
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Streamline trajectory
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- 
-\begin_inset space \qquad{}
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp140SDAp352SGPp071SOLp030/recirculation_freqs.png
-	lyxscale 10
-	width 7cm
-	height 7cm
-	keepAspectRatio
-	BoundingBox 0bp 0bp 1740bp 1051bp
-	groupId streamlinerecircfreq
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Recirculation frequency
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Streamline extracted from the mean flow profile for Case 5 suggest that
- the recirculation in the cove maintains a frequency of 
-\begin_inset Formula $210Hz$
-\end_inset
-
-.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:recirculation_frequency_case5"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement t
-wide true
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp164SDAp352SGPp043SOLn023.png
-	lyxscale 10
-	width 4.15cm
-	height 4.15cm
-	keepAspectRatio
-	BoundingBox 30mm 0bp 1440bp 867bp
-	groupId thesis_spanwisemodes
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 11
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp164SDAp352SGPp043SOLn023_probe_17.png
-	lyxscale 10
-	width 8cm
-	height 8cm
-	keepAspectRatio
-	BoundingBox 0bp 0bp 1250bp 520bp
-	groupId psd_spanwise
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 11
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename chapter06_figs/Recirculation_Streamline.png
-	lyxscale 10
-	width 4.5cm
-	height 4.5cm
-	keepAspectRatio
-	groupId streamlinetraj
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename chapter06_figs/Recirculation_Streamline2.png
-	lyxscale 10
-	width 4cm
-	height 4cm
-	keepAspectRatio
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Streamline trajectory
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- 
-\begin_inset space \qquad{}
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp164SDAp352SGPp043SOLn023/recirculation_freqs.png
-	lyxscale 10
-	width 7cm
-	height 7cm
-	keepAspectRatio
-	BoundingBox 0bp 0bp 1740bp 1051bp
-	groupId streamlinerecircfreq
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Recirculation frequency
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Streamline extracted from the mean flow profile for Case 11 suggest that
- the recirculation in the cove maintains a frequency of 
-\begin_inset Formula $170Hz$
-\end_inset
-
-.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:recirculation_frequency_case11"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement t
-wide true
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp340SGPp094SOLn081.png
-	lyxscale 10
-	width 4.15cm
-	height 4.15cm
-	keepAspectRatio
-	BoundingBox 30mm 0bp 1440bp 867bp
-	groupId thesis_spanwisemodes
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 22
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp340SGPp094SOLn081_probe_17.png
-	lyxscale 10
-	width 8cm
-	height 8cm
-	keepAspectRatio
-	BoundingBox 0bp 0bp 1250bp 520bp
-	groupId psd_spanwise
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 22
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp180SDAp340SGPp094SOLn081/steamline_path.png
-	lyxscale 10
-	width 4.5cm
-	height 4.5cm
-	keepAspectRatio
-	groupId streamlinetraj
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp180SDAp340SGPp094SOLn081/steamline_path2.png
-	lyxscale 10
-	width 3.6cm
-	height 3.6cm
-	keepAspectRatio
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Streamline trajectory
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- 
-\begin_inset space \qquad{}
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp180SDAp340SGPp094SOLn081/recirculation_freqs.png
-	lyxscale 10
-	width 7cm
-	height 7cm
-	keepAspectRatio
-	BoundingBox 0bp 0bp 1740bp 1051bp
-	groupId streamlinerecircfreq
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Recirculation frequency
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Streamline extracted from the mean flow profile for Case 22 suggest that
- the recirculation in the cove maintains a frequency of 
-\begin_inset Formula $190Hz$
-\end_inset
-
-.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:recirculation_frequency_case22"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement t
-wide true
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp190SDAp320SGPp064SOLn009.png
-	lyxscale 10
-	width 4.15cm
-	height 4.15cm
-	keepAspectRatio
-	BoundingBox 30mm 0bp 1440bp 867bp
-	groupId thesis_spanwisemodes
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 29
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp190SDAp320SGPp064SOLn009_probe_17.png
-	lyxscale 10
-	width 8cm
-	height 8cm
-	keepAspectRatio
-	BoundingBox 0bp 0bp 1250bp 520bp
-	groupId psd_spanwise
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Case 29
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spanwise_psd_probe17_2"
 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp190SDAp320SGPp064SOLn009/streamline_trajectory
-	lyxscale 10
-	width 4.5cm
-	height 4.5cm
-	keepAspectRatio
-	groupId streamlinetraj
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp190SDAp320SGPp064SOLn009/streamline_trajectory2.png
-	lyxscale 10
-	width 3.6cm
-	height 3.6cm
-	keepAspectRatio
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Streamline trajectory
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- 
-\begin_inset space \qquad{}
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp190SDAp320SGPp064SOLn009/recirculation_freqs.png
-	lyxscale 10
-	width 7cm
-	height 7cm
-	keepAspectRatio
-	BoundingBox 0bp 0bp 1740bp 1051bp
-	groupId streamlinerecircfreq
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Recirculation frequency
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
 
-\begin_layout Plain Layout
-Streamline extracted from the mean flow profile for Case 29 suggest that
- the recirculation in the cove maintains a frequency of 
-\begin_inset Formula $190Hz$
+, the power spectra of spanwise velocity component has a localized spike
+ around 
+\begin_inset Formula $200\,Hz$
 \end_inset
 
-.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:recirculation_frequency_case29"
-
+ corresponding to 
+\begin_inset Formula $St=0.156$
 \end_inset
-
 
-\end_layout
+ for all the cases studied.
+ A particular statement can be that for the Case 15 in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spanwise_psd_probe17_1"
 
 \end_inset
 
-
-\end_layout
-
+ .
+ Here it can be observed that the case have three wavelengths within the
+ spanwise domain.
+ Hence, for the region near the slat trailing edge, there are 3 diverging
+ planes and 3 converging planes.
+ For the figure, the power spectral densities of velocity is obtained for
+ a reduced spanwise length of 
+\begin_inset Formula $0.1\,m$
 \end_inset
-
 
+ and hence the 2 diverging planes close to the mid-plane are captured.
+ Also note that for positioning of the diverging cells, the lower and upper
+ array of cells in the slat cove have a shifted phase by a quarter of wavelength.
+ These spikes can be noticed to occur at the locations of the diverging
+ planes where the spanwise velocity is zero and increasing.
+ These spanwise localization is also present in all cases that have the
+ cell formation and can be deduced from the exhaustive dataset presented
+ in Appendix B.
 \end_layout
 
 \begin_layout Standard
@@ -12673,8 +12147,7 @@ reference "fig:spanwise_psd_probe17_2"
 
 \end_inset
 
-.
- The low frequency range of the spectra also shows saturation of the standard
+.The low frequency range of the spectra also shows saturation of the standard
  color map below 
 \begin_inset Formula $200\,Hz$
 \end_inset
@@ -12809,6 +12282,9 @@ noprefix "false"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Comment
 status collapsed
 
@@ -12861,16 +12337,745 @@ reference "fig:hotwire_probe_17_case11"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement p
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp140SDAp352SGPp071SOLp030.png
+	lyxscale 10
+	width 4.15cm
+	height 4.15cm
+	keepAspectRatio
+	BoundingBox 30mm 0bp 1440bp 867bp
+	groupId thesis_spanwisemodes
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp140SDAp352SGPp071SOLp030_probe_17.png
+	lyxscale 10
+	width 8cm
+	height 8cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1250bp 520bp
+	groupId psd_spanwise
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp140SDAp352SGPp071SOLp030/streamline_trajectory.png
+	lyxscale 10
+	width 4.5cm
+	height 4.5cm
+	keepAspectRatio
+	groupId streamlinetraj
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp140SDAp352SGPp071SOLp030/streamline_trajetory2.png
+	lyxscale 10
+	width 3.6cm
+	height 3.6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Streamline trajectory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp140SDAp352SGPp071SOLp030/recirculation_freqs.png
+	lyxscale 10
+	width 6cm
+	height 6cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1740bp 1051bp
+	groupId streamlinerecircfreq
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recirculation frequency
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Streamline extracted from the mean flow profile for Case 5 suggest that
+ the recirculation in the cove maintains a frequency of 
+\begin_inset Formula $210Hz$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:recirculation_frequency_case5"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp164SDAp352SGPp043SOLn023.png
+	lyxscale 10
+	width 4.15cm
+	height 4.15cm
+	keepAspectRatio
+	BoundingBox 30mm 0bp 1440bp 867bp
+	groupId thesis_spanwisemodes
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 11
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp164SDAp352SGPp043SOLn023_probe_17.png
+	lyxscale 10
+	width 8cm
+	height 8cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1250bp 520bp
+	groupId psd_spanwise
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 11
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename chapter06_figs/Recirculation_Streamline.png
+	lyxscale 10
+	width 4.5cm
+	height 4.5cm
+	keepAspectRatio
+	groupId streamlinetraj
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename chapter06_figs/Recirculation_Streamline2.png
+	lyxscale 10
+	width 4cm
+	height 4cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Streamline trajectory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp164SDAp352SGPp043SOLn023/recirculation_freqs.png
+	lyxscale 10
+	width 6cm
+	height 6cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1740bp 1051bp
+	groupId streamlinerecircfreq
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recirculation frequency
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Streamline extracted from the mean flow profile for Case 11 suggest that
+ the recirculation in the cove maintains a frequency of 
+\begin_inset Formula $170Hz$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:recirculation_frequency_case11"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp190SDAp320SGPp064SOLn009.png
+	lyxscale 10
+	width 4.15cm
+	height 4.15cm
+	keepAspectRatio
+	BoundingBox 30mm 0bp 1440bp 867bp
+	groupId thesis_spanwisemodes
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 29
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp190SDAp320SGPp064SOLn009_probe_17.png
+	lyxscale 10
+	width 8cm
+	height 8cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1250bp 520bp
+	groupId psd_spanwise
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 29
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp190SDAp320SGPp064SOLn009/streamline_trajectory
+	lyxscale 10
+	width 4.5cm
+	height 4.5cm
+	keepAspectRatio
+	groupId streamlinetraj
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp190SDAp320SGPp064SOLn009/streamline_trajectory2.png
+	lyxscale 10
+	width 3.6cm
+	height 3.6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Streamline trajectory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp190SDAp320SGPp064SOLn009/recirculation_freqs.png
+	lyxscale 10
+	width 6cm
+	height 6cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1740bp 1051bp
+	groupId streamlinerecircfreq
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recirculation frequency
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Streamline extracted from the mean flow profile for Case 29 suggest that
+ the recirculation in the cove maintains a frequency of 
+\begin_inset Formula $190Hz$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:recirculation_frequency_case29"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp340SGPp094SOLn081.png
+	lyxscale 10
+	width 4.15cm
+	height 4.15cm
+	keepAspectRatio
+	BoundingBox 30mm 0bp 1440bp 867bp
+	groupId thesis_spanwisemodes
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 22
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp340SGPp094SOLn081_probe_17.png
+	lyxscale 10
+	width 8cm
+	height 8cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1250bp 520bp
+	groupId psd_spanwise
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 22
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp180SDAp340SGPp094SOLn081/steamline_path.png
+	lyxscale 10
+	width 4.5cm
+	height 4.5cm
+	keepAspectRatio
+	groupId streamlinetraj
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp180SDAp340SGPp094SOLn081/steamline_path2.png
+	lyxscale 10
+	width 3.6cm
+	height 3.6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Streamline trajectory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/UnsteadyAnalysis/AOAp180SDAp340SGPp094SOLn081/recirculation_freqs.png
+	lyxscale 10
+	width 6cm
+	height 6cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 1740bp 1051bp
+	groupId streamlinerecircfreq
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recirculation frequency
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Streamline extracted from the mean flow profile for Case 22 suggest that
+ the recirculation in the cove maintains a frequency of 
+\begin_inset Formula $190Hz$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:recirculation_frequency_case22"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The low frequency fluctuations present in both cases with and without the
  spanwise modes suggest that this frequency itself is not directly connected
- to the centrifugal instability but rather a feature of a different flow
+ to the centrifugal instability, but rather a feature of a different flow
  dynamics.
  To investigate this, we choose an arbitrary position inside the cove, in
  close proximity to the slat cusp, where if a streamline is sourced would
  generate one that enters the recirculation after the impingement location.
  The three dimensional length of this streamline is then used to obtain
- the velocity profile, the time of travel along which can be used to obtain
- the recirculation frequency.
+ the velocity profile and the time of travel can be used to obtain the recircula
+tion frequency.
  The recirculation frequency as a function of the streamline path length
  for Cases 
 \begin_inset Formula $[5,11,22,\text{ and }29]$
@@ -12895,7 +13100,7 @@ reference "fig:recirculation_frequency_case29"
  for a streamline particle from the vicinity of the slat cusp to return
  to the same vicinity via the recirculation explains the oscillation at
  
-\begin_inset Formula $200\,Hz$
+\begin_inset Formula $200Hz$
 \end_inset
 
 .
@@ -12907,16 +13112,9 @@ reference "fig:recirculation_frequency_case29"
 \begin_inset Formula $22$
 \end_inset
 
- and 
-\begin_inset Formula $29$
-\end_inset
-
 .
-\end_layout
-
-\begin_layout Standard
-
-\color black
+ 
+\color red
 For Case 
 \begin_inset Formula $11$
 \end_inset
@@ -12924,11 +13122,11 @@ For Case
  where the shear layer has a low initial curvature, the oscillation is spanwise
  homogeneous with a frequency slightly lower than the recirculation.
  Precisely, in this case, the frequency of spanwise oscillation is 
-\begin_inset Formula $100\,Hz$
+\begin_inset Formula $100Hz$
 \end_inset
 
  and the recirculation frequency is at 
-\begin_inset Formula $170\,Hz$
+\begin_inset Formula $170Hz$
 \end_inset
 
 , i.e.
@@ -12938,235 +13136,29 @@ n is at approximately
 \end_inset
 
 .
- We do not put forward an explanation for this but only suggest that it
- can be possibly due to the presence of a spanwise homogeneous drift velocity
- present in this case causing the recirculation loop to be a spiral with
- axis along the span, as seen in the streamline visualization in Fig.
-\color inherit
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:recirculation_frequency_case11"
-
-\end_inset
-
-
-\color black
-.
- In contrast, for the other cases with presence of spanwise modes, the modes
- constrain the spanwise velocity to have opposing polarity with the cells
- and the oscillations to occur at the diverging planes.
- Then at this frequency, the diverging spanwise velocity leads to a saturation
- of the low pressure thereby bursting the shear layer at the recirculation
- frequency.
-\end_layout
-
-\begin_layout Section
-Conclusions
-\end_layout
-
-\begin_layout Standard
-In this last chapter, we utilized the LBM based ProLB solver and high-fidelity
- data generated using same to investigate the slat cove dynamics.
- We parameterized the slat positioning with respect to the main element
- using a three variable coordinate and used a surrogate model based automated
- exploration using Bayesian Active Learning to collect the dataset such
- that maximum information pertaining to the variation of the spectra is
- captured.
- The flow recordings were then investigated to uncover the slat cove dynamics.
-\end_layout
-
-\begin_layout Standard
-On inspecting the dataset, it was first showed that the spectra showed strong
- sensitivity to the shape of the shear layer as expected.
- Following the theory of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Terracol2016"
-literal "false"
-
-\end_inset
-
- that the tone frequencies are selected by the Rossiter mechanism, we investigat
-ed the effect of shear layer shape in determining the strength of the resonance.
- For this we followed the suggestion of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Liou2014"
-literal "false"
-
-\end_inset
-
- that a curved free shear layer has instabilities related to the centrifugal
- forces and can develop steady spanwise modes as well as Görtler like vortices.
- Based on 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Bradshaw1969"
-literal "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Liou2014"
-literal "false"
-
-\end_inset
-
-, we characterized the slat shear layer for each case using its distribution
- of curvature and Richardson number.
- It was shown that the Richardson number for all cases are well in the unstable
- regime near the slat trailing edge.
- Nevertheless, the variation of Richardson number and corresponding variation
- in the spanwise coherence near the trailing edge is less significant than
- what would be caused by the effect of the position of the impingement location.
- The movement of the impingement location to the closest to the trailing
- edge is hence a better predictor for the strength of the tones.
- It happens geometrically that it is only possible to produce an additional
- curvature near the trailing edge by inadvertently making the impingement
- point to move upstream.
- The decoherence effect by the impingement then trumps the effect of additional
- curvatures.
-\end_layout
-
-\begin_layout Standard
-A second and novel finding related to the cove dynamics was presented in
- the previous chapter i.e.
- the presence of spanwise modulated spanwise velocity.
- We showed using the dataset that the slat chord normalized wavelength of
- these modes 
-\begin_inset Formula $\Lambda_{z}=\frac{\lambda_{z}}{C_{s}}$
-\end_inset
-
- ranges between 
-\begin_inset Formula $1.0$
-\end_inset
-
- to 
-\begin_inset Formula $1.7$
-\end_inset
-
-, the exact value dictated by the spanwise length of the cove.
- We also demonstrated using the curvature distribution of shear layers that
- a high initial curvature is the characteristic that leads to a stronger
- modulation leading to smaller wavelength of the spanwise velocity.
- Further investigation of the spanwise distribution of velocity spectra
- then revealed that there exist spanwise localized oscillations at 
-\begin_inset Formula $200\,Hz$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-The investigation of this spanwise distribution for all cases in the dataset
- showed that oscillation is present in all cases which develops the spanwise
- modes, and the localization is always in the diverging planes.
- The oscillations were also found to be always within the range of 
-\begin_inset Formula $100$
-\end_inset
-
- to 
-\begin_inset Formula $200\,Hz$
-\end_inset
-
- for all cases in the dataset.
- In search of the source of this frequency, the three dimensional recirculating
- streamlines were generated and the recirculation times were then shown
- to fall in the same range around 
-\begin_inset Formula $200\,Hz$
-\end_inset
-
-.
- Hence it is theorized that the low frequency oscillation is the effect
- of the periodic recirculation, often referred to as the 
-\begin_inset Quotes eld
-\end_inset
-
-pulsation of the cove
-\begin_inset Quotes erd
-\end_inset
-
- in recent literature.
+ For the other cases with presence of spanwise modes, the modes constrain
+ the spanwise velocity to have opposing polarity with the cells and at the
+ diverging planes where the spanwise velocity leads to a saturation of the
+ low pressure, the bursting occurs at the same recirculation frequency.
  
-\end_layout
-
-\begin_layout Standard
-Moreover, the low frequency oscillations were also visualized in the previous
- chapter using the Q-criterion demonstrating that this phenomena is a periodic
- bursting of the shed spanwise vorticity at the slat cusp.
- The spanwise coherence of the spanwise vorticity is hence periodically
- disrupted at its initial shedding phase leading to generation of small
- scale streamwise vortices.
- Being generated in diverging planes, these small scale structure is then
- convected by either positive or negative spanwise velocity.
- Being a turbulent process, the effect of this bursting and breaking of
- spanwise coherence is thus intractable periodically at the region farther
- from the cusp region.
- This very well explain the mode switching behavior that is attributed to
- the variation of coherence length and dominant tonal fluctuations across
- the spanwise extend reported in very recent literature
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Wei2025"
-literal "false"
-
-\end_inset
-
-.
- This also explains the apparent stochasticity of the slat tones reported
- int he experimental investigations of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "KamliyaJawahar2021"
-literal "false"
-
-\end_inset
-
-.
- Here it must be emphasized that the experimental investigations which selects
- the spanwise mid-plane to place the wall pressure and hot-wire probes may
- or may not be at the center of a diverging plane depending of the development
- of the cells.
- Hence, the studied characteristics will inevitably tend to diverge between
- the experimental observations from different wind tunnel cases in view
- of periodicity.
- The turbulence ejection that accompanies the bursting phenomena will also
- appear to induce intermittency in the turbulence characteristics in the
- slat gap since the periodicity of bursting is robust only in the very early
- shear layer near the slat cusp and the generated vorticity from each event
- is then convected along with the rest of turbulence.
 \end_layout
 
 \begin_layout Standard
 Here, the fact that the bursting occurs at the diverging planes due to saturatio
 n of a suction pressure at diverging planes is not entirely consistent with
  the fact that its frequency is close to the recirculation frequency.
- The saturation of low pressure could have been synchronized with other
- modes which are more probable, for example with the first Rossiter mode,
- and the flow recirculation frequency is an unintuitive candidate to synchronize
+ The saturation of low pressure could have been synchronized other modes
+ which are more probable, for example with the first Rossiter mode, and
+ the flow recirculation frequency is an unintuitive candidate to synchronize
  with the spanwise mode oscillation, thereby suggesting a non-trivial coupling
  between the bursting phenomena and the recirculation.
  This aspect hence is an intriguing line of experimentation for future investiga
 tions.
  Nevertheless, with the current understanding from our dataset and the presented
- results herein, it is overwhelmingly evident that the low frequency oscillation
+ results herein, it is overwhelmingly obvious that the low frequency oscillation
  associated with the recirculation phenomena is pertinent to the establishment
  of characteristic noise sources in the cove dynamics.
-\end_layout
-
-\begin_layout Standard
-
-\color brown
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-
-\color brown
-The idea of a low frequency modulation of the Rossiter tone by periodic
+ The idea of a low frequency modulation of the Rossiter tone by periodic
  disruption of the spanwise coherence of the shear layer and its periodic
  busting leading to generation of a streamwise vorticity is essential to
  form the complete picture of the slat cove dynamics that was until today
@@ -13189,13 +13181,8 @@ ics that was so far speculated from the turbulence characteristics at the
  the slat trailing edge.
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
-With the establishment of this new facts, we now proceed to conclude the
+With the establishment of this new factor, we now proceed to conclude the
  thesis by drawing the new picture of slat cove dynamics with the addition
  of the new found dynamics, in the upcoming chapter.
 \end_layout
@@ -15056,127 +15043,6 @@ name "fig:spanwise_modes"
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Apart from the dynamics of the flow, implications of spanwise modes on acoustics
- arise not from the spatial modes themselves but from the above mentioned
- periodic bursting.
- The spanwise coherence of impinging vortex is the first necessary condition
- for aeroacoustic resonance to occur since the Rossiter mechanism is a largely
- 2D phenomenon with the strength of resonance decreasing progressively with
- spanwise coherence
-\begin_inset CommandInset citation
-LatexCommand citep
-key "HamiltonSmith2024,Souza2019"
-literal "false"
-
-\end_inset
-
-.
- Hence, if the spanwise coherence is broken periodically at a frequency
- lower than the first Rossiter tone, the strength of resonance will also
- be modulated, which means that the acoustic tones are not sourced by ideally
- periodic fluctuations but are amplitude modulated by the bursting frequency.
- Such an amplitude modulation can be detected in the spectral domain as
- appearance of side bands which we conjectured as the reason for the first
- Rossiter tone to appear broadband due to contributions from side band frequenci
-es.
- This is however observable only if the span to chord ratio of the simulation
- is sufficiently large such that the centrifugally driven spanwise mode
- oscillations are prominent, as in the case of experiment by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "KamliyaJawahar2021"
-literal "false"
-
-\end_inset
-
-.
- The same effect will also vitiate the periodicity of the noise source character
-istics rendering them as intermittent or quasi-periodic if analyzed close
- to the diverging planes.
- This is promptly underlined in the work of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "KamliyaJawahar2021"
-literal "false"
-
-\end_inset
-
- which shed light on the intermittency associated with the first Rossiter
- tone.
- 
-\end_layout
-
-\begin_layout Plain Layout
-In summary, the effect of shear layer shape on acoustics is qualitatively
- deducible from the collection of cases.
- It can be noted that both broadband and tonal noise levels are dependent
- primarily on the exit velocity with additional influence from the location
- of impingement and shear layer shape.
- This complements the literature where a scaling law of the slat noise level
- was established with OASPL in the characteristic frequency range proportional
- to 
-\begin_inset Formula $M^{5}$
-\end_inset
-
-, where 
-\begin_inset Formula $M$
-\end_inset
-
- is the free stream Mach number
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Roger2005,Santana,Singer2000,Takeda2004,Guo2012"
-literal "false"
-
-\end_inset
-
-.
- However, the location of impingement does not necessarily need to be stationary
- with an increase in the free-stream velocity and neither does the maximum
- exit velocity since the impingement location can influence both the recirculati
-on flow rate and the exit flow rate.
- This determines the the velocity with which coherent structures are ejected
- past the trailing edge.
- Adding to the same complexity, the shear layer shape variation introduce
- varying levels of centrifugal instability to the shear layer which determine
- the vorticity transitions from spanwise coherent structures to streamwise
- which determine the efficiency of the TE scattering leading to broadband
- noise.
- This explains why the canonical scaling laws based on free-stream parameters
- alone have high uncertainties for standard slat-noise prediction models
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Guo2003,Bolivar2020"
-literal "false"
-
-\end_inset
-
-.
- Additionally, the location of impingement being close to the trailing edge
- is a strong indicator of the presence of characteristic noise signature
- regardless of the shear layer shape.
- Hence, it can be safely assumed that the the far-field power levels of
- the characteristic noise is primarily determined by the strength of dynamics
- at the trailing edge.
- Given these factors, we consider that an appropriate analysis of the slat
- noise characteristics and scaling laws must be based on the geometric parameter
-s of the shear layer rather than based on the geometric positional variables
- of the slat or free stream parameters.
- The former can have a non-linear relation with the shape parameters of
- the shear layer and can hence introduce unpredictability if the noise levels
- are modelled in terms of the former only.
 \end_layout
 
 \end_inset

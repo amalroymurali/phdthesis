@@ -6,6 +6,18 @@ import plot_style_init
 # Read the cases from cases.txt
 with open('cases.txt', 'r') as f:
     cases = f.read().splitlines()
+non_noisy_cases = [
+    "AOAp130SDAp360SGPp040SOLn018",
+    "AOAp140SDAp352SGPp071SOLp030",
+    "AOAp147SDAp352SGPp093SOLp076",
+    "AOAp152SDAp352SGPp063SOLp072",
+    "AOAp159SDAp352SGPp067SOLp051",
+    "AOAp164SDAp352SGPp043SOLp023",
+    "AOAp174SDAp352SGPp085SOLp049",
+    "AOAp186SDAp352SGPp048SOLp032",
+    "AOAp192SDAp352SGPp053SOLp063",
+    "AOAp181SDAp352SGPp078SOLp059"
+]
 
 # Load data for all cases
 case_data = {}
@@ -46,7 +58,11 @@ for case, data in case_data.items():
     plt.xlabel('Flow path length')
     plt.ylabel('$Ri_{c,cum2}$')
     plt.legend(loc='lower left')
-    
+    if case in non_noisy_cases:
+        plt.gca().set_facecolor((0.0, 0.6, 0.0, 0.1))
+    else:
+        plt.gca().set_facecolor((0.6, 0.0, 0.0, 0.1))
+
     # Save the plot
     plt.savefig(f'{case}_richardson_cum2.png')
     plt.close()

@@ -6,6 +6,18 @@ import plot_style_init
 # Read the cases from cases.txt
 with open('cases.txt', 'r') as f:
     cases = f.read().splitlines()
+non_noisy_cases = [
+    "AOAp130SDAp360SGPp040SOLn018",
+    "AOAp140SDAp352SGPp071SOLp030",
+    "AOAp147SDAp352SGPp093SOLp076",
+    "AOAp152SDAp352SGPp063SOLp072",
+    "AOAp159SDAp352SGPp067SOLp051",
+    "AOAp164SDAp352SGPp043SOLp023",
+    "AOAp174SDAp352SGPp085SOLp049",
+    "AOAp186SDAp352SGPp048SOLp032",
+    "AOAp192SDAp352SGPp053SOLp063",
+    "AOAp181SDAp352SGPp078SOLp059"
+]
 
 # Load data for all cases
 case_data = {}
@@ -15,6 +27,9 @@ for case in cases:
         case_data[case] = pd.read_csv(filename, header=None, delimiter=' ')
     else:
         print(f"Data file for {case} not found.")
+
+# Identify Case 22
+case_22 = "AOAp180SDAp340SGPp094SOLn081"
 
 # Plot each case separately
 for case, data in case_data.items():
@@ -32,6 +47,11 @@ for case, data in case_data.items():
     	plt.plot(dataall.iloc[:,1], dataall.iloc[:,2], ls='-',color='grey',
     	         alpha=0.2, label='All cases' if flag==0 else None); flag=1
 
+    # Plot Case 22 in black
+    case_22_data = case_data[case_22]
+    plt.semilogy(case_22_data.iloc[:,1], case_22_data.iloc[:,2], 
+             lw=2.0, color='k',ls='-', label='Case 22')
+
     # Plot the specific case in color
     plt.plot(data.iloc[:,1], data.iloc[:,2], lw=2.0,
              color='red', label=label)
@@ -40,8 +60,12 @@ for case, data in case_data.items():
     plt.axvline(1.0, ls='--', label='Trailing edge location')
     plt.xlabel('Flow path length')
     plt.ylabel('Curvature ($\\frac{1}{\sqrt{(d^2x/ds^2)^2 + (d^2y/ds^2)^2}}$)($m^{-1}$)')
-    plt.legend(loc='upper left')
-    
+    plt.legend(loc='lower left')
+    if case in non_noisy_cases:
+        plt.gca().set_facecolor((0.0, 0.6, 0.0, 0.1))
+    else:
+        plt.gca().set_facecolor((0.6, 0.0, 0.0, 0.1))
+
     # Save the plot
     plt.savefig(f'{case}_curvr.png')
     plt.close()

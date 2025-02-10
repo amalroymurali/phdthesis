@@ -28,6 +28,9 @@ for case in cases:
     else:
         print(f"Data file for {case} not found.")
 
+# Identify Case 22
+case_22 = "AOAp180SDAp340SGPp094SOLn081"
+
 # Plot each case separately
 for case, data in case_data.items():
     plt.figure(figsize=(5, 5*0.618))
@@ -44,6 +47,11 @@ for case, data in case_data.items():
     	plt.plot(dataall.iloc[:,1], dataall.iloc[:,2], ls='-',color='grey',
     	         alpha=0.2, label='All cases' if flag==0 else None); flag=1
 
+    # Plot Case 22 in black
+    case_22_data = case_data[case_22]
+    plt.semilogy(case_22_data.iloc[:,1], case_22_data.iloc[:,2], 
+             lw=2.0, color='k',ls='-', label='Case 22')
+
     # Plot the specific case in color
     plt.plot(data.iloc[:,1], data.iloc[:,2], lw=2.0,
              color='red', label=label)
@@ -51,8 +59,8 @@ for case, data in case_data.items():
     plt.xlim([-0.1, 1.2])
     plt.axvline(1.0, ls='--', label='Trailing edge location')
     plt.xlabel('Flow path length')
-    plt.ylabel('Curvature ($\\frac{1}{\sqrt{(d^2x/ds^2)^2 + (d^2y/ds^2)^2}}$)($m^{-1}$)')
-    plt.legend(loc='upper left')
+    plt.ylabel('Curvature ($m^{-1}$)')
+    plt.legend(loc='lower left')
     if case in non_noisy_cases:
         plt.gca().set_facecolor((0.0, 0.6, 0.0, 0.1))
     else:

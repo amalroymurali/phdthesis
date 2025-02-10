@@ -26,19 +26,19 @@ for case, data in case_data.items():
     # Plot all cases in grey first
     flag = 0
     for caseall, dataall in case_data.items():
-        plt.plot(dataall.iloc[:,1], dataall.iloc[:,3],  # Column 3 for richardson_cum2
+        plt.plot(dataall.iloc[:,1], dataall.iloc[:,2],  # Column 2 for richardson_cum2
                  ls='-', color='grey', alpha=0.2, 
                  label='Other cases' if flag==0 else None)
         flag = 1
     
     # Plot Case 22 in black
     case_22_data = case_data[case_22]
-    plt.plot(case_22_data.iloc[:,1], case_22_data.iloc[:,3],  # Column 3
+    plt.plot(case_22_data.iloc[:,1], case_22_data.iloc[:,2],  # Column 3
              lw=2.0, color='k', ls='-', label='Case 22')
     
     # Plot the current case in red
     if not case == "AOAp180SDAp340SGPp094SOLn081":
-        plt.plot(data.iloc[:,1], data.iloc[:,3],  # Column 3
+        plt.plot(data.iloc[:,1], data.iloc[:,2],  # Column 3
                  lw=2.0, ls='-', color='r', label=f'Current Case')
     
     plt.xlim([-0.1, 1.2])
