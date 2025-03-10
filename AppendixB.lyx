@@ -3,10 +3,10 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
-\textclass extbook
+\origin /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/
+\textclass report
 \begin_preamble
-\setcounter{chapter}{0}
+\usepackage{lmodern}
 
 \usepackage{tcolorbox}
 \usepackage{listings}
@@ -22,6 +22,7 @@
 \renewcommand{\thesubfigure}{\roman{subfigure}}
 \end_preamble
 \use_default_options false
+\master Thesis_Manuscript_ARM.lyx
 \begin_modules
 theorems-ams
 \end_modules
@@ -93,7 +94,7 @@ End
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date false
+\suppress_date true
 \justification true
 \use_refstyle 0
 \use_minted 0
@@ -102,12 +103,7 @@ End
 \color #008000
 \end_index
 \leftmargin 3cm
-\topmargin 2.5cm
 \rightmargin 2.5cm
-\bottommargin 2.5cm
-\headheight 1in
-\headsep 2in
-\footskip 1.25cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -128,19 +124,40 @@ End
 
 \begin_body
 
-\begin_layout Chapter*
-Appendix B
+\begin_layout Chapter
+Dataset from Bayesian Active Learning
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Dataset
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Data Description
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-To enable reuse and further extension, the data is first organized into
- cases representing different slat positions.
+To enable reuse and further extension, the dataset we obtained from the
+ current thesis work is documented here.
+ It is first organized into cases representing different slat positions.
  For each case, the data used to generate the LBM simulation case files
- are available in the pre-processsing folder 
+ are available in the pre-processing folder 
 \begin_inset Quotes eld
 \end_inset
 
@@ -148,8 +165,7 @@ preproc
 \begin_inset Quotes erd
 \end_inset
 
- with the connected scripts for editing the files according to case specific
- needs being archived in the 
+ with the connected scripts in the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -157,18 +173,15 @@ templates
 \begin_inset Quotes erd
 \end_inset
 
- folder.
- For the template based setup that we used, the files are largely the same
- for different cases except for the slat geometry file which is updated
- with the coordinate translation necessary according to the slat coordinates.
- 
+ folder for editing the files according to case specific needs.
+ For the template based setup that we used, the configuration files are
+ largely the same for different cases except for the slat geometry file
+ which is updated with the coordinate translation necessary according to
+ the slat coordinates.
+ For each case we then use the following conventions.
 \end_layout
 
-\begin_layout Standard
-For each case we then follow the conventions as below:
-\end_layout
-
-\begin_layout Subsection
+\begin_layout Subsection*
 Case names and regular expression:
 \end_layout
 
@@ -180,7 +193,7 @@ Each test case for slat position coordinate is represented by a regular
  coordinate values are used to form the case specific regex.
  Characters `p' and `n' are prepended to the value to denote positive and
  negative signs respectively.
- A python3 is snippet used to generate the regex, given the four coordinate
+ The python3 snippet used to generate the regex, given the four coordinate
  values are given below.
 \end_layout
 
@@ -305,33 +318,32 @@ regex = regex.replace('+', 'p')
 regex = regex.replace('-', 'n')
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Folder structure
 \end_layout
 
 \begin_layout Standard
 Each of the simulation case data is stored in a folder named using the above-men
 tioned regex.
- Within each case folder, the data is archived for each step during generation
- of the simulation case.
+ Within each case folder, the data is archived as follows
 \end_layout
 
 \begin_layout Itemize
-Pre-processing - The folder `preproc' contains, for each of the simulated
- case, files generated during preprocessing.
- It includes the case geometries in which the slat.stl file from the master
- folder is transformed to obtain the file with case specific positioning,
- the probe coordinates transformed according to case requirement, and the
- FWH surface files.
- The data in this folder are then used to generate the LBPre case file using
- LBPre scripting features.
+Pre-processing - The `preproc' folder contains files that are inputs to
+ the LBPre module.
+ It includes case geometries in which the slat.stl file from master folder
+ is transformed to obtain the file with case specific positioning, the probe
+ coordinates transformed according to case requirement, and the FWH surface
+ files.
+ The data in this folder is then inputted to LBPre case file using its scripting
+ features.
 \end_layout
 
 \begin_layout Itemize
 Results - The folder `results' contains, for each of the simulated case,
  the data files generated by ProLB solver.
- The result files formatting are consistent across cases and contains primarily
- the following:
+ The result files are formatted consistently across cases and contains the
+ following:
 \end_layout
 
 \begin_deeper
@@ -343,8 +355,8 @@ Mean flow recording - MeanQuantities.xmf and corresponding .h5 data file:
 
 The flow recordings are generated for the full domain of simulation and
  are recorded at full resolution of the mesh.
- Temporal averaging corresponds to 5 chord pass times towards the final
- end of the simulation.
+ Temporal averaging corresponds to 5 chord pass times and recording starts
+ from the latest possible time step in the simulation.
 \end_layout
 
 \begin_layout Enumerate
@@ -353,15 +365,16 @@ ding .h5 data file:
 \begin_inset Newline newline
 \end_inset
 
-The surface recordings are for velocity, pressure, and density data.
- Sampling rate is chosen according to requirements for the spectral resolution.
- The standard recording frequency is set to 
-\begin_inset Formula $180405Hz$
+The FWH surface recordings are for velocity, pressure, and density data.
+ Sampling rate is chosen according to requirements discussed in the main
+ text.
+ The recording frequency is 
+\begin_inset Formula $180405\,Hz$
 \end_inset
 
-, and has a total of 49200 times steps enabling 6 averaging bins, with 8200
- steps for each bin for the Welch method for PSD calculation.
- The resulting spectra can hence be obtained at a resolution of 
+, and has a total of 49200 timesteps enabling 6 averaging bins, with 8200
+ steps per bin for the Welch method for PSD calculation.
+ The resulting spectra can be obtained at a resolution of 
 \begin_inset Formula $44Hz$
 \end_inset
 
@@ -378,16 +391,16 @@ Unsteady data for Q-Criterion and Vorticity vectors in the slat cove region
  are recorded for visualizing the cove vortex behavior.
  The sampling rate is kept lower than FWH surface recording to save storage
  space and its sampling at 
-\begin_inset Formula $22550Hz$
+\begin_inset Formula $22550\,Hz$
 \end_inset
 
  is found sufficient for unsteady visualizations of the cove vortex evolution.
  A total spanwise length of 
-\begin_inset Formula $0.016m$
+\begin_inset Formula $0.016\,m$
 \end_inset
 
  are recorded around the span-center plane from a total of 
-\begin_inset Formula $0.2m$
+\begin_inset Formula $0.2\,m$
 \end_inset
 
  of spanwise length of the simulation.
@@ -395,7 +408,7 @@ Unsteady data for Q-Criterion and Vorticity vectors in the slat cove region
 \begin_inset Formula $3$
 \end_inset
 
- sets along the spanwise length to enable faster post-processing also.
+ sets along with the spanwise length to enable faster post-processing also.
 \end_layout
 
 \end_deeper
@@ -409,12 +422,44 @@ Post-processing - The folder `postproc' contains, for each of the simulated
  This recording is used for obtaining streamlines and the shear layer shape.
 \end_layout
 
-\begin_layout Subsection
-Flow cases 
+\begin_layout Section
+All simulations and results
+\end_layout
+
+\begin_layout Subsection*
+All Flow Cases
 \end_layout
 
 \begin_layout Standard
-\align center
+All simulations that is a part of results in thesis are given in the Table.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:allcases"
+
+\end_inset
+
+.
+ The variables are Angle of Attack (AOA), Slat Deflection Angle (SDA), Slat
+ Gap (SGP) and Slat Overlap (SOL).
+ All angles are in degrees and lengths in mm.
+ A total of 33 cases are documented of which the first case is the reference
+ case studied in Chapter 04.
+ This corresponds to the default slat positioning with respect to the airfoil
+ and the coordinates are obtained from geometry available from the original
+ VALIANT project
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Manoha2012"
+literal "false"
+
+\end_inset
+
+.
+ The first three cases are the result of simulations that varied only the
+ slat gap progressively.
+ Among simulation 4 to 32, 10 are selected using the Latin Hypercube with
+ Multi-dimensional uniformity to enable initial exploration of parameter
+ space and 18 are run using the Bayesian Active Learning sampling technique.
 \begin_inset Float table
 placement H
 wide false
@@ -425,24 +470,24 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="18" columns="11">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="0pt">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
+<column alignment="center" valignment="top" width="1cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-No.
+Case No.
 \end_layout
 
 \end_inset
@@ -454,6 +499,10 @@ No.
 AOA
 \end_layout
 
+\begin_layout Plain Layout
+(deg)
+\end_layout
+
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -463,31 +512,21 @@ AOA
 SDA
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
-SOL
+(deg)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 SGP
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
-...........
+(mm)
 \end_layout
 
 \end_inset
@@ -496,7 +535,32 @@ SGP
 \begin_inset Text
 
 \begin_layout Plain Layout
-No.
+SOL
+\end_layout
+
+\begin_layout Plain Layout
+(mm)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Case No.
 \end_layout
 
 \end_inset
@@ -508,6 +572,10 @@ No.
 AOA
 \end_layout
 
+\begin_layout Plain Layout
+(deg)
+\end_layout
+
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -517,13 +585,8 @@ AOA
 SDA
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
-SOL
+(deg)
 \end_layout
 
 \end_inset
@@ -533,6 +596,23 @@ SOL
 
 \begin_layout Plain Layout
 SGP
+\end_layout
+
+\begin_layout Plain Layout
+(mm)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SOL
+\end_layout
+
+\begin_layout Plain Layout
+(mm)
 \end_layout
 
 \end_inset
@@ -566,16 +646,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--6.36
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -588,12 +659,12 @@ Std.
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-6.36
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -630,6 +701,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -667,16 +747,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--6.36
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -686,6 +757,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-6.36
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -721,20 +801,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--5.40
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 7.00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-5.40
 \end_layout
 
 \end_inset
@@ -768,16 +848,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--6.36
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -787,6 +858,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-6.36
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -822,20 +902,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--2.30
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 4.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2.30
 \end_layout
 
 \end_inset
@@ -869,16 +949,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--6.36
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -888,6 +959,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-6.36
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -923,20 +1003,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--6.30
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 5.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-6.30
 \end_layout
 
 \end_inset
@@ -970,16 +1050,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--1.80
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -989,6 +1060,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1024,20 +1104,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--5.90
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 7.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-5.90
 \end_layout
 
 \end_inset
@@ -1071,16 +1151,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1090,6 +1161,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1125,20 +1205,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--8.10
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 8.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-8.10
 \end_layout
 
 \end_inset
@@ -1172,16 +1252,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-7.60
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1191,6 +1262,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1226,20 +1306,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--8.10
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 9.40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-8.10
 \end_layout
 
 \end_inset
@@ -1273,16 +1353,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--3.60
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1292,6 +1363,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3.60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1327,20 +1407,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--7.60
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 9.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-7.60
 \end_layout
 
 \end_inset
@@ -1374,16 +1454,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-7.20
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1393,6 +1464,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1428,20 +1508,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--8.10
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 8.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-8.10
 \end_layout
 
 \end_inset
@@ -1475,16 +1555,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5.10
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1494,6 +1565,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1529,20 +1609,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--3.00
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 7.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-3.00
 \end_layout
 
 \end_inset
@@ -1576,16 +1656,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--5.40
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1595,6 +1666,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-5.40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1630,20 +1710,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--4.20
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 9.40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-4.20
 \end_layout
 
 \end_inset
@@ -1677,16 +1757,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--2.30
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1696,6 +1767,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1731,20 +1811,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5.90
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 7.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.90
 \end_layout
 
 \end_inset
@@ -1778,16 +1858,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2.30
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1797,6 +1868,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1832,20 +1912,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3.20
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 4.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.20
 \end_layout
 
 \end_inset
@@ -1879,16 +1959,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--4.90
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1898,6 +1969,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-4.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1933,20 +2013,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--0.90
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 6.40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.90
 \end_layout
 
 \end_inset
@@ -1980,16 +2060,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4.90
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1999,6 +2070,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2034,20 +2114,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-6.30
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 5.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.30
 \end_layout
 
 \end_inset
@@ -2081,16 +2161,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--5.10
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2100,6 +2171,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-5.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2135,20 +2215,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--4.20
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 9.40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-4.20
 \end_layout
 
 \end_inset
@@ -2182,16 +2262,7 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--5.40
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2201,6 +2272,15 @@ Std.
 \end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-5.40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2236,20 +2316,20 @@ Std.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4.20
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 9.40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.20
 \end_layout
 
 \end_inset
@@ -2266,15 +2346,21 @@ Std.
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+List of parametric cases simulated and data archived.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:allcases"
 
 \end_inset
 
- List of parametric cases (geometric position of slat) simulated and data
- archived.
- All angles are in degrees and lengths in mm.
+ 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+List of parametric cases simulated and archived.
+ 
 \end_layout
 
 \end_inset
@@ -2285,6 +2371,67 @@ name "tab:allcases"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Auxiliary results
+\end_layout
+
+\begin_layout Subsubsection
+Shear layer and recirculation bubble shapes
+\end_layout
+
+\begin_layout Standard
+The results for shear layer shape extraction for cases from Bayesian Active
+ Learning simulations are given in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:meanshearlayershapes-2"
+
+\end_inset
+
+.
+ The shear layer shape varies with respect to the position of the slat.
+ The most sensitive variable to the shape is the Slat Overlap.
+ As the slat overlap is negative by definition if the slat trailing edge
+ is upstream of the leading edge of the main element, the value needs to
+ decrease to increase slats proximity to the main element.
+ As it is increased, the shear layer readjusts such that the flow has to
+ reverse its direction progressively in order to circumvent the main element's
+ leading edge.
+ This introduces a strong reversal of curvature to the shear layer.
+ The initial curvature is also affected such that when slat overlap is decreased
+, i.e.
+ slat move closed to the main element, the initial shear layer from the
+ slat cusp takes a more tangential path to the free stream flow, only to
+ reverse its direction strongly.
+ As the flow is more tangential to the incoming flow below the slat cusp,
+ the initial curvature of the shear layer decreases leading to less instability
+ effects due to curvature.
+\end_layout
+
+\begin_layout Standard
+Conversely, when the slat overlap is decreased, i.e.
+ the slat move further away from the main element, the cove recirculation
+ shape converges such that the shear layer has a regularized curvature distribut
+ion.
+ This can be noticed for Case 22, which is the most noisy case among the
+ dataset and the coordinates are close to the standard configuration.
+\end_layout
+
+\begin_layout Standard
+It is also possible to have configurations whose initial curvatures are
+ excessively high by maintaining a high slat gap and a positive slat overlap.
+ In such cases like Case 5, for example, the flow is strongly deviated towards
+ the trailing edge from the initial shear layer instead of having a tangential
+ flow.
+ Such cases however also tend to have an early impingement with a significantly
+ small recirculation region if the slat overlap is too high.
 \end_layout
 
 \begin_layout Standard
@@ -2292,7 +2439,7 @@ name "tab:allcases"
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -3210,12 +3357,44 @@ name "fig:meanshearlayershapes-2"
 
 \end_layout
 
+\begin_layout Subsection
+Far-field Noise spectra
+\end_layout
+
+\begin_layout Standard
+The farfield noise spectra for all cases simulated are given in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spectra_parametric-1"
+
+\end_inset
+
+.
+ All computations follow the same parameters as explained in Chapter 03
+ and 04.
+ Case 22 has the strongest broadband and tonal components and since it is
+ closest to the experimental case, this case is chosen as the basis of compariso
+n.
+ 
+\end_layout
+
+\begin_layout Standard
+For cases which are close to Case 22, the broadband and tonal noise are
+ largely significant.
+ Cases where the slat gap and overlap are suited, the tonal frequency also
+ shows changes in the selection of frequency selection.
+ The first four tones are shown to have a high degree of correlation in
+ their variation with respect to the slat position.
+ The fifth tone however maintain a stable frequency and can be present even
+ in the absence of other tones.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -4110,8 +4289,13 @@ Case 31
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The shear layer trajectory at mid-span plane obtained using time integration
- of the mean velocity field for parametric cases in the dataset.
+Farfield noise spectra for parametric cases obtained using the LBM-FWH computati
+on.
+ Observer location is at 
+\begin_inset Formula $90^{o}$
+\end_inset
+
+to the airfoil at the pressure side.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spectra_parametric-1"
@@ -4129,6 +4313,40 @@ name "fig:spectra_parametric-1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Shear Layer Curvature Profiles
+\end_layout
+
+\begin_layout Standard
+The shear layer curvature profiles are given in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:streamlinecurvature-1"
+
+\end_inset
+
+.
+ The curvatures are computed along the mean shear layer and for a streamline
+ whose origin near the cusp is chosen as detailed in Chapter 04.
+ The curvature is calculated as the geometric curvature of the streamline
+ and for the mid-span plane.
+ 
+\end_layout
+
+\begin_layout Standard
+The curvature inflection point can be noted as the location of local drop
+ in the curvature magnitude for each case.
+ The location of impingement is marked by the second sharp peak after this
+ inflection.
+ For most cases, the curvature calculation after impingement location accrues
+ a strong numerical noise.
+ This is due to the low convergence of the flow features due to low frequency
+ oscillating components in the flow leading to non-smoothness of the streamline
+ calculation from the averaged velocity field.
+ Case 22 which serves as the most noisy case is included for all plots to
+ enable comparison.
 \end_layout
 
 \begin_layout Standard
@@ -5063,8 +5281,9 @@ Case 31
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The shear layer trajectory at mid-span plane obtained using time integration
- of the mean velocity field for parametric cases in the dataset.
+Curvature profiles along the mean shear layer for parametric cases in the
+ dataset.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:streamlinecurvature-1"
@@ -5082,6 +5301,35 @@ name "fig:streamlinecurvature-1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Curvature Richardson Numbers
+\end_layout
+
+\begin_layout Standard
+The Curvature Richardson numbers for all cases in the dataset are given
+ in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:curvature_richardson-2"
+
+\end_inset
+
+.
+ The calculation is detailed in Chapter 04.
+ The Curvature Richardson numbers are shown to have consistent distribution
+ across cases where the mean value is maintained above 0.1 and with one inflectio
+n point along the shear layer where the curvature reverses sign.
+ 
+\end_layout
+
+\begin_layout Standard
+The cases which shows a strong broadband and tonal noise given a red highlight
+ whereas for cases whose characteristic noise is attenuated due to excessive
+ overlap is given a green highlight.
+ The Richardson number profile for the most noisy Case 22 is also included
+ to enable comparison.
 \end_layout
 
 \begin_layout Standard
@@ -6015,8 +6263,8 @@ Case 31
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The shear layer trajectory at mid-span plane obtained using time integration
- of the mean velocity field for parametric cases in the dataset.
+Curvature Richardson Number profiles along the mean shear layer for all
+ cases in the dataset.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:curvature_richardson-2"
@@ -6036,12 +6284,39 @@ name "fig:curvature_richardson-2"
 
 \end_layout
 
+\begin_layout Subsection
+Spanwise Cells
+\end_layout
+
+\begin_layout Standard
+The spanwise modulation of spanwise velocity is visualized using 3D isocontours
+ for spanwise velocity.
+ These cells vary according to the shear layer shape and recirculation cavity
+ shape.
+ The same for all cases int he dataset are shown in in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spanwise_cookies-1"
+
+\end_inset
+
+.
+ As can be noted, the formation of cells and their cell size is dependent
+ on the cove recirculation shape driven by the slat positioning.
+ The presence of the shapes is also seen to be dependent on the cases where
+ there exists cases with no spanwise cell formation, cases with 3, 4, and
+ 5 cells in total across the span.
+ This also serves to bolster the notion that formation of the spanwise cells
+ is not an artifact of the spanwise periodic condition but a physical manifestat
+ion of the centrifugal instability of the flow inside the cove recirculation.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -6053,8 +6328,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp130SDAp360SGPp040SOLn018.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6085,8 +6360,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp140SDAp352SGPp071SOLp030.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6117,8 +6392,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp147SDAp352SGPp093SOLp076.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6149,8 +6424,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp150SDAp240SGPp070SOLn036.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6184,8 +6459,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp152SDAp352SGPp063SOLp072.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6216,8 +6491,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp159SDAp352SGPp067SOLp051.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6248,8 +6523,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp160SDAp320SGPp082SOLn054.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6280,8 +6555,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp164SDAp352SGPp043SOLn023.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6315,8 +6590,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp164SDAp352SGPp043SOLp023.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6347,8 +6622,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp174SDAp352SGPp085SOLn049.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6379,8 +6654,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp174SDAp352SGPp085SOLp049.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6411,8 +6686,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp239SGPp067SOLn051.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6446,8 +6721,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp240SGPp064SOLn054.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6478,8 +6753,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp240SGPp070SOLn054.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6510,8 +6785,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp255SGPp043SOLn023.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6542,8 +6817,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp276SGPp053SOLn063.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6577,8 +6852,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp286SGPp078SOLn059.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6609,8 +6884,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp340SGPp088SOLn081.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6641,8 +6916,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp340SGPp094SOLn081.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6673,8 +6948,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp347SGPp093SOLn076.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6708,8 +6983,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp360SGPp088SOLn081.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6740,8 +7015,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp365SGPp071SOLn030.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6772,8 +7047,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp180SDAp393SGPp094SOLn042.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6804,8 +7079,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp181SDAp352SGPp078SOLp059.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6839,8 +7114,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp186SDAp352SGPp048SOLp032.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6871,8 +7146,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp190SDAp320SGPp064SOLn009.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6903,8 +7178,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp192SDAp352SGPp053SOLp063.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6938,8 +7213,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter13/all_cases/AOAp195SDAp352SGPp094SOLn042.png
 	lyxscale 10
-	width 4.15cm
-	height 4.15cm
+	width 3.8cm
+	height 3.8cm
 	keepAspectRatio
 	BoundingBox 30mm 0bp 1440bp 867bp
 	groupId thesis_spanwisemodes
@@ -6967,8 +7242,8 @@ Case 31
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The shear layer trajectory at mid-span plane obtained using time integration
- of the mean velocity field for parametric cases in the dataset.
+Spanwise cells of spanwise velocity demonstrated using 3D isocontours of
+ the same for all cases in the dataset.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwise_cookies-1"
@@ -6988,6 +7263,43 @@ name "fig:spanwise_cookies-1"
 
 \end_layout
 
+\begin_layout Subsection
+Spanwise Variation of Spanwise-Velocity Spectra
+\end_layout
+
+\begin_layout Standard
+The spanwise spectra of spanwise component of velocity near the slat cusp
+ revealed a low frequency localized oscillation at the diverging planes.
+ These oscillations were shown to be restricted to the vicinity of diverging
+ planes in Chapter 04.
+ The same was also shown to correspond to the recirculation frequency based
+ on the low speed recirculation velocity inside the cove in Chapter 06.
+ To demonstrate that this oscillation is a consistent feature across cases
+ with consistency of the low frequency at around 200Hz, the spanwise variation
+ of the spectra with appropriate color scale is shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spanwise_psd_probe17_1-1"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spanwise_psd_probe17_2-1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spanwise_psd_probe17_3-1"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 placement ph
@@ -7005,8 +7317,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp130SDAp360SGPp040SOLn018_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7038,8 +7350,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp140SDAp352SGPp071SOLp030_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7074,8 +7386,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp147SDAp352SGPp093SOLp076_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7107,8 +7419,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp150SDAp240SGPp070SOLn036_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7143,8 +7455,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp152SDAp352SGPp063SOLp072_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7176,8 +7488,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp159SDAp352SGPp067SOLp051_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7212,8 +7524,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp160SDAp320SGPp082SOLn054_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7245,8 +7557,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp164SDAp352SGPp043SOLn023_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7281,8 +7593,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp164SDAp352SGPp043SOLp023_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7314,8 +7626,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp174SDAp352SGPp085SOLn049_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7362,15 +7674,12 @@ name "fig:spanwise_psd_probe17_1-1"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset Float figure
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -7382,8 +7691,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp174SDAp352SGPp085SOLp049_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7415,8 +7724,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp239SGPp067SOLn051_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7451,8 +7760,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp240SGPp064SOLn054_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7484,8 +7793,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp240SGPp070SOLn054_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7520,8 +7829,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp255SGPp043SOLn023_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7553,8 +7862,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp276SGPp053SOLn063_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7589,8 +7898,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp286SGPp078SOLn059_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7622,8 +7931,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp340SGPp088SOLn081_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7658,8 +7967,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp340SGPp094SOLn081_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7691,8 +8000,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp347SGPp093SOLn076_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7739,15 +8048,12 @@ name "fig:spanwise_psd_probe17_2-1"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset Float figure
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -7759,8 +8065,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp360SGPp088SOLn081_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7792,8 +8098,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp365SGPp071SOLn030_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7828,8 +8134,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp180SDAp393SGPp094SOLn042_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7861,8 +8167,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp181SDAp352SGPp078SOLp059_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7897,8 +8203,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp186SDAp352SGPp048SOLp032_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7930,8 +8236,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp190SDAp320SGPp064SOLn009_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -7966,8 +8272,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp192SDAp352SGPp053SOLp063_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -8002,8 +8308,8 @@ status open
 \begin_inset Graphics
 	filename parametric_case_images/parametric_cases/PSD_hot_wire_SL/AOAp195SDAp352SGPp094SOLn042_probe_17.png
 	lyxscale 10
-	width 8cm
-	height 8cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 0bp 0bp 1250bp 520bp
 	clip
@@ -8048,13 +8354,6 @@ name "fig:spanwise_psd_probe17_3-1"
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
 \end_inset
 
 
