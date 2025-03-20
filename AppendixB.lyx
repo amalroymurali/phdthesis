@@ -2359,8 +2359,7 @@ name "tab:allcases"
 status open
 
 \begin_layout Plain Layout
-List of parametric cases simulated and archived.
- 
+List of parametric cases simulated and archived
 \end_layout
 
 \end_inset
@@ -5282,8 +5281,7 @@ Case 31
 
 \begin_layout Plain Layout
 Curvature profiles along the mean shear layer for parametric cases in the
- dataset.
- 
+ dataset 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:streamlinecurvature-1"
@@ -6264,7 +6262,7 @@ Case 31
 
 \begin_layout Plain Layout
 Curvature Richardson Number profiles along the mean shear layer for all
- cases in the dataset.
+ cases in the dataset 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:curvature_richardson-2"
@@ -7657,7 +7655,7 @@ Case 13
 
 \begin_layout Plain Layout
 Power spectral density of spanwise velocity component as a function of spanwise
- location.
+ location 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwise_psd_probe17_1-1"
@@ -7679,7 +7677,7 @@ name "fig:spanwise_psd_probe17_1-1"
 placement ph
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -8031,7 +8029,7 @@ Case 23
 
 \begin_layout Plain Layout
 Power spectral density of spanwise velocity component as a function of spanwise
- location.
+ location 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwise_psd_probe17_2-1"
@@ -8053,7 +8051,7 @@ name "fig:spanwise_psd_probe17_2-1"
 placement ph
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -8339,7 +8337,7 @@ Case 31
 
 \begin_layout Plain Layout
 Power spectral density of spanwise velocity component as a function of spanwise
- location.
+ location 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwise_psd_probe17_3-1"

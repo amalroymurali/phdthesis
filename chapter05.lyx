@@ -1899,6 +1899,18 @@ status open
 A sampling of the space of three slat positional variables using canonical
  LHS (left) and with LHS-MDU (right).
  A total of 20 samples were made to create the initial set.
+ 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+A sampling of the space of three slat positional variables using canonical
+ LHS (left) and with LHS-MDU 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2158,6 +2170,17 @@ name "tab:domain"
 
 .
  This is also the test domain used for the surrogate model.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Table of upper and lower bounds for slat positional variables and angle
+ of attack used to generate the initial sample using LHS-MDU 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2193,7 +2216,7 @@ status open
 
 \begin_layout Plain Layout
 A scatter plot of the initial samples drawn from the domain to create the
- initial dataset using LHS-MDU.
+ initial dataset using LHS-MDU
 \end_layout
 
 \end_inset
@@ -3516,8 +3539,7 @@ Case 27
 
 \begin_layout Plain Layout
 Feature extraction for the spectra using Guo's shape function and Lorentzian
- peaks, showcasing few cases from the dataset.
- 
+ peaks, showcasing few cases from the dataset 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Featurextraction"
@@ -3806,6 +3828,17 @@ Scatter plots of the input targets against the 17 predicted target variables
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:residualplot"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Scatter plots of the input targets against the 17 predicted target variables
+ used in regression, over datapoints in the training set of first 18 simulations
+\end_layout
 
 \end_inset
 
@@ -4131,6 +4164,16 @@ name "fig:Spectratest"
 \end_inset
 
 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Spectra predicted using the Gaussian Process Surrogate model
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4301,6 +4344,16 @@ name "fig:MeanModelVariance"
 \end_inset
 
 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Progressions during the Bayesian Active Learning
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4452,7 +4505,7 @@ y skewed shear layer path length which is longer in length and thus reduce
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4485,6 +4538,17 @@ Parametric predictions using the surrogate model by varying the slat overlap
 \end_inset
 
 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Parametric predictions using the surrogate model by varying the slat overlap
+ (SOL)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4499,7 +4563,7 @@ Parametric predictions using the surrogate model by varying the slat overlap
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4613,6 +4677,16 @@ Parametric predictions using surrogate model by varying the slat gap (SGP).
  for further increase.
  The slat gap parameter is most sensitive thus close to the nominal slat
  overlap configuration.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Parametric predictions using surrogate model by varying the slat gap (SGP)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

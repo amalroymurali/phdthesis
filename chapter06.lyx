@@ -3322,8 +3322,7 @@ status open
 
 \begin_layout Plain Layout
 Streamline curvature contour obtained under the inviscid assumption for
- Case 22 demonstrating the identification of impingement location.
- 
+ Case 22 demonstrating the identification of impingement location 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:meancurvaturecontour"
@@ -5639,7 +5638,7 @@ noprefix "false"
 
 \end_inset
 
-.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:streamlinecurvature-2"
@@ -6098,8 +6097,8 @@ Case 25
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The shear layer trajectory at mid-span plane obtained using time integration
- of the mean velocity field for parametric cases in the dataset.
+Comparison of shear layer shape, Curvature Richardson number profile and
+ far-field noise of select cases 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:curvature_richardsonCase18"
@@ -7017,8 +7016,8 @@ Case 31
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The shear layer trajectory at mid-span plane obtained using time integration
- of the mean velocity field for parametric cases in the dataset.
+Comparison of shear layer shape, Curvature Richardson number profile and
+ far-field noise of select cases 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:curvature_richardson-3-1"
@@ -10626,8 +10625,9 @@ Case 12
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The shear layer trajectory at mid-span plane obtained using time integration
- of the mean velocity field for parametric cases in the dataset.
+Comparison of the shear layer shape, curvature profile, and the spanwise
+ modulations in three cases with initial curvature lower than Case 22.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwise_cookies"
@@ -10718,7 +10718,7 @@ literal "false"
 placement tbph
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -11015,8 +11015,8 @@ Case 9
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The shear layer trajectory at mid-span plane obtained using time integration
- of the mean velocity field for parametric cases in the dataset.
+Comparison of shear layer shape, curvature profile, and spanwise velocity
+ modulations of three cases with initial curvature higher than Case 22
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwise_cookies-2"
@@ -11363,10 +11363,21 @@ Power spectral density of spanwise velocity component as a function of spanwise
 \begin_inset Formula $\frac{\partial U_{z}}{\partial z}>0$
 \end_inset
 
-.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwise_psd_probe17_1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Power spectral density of spanwise velocity component as a function of spanwise
+ location for cases which has spanwise mode formations
+\end_layout
 
 \end_inset
 
@@ -11449,7 +11460,7 @@ ly low exit velocity.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -11858,7 +11869,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Spanwise variation of low frequency components of the spanwise velocity.
+Spanwise variation of low frequency components of the spanwise velocity
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwise_spectra_case04"
@@ -12233,7 +12245,7 @@ Streamline extracted from the mean flow profile for Case 11 suggest that
 \begin_inset Formula $170Hz$
 \end_inset
 
-.
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:recirculation_frequency_case11"
@@ -12416,7 +12428,7 @@ Streamline extracted from the mean flow profile for Case 22 suggest that
 \begin_inset Formula $190Hz$
 \end_inset
 
-.
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:recirculation_frequency_case22"
@@ -12599,7 +12611,7 @@ Streamline extracted from the mean flow profile for Case 29 suggest that
 \begin_inset Formula $190Hz$
 \end_inset
 
-.
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:recirculation_frequency_case29"

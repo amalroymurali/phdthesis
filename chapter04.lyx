@@ -104,7 +104,7 @@ theorems-ams-extended
 \begin_body
 
 \begin_layout Chapter
-Detailed Study with Nominal Slat Configuration 
+Detailed Study of Nominal Slat Configuration 
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:04_The_VALIANT_Case"
@@ -116,8 +116,7 @@ name "chap:04_The_VALIANT_Case"
 status open
 
 \begin_layout Plain Layout
-Nominal Config.
- 
+Detailed Study of Nominal Slat Configuration 
 \end_layout
 
 \end_inset
@@ -553,7 +552,7 @@ name "fig:rawdatawpsensor-1"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Unsteady data monitored to check convergence of dynamics in the LBM simulation.
+Unsteady data monitored to check convergence of dynamics in the LBM simulation
 \end_layout
 
 \end_inset
@@ -624,7 +623,7 @@ Coefficient of pressure
 \end_inset
 
  over the surface of HLD obtained using the LBM simulations with and without
- wind-tunnel setup included are compared against the experimental data.
+ wind-tunnel setup included are compared against the experimental data
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Coefficient-of-pressure-1"
@@ -962,7 +961,7 @@ Probe 12
 
 \begin_layout Plain Layout
 Wallpressure PSD inside the slat cove compared between the simulation in
- free stream, simulation with wind tunnel, and the experimental data.
+ free stream, simulation with wind tunnel, and the experimental data
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:wallpressure_psd_cove-1"
@@ -1306,10 +1305,22 @@ status open
 Velocity magnitude data compared between the simulation with and without
  the wind tunnel geometry included in the LBM setup, against the VALIANT
  experimental data for probe file SL placed across the initial shear layer
- near the slat cusp.
+ near the slat cusp
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:hotwire_mean_mag_SL-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Velocity magnitude data compared between the simulation with and without
+ the wind tunnel geometry included in the LBM setup, against the VALIANT
+ experimental data
+\end_layout
 
 \end_inset
 
@@ -1572,6 +1583,16 @@ a) Coefficient of pressure,
 \end_inset
 
 .
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Coefficient of pressure contours in and around the slat cove
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1932,8 +1953,7 @@ name "fig:CoveMeanUz-1"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Time-averaged spanwise velocity field in the slat cove.
- 
+Time-averaged spanwise velocity field in the slat cove 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Velocity-Z-Mean-Cove-1-1"
@@ -2097,11 +2117,21 @@ Spanwise velocity,
 , visualized on a cutplane parallel to the spanwise Z axis inside the cove
  region.
  The stream tracers are used in the mid-span plane to show the recirculation
- path in the mid-plane.
- 
+ path in the mid-plane 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:ZPlaneSchematic-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Spanwise velocity visualized on a cutplane parallel to the spanwise Z axis
+ inside the cove region
+\end_layout
 
 \end_inset
 
@@ -2146,11 +2176,21 @@ Contours of spanwise velocity,
 
 , showing the cell formation inside the cove region.
  The cut line denoted the approximate position of the shear layer passing
- through the visualization plane.
- 
+ through the visualization plane 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:ZPlaneCells-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Contours of spanwise velocity showing the cell formation inside the cove
+ region
+\end_layout
 
 \end_inset
 
@@ -2351,8 +2391,7 @@ status open
 
 \begin_layout Plain Layout
 Left: Visualization planes used to show the spanwise modulation at different
- locations of the shear layer.
- 
+ locations of the shear layer 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Visualisation_planes-1"
@@ -2394,7 +2433,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Left: Spanwise modulation on a visualization plane in between PL1 and PL2.
+Left: Spanwise modulation on a visualization plane in between PL1 and PL2
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -3369,8 +3408,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-C-shaped FWH Surface and the dilatation field around the HLD.
- 
+C-shaped FWH Surface and the dilatation field around the HLD 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:cshapedfwhsurface-1"
@@ -3412,8 +3450,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Numerical microphones relative to the FWH surface.
- 
+Numerical microphones relative to the FWH surface 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:fwhobservers-1-1"
@@ -3643,6 +3680,16 @@ s.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sound-pressure-data_FWH_Cshape-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Sound pressure data obtained at select numerical microphones using FWH approach
+\end_layout
 
 \end_inset
 
@@ -3882,10 +3929,21 @@ Sound pressure data computed at numerical microphones using FWH approach
 \begin_inset Formula $\Delta f=22Hz$
 \end_inset
 
-.
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sound-pressure-spectra_FWH_Cshape-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Sound pressure data computed at numerical microphones using FWH approach
+ for the free stream configuration 
+\end_layout
 
 \end_inset
 
@@ -4301,8 +4359,7 @@ Iso-surfaces of Q-Criterion,
 
 , is the flow Mach number.
  The region of sparsity for the small scale recirculating structure is demarcate
-d with the yellow line.
- 
+d with the yellow line 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:IsoQcrit"
@@ -4463,8 +4520,7 @@ Iso-surfaces of Q-Criterion,
 \begin_inset Formula $M=0.14$
 \end_inset
 
- is the flow Mach number.
- 
+ is the flow Mach number 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:CoveVortices"
@@ -4489,7 +4545,7 @@ name "fig:CoveVortices"
 placement tb
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4522,6 +4578,16 @@ Streamwise vortices ejected from the slat gap.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:IsoQcrit-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Streamwise vortices ejected from the slat gap 
+\end_layout
 
 \end_inset
 
@@ -4784,7 +4850,7 @@ y directly graze the main element.
 placement tb
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4829,6 +4895,17 @@ name "fig:streamwisevorticesredblue"
 \end_inset
 
 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Streamwise counter rotating vortex pairs at the slat gap visualized using
+ a diverging colourmap based on the streamwise vorticity
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4842,7 +4919,7 @@ name "fig:streamwisevorticesredblue"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4864,11 +4941,22 @@ The unsteady aerodynamic pressure field (
 \end_inset
 
 ) in the slat cove identifying the trajectory of the spanwise coherent structure
- along the curved shear layer.
- 
+ along the curved shear layer 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:The-unsteady-pressure"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The unsteady aerodynamic pressure field in the slat cove identifying the
+ trajectory of the spanwise coherent structure along the curved shear layer
+ 
+\end_layout
 
 \end_inset
 
@@ -5287,7 +5375,7 @@ noprefix "false"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -7494,11 +7582,22 @@ Time-averaged spanwise velocity on spanwise planes at different locations
  similar to the free flow simulation without spanwise plates.
  The edge effects distorting the cells are also evident on the sides which
  is due to the presence of lateral side walls and the boundary layer and
- associated vorticity generation.
- 
+ associated vorticity generation 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwiseplanesvaliant"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Time-averaged spanwise velocity on spanwise planes at different locations
+ in the slat cove region for simulation which includes the spanwise plates
+ and wind tunnel geometry
+\end_layout
 
 \end_inset
 
@@ -7815,7 +7914,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Spanwise cell formation is still noticeable although the cove shape is distorted.
+Spanwise cell formation is still noticeable although the cove shape is distorted
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:SimulationWithPlatesSpanwiseVelocity"
@@ -7997,10 +8096,20 @@ Time-averaged velocity magnitude field for simulation using reduced span
 \begin_inset Formula $0.2\,m$
 \end_inset
 
-.
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:HalfSpanSimulation"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Time-averaged velocity magnitude field for simulation using reduced span
+\end_layout
 
 \end_inset
 
@@ -8048,11 +8157,20 @@ Time-averaged spanwise velocity field for simulation using reduced span
  The spanwise cell formation is seen to remain only in the early part of
  the shear layer whereas the rest of the cove region seems to develop spanwise
  homogeneity arising from the effect of periodic boundary conditions applied
- in the spanwise boundaries.
- 
+ in the spanwise boundaries 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:TimeAveragedSpanwiseHalfSpan"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Time-averaged spanwise velocity field for simulation using reduced span
+\end_layout
 
 \end_inset
 
@@ -8275,11 +8393,21 @@ noprefix "false"
 
  also affect the wavelength of the cells.
  However the selection of wave number is constrained by the fact that the
- spanwise length requires a whole number multiple of the wavelength.
- 
+ spanwise length requires a whole number multiple of the wavelength 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:mambo_spanwise_cells"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Spanwise cells formed near the early shear layer for the case of downscaled
+ geometry
+\end_layout
 
 \end_inset
 
@@ -8589,7 +8717,18 @@ a) The streamline obtained using Runge-Kutta integration of the velocity
  point is shown as L1.
  b) The velocity magnitude obtained along the line L1 with the minima denoting
  the location of the line crossing the immediate vicinity of the slat cusp
- is marked with a dot.
+ is marked with a dot 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The streamline obtained using Runge-Kutta integration of the velocity field
+ from a source point near the slat cusp
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -8707,8 +8846,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Local curvature along a streamline in the shear layer.
- 
+Local curvature along a streamline in the shear layer 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:localcurvature"
@@ -8950,11 +9088,21 @@ a) Local deceleration along a streamline in the shear layer and the location
  of low frequency oscillations not sufficiently averaged out within 5 chord
  pass times.
  b) Location of the impingement location within the flow field.
- A representative color map is used to indicate the background flow velocity.
+ A representative color map is used to indicate the background flow velocity
  
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Local-deceleration"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Local deceleration and location of the impingement within the flow field
+\end_layout
 
 \end_inset
 
@@ -9580,8 +9728,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Local curvature along a streamline in the shear layer.
- 
+Local curvature along a streamline in the shear layer 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:localcurvaturerichardson"
@@ -9807,8 +9954,7 @@ status open
 
 \begin_layout Plain Layout
 Cumulative curvature Richardson number as a function of the slat shear layer
- path length along a streamline.
- 
+ path length along a streamline 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:cumulativecurvaturerichardson"
@@ -9939,7 +10085,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Dilatation field over the HLD from the unsteady data.
+Dilatation field over the HLD from the unsteady data
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Dilatation"
@@ -10193,7 +10339,7 @@ Unsteady pressure field visualized using density rate
 \begin_inset Formula $-\frac{1}{\rho}\frac{d\rho}{dt}$
 \end_inset
 
- .
+ 
 \end_layout
 
 \end_inset
@@ -10517,10 +10663,22 @@ The Fourier filtered pressure fields at a select frequencies corresponding
  to the peaks in farfield spectra.
  The visualization is for a spanwise central plane, and the streamline along
  which the vortex path is extracted from mean flow is shown as green line
- and corresponding wavelengths for the traveling waves are also annotated.
+ and corresponding wavelengths for the traveling waves are also annotated
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:filteredpressure"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The Fourier filtered pressure fields at a select frequencies corresponding
+ to the peaks in farfield spectra
+\end_layout
 
 \end_inset
 
@@ -10831,6 +10989,17 @@ name "fig:Spanwise-replicated-numerical_loc-1"
 \begin_layout Plain Layout
 a) Select wall pressure probe coordinates on the slat.
  b) Spanwise replicated numerical probes and the slat geometry.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Wall pressure probe locations and their spanwise replications with respect
+ to the slat geometry.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -12067,10 +12236,21 @@ Probe 10
 Wall pressure spectra from spanwise replicas of probes on spanwise center
  plane showing variation of spectra along the span.
  Corresponding time-averaged pressure for the probe recording is also shown
- to identify the spanwise cell locations.
+ to identify the spanwise cell locations 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:spanwisespectra_probe6_7_8_9"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Wall pressure spectra from spanwise replicas of probes on spanwise center
+ plane showing variation of spectra along the span
+\end_layout
 
 \end_inset
 
@@ -12501,6 +12681,17 @@ Time-averaged velocity and components from the SL probe file placed near
 \end_inset
 
  of the velocity magnitude.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Time-averaged velocity and components from the SL probe file placed near
+ slat cusp 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -12806,10 +12997,21 @@ name "fig:hotwireSLspanwise_P20"
 Unsteady velocity spectra from spanwise replicas of probes close to slat
  cusp.
  Corresponding time-averaged spanwise velocity for the probe recording is
- also shown to identify the spanwise cell locations.
+ also shown to identify the spanwise cell locations 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:hotwireSL_0_14_15"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Unsteady velocity spectra from spanwise replicas of probes close to slat
+ cusp 
+\end_layout
 
 \end_inset
 
@@ -12922,10 +13124,21 @@ name "fig:hotwireSLspanwise_P24"
 Unsteady velocity spectra from spanwise replicas of probes close to slat
  cusp.
  Corresponding time-averaged spanwise velocity for the probe recording is
- also shown to identify the spanwise cell locations.
+ also shown to identify the spanwise cell locations 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:hotwireSL_21_24"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Unsteady velocity spectra from spanwise replicas of probes close to slat
+ cusp 
+\end_layout
 
 \end_inset
 
@@ -13563,8 +13776,7 @@ literal "false"
 .
  This is conjectured to arise from the low frequency modulation of the first
  Rossiter mode due to the spanwise mode formation and resulting low frequency
- bursting of the early shear layer demonstrated in this chapter.
- 
+ bursting of the early shear layer demonstrated in this chapter 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:jawahar_farfield"
@@ -13758,8 +13970,7 @@ Time stamp
 \begin_layout Plain Layout
 The cove bursting near the mid-span diverging plane at time stamps separated
  by 0.005s corresponding to the 200Hz peak in the numerical hot-wire probe
- data.
- 
+ data 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:The-cove-bursting"

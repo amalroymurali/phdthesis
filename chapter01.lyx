@@ -404,10 +404,6 @@ l campaigns at carried out at Ecole Centrale de Lyon.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -509,11 +505,6 @@ name "fig:geometries_valiant-1"
 
 \begin_layout Plain Layout
 Comparison of standardized HLD geometries
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -799,7 +790,7 @@ status open
 
 \begin_layout Plain Layout
 Schematic of a typical slat noise spectrum showing the broadband component,
- tones, and high frequency hump.
+ tones, and high frequency hump
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:schematic_b"

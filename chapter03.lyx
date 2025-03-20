@@ -1162,10 +1162,6 @@ ProLB
  
 \end_layout
 
-\begin_layout Note*
-Some mention of the speed of sound calculation of LBM will be good.
-\end_layout
-
 \begin_layout Section
 Acoustic Test Case using an Unsteady Compressible Perturbation
 \begin_inset Argument 1
@@ -1594,8 +1590,7 @@ ProLB
 \emph default
   solver showing evidence of underdeveloped tripped TBL thickness.
  An excessive viscosity due to the SISM turbulence model is suspected to
- be the issue.
- 
+ be the issue 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Tripped-Turbulent-Boundary"
@@ -2154,10 +2149,8 @@ where, k is the wave number
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
+placement tb
 wide false
 sideways false
 status open
@@ -2451,7 +2444,7 @@ Number of Points Per Wavelength (PPW) for relevant values of wavenumbers
 \begin_inset Formula $CFL=1$
 \end_inset
 
- also shown.
+ also shown
 \end_layout
 
 \end_inset
@@ -2546,7 +2539,7 @@ noprefix "false"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2750,22 +2743,7 @@ Time history of the propagating pulse at positions downstream of the right
 \emph on
 ProLB
 \emph default
-  simulation with resolution a)
-\begin_inset Formula $\Delta x=0.004m$
-\end_inset
-
-, b)
-\begin_inset Formula $\Delta x=0.002m$
-\end_inset
-
-, c)
-\begin_inset Formula $\Delta x=0.001m$
-\end_inset
-
- .
- The variation of the Fourier transform with respect to propagation distances
- for case a) is shown in d) using the amplitudes of FT as a ratio of its
- initial value.
+  simulation
 \end_layout
 
 \end_inset
@@ -2953,6 +2931,17 @@ name "fig:dissipation_and_dispersion_coefficient"
 \end_inset
 
 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The dissipation and dispersion results for an initial acoustic Gaussian
+ pulse - ProLB 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2994,6 +2983,17 @@ The dissipation and dispersion results for the same case using PowerFLOW
 LatexCommand citet
 key "Bres2009"
 literal "false"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The dissipation and dispersion results for an initial acoustic Gaussian
+ pulse - PowerFlow
+\end_layout
 
 \end_inset
 
@@ -3703,8 +3703,7 @@ name "fig:Truncated-surface-used"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-FWH surface placement along with the HLD geometry put into perspective.
- 
+FWH surface placement along with the HLD geometry put into perspective 
 \end_layout
 
 \end_inset
@@ -4785,6 +4784,17 @@ name "fig:ResultsTurbAcAn"
 \end_inset
 
 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Results for pulsating pressure source test case for TurbAcAn showing signals
+ obtained at various probe coordinates
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5005,6 +5015,16 @@ Schematic of the domain and boundary conditions.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:SchematicDomain"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Schematic of the domain and boundary conditions
+\end_layout
 
 \end_inset
 
@@ -5589,7 +5609,7 @@ All variables equated
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Boundary conditions applied for the simulation domain.
+Boundary conditions applied for the simulation domain
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:BCsTable"
@@ -5855,7 +5875,7 @@ name "fig:VisCOVEmesh"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-LBM mesh sizes in the domain and around the HLD geometry.
+LBM mesh sizes in the domain and around the HLD geometry
 \end_layout
 
 \end_inset
@@ -6453,7 +6473,7 @@ That being the differences between the two cases, the wind tunnel installation
 placement !tb
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -6471,8 +6491,7 @@ status collapsed
 
 \begin_layout Plain Layout
 The simulation domain of the wind tunnel geometry with the tunnel and HLD
- installed.
- 
+ installed 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:simdomain-1"
@@ -6651,7 +6670,7 @@ literal "false"
 
 \end_inset
 
-.
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:coordinates"

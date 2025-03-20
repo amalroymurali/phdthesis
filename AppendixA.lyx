@@ -650,8 +650,7 @@ status open
 
 \begin_layout Plain Layout
 Schematic of the surface placement along with airfoil and the dilatation
- field.
- 
+ field 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Visualization-of-FWH-2"
@@ -1286,14 +1285,14 @@ literal "false"
 
 \end_inset
 
-.
+
 \begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
 Farfield spectra obtained using the oval FWH surface compared to 1) a simulation
  of the same HLD while simulated by including the wind tunnel geometry and
- 2) the experimental data from VALIANT program.
+ 2) the experimental data from VALIANT program
 \end_layout
 
 \end_inset
@@ -1342,11 +1341,22 @@ Flow visualization to demonstrate the low vorticity structures crossing
 \begin_inset Formula $\frac{Q_{c}}{M^{2}}=200$
 \end_inset
 
- is used to identify the structures and are colored by logarithm of vorticity.
+ is used to identify the structures and are colored by logarithm of vorticity
  
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:qcrit_fwh_oval_large_vorticity"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Flow visualization to demonstrate the low vorticity structures crossing
+ the upper side of FWH surface
+\end_layout
 
 \end_inset
 
@@ -1407,7 +1417,7 @@ The complete configuration of the wind tunnel setup of the original VALIANT
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -1497,7 +1507,17 @@ name "fig:wtsim_fwh_placement"
 Wind tunnel simulation setup in ProLB.
  A) The simulation domain of the wind tunnel geometry with the tunnel and
  HLD installed.
- b) Wind tunnel geometry with the FWH surface placed inside the flow.
+ b) Wind tunnel geometry with the FWH surface placed inside the flow
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Wind tunnel simulation setup in ProLB
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1515,7 +1535,7 @@ Wind tunnel simulation setup in ProLB.
 placement t
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1532,7 +1552,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Dimensions of the wind tunnel nozzle exit.
+Dimensions of the wind tunnel nozzle exit
 \end_layout
 
 \end_inset
@@ -1742,7 +1762,7 @@ Coefficient of pressure
 \end_inset
 
  over the surface of HLD obtained using the LBM simulations with and without
- wind-tunnel setup included are compared against the experimental data.
+ wind-tunnel setup included are compared against the experimental data 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Coefficient-of-pressure"
@@ -1818,7 +1838,7 @@ ns was not uniform at the nozzle exit of the wind tunnel simulation, suggesting
 placement tb
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -2042,11 +2062,21 @@ The sound pressure spectra obtained from the FWH analogy applied to the
 \begin_inset Formula $\Delta f=88\,Hz$
 \end_inset
 
-.
  
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:FWH_ECLLBM-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The sound pressure spectra obtained from the FWH analogy applied to the
+ ECL computation of the installed configuration 
+\end_layout
 
 \end_inset
 
@@ -2065,7 +2095,7 @@ name "fig:FWH_ECLLBM-1"
 placement tb
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -2294,11 +2324,21 @@ ProLB
 \begin_inset Formula $\Delta f=22Hz$
 \end_inset
 
-.
  
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:FWH_AirbusLBM"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The sound pressure spectra computed using simulation run by Airbus using
+ ProLB and FWH approach for the full wind-tunnel installation
+\end_layout
 
 \end_inset
 
@@ -2728,8 +2768,7 @@ Probe 13
 
 \begin_layout Plain Layout
 Wall pressure spectra for select probes on the slat wall placed along the
- spanwise center plane.
- 
+ spanwise center plane 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:wp_spectras_slat-1-1"
@@ -3041,7 +3080,7 @@ status open
 
 \begin_layout Plain Layout
 Wall pressure spectra for select probes on the main element wall and on
- spanwise center plane - set 1.
+ spanwise center plane - set 1
 \end_layout
 
 \end_inset
@@ -3194,7 +3233,7 @@ status open
 
 \begin_layout Plain Layout
 Wall pressure spectra for select probes on the main element wall and on
- spanwise center plane - set 2.
+ spanwise center plane - set 2
 \end_layout
 
 \end_inset

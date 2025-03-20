@@ -1,0 +1,154 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/
+\textclass report
+\begin_preamble
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{chapter}{0}
+\end_preamble
+\use_default_options false
+\master Thesis_Manuscript_ARM.lyx
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "beramono" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command bibtex
+\index_command default
+\float_placement th
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "PhD Thesis Draft"
+\pdf_author "Ama Roy Murali"
+\pdf_subject "Noise prediction for high lift devices"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style unsrtnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\rightmargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+Acknowledgements
+\end_layout
+
+\begin_layout Standard
+First and foremost, I would like to express my deepest gratitude to my thesis
+ advisors, Prof.
+ Marc C Jacob, Prof.
+ Vincent Clair, and Prof.
+ Michel Roger, for their unwavering support, insightful guidance, and invaluable
+ feedback throughout this research journey.
+ Their expertise, patience, and encouragement were instrumental in shaping
+ this work and helping me navigate challenges along the way.
+\end_layout
+
+\begin_layout Standard
+My heartfelt thanks go to my colleagues and peers at Ecole Centrale de Lyon,
+ for their camaraderie, stimulating discussions, and technical assistance.
+ The collaborative environment fostered by this group made the research
+ process both productive and enjoyable.
+\end_layout
+
+\begin_layout Standard
+I am eternally grateful to my family — my parents, and siblings — for their
+ unconditional love, endless encouragement, and sacrifices that enabled
+ me to pursue my academic goals.
+ Their belief in me has been a constant source of motivation.
+\end_layout
+
+\begin_layout Standard
+To my friends, thank you for your moral support, laughter, and understanding
+ during stressful moments.
+ You reminded me to stay grounded and persevere even when the path seemed
+ daunting.
+\end_layout
+
+\begin_layout Standard
+Finally, I acknowledge the financial and institutional support provided
+ by Airbus, and the early support from its engineers, namely, Dr.
+ Florian Guiho, Dr.
+ Maxime Itasse, and Dr.
+ Nicolas Molin, which made this research possible.
+ The resources, facilities, and opportunities offered were critical to the
+ completion of this project.
+\end_layout
+
+\begin_layout Standard
+While this thesis represents my individual effort, it stands on the collective
+ contributions of everyone mentioned above.
+ Any errors or shortcomings remain my own.
+\end_layout
+
+\end_body
+\end_document
