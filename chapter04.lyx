@@ -2474,18 +2474,8 @@ literal "false"
  instability owing to the closed loop streamline in the recirculation bubble
  leading to generation of steady spanwise modes.
  The eigen functions identified in their work using the linear stability
- analysis of a simplified flow configuration, as shown in Fig.
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:barkleyspanmodes-1"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, predicts the spanwise wavelength with same order as that of the cavity
- depth.
+ analysis of a simplified flow configuration predicts the spanwise wavelength
+ with same order as that of the cavity depth.
  This is consistent with the observation that the spanwise cells in the
  slat cove have a wavelength with same order as the slat chord.
  On comparing the rectangular flow cavity with the slat cove, the cavity
@@ -4267,7 +4257,7 @@ To study unsteady dynamics of the cove for the noise-validated standard
  geometry case, we used the Q-criterion visualization 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "hunt1988eddies"
+key "Hunt1988"
 literal "false"
 
 \end_inset
@@ -4727,7 +4717,7 @@ noprefix "false"
 n Görtler instability of concavely curved boundary layers 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "saric1994gortler,Floryan1991"
+key "Saric1994,Floryan1991"
 literal "false"
 
 \end_inset
@@ -5283,12 +5273,7 @@ mic and acoustic modes are explicitly separated.
  
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 The unsteady velocity field can shed further light on the three-dimensionality
  of the flow which is not evident from the pressure fields.
  But before elaborating on this, we first plot the unsteady velocity components
@@ -5326,6 +5311,11 @@ noprefix "false"
 
 .
  This acceleration is due to the nozzle effect of the slat gap.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9349,7 +9339,7 @@ where,
  
 \begin_inset CommandInset citation
 LatexCommand citet
-key "bradshaw1973effects"
+key "Bradshaw2016"
 literal "false"
 
 \end_inset
@@ -9358,7 +9348,7 @@ literal "false"
  
 \begin_inset CommandInset citation
 LatexCommand citet
-key "wyngaard1967experimental"
+key "Wyngaard1967"
 literal "false"
 
 \end_inset
@@ -10008,7 +9998,7 @@ where,
  is called the dilatation field
 \begin_inset CommandInset citation
 LatexCommand citep
-key "RIBNER1964103"
+key "Ribner1964"
 literal "false"
 
 \end_inset
@@ -10109,7 +10099,7 @@ name "fig:Dilatation"
 The slat cove radiation can be noticed to have characteristic directivity
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Choudhari"
+key "Choudhari2017"
 literal "false"
 
 \end_inset
@@ -12783,7 +12773,6 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-\align center
 The same profile for all velocity components are also shown.
  For the spanwise component shown in Fig.
 \begin_inset CommandInset ref
@@ -12807,10 +12796,7 @@ noprefix "false"
  cells previously demonstrated in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Visualisation_planes"
-plural "false"
-caps "false"
-noprefix "false"
+reference "fig:Visualisation_planes-1"
 
 \end_inset
 

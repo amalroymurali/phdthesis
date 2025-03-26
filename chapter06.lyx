@@ -280,7 +280,7 @@ literal "false"
  Early works of 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "Bradshaw1969,bradshaw1973effects"
+key "Bradshaw1969,Bradshaw2016"
 literal "false"
 
 \end_inset
@@ -2775,10 +2775,7 @@ noprefix "false"
  Section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:fwh_computation"
-plural "false"
-caps "false"
-noprefix "false"
+reference "sec:FWHsection"
 
 \end_inset
 
@@ -4402,10 +4399,7 @@ noprefix "false"
  A few select cases are given in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:streamlinecurvature"
-plural "false"
-caps "false"
-noprefix "false"
+reference "fig:streamlinecurvature-2"
 
 \end_inset
 
@@ -5768,7 +5762,7 @@ That being the observations based on raw curvature along the streamline,
 s from 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "bradshaw1973effects"
+key "Bradshaw2016"
 literal "false"
 
 \end_inset
@@ -5856,7 +5850,7 @@ noprefix "false"
  A later work of 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "bradshaw1973effects"
+key "Bradshaw2016"
 literal "false"
 
 \end_inset
@@ -11891,10 +11885,6 @@ name "fig:spanwise_spectra_case04"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status collapsed
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 placement t
 wide true
@@ -12060,12 +12050,7 @@ Streamline extracted from the mean flow profile for Case 5 suggest that
 .
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:recirculation_frequency_case5"
-
-\end_inset
-
-
-\end_layout
+name "fig:recirculation_frequency_case5-1"
 
 \end_inset
 
@@ -12850,7 +12835,10 @@ The low frequency fluctuations present in both cases with and without the
  are shown in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:recirculation_frequency_case5"
+reference "fig:recirculation_frequency_case5-1"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 

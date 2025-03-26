@@ -103,79 +103,131 @@ Acknowledgements
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 First and foremost, I would like to express my deepest gratitude to my thesis
  advisors, Prof.
  Marc C Jacob, Dr.
  Vincent Clair, and Prof.
- Michel Roger, for their support, guidance, and feedback throughout this
- research journey.
+ Michel Roger, for their unwavering support, insightful guidance, and invaluable
+ feedback throughout this research journey.
  Their expertise, patience, and encouragement were instrumental in shaping
- this work and helping me navigate its challenges.
+ this work and helping me navigate challenges along the way.
  Prof.
  Marc's supervision is the major pillar of this work.
  Dr.
- Vincent Clair's well reasoned suggestions regarding the research has enabled
- a comfortable progress from early on.
- Special thanks to Prof.
- Michel Roger for many of his ideas and suggestions.
- Apart from formal supervision, my heartfelt gratitude to Dr.
+ Vincent Clair's reasonable interactions and suggestions regarding the research
+ from has enabled a comfortable progress from early on.
+ Special thanks to Prof.Michel Roger for many of his ideas and suggestions.
+ Apart from formal supervision, my heart felt gratitude to Dr.
  Jerome Boudet whose sharing of knowledge and time to assist me in the process
  of this thesis was instrumental to its completion.
 \end_layout
 
-\begin_layout Standard
-My thanks go to my colleagues and peers at Ecole Centrale de Lyon for their
- camaraderie and technical assistance.
+\begin_layout Plain Layout
+My heartfelt thanks go to my colleagues and peers at Ecole Centrale de Lyon,
+ for their camaraderie, stimulating discussions, and technical assistance.
  The collaborative environment fostered by this group made the research
  process both productive and enjoyable.
  I wish to mention the members of my Thesis Monitoring Committee, Dr.
  Thomas Castelain and Dr.
  Sebastien Besset, who were instrumental in guiding me through the difficult
- terrain of completion of PhD.
- I acknowledge the financial and institutional support provided by Airbus,
- and the early support from its engineers, namely, Dr.
- Florian Guiho, Dr.
- Maxime Itasse, and Dr.
- Nicolas Molin, which made this research possible.
+ terrain of the completion of PhD life.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Special thanks to Prof.
  Sergey Karabasov and Prof.
- Rob Krams of Queen Mary University of London, and his research team for
- their unwavering support both personally and professionally during this
- academic journey.
+ Rob Krams of Queen Mary University London, and his research team for their
+ unwavering support both personally and professionally during this academic
+ journey.
  From managing life as an international research student to invigorating
  the collaborative research spirit, their timely contributions were inevitable
  to complete this journey.
 \end_layout
 
-\begin_layout Standard
-I am eternally grateful to my family — my parents, and my brother — for
- their unconditional love, endless encouragement, and sacrifices that enabled
+\begin_layout Plain Layout
+I am eternally grateful to my family — my parents, and siblings — for their
+ unconditional love, endless encouragement, and sacrifices that enabled
  me to pursue my academic goals.
  My mother's belief in me has been a constant source of motivation and continues
  to fuel my quest for higher successes.
  My heartfelt gratitude extends to my dearest family friend Dr.
- Koshy Idicula and his family, for being my strength and a guardian to my
- family in my absence at home.
+ Koshy Idicula, Kerala, India, and his family, for being my strength and
+ an invisible guardian to my family in my absence at home.
 \end_layout
 
-\begin_layout Standard
-To my girlfriend Anagha, and my friends especially Ananthu, Anjali, Augustin,
- Isa, Livia, Lidiya, Marie, Nathan, and Stephano, thank you for your moral
- supports, laughter, games, night outs, homely dinners, and also mindful
- understanding during difficult times, both personally and communally.
+\begin_layout Plain Layout
+To all my friends including Ananthu, Augustin, Isa, Marie and Igor, Nathan,
+ Stephano and Livia, thank you for your moral supports, laughter, games,
+ night outs, homely dinners, and also mindful understanding during difficult
+ times.
  You reminded me to stay grounded and persevere even when the path seemed
  daunting.
- Even to those who chose not to be friends in this brief journey of life,
- thank you for motivating me to be careful with my unconditional camaraderie.
+ To those who chose not to be friends in this brief journey, thank you for
+ motivating me to be careful with my unconditional camaraderie.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+Finally, I acknowledge the financial and institutional support provided
+ by Airbus, and the early support from its engineers, namely, Dr.
+ Florian Guiho, Dr.
+ Maxime Itasse, and Dr.
+ Nicolas Molin, which made this research possible.
+ The resources, facilities, and opportunities offered were critical to the
+ completion of this project.
+\end_layout
+
+\begin_layout Plain Layout
 While this thesis represents my individual effort, it stands on the collective
  contributions of everyone mentioned above.
  Any errors or shortcomings remain my own.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I extend my deepest gratitude to my thesis advisors, Prof.
+ Marc C Jacob, Dr.
+ Vincent Clair, and Prof.
+ Michel Roger, for their unwavering guidance, expertise, and encouragement.
+ Special thanks to Dr.
+ Jerome Boudet for his invaluable knowledge and time.
+\end_layout
+
+\begin_layout Standard
+I thank my colleagues at Ecole Centrale de Lyon for their camaraderie and
+ technical support, and Dr.
+ Thomas Castelain and Dr.
+ Sebastien Besset of the Thesis Monitoring Committee for their guidance.
+ I am grateful to Prof.
+ Sergey Karabasov, Prof.
+ Rob Krams, and their team at Queen Mary University London for their academic
+ and personal support during my international research journey.
+\end_layout
+
+\begin_layout Standard
+To my family—my parents, siblings, and Dr.
+ Koshy Idicula and his family—thank you for your sacrifices, love, and strength.
+ My friends, including Ananthu, Augustin, Isa, Marie and Igor, Nathan, Stephano
+ and Livia, and others, provided laughter, support, and grounding during
+ challenging times.
+\end_layout
+
+\begin_layout Standard
+This work was made possible by Airbus’s financial and institutional support,
+ along with contributions from Dr.
+ Florian Guiho, Dr.
+ Maxime Itasse, and Dr.
+ Nicolas Molin.
+ While this thesis is my own effort, it stands on the collective contributions
+ of all mentioned.
+ Any shortcomings remain mine.
 \end_layout
 
 \end_body

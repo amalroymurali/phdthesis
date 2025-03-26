@@ -1222,7 +1222,7 @@ literal "false"
 
 \begin_layout Standard
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Accordingly, the linearized Navier-Stokes equation that captures the adiabatic
@@ -1345,7 +1345,7 @@ m, corresponding to 17 points per wavelength at 10~kHz.
 
 \begin_layout Standard
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Section
 Turbulent Boundary Layer simulation with 
@@ -2071,7 +2071,7 @@ A simple Gaussian pulse in spatial, temporal, and frequency domains
 Following 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "Bres2009a"
+key "Bres2009"
 literal "false"
 
 \end_inset
@@ -3398,7 +3398,7 @@ The integration then leads to the retarded time formulation of the FWH analogy
  called the Farassat's 1A formulation
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Farassata"
+key "Farassat2013"
 literal "false"
 
 \end_inset

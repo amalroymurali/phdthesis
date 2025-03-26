@@ -754,7 +754,7 @@ noprefix "false"
  fluctuations emanate as acoustic waves towards farfield
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Rossiter1964,Terracol2016"
+key "Rossiter1964WindTE,Terracol2016"
 literal "false"
 
 \end_inset
@@ -908,7 +908,7 @@ d geometries using Cartesian meshes by deploying Immersed Boundary Methods
  together with a high level of parallelism
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Feng2010a,Marie2009,Satti2012,Soni2022"
+key "Feng2010a,Marie2009c,Satti2012,Soni2022"
 literal "false"
 
 \end_inset

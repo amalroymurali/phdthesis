@@ -1,7 +1,8 @@
 [Dolphin]
-Timestamp=2025,3,13,15,16,34
+HeaderColumnWidths=1151,58,93
+SortRole=modificationtime
+Timestamp=2025,3,26,15,41,36
 Version=4
-ViewMode=1
 
 [Settings]
 HiddenFilesShown=true
