@@ -3050,7 +3050,7 @@ ns scales with
  Here, a Ffowcs Williams–Hawkings (FWH) analogy
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Williams1969"
+key "Williams1969,Greschner2008"
 literal "false"
 
 \end_inset

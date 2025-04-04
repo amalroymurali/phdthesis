@@ -4356,7 +4356,7 @@ The second way to calculate local curvature is by using geometrical formula
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-R & =\sqrt{\left(\frac{\partial^{2}x}{\partial s^{2}}\right)^{2}+\left(\frac{\partial^{2}y}{\partial s^{2}}\right)^{2}}\label{eq:curvreqn}
+R & =\left[\left(\frac{\partial^{2}x}{\partial s^{2}}\right)^{2}+\left(\frac{\partial^{2}y}{\partial s^{2}}\right)^{2}\right]^{-\frac{1}{2}}\label{eq:curvreqn}
 \end{align}
 
 \end_inset
@@ -11860,6 +11860,9 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -11876,6 +11879,10 @@ name "fig:spanwise_spectra_case04"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -13114,12 +13121,6 @@ tions.
  results herein, it is overwhelmingly evident that the low frequency oscillation
  associated with the recirculation phenomena is pertinent to the establishment
  of characteristic noise sources in the cove dynamics.
-\end_layout
-
-\begin_layout Standard
-With the establishment of this new facts, we now proceed to conclude the
- thesis by drawing the new picture of slat cove dynamics with the addition
- of the new found dynamics, in the upcoming chapter.
 \end_layout
 
 \begin_layout Standard

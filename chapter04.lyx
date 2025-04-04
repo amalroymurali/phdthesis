@@ -701,7 +701,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename chapter03_figs/Wall_Pressure_prob locations.png
 	lyxscale 10
@@ -714,6 +713,9 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -8769,7 +8771,7 @@ where,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-R & =\sqrt{\left(\frac{\partial^{2}x}{\partial s^{2}}\right)^{2}+\left(\frac{\partial^{2}y}{\partial s^{2}}\right)^{2}}
+R & =\left[\left(\frac{\partial^{2}x}{\partial s^{2}}\right)^{2}+\left(\frac{\partial^{2}y}{\partial s^{2}}\right)^{2}\right]^{-\frac{1}{2}}
 \end{align*}
 
 \end_inset
