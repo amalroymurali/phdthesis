@@ -3449,12 +3449,14 @@ The quadrupole term remains an integral over the volume and cannot be reduced
 This method leads to the calculation of the sound received by each observer
  at each time step as an integral on the recording surface.
  
-\color brown
+\color black
 The calculation thus uses the data on the surface locations at a time of
  emission which coincides with the condition that a source emitting sound
  at a particular time will have the wave reaching the observer at the particular
  observer time step, or precisely, the computation time step is the observer's
  time step or the reception time step.
+
+\color brown
  
 \color inherit
 This retarded time formulation leads the calculation on the surface to be

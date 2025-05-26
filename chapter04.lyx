@@ -8540,15 +8540,14 @@ Streamline Curvature
 \end_layout
 
 \begin_layout Standard
-From analyzing the mean flow inside the cove region and drawing parallels
- from the literature on the spanwise modulation of curved flows in cases
- of flow past a backward facing step, open cavity flows, and lid-driven
- cavity flows, it is logical to assume that the three dimensionality in
- the cove is due to the effect of streamline curvature in the shear layer
- and recirculation region.
- The curvature of the streamline in the shear layer can also lead the effect
- of `Görtler' like transition leading to the generation of counter-rotating
- small-scale streamwise structures.
+The analysis of the mean flow inside the cove region and parallels from
+ the literature on the spanwise modulation of curved flows in cases of flow
+ past a backward facing step, open cavity flows, and lid-driven cavity flows,
+ suggest to investigate the effect of i) the three dimensionality and ii)
+ streamline curvature in the shear layer and recirculation region.
+ The curvature of the streamline in the shear layer may also trigger a `Görtler'
+ like transition leading to the generation of counter-rotating small-scale
+ streamwise structures.
  Both these effects are fundamental to the slat noise generation mechanism
  whose tonal characteristics are necessarily influenced by the coherence
  of the impinging spanwise coherent vortices.
@@ -8559,12 +8558,12 @@ y understand its implications on the shear layer development, we attempt
 \end_layout
 
 \begin_layout Standard
-The mean streamlines can be obtained from time-averaged velocity field.
+The mean streamlines can be obtained from the time-averaged velocity field.
  For our purpose, we use a constant time stepping and the mean 2-dimensional
  velocity as the gradient field as inputs to a Runge-Kutta integrator.
  Here, since we assume that the flow features in the spanwise direction
  are primarily driven by the streamline curvature in the mid-span 2D plane,
- we use the streamwise and cross-flow component of the velocity field to
+ the streamwise and cross-flow component of the velocity field is used to
  study the streamline in their 2D plane and omit the contribution of spanwise
  velocity component.
  For the Runge-Kutta integrator, we use the classical fourth order RK4 formulati
@@ -8572,7 +8571,7 @@ on.
 \end_layout
 
 \begin_layout Standard
-The mean flow data is obtained on the same Cartesian grid used in the simulation.
+The mean flow data is obtained on the Cartesian grid of the simulation.
  However, this grid is not suitable to obtain a continuous streamline and
  hence the velocity field need to be interpolated in order to obtain the
  velocity value at a given query point for the RK integrator.
@@ -8593,9 +8592,9 @@ The mean flow data is obtained on the same Cartesian grid used in the simulation
 The streamline can thus be recovered for any selection of the source point
  in the flow field.
  However, to select a suitable point that would allow capturing the mean
- trajectory of the spanwise coherent vortices, we used the distribution
- of mean velocity magnitude on a straight line across the shear layer near
- the slat cusp as shown in Fig.
+ trajectory of the spanwise coherent vortices, the mean velocity magnitude
+ distribution on a straight line across the shear layer near the slat cusp
+ is used as shown in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:velocityacrossshearlayer"
@@ -8627,8 +8626,8 @@ status open
 \begin_inset Graphics
 	filename chapter04_figs/Streamline.png
 	lyxscale 30
-	width 7cm
-	height 7cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 
 \end_inset
@@ -8823,7 +8822,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter11/SGP079_curvr.png
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter11/SGP079_curvr_corrected.png
 	lyxscale 20
 	width 12cm
 	height 12cm
@@ -8885,7 +8884,7 @@ noprefix "false"
 \end_inset
 
  and is the region of highest curvature.
- The streamline which exits through the slat gap have a smaller curvature
+ The streamline then exits through the slat gap has a smaller curvature
  than the other.
 \end_layout
 
@@ -8940,9 +8939,8 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-To compute the related parameters are investigate the streamline, the first
- parameter of interest is the time-averaged streamwise acceleration or decelerat
-ion.
+To investigate the streamline for related parameters, the first parameter
+ of interest is the time-averaged streamwise deceleration.
  This can be computed from the mean velocity field along the streamline
  as 
 \end_layout
@@ -8994,8 +8992,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter11/SGP079_dec.png
 	lyxscale 20
-	width 8cm
-	height 8cm
+	width 8.3cm
+	height 8.3cm
 	keepAspectRatio
 
 \end_inset
@@ -9034,8 +9032,8 @@ status open
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter11/SGP079_thesis.png
 	lyxscale 20
-	width 7cm
-	height 7cm
+	width 7.5cm
+	height 7.5cm
 	keepAspectRatio
 	BoundingBox 150bp 100bp 1460bp 1060bp
 	clip
@@ -9125,18 +9123,18 @@ reference "fig:Local-deceleration"
  intermediate region, the flow is accelerated.
  Before the impingement near the wall, the stagnation causes a region of
  strong deceleration.
- This deceleration of the mean flow generates the necessary pressure gradient
+ This stagnation of the mean flow generates the necessary pressure gradient
  required to counter act the centrifugal force generated by the curvature
  of the flow.
  However, when the angular momentum decreases radially across the streamlines,
  the centrifugal force can be in excess of the established pressure gradient.
  This imbalance is the cause for the centrifugal instability.
- These vortices then allow exchange of momentum along the radial direction
+ These perturbations then allow exchange of momentum along the radial direction
  by the transport of fluid thereby balancing the deficit in the pressure
  gradient to counteract the centrifugal force.
- This rapid generation of streamwise vortices are also accelerated by the
- degeneration of spanwise coherent vortices which have already entrained
- a portion of the recirculating streamwise vortices.
+ This rapid generation of streamwise vortices is also enhanced by the degenerati
+on of spanwise coherent vortices which have already entrained a portion
+ of the recirculating streamwise vortices.
 \end_layout
 
 \begin_layout Standard
@@ -9158,11 +9156,11 @@ noprefix "false"
  Nevertheless, the marked position is the location of the maximum deceleration
  experienced by a fluid particle moving along the streamline and is hence
  the location of maximum momentum transfer.
- In view of the theory that impingement of vortices are responsible for
- the generation of acoustics waves that modulate the K-H shedding frequency
- at the cusp and thereby selecting the tonal noise frequency, this location
- must correspond to the length of the shear layer that predicts the tonal
- noise frequency.
+ In view of the theory that impingement of vortices is responsible for the
+ generation of acoustic waves that modulate the K-H shedding frequency at
+ the cusp and thereby select the tonal noise frequency, this location must
+ correspond to the length of the shear layer that predicts the tonal noise
+ frequency.
  To understand this further we look at the actual velocity distribution
  along the streamline and compute the time of travel.
 \end_layout
@@ -9302,14 +9300,13 @@ literal "false"
 \end_inset
 
 .
- His analogy of the case of streamline curvature with the case of stratified
- flow under the effect of buoyancy led to the formulation of representative
- parameters.
+ His analogy of the streamline curvature with a stratified flow under the
+ effect of buoyancy led to formulation of representative parameters.
  One of these, pertinent to interpretation of the slat shear layer, is the
  flux Richardson number.
  By the analogy, for flow along a curved streamline, it is the ratio of
- turbulent kinetic energy production in the radial direction to the same
- in the streamwise direction, i.e.
+ turbulent kinetic energy production between the radial direction and the
+ streamwise direction, i.e.
 \end_layout
 
 \begin_layout Standard
@@ -9346,8 +9343,7 @@ literal "false"
 
 \end_inset
 
- obtains a form of the flux Richardson number inspired from the work of
- 
+ obtain a form of the flux Richardson number inspired from the work of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Wyngaard1967"
@@ -9378,16 +9374,16 @@ literal "false"
 
 \end_inset
 
- while studying the stability of curved free shear layer in the small curvature
+ while studying the stability of curved free shear layers in small curvature
  regime.
  The generation of vorticity in the streamwise direction, in their perspective,
  is an effect of the diffusion of the turbulent velocity perturbation into
  the streamwise direction led by the effect of the centrifugal force and
  hence arises from the requirement of inviscid stability.
  The flux Richardson number aids in quantifying the effect of this imposed
- vorticity transfer by taking into account effect of the centrifugal force
- acting on the flow and also the local vorticity thickness by incorporating
- the radial streamwise-velocity gradient 
+ vorticity transfer by taking into account the effect of the centrifugal
+ force acting on the flow and also the local vorticity thickness by incorporatin
+g the radial streamwise-velocity gradient 
 \begin_inset Formula $\frac{\partial U}{\partial n}$
 \end_inset
 
@@ -9432,7 +9428,7 @@ It is well understood from the literature that the streamline curvature
 \begin_layout Standard
 \begin_inset Formula 
 \[
-dM_{c}=\frac{U^{2}}{R}\frac{ds}{U}=\frac{U}{R}ds
+d\Theta_{c}=\frac{U^{2}}{R}\frac{ds}{U}=\frac{U}{R}ds
 \]
 
 \end_inset
@@ -9765,7 +9761,6 @@ noprefix "false"
  The curvature Richardson number then tend to saturate towards 2 in the
  region immediately downstream of the location of maximum deceleration,
  owing to the large value of curvature.
- The flow here is fully unstable to the curvature instability.
 \end_layout
 
 \begin_layout Standard
@@ -9827,6 +9822,10 @@ m of the location of maximum deceleration suggesting that the flow did not
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 That being said, we now define a non-dimensional quantity that allows us
  to compare the effect of curvature for any given geometry of the slat shear
  layer, based only on the shear layer shape and mean flow distribution.
@@ -9834,7 +9833,7 @@ That being said, we now define a non-dimensional quantity that allows us
  shear layer, which can be formally written as 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \[
 M^{*}(l)=\int_{0}^{l}Ri_{f}ds
@@ -9845,7 +9844,7 @@ M^{*}(l)=\int_{0}^{l}Ri_{f}ds
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 where, 
 \begin_inset Formula $l$
 \end_inset
@@ -9872,12 +9871,12 @@ tely 0.005 at the location of maximum deceleration.
  from the centrifugal effect.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 There are two things worth mentioning with regard to analyzing the curvature
  effect in this manner:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 First is that in the volume of region after the impingement, the effect
  of curvature instability is obviously large across the slat gap.
  However, this region is not only influenced by the curvature but by the
@@ -9889,7 +9888,7 @@ First is that in the volume of region after the impingement, the effect
  location of maximum deceleration.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The second is that the effect of curvature is obviously substantial.
  Hence the same can be used to qualitatively understand how the noise efficiency
  will change when shape of the shear layer changes.
@@ -9913,14 +9912,14 @@ literal "false"
  effects leading to reduced noise efficiency.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 That being said, before moving to a parametric analysis, let us look into
  the acoustics data available from the simulation in detail.
  We do not reiterate the far-field data obtained using FWH computation but
  the data from unsteady density in the vicinity of the cove.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float figure
 placement H
 wide false
@@ -9966,13 +9965,18 @@ name "fig:cumulativecurvaturerichardson"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Acoustics
 \end_layout
 
 \begin_layout Standard
 Acoustic perturbations are essentially perturbations of the pressure field
- arising from compressibilty and translates to equivalent density field.
+ arising from compressibilty and translate to equivalent density perturbations.
  By the continuity equation, the density perturbation can be written in
  terms of the divergence of the velocity field as
 \end_layout
@@ -10006,11 +10010,12 @@ literal "false"
 \end_inset
 
 .
- Within turbulent flows, the dilatation field has both components i.e.
- the hydrodynamic and acoustic components.
- The former fluctuations are large magnitude quasi-incompressible fluctuations
- of the flow which are responsible for sound generation while the latter
- represents the propagation of sound.
+ Within turbulent flows, the dilatation field has two components due to
+ the hydrodynamic and acoustic fluctuations.
+ The former are large magnitude perturbations that witness slight hydrodynamic
+ compressibilty that might contribute or not to sound radiation whereas
+ the latter are small magnitude perturbations that represents the propagation
+ of sound.
  Although vastly differing in their order of magnitudes, separating the
  two is still a non-trivial procedure
 \begin_inset CommandInset citation
@@ -10023,8 +10028,8 @@ literal "false"
 .
  But the emanating acoustic wave fronts can be identified in the region
  outside the turbulent region where sound generation is absent.
- The dilatation field around the HLD as obtained from the unsteady simulation
- is shown in Fig.
+ The typical dilatation field around the HLD as obtained from the unsteady
+ simulation is shown on the snapshot of Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Dilatation"
@@ -10117,14 +10122,14 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-The dilation field also have drawbacks visualizing data on the grids with
+The dilation field also has drawbacks visualizing data on the grids with
  refinement interfaces.
  At the refinement interface, the calculation of derivative introduces numerical
- errors, which are not unsteady fluctuations.
+ errors, which are not necessarily unsteady.
  Hence the errors does not necessarily lead to generation of spurious acoustics
  but vitiates the acoustic field visualization.
- An improvement in this regard is hence possible by using alternative definition
- for dilatation as the density rate.
+ An improvement in this regard is hence possible by using an alternative
+ definition for dilatation as the density rate.
  For isentropic fluctuations of small amplitudes in an otherwise quiescent
  media, the dilatation can be expressed as the rate of pressure fluctuation
  as 
@@ -10133,7 +10138,7 @@ The dilation field also have drawbacks visualizing data on the grids with
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\ensuremath{\Theta=-\frac{1}{\rho_{0}}\frac{\partial p}{\partial t}}
+\ensuremath{\Theta=-\frac{1}{\rho_{0}}\frac{\partial P}{\partial t}}
 \]
 
 \end_inset
@@ -10179,7 +10184,7 @@ reference "fig:DensityRate-1"
 .
  The acoustic field thus visualized shows majorly high frequency wavefronts
  which have an approximate wavelength of 
-\begin_inset Formula $\lambda=0.007\,m$
+\begin_inset Formula $\lambda=0.008\,m$
 \end_inset
 
 .
@@ -10191,7 +10196,12 @@ reference "fig:DensityRate-1"
  It hence suggests that the wavefronts visible in this visualization are
  also strongly vitiated by the high frequency numerical noise which are
  amplified by the temporal derivative.
- The source of this very high frequency noise is suspected to be from the
+ 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+The source of this very high frequency noise is suspected to be from the
  mesh refinement applied to the region downstream of the slat trailing edge.
  A visualization of the mesh along with the dilatation field in Fig.
 \begin_inset CommandInset ref
@@ -10201,6 +10211,11 @@ reference "fig:DensityRateMesh-1"
 \end_inset
 
  illustrates this fact.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10251,6 +10266,11 @@ name "fig:DensityRate-1"
 
 
 \end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Note Comment
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -10306,6 +10326,11 @@ status open
 \begin_layout Plain Layout
 The mesh refinement at the trailing edge with the shed vortices crossing
  a refinement region downstream of the trailing edge.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10902,7 +10927,10 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/Wall_Pressure_prob locations.png
 	lyxscale 20
@@ -12021,6 +12049,15 @@ reference "fig:wp_coords-1"
 \end_inset
 
 .
+ Each of these probes are replicated along the spanwise direction as illustrated
+ in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Spanwise-replicated-numerical_loc-1"
+
+\end_inset
+
+ and a function spectra is plotted as function of the spanwise coordinate.
  The mean pressure from these probes for the computed PSD are also shown
  on the right side to shed light on the correspondence between the spanwise
  trend of spectra and spanwise cell formations.
@@ -12325,18 +12362,17 @@ For other probes, namely Probe
 , the low frequency contents again becomes dominant due to the possible
  contribution from low frequency fluctuations associated with strongly curved
  flow at the impingement location.
- For Probe 
-\begin_inset Formula $13$
-\end_inset
-
- very close to the impingement, the low frequency contents are dominant
- and the spanwise modulation is seen to have influence for higher frequencies.
+ 
 \end_layout
 
 \begin_layout Standard
 Apart from the spanwise modulated behavior, the presence of the tones at
  
-\begin_inset Formula $2655$
+\begin_inset Formula $1771,$
+\end_inset
+
+ 
+\begin_inset Formula $2655,$
 \end_inset
 
  and 
@@ -12380,9 +12416,14 @@ Apart from the spanwise modulated behavior, the presence of the tones at
 \end_inset
 
 , this hump is distinctly identifiable.
+ 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 The initial reduction of the low frequency fluctuations from Probe 
 \begin_inset Formula $6$
 \end_inset
@@ -12414,6 +12455,11 @@ noprefix "false"
 \end_inset
 
  corresponding to the low frequency hump in the far-field acoustic spectra.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12464,7 +12510,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hotwire probe locations used for point recordings in the simulation 
+Hot-wire probe locations used for point recordings in the simulation 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:hotwireprobelocations"
@@ -12699,10 +12745,10 @@ Time-averaged velocity and components from the SL probe file placed near
 \begin_layout Standard
 The hot-wire probe data allows to analyze single point time series recording
  of the flow velocity.
- The point recording captured from LBM simulation at select nodes are hence
- analogous to the hot-wire measurements in the experiments and are typically
- used to compare the experiment and simulations.
- Here we use the same to study spanwise variability of the flow.
+ The point recording captured from LBM simulation at selected nodes are
+ hence analogous to the hot-wire measurements in the experiments and are
+ typically used to compare the experiment and simulations.
+ Here they are used to study spanwise variability of the flow.
 \end_layout
 
 \begin_layout Standard
@@ -12738,10 +12784,7 @@ noprefix "false"
  The time-averaged velocity magnitude profile shown in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:averagehotwireSLZvel"
-plural "false"
-caps "false"
-noprefix "false"
+reference "fig:averagehotwiseSLmag"
 
 \end_inset
 
@@ -12749,8 +12792,8 @@ noprefix "false"
 \begin_inset Formula $50m/s$
 \end_inset
 
-, and the deceleration due to presence of the main-element outside the cove
- region.
+, and the deceleration due to presence of the main-element outside of the
+ cove region.
  The mean recirculation velocity near the cusp is obtained as 
 \begin_inset Formula $15m/s$
 \end_inset
@@ -12766,7 +12809,7 @@ noprefix "false"
 \end_inset
 
 .
- The velocity magnitude profile is also largely spanwise invariant outside
+ The velocity magnitude profiles are also largely spanwise invariant outside
  the cove and have a deviation of 
 \begin_inset Formula $\pm5m/s$
 \end_inset
@@ -12775,7 +12818,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-The same profile for all velocity components are also shown.
+The profiles for all velocity components are also shown.
  For the spanwise component shown in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -13144,11 +13187,11 @@ Unsteady velocity spectra from spanwise replicas of probes close to slat
 \end_layout
 
 \begin_layout Standard
-The modulated velocity fields is then subjected to power spectral analysis
- as for the case of wall pressure probes.
- Here we present only the spectral contents of the spanwise velocity component,
- Velocity Z, which shows spanwise modulations.
- A contour plot of the spectra against spanwise position is shown in Fig.
+The modulated velocity spectra for the spanwise component 
+\begin_inset Formula $U_{z}$
+\end_inset
+
+ are shown in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:hotwireSL_0_14_15"
@@ -13191,8 +13234,8 @@ noprefix "false"
 
  is however absent.
  For probes 14 and higher, it can be noted that the spanwise velocity shows
- a consistent oscillation at a frequency of 
-\begin_inset Formula $200Hz$
+ a consistent oscillation between 
+\begin_inset Formula $200-300Hz$
 \end_inset
 
  across multiple probe locations along the span.
@@ -13216,15 +13259,15 @@ noprefix "false"
 
 \end_inset
 
-, the peaks corresponding to acoustic frequencies are absent but instead
- hot spots for a frequency of 
+, the peaks corresponding to acoustic frequencies are hardly distinguishable
+ but instead hot spots for a frequency of 
 \begin_inset Formula $200Hz$
 \end_inset
 
  can be noticed.
  The hot spots appear strongest at spanwise location where the spanwise
  mean velocity switches sign from negative to positive suggesting that this
- location is a diverging plane and lower mean pressure is present.
+ location is a diverging plane.
  The periodic oscillations are interestingly absent in the locations of
  the converging planes where the fluid is removed from the spanwise motion
  potentially entrained by the shear layer.
@@ -13244,7 +13287,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Such a periodic bursting if present can affect the acoustics.
+Such a periodic bursting if present may affect the acoustics.
  Since the Rossiter mechanism is driven by the impingement of spanwise coherent
  vortices at the slat trailing edge, the retained spanwise coherence is
  a necessary factor for exciting a strong resonance.
@@ -13405,119 +13448,14 @@ ion, rarification, and periodic behavior of the recirculated small scale
 \end_layout
 
 \begin_layout Section
-Conclusions
+Cove bursting as a modulating mechanism
 \end_layout
 
 \begin_layout Standard
-In this chapter, we presented the numerical investigation and major findings
- specific to cove dynamics and noise mechanisms for VALIANT geometry HLD.
- The airfoil was kept at an angle of attack at 
-\begin_inset Formula $18^{0}$
-\end_inset
+\begin_inset Note Comment
+status open
 
- against an inflow of 
-\begin_inset Formula $50m/s$
-\end_inset
-
- at chord based Reynolds number of 
-\begin_inset Formula $10^{6}$
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Terracol2016"
-literal "false"
-
-\end_inset
-
-.
- The slat positioning was kept as standard.
-\end_layout
-
-\begin_layout Standard
-The objective of the study was to investigate the details of data generated
- using unsteady 3D LBM for the slat cove flow and to revisit existing knowledge
- on its noise mechanism.
- In line with this, the unsteady visualizations of the cove vortices using
- Q-criterion was obtained and the behavior of spanwise coherent structures
- and their conversion to small scale streamwise structures were discussed.
- The generation of streamwise structures were shown to be possibly driven
- by the curvature instability of the shear layer which augments the current
- understanding of their behaviors.
- Detailed visualizations were used to suggest that the vortices are generated
- from the outer periphery of the spanwise coherent structures and that a
- major fraction of the recirculated vortices are entrained and consumed
- by the spanwise coherent vortices from the early the shear layer.
-\end_layout
-
-\begin_layout Standard
-On inspecting the mean flow contours of the velocity and pressure fields
- in the cove, the 2D flow components largely agreed with the existing knowledge
- of slat cove dynamics.
- However, the distributions of spanwise velocity rendered strong spanwise
- modulations which called into question the veracity of a spanwise homogeneous
- flow typically assumed for the configuration in both experiments and numerical
- simulations.
- The spanwise velocity modulation with amplitude upto more than 
-\begin_inset Formula $10%\ensuremath{\%}
-$
-\end_inset
-
- of the mean stream velocity was observed in the simulation which used a
- spanwise domain length of more than 
-\begin_inset Formula $5C_{s}$
-\end_inset
-
- and 
-\begin_inset Formula $0.66C,$
-\end_inset
-
- where 
-\begin_inset Formula $C_{s}$
-\end_inset
-
- is the slat chord length and 
-\begin_inset Formula $C$
-\end_inset
-
- is the stowed chord of the full HLD.
-\end_layout
-
-\begin_layout Standard
-To establish that the modulation is not an artifact of the simulation due
- to application of the periodic boundary condition, a simulation of the
- original wind tunnel geometry along with the lateral supporting plates
- were used.
- Here, the flow around the HLD was typically expected to be spanwise homogeneous
- in the region which is free from the influence of the wall in the experiment.
- But counter-intuitively this region was found to have a length of 0.2
-\begin_inset Formula $C$
-\end_inset
-
-.
- However, the presence of spanwise modulations were also strongly disrupted
- by the presence of wall related turbulence for the rest of the span.
- Hence it is inferred that the presence of spanwise modulations is not a
- numerical artifact of the simulation but an effect of the centrifugal force
- due to the recirculating motion in the cove.
- To further the argument, two other simulations, one with a reduced span
- length by a factor of 
-\begin_inset Formula $0.5$
-\end_inset
-
- and another with a subsized geometry with the chord scaled by a factor
- of 
-\begin_inset Formula $\frac{2}{3}$
-\end_inset
-
- is also presented.
- Both the cases are also shown to retain the spanwise cell formation with
- the latter having a higher spanwise wave number for the modulations demonstrati
-ng that the feature responds to the geometrical conditions.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 The spanwise behavior of the flow was demonstrated previously in the works
  of 
 \begin_inset CommandInset citation
@@ -13554,26 +13492,13 @@ literal "false"
  and the very low frequency oscillations induced by its dynamics.
 \end_layout
 
-\begin_layout Standard
-On further investigation of the mean flow distributions, it was inferred
- that the spanwise modulation of velocity leads to generation of converging
- and diverging 2D planes.
- At these planes, if we move along the positive spanwise direction, spanwise
- velocity switches signs.
- For those which switches the velocity from negative to positive are what
- we refer to as the diverging planes and they act as a source of the fluid
- for spanwise flow.
- The vice-versa is true for the converging planes which act as the sinks
- enabling entrainment of flow into the flow exterior to the recirculation.
- Such a configuration was shown to distort the pressure field in the cove
- such that the low pressure center of recirculation (time-averaged) generated
- due the centrifugal effect is not spanwise homogeneous, but deflected towards
- the shear layer at the location of the diverging nodal planes.
- This lead us to conjecture that a full picture of the low frequency slat
- cove dynamics as the following:
-\end_layout
+\end_inset
 
-\begin_layout Standard
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 The highly curved shear layer and the curved streamline of the recirculation
  enables saturation of spanwise modes associated with the centrifugal instabilit
 y in recirculation region.
@@ -13595,9 +13520,9 @@ literal "false"
  the fluid from the recirculation is at a higher velocity than the inner
  recirculation which plays the role of redistributing the fluid back to
  the diverging planes.
- Due to this difference of flow rates, the entertainment and removal of
- fluid mass is faster at converging planes and redistribution is slower
- in diverging planes leading to an imbalance of the mass continuity.
+ Due to this difference of flow rates, the entrainment and removal of fluid
+ mass is faster at converging planes and redistribution is slower in diverging
+ planes leading to an imbalance of the mass continuity.
  This imbalance saturates periodically leading to a local bursting of the
  shear layer at the location of diverging planes, enabling mass transfer
  across the shear layer and leading to generation of streamwise oriented
@@ -13607,28 +13532,33 @@ literal "false"
  coherence of the 2D K-H vortices.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 One key ingredient in understanding the subsequent effects of such a cove
  bursting is in the fact that the bursting occurs at the diverging planes.
- Since the velocity is diverging at these planes, the generated streamwise
- vortices are convected by either the positive or negative side flow.
- By nature of turbulence, the bursting phenomena itself is in average located
- around the diverging planes and is hence impossible to be convected by
- only one side after each bursting event.
- This results in the random selection of direction in which the streamwise
- vortices are convected and consequently their location of impingement.
+ Since the velocity is diverging, the generated streamwise vortices are
+ convected either by the positive velocity or by the negative.
+ By nature of turbulent flow, the bursting location is located more frequently
+ at the center and hence the convection direction is selected in a stochastic
+ manner.
+ Consequently their location of impingement at the trailing edge of the
+ slat also varies in the same fashion.
  This is precisely the phenomena noted in the recent work of 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "Wei2025"
+key "Wei2025a"
 literal "false"
 
 \end_inset
 
- where spanwise coherence of the flow shows intermittent variations along
- the spanwise locations at the slat trailing edge.
- Our demonstrations hence provides a plausible explanation on what drives
- this phenomenon.
+ where spanwise location of the tonal sources shows intermittent variations
+ along the spanwise locations at the slat trailing edge.
+ Our demonstrations hence provides a plausible explanation on what fundamentally
+ drives this dynamics.
 \end_layout
 
 \begin_layout Standard
@@ -13645,10 +13575,9 @@ Moreover, the Rossiter mechanism selects the frequencies based on the number
  The amplitude modulation will then lead to non-linear transfer of energy
  between the tonal frequencies is also a popular phenomena is slat noise,
  though unexplained.
- The first broadband hump which corresponds to the first Rossiter tone is
- significantly lower in the sound pressure level compared to the second
- tone, and is not evident in the VALIANT experiment against installation
- noise.
+ Here the first broadband hump which corresponds to the first Rossiter tone
+ is weaker in the sound level compared to the second tone, and is not evident
+ in the VALIANT experiment against installation noise.
  This peak also shows intermittent behavior according to 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -13705,7 +13634,7 @@ noprefix "false"
 \begin_inset Formula $200Hz$
 \end_inset
 
- for our geometry yields a value of 
+ for the given slat chord yields 
 \begin_inset Formula $\Delta St_{s}=0.16$
 \end_inset
 
@@ -13796,7 +13725,7 @@ The farfield spectra from experimental study of Jawahar et al.
 \end_layout
 
 \begin_layout Standard
-Here the Strouhal numbers for the Rossiter tones are dependent on the shear
+Here, the Strouhal numbers for the Rossiter tones are dependent on the shear
  layer path length.
  Following the hypothesis that the low frequency oscillation is due to the
  effect of mass flow disparity, the Strouhal number for the low frequency
@@ -13811,7 +13740,7 @@ Here the Strouhal numbers for the Rossiter tones are dependent on the shear
 \end_inset
 
 .
- More formally, if the frequency of the cove bursting is 
+ Thus, if the frequency of the cove bursting is 
 \begin_inset Formula $f_{B},$
 \end_inset
 
@@ -13823,7 +13752,7 @@ Here the Strouhal numbers for the Rossiter tones are dependent on the shear
 \begin_inset Formula $f_{B}\propto\frac{1}{\lambda_{s}}$
 \end_inset
 
- , then the Strouhal number can be 
+ , then 
 \begin_inset Formula $St_{B}\propto\frac{\Delta U}{\lambda_{s}}\times\frac{C_{s}}{U_{\infty}}$
 \end_inset
 
@@ -13863,7 +13792,7 @@ where
 \begin_inset Formula $\Delta U$
 \end_inset
 
-.
+, the velocity difference across the initial shear layer.
  Nevertheless a more rigorous approach on extracting a model for this Strouhal
  number requires precise knowledge of the dependence of spanwise cell size
  based on the slat chord.
@@ -14020,10 +13949,163 @@ tic between the region of vortices from bursting and the slurry of streamwise
  vortices already present towards the impingement location.
 \end_layout
 
+\begin_layout Section
+Conclusion
+\end_layout
+
 \begin_layout Standard
-In conclusion, it must be stated that the spanwise modulation of the spanwise
- velocity present in the slat cove have a non-trivial impact on both the
- cove vortex dynamics and their acoustic signature.
+In this chapter, we presented the numerical investigation and major findings
+ specific to cove dynamics and noise mechanisms for VALIANT geometry HLD.
+ The airfoil was kept at an angle of attack at 
+\begin_inset Formula $18^{0}$
+\end_inset
+
+ against an inflow of 
+\begin_inset Formula $50m/s$
+\end_inset
+
+ at a chord based Reynolds number of 
+\begin_inset Formula $10^{6}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+.
+ The slat positioning was kept as standard.
+\end_layout
+
+\begin_layout Standard
+The objective of the study was to investigate the details of data generated
+ using unsteady 3D LBM for the slat cove flow and to revisit existing knowledge
+ on its noise mechanism.
+ In line with this, the unsteady visualizations of the cove vortices using
+ Q-criterion was obtained and the behavior of spanwise coherent structures
+ and their conversion to small scale streamwise structures were discussed.
+ The generation of streamwise structures were shown to be possibly influenced
+ by the curvature instability of the shear layer which augments the current
+ understanding of their behaviors.
+ Detailed visualizations were used to suggest that the vortices are generated
+ from the outer periphery of the spanwise coherent structures and that a
+ major fraction of the recirculated vortices are entrained and consumed
+ by the spanwise coherent vortices from the early the shear layer.
+\end_layout
+
+\begin_layout Standard
+On inspecting the mean flow contours of the velocity and pressure fields
+ in the cove, the 2D flow components largely agreed with the existing knowledge
+ of slat cove dynamics.
+ However, the distributions of spanwise velocity rendered strong spanwise
+ modulations which called into question the veracity of a spanwise homogeneous
+ flow typically assumed for the configuration in both experiments and numerical
+ simulations.
+ The spanwise velocity modulation with amplitude upto more than 
+\begin_inset Formula $10%\ensuremath{\%}
+$
+\end_inset
+
+ of the mean stream velocity was observed in the simulation which used a
+ spanwise domain length of more than 
+\begin_inset Formula $5C_{s}$
+\end_inset
+
+ and 
+\begin_inset Formula $0.66C,$
+\end_inset
+
+ where 
+\begin_inset Formula $C_{s}$
+\end_inset
+
+ is the slat chord length and 
+\begin_inset Formula $C$
+\end_inset
+
+ is the stowed chord of the full HLD.
+\end_layout
+
+\begin_layout Standard
+To establish that the modulation is not an artifact of the simulation due
+ to application of the periodic boundary condition, a simulation of the
+ original wind tunnel geometry along with the lateral supporting plates
+ were used.
+ Here, the flow around the HLD was typically expected to be spanwise homogeneous
+ in the region which is free from the influence of the wall in the experiment.
+ But counter-intuitively this region was found to have a length of 0.2
+\begin_inset Formula $C$
+\end_inset
+
+.
+ However, the presence of spanwise modulations were also strongly disrupted
+ by the presence of wall related turbulence for the rest of the span.
+ Hence it is inferred that the presence of spanwise modulations is not a
+ numerical artifact of the simulation but an effect of the centrifugal force
+ due to the recirculating motion in the cove.
+ To further the argument, two other simulations, one with a reduced span
+ length by a factor of 
+\begin_inset Formula $0.5$
+\end_inset
+
+ and another with a subsized geometry with the chord scaled by a factor
+ of 
+\begin_inset Formula $\frac{2}{3}$
+\end_inset
+
+ is also presented.
+ Both the cases are also shown to retain the spanwise cell formation with
+ the latter having a higher spanwise wave number for the modulations demonstrati
+ng that the feature responds to the geometrical conditions.
+\end_layout
+
+\begin_layout Standard
+On further investigation of the mean flow distributions, it was inferred
+ that the spanwise modulation of velocity leads to generation of converging
+ and diverging 2D planes.
+ At these planes, if we move along the positive spanwise direction, spanwise
+ velocity switches signs.
+ For those which switches the velocity from negative to positive are what
+ we refer to as the diverging planes and they act as a source of the fluid
+ for spanwise flow.
+ The vice-versa is true for the converging planes which act as the sinks
+ enabling entrainment of flow into the flow exterior to the recirculation.
+ Such a configuration was shown to distort the pressure field in the cove
+ such that the low pressure center of recirculation (time-averaged) generated
+ due the centrifugal effect is not spanwise homogeneous, but deflected towards
+ the shear layer at the location of the diverging nodal planes.
+ 
+\end_layout
+
+\begin_layout Standard
+The spanwise variation of the velocity spectra for the spanwise component
+ then revealed that there exists an oscillation at 200Hz, corresponding
+ to 
+\begin_inset Formula $St\approx0.156$
+\end_inset
+
+.
+ These periodic oscillations since occurring at the diverging planes only
+ at the early share layer can potentially affect the spanwise coherence
+ of the shed eddies.
+ Moreover, the streamwise vortices generated in this oscillation are convected
+ towards both spanwise directions from the diverging plane in a stochastic
+ manner.
+ The latter phenomena is their suggested as a plausible reason for recently
+ discovered stochastic nature of the spanwise coherence location, trailing
+ edge turbulence characteristics, and the non-linear interaction between
+ the slat tones.
+ 
+\end_layout
+
+\begin_layout Standard
+Thus, based on the above inferences, we suggest in this chapter that the
+ spanwise modulation of the spanwise velocity present in the slat cove have
+ a non-trivial impact on both the cove vortex dynamics and their acoustic
+ signature.
  The problem of spanwise mode generation itself is sparingly attended in
  the fluid dynamics literature although the same has been noted, intrigued
  on, and partially characterized in the works including that of 

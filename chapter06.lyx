@@ -10319,10 +10319,10 @@ on which replenishes the diverging planes leading to periodic bursting of
 
 \begin_layout Standard
 \begin_inset Float figure
-placement !tbp
+placement tbp
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -10712,7 +10712,7 @@ literal "false"
 placement tbph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center

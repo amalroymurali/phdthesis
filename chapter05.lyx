@@ -1322,7 +1322,7 @@ kernel trick
 
 \begin_layout Standard
 
-\color magenta
+\color black
 The predictive covariance according to Eq.
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4452,7 +4452,7 @@ Conclusions
 
 \begin_layout Standard
 
-\color magenta
+\color black
 A method for automating the exploration of parameter space of slat positioning
  with respect to the airfoil was developed for the particular application
  to aeroacoustic investigation.
@@ -4483,7 +4483,7 @@ n in the domain.
 
 \begin_layout Standard
 
-\color magenta
+\color black
 As for demonstration of the model, a few predictions based on parametric
  variation of the slat overlap and slat gap is made.
  Variation of the spectra for the strength of the peak and the distribution
@@ -4501,6 +4501,8 @@ y skewed shear layer path length which is longer in length and thus reduce
  the dataset.
  Note that the prediction now can be made for any continuous trajectory
  in the parameter space.
+\color magenta
+
 \begin_inset Float figure
 placement H
 wide false
@@ -4701,7 +4703,7 @@ Parametric predictions using surrogate model by varying the slat gap (SGP)
 
 \begin_layout Standard
 
-\color magenta
+\color black
 That being demonstrated that the model is fully viable for a data-driven
  noise surrogate model for industrial cases, it is imperative to delineate
  the limitations of the current implementation.
@@ -4725,7 +4727,7 @@ That being demonstrated that the model is fully viable for a data-driven
 
 \begin_layout Standard
 
-\color magenta
+\color black
 Now, for the continuation of slat noise investigation, the aeroacoustic
  LBM simulations that we conducted were used to record pertinent information
  regarding the flow dynamics.
