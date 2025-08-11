@@ -3263,7 +3263,7 @@ literal "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-a_{\text{UCB}}(x;\beta)=\mu(x)-\beta\sigma(x)\label{eq:ucb}
+a_{\text{UCB}}(x;\beta)=\mu(x)+\beta\sigma(x)\label{eq:ucb}
 \end{equation}
 
 \end_inset

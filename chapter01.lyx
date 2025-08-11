@@ -140,7 +140,7 @@ literal "false"
  when the airframe noise was identified as a major contributor to aircraft
  noise
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citeyearpar
 key "Fink1979"
 literal "false"
 
@@ -204,9 +204,9 @@ literal "false"
  This also is the fuel behind our current activity and our primary focus
  is on further detailed characterization of HLD noise sources using advanced
  computational methods.
- In this process we also develop tools and generate datasets which enable
- for fast and data-driven aeroacoustic characterization of such complex
- engineering flows.
+ In this process we also develop tools which enable rapid and data-driven
+ aeroacoustic characterization of such complex engineering flows attempting
+ to bypass the complexity of its numerical modelling.
 \end_layout
 
 \begin_layout Standard
@@ -314,10 +314,10 @@ reference "fig:geometries_30p30n-1"
 \end_inset
 
 .
- Now, although both the slats and flaps contribute equally to the total
- noise, the mechanisms behind the mid-frequency noise generation in the
- leading edge slat cavity are particularly elusive to engineers due to the
- complex cove flow dynamics.
+ Now, although both the slats and flaps contribute significantly to the
+ total noise, the mechanisms behind the mid-frequency noise generation in
+ the leading edge slat cavity are particularly elusive to engineers due
+ to the complex cove flow dynamics.
  Hence on further sophistication of the investigations, the slat only configurat
 ion had to be isolated and studied in detail.
  For the same, 
@@ -1002,20 +1002,11 @@ ess and to enable future investigators.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "/home/amurali/Desktop/References/zoterolibrary"
 options "unsrtnat"
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 

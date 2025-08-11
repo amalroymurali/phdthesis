@@ -1,0 +1,4837 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/
+\textclass report
+\begin_preamble
+\usepackage{lmodern}
+\setcounter{chapter}{4}
+\usepackage{amssymb}
+
+\usepackage{xcolor}
+\end_preamble
+\use_default_options false
+\master Thesis_Manuscript_ARM.lyx
+\begin_modules
+theorems-ams
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "beraserif" "default"
+\font_sans "default" "default"
+\font_typewriter "beramono" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command bibtex
+\index_command default
+\float_placement th
+\paperfontsize 10
+\spacing onehalf
+\use_hyperref true
+\pdf_title "PhD Thesis Draft"
+\pdf_author "Ama Roy Murali"
+\pdf_subject "Noise prediction for high lift devices"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=red, urlcolor=blue, citecolor=blue, pdfstartview={FitH}, hyperfootnotes=false, unicode=true"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style unsrtnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\rightmargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Design of Experiments for Parametric Simulations
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Design of Experiments
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+The design of computer simulation experiments is a fundamental aspect of
+ scientific computing.
+ Effective simulation campaigns necessitate a strategic plan to explore
+ a parametric space of interest, enabling accurate inference of its behavior.
+ Although the ideal outcome is a highly detailed representation of the parametri
+c space, the escalating costs associated with each simulation constrain
+ the number of experiments that can be conducted within a given computational
+ budget.
+ The primary objective of a Design of Experiments (DOE) methodology is therefore
+ to implement a statistically optimal sampling technique, ensuring that
+ each costly simulation maximizes its information yield
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Anderson2015"
+literal "false"
+
+\end_inset
+
+.
+ From an optimization perspective, the challenge is to develop an efficient
+ routine that approximates the behavior of the parameter of interest with
+ the fewest possible query points.
+ This solution varies depending on the nature of the problem, its dimensionality
+, data acquisition costs, and other factors
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Koziel2014"
+literal "false"
+
+\end_inset
+
+.
+ Consequently, it is imperative to devise an optimal method for sampling
+ the parameter space, such as in the context of this study, where data on
+ the far-field acoustic signature of a slat-airfoil configuration, focusing
+ on the position of the leading-edge slat relative to the airfoil, is needed.
+ Each data point acquisition involves an LBM-FWH simulation, as detailed
+ in the previous chapter, a procedure known for its computational expense
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shao2019"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A first approach to DOE is to discretize the parameter space and query discrete
+ points uniformly from the resulting manifold.
+ However, the number of points grows exponentially with the number of dimensions
+ and is hence sample inefficient.
+ The use of factorial designs, which instead of querying all the discrete
+ points, systematically explores all possible combinations of discrete parameter
+ levels, obtaining a sparser representation of the manifold, reduces compute
+ costs but is not optimal because the acquisition is still not carried out
+ based on information availability.
+ Strategies derived from these factorial designs, such as fractional factorial
+ designs, Latin hypercube sampling, and adaptive sampling methods, aim to
+ balance the trade-off between discretization size of the manifold and efficienc
+y of acquisition.
+ These methods are therefore theoretically optimal to sample a manifold
+ apriori to the experiment and guarantee that the cost of simulation is
+ the least possible against the information collected on the parameter manifold.
+\end_layout
+
+\begin_layout Standard
+Surrogate Modeling(SMs) is a more recent approach to cost-effective technique
+ to aid in the inference of the parameter space involving expensive simulations
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Alizadeh2020"
+literal "false"
+
+\end_inset
+
+.
+ A surrogate model or a response surface is an approximate discrete representati
+on of the behavior of a simulated variable of the given parameter domain
+ which can be used to infer the behavior of the variable over the continuous
+ parameter space.
+ In simple Response Surface Modelling (RSM)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Khuri2010"
+literal "false"
+
+\end_inset
+
+, the response surface is assumed to be a linear function of the parameters
+ whose coefficients are then deduced from a few available data points, i.e.
+ a linear fit which demands only 
+\begin_inset Formula $N_{D}$
+\end_inset
+
+ number of observations, same as the dimensionality of the problem.
+ When it is known that the response is non-linear, an approximate polynomial
+ order can be assumed and the corresponding coefficients can be computed.
+ This method hence results in a fixed number of points per parameter if
+ an approximate function can be guessed correctly.
+ 
+\end_layout
+
+\begin_layout Standard
+In more recent advances, the data collected over a response surface in the
+ first few simulations can be subjected to a more rigorous statistical data
+ analysis and better inferences about the surface can be obtained.
+ Such methods includes that of Kriging
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gano2006"
+literal "false"
+
+\end_inset
+
+ and Active Learning methods
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kottke2021"
+literal "false"
+
+\end_inset
+
+ and primarily involves deploying the Bayes' theorem to statistically estimate
+ the nature of the response surface.
+ The estimated probabilities are then used to guide the acquisition process
+ which leads to sample efficiency.
+ Theoretically, the data acquisition can be controlled online, i.e.
+ the decision to make new query points are not determined apriori to the
+ experiment but are adaptively calculated during the acquisition process.
+ The nature of this active acquisition leads to different methods of surrogate
+ modelling.
+ For the purpose of this work, we adapt and deploy the Gaussian Process
+ Surrogate model for creating a response surface of the noise characteristics
+ of the HLD under study.
+ The noise surrogate is then utilized to design an experiment based on the
+ active learning strategy to acquire data and provide a fast-turn around
+ model for noise behavior based on the slat positioning.
+ In the rest of this chapter, we explain the details on the construction
+ of this model.
+\end_layout
+
+\begin_layout Section
+Bayes' Theorem
+\end_layout
+
+\begin_layout Standard
+Bayes' Theorem is a fundamental idea in the statistical school of thought
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Berkson1930"
+literal "false"
+
+\end_inset
+
+ and provides a simple rule to calculate conditional probabilities.
+ According to the Bayes's rule, commonly written as 
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula 
+\begin{equation}
+P(H\mid E)P(E)=P(E\mid H)P(H)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, 
+\begin_inset Formula $P(H\mid E)$
+\end_inset
+
+ is the conditional probability of a hypothesis 
+\begin_inset Formula $H$
+\end_inset
+
+ being true in the light of some observed evidence 
+\begin_inset Formula $E$
+\end_inset
+
+ being available, and 
+\begin_inset Formula $P(E)$
+\end_inset
+
+ and 
+\begin_inset Formula $P(H)$
+\end_inset
+
+ are the raw probabilities of the evidence to exist and the hypothesis to
+ be true.
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+, the probability of a hypothesis being true after the fact that some of
+ the evidence 
+\begin_inset Formula $E$
+\end_inset
+
+ suggesting so can be calculated mathematically using this simple formula.
+\end_layout
+
+\end_inset
+
+ In effect, the Bayes' rule leads us to think that for any scenario determined
+ by the rules of probabilities, we can first form a prior belief about a
+ hypothesis, and then numerically update the probability of that hypothesis
+ being true according to our observation of evidences.
+ Indeed, the prior hypothesis can be even a false one with respect to reality
+ but can still be updated in the wake of new observations and be updated
+ iteratively to obtain a true representation of the reality.
+ The formula itself is a representation of how this updation of the belief
+ must be done numerically.
+\end_layout
+
+\begin_layout Standard
+The Bayes' formula can be reasoned to arise from a symmetry of the probabilities
+, i.e.
+ in the symmetry of argument between the probability of a hypothesis being
+ true 'if' the evidence is present and and probability of observing evidence
+ 'if' the hypothesis was true.
+ The left side of the equation gives a product of the probability of a hypothese
+s H being true in the presence of observed evidence E, and the probability
+ of observation of such an evidence E.
+ Together they represent the probability of the hypothesis being true 'if'
+ the evidences are observed.
+ On the right hand, we have the product of the probability of the evidence
+ being observed given that the hypothesis was true (
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $P(E\mid H)$
+\end_inset
+
+)
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ and the probability of the hypothesis being true (
+\begin_inset Formula $P(H)$
+\end_inset
+
+), and together it represent the probability of the observation of the evidence
+ 
+\begin_inset Formula $E$
+\end_inset
+
+ 'if' the hypothesis is true.
+ This symmetry leads to the objective equality of these two quantities and
+ hence the formula.
+\end_layout
+
+\begin_layout Standard
+Bayes' formula becomes a powerful tool once written as
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Formula 
+\begin{equation}
+P(H\mid E)=\frac{P(E\mid H)P(H)}{P(E)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, 
+\begin_inset Formula $P(H\mid E)$
+\end_inset
+
+ is called the posterior, since it is the probability of the hypothesis
+ 
+\begin_inset Formula $H$
+\end_inset
+
+ being true after observation of evidence 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ The naive probability of 
+\begin_inset Formula $H$
+\end_inset
+
+ being true indicated by 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $P(H)$
+\end_inset
+
+ is called the prior distribution since it is the probability of 
+\begin_inset Formula $H$
+\end_inset
+
+ being true before the observation of evidence 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ The conditional probability 
+\begin_inset Formula $P(E\mid H)$
+\end_inset
+
+ is called the likelihood, being the probability of the observation of evidence
+ given that 
+\begin_inset Formula $H$
+\end_inset
+
+ is true.
+ Emphasis must be given to the fact that the formula is useful for both
+ an iterative procedure to updating the prior to converge towards a conclusion
+ of reality or, when a sufficient sample of the data is available already,
+ allows direct estimation of the real nature of the hypothesis.
+ In a Bayesian inference setting, if we are trying to estimate the true
+ value of a variable, the Bayesian posterior will converge to the exact
+ value if an infinite number of samples are collected.
+ For a rigorous explanation of this fact, refer to Section 5.3 in the work
+ of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bernardo2009"
+literal "false"
+
+\end_inset
+
+.
+ This asymptotic behavior is however not true at every intermediate step
+ of a Bayesian inference procedure and that difference is the core feature
+ which differentiates a Bayesian paradigm to statistical inference from
+ that of the Frequentist.
+\end_layout
+
+\begin_layout Standard
+In a Frequentist approach to probability, the objective value of a probability
+ is obtained by repeating an experiment infinite number of times.
+ This means that the value of the probability is an intrinsic quantity related
+ to the experiment and each run of the experiment is a realization of the
+ process that functions according to the set probability.
+ On the other hand, in the Bayesian perspective, the probability of an event
+ is only a measure of the confidence that the event will occur and is not
+ inherently derived from an infinite sampling.
+ In other words, in Bayesian perspective, probability has a meaning while
+ using a finite sample size as the representation of the confidence in a
+ prediction for the next sample.
+ This is while Frequentist approach cannot give a prediction of confidence
+ in the prediction for the exact next sample, based on only the previous
+ experiments.
+ In fact, if the sample size is large enough, the Bayesian estimate and
+ the Frequentist probability will converge.
+\end_layout
+
+\begin_layout Standard
+Now that the Bayes's formula is familiarized, let us visit the premise of
+ how to use Bayesian inference for a regression and surrogate modelling
+ problem.
+ 
+\end_layout
+
+\begin_layout Section
+Gaussian Processes
+\end_layout
+
+\begin_layout Standard
+The Gaussian Processes (GPs) also known as Kriging or Wiener-Kolmogorov
+ prediction, are a popular and powerful tool in the repertoire of statistical
+ inference and regression
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rasmussen2008"
+literal "false"
+
+\end_inset
+
+.
+ It is a non-parametric tool for modelling complex functions that are otherwise
+ not amenable to analytical modelling.
+ The key advantage of GPs is that they can be used to approximate a function
+ or response surface while the nature of the function is not explicitly
+ known.
+ Moreover, the function modelled is a distribution over functions meaning
+ that the GP representation of a function is an average function along with
+ a standard deviation function.
+ This naturally leads to uncertainty quantification on the approximation
+ and also enables the use of Bayesian methods for estimation of the variables.
+ The latter property is what makes GPs well suited as a function approximator
+ in the Bayesian regression setting.
+\end_layout
+
+\begin_layout Standard
+More precisely, a Gaussian process is a function approximator of the form
+ 
+\begin_inset Formula $y\in\{y_{1},y_{2},y_{3},...,y_{n}\}$
+\end_inset
+
+ in a multidimensional domain of 
+\begin_inset Formula $X\in\{x_{1},x_{2},x_{3},...,x_{n}\}$
+\end_inset
+
+.
+ As it is possible to assume that the components of 
+\begin_inset Formula $y$
+\end_inset
+
+ are not numerical values but a random variable.
+ If we assume that these variables have a Gaussian distribution each, then
+ the collection of these variables into 
+\begin_inset Formula $y$
+\end_inset
+
+ leads it to have a jointly Gaussian distribution.
+ The function 
+\begin_inset Formula $y$
+\end_inset
+
+ can then be written using the joint distribution as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y\approx\mathcal{N}(\mu(X),K(X,X))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $μ(X)$
+\end_inset
+
+ is the mean function, often taken to be zero as an initial guess, and 
+\begin_inset Formula $K(X,X)$
+\end_inset
+
+ is the covariance matrix.
+ The mean function now is an average function over the domain whereas the
+ covariance matrix determines the flexibility or expressiveness of this
+ function.
+ This is because, for each realization sampled for 
+\begin_inset Formula $y$
+\end_inset
+
+, we obtain a function that has different values at each of the discrete
+ points 
+\begin_inset Formula $y_{1},y_{2},y_{3}...,y_{n}$
+\end_inset
+
+ but their mean values are determined by corresponding 
+\begin_inset Formula $\mu_{1},\mu_{2},\mu_{3}...,\mu_{n},$
+\end_inset
+
+and then their variances by the deviatoric components of 
+\begin_inset Formula $K(X,X)$
+\end_inset
+
+.
+ This means that the values 
+\begin_inset Formula $y_{1},y_{2},y_{3}...,y_{n}$
+\end_inset
+
+ are not completely independent, but are rather correlated, the correlation
+ between each component denoted by corresponding elements of the 2D symmetric
+ covariance matrix 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $K(X,X)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+The nature of this correlation matrix can now be understood more deeply
+ if we assume simple forms.
+ Let us say that the correlation matrix is a banded matrix with the major
+ diagonal as unity and adjacent elements slightly less.
+ In this case, each of the elements will be correlated to its immediate
+ neighbor on both sides and to none other.
+ Thus for each realization, the sampled values of the vector 
+\begin_inset Formula $y$
+\end_inset
+
+ will be smoothed due to the constraint of adjacent elements by the correlation.
+ If the bandwidth of the correlation matrix is increased, each element will
+ then be correlated with more and more of its neighbors thus leading to
+ stiffness of the vector 
+\begin_inset Formula $y$
+\end_inset
+
+ towards a homogeneous one.
+ Thus the bandwidth of the correlation matrix directly leads to the expressivene
+ss of the Gaussian processes.
+\end_layout
+
+\begin_layout Standard
+The covariance matrix 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $K(X,X)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+, or as often called the kernel matrix, or just the kernel, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+thus primarily represents the nature of the approximator given by a Gaussian
+ process.
+ In a detailed analysis, the covariance matrix is often subjected to the
+ Mercer's theorem which guarantees that for a positive definite symmetric
+ matrix such as a covariance matrix, an eigen decomposition is always possible
+ into an infinite space of eigenvalue-eigenfunction pairs
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Steinwart2012"
+literal "false"
+
+\end_inset
+
+.
+ In the GP context, these eigen functions are then a set of infinite number
+ of feature functions representing the feature space on which the GP attempts
+ to represent a given test function.
+ In a regression or classification problem, the projection of input datapoints
+ and query points onto this infinite dimensional feature space is possible
+ without the exact knowledge of the feature space itself and without explicit
+ calculation of their infinite dimensional coordinates.
+ This saves the computation of data transformations to latent spaces and
+ provides straightforward computation of predictive distributions and is
+ essentially called the 'kernel trick'.
+\end_layout
+
+\begin_layout Section
+Bayesian Regression using Gaussian Processes 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Bayesian GP 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to use Gaussian Processes for Bayesian regression and to generate
+ a noise-surrogate of the high-lift device, we follow the theoretical framework
+ of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rasmussen2008"
+literal "false"
+
+\end_inset
+
+.
+ Accordingly, a linear regression problem imbibes the properties of a stochastic
+ process by assumption of an additive noise to the data representing its
+ aleatoric uncertainty.
+ It then follows that a linear regressor for a given dataset 
+\begin_inset Formula $\mathcal{D}=\{(\boldsymbol{x_{i}},y_{i})\thinspace|\thinspace i=1,...,n\}$
+\end_inset
+
+ mapping multidimensional observations from domain 
+\begin_inset Formula $X$
+\end_inset
+
+ to the scalar targets 
+\begin_inset Formula $Y$
+\end_inset
+
+can be written as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y=f(\mathbf{x})+\varepsilon=\mathbf{x}^{\top}\mathbf{w}+\varepsilon\label{eq:gpeqn}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, 
+\begin_inset Formula $\mathcal{\varepsilon\sim N}\left(0,\sigma_{n}\right)$
+\end_inset
+
+ is a normally distributed statistical noise with mean 0 and standard deviation
+ 
+\begin_inset Formula $\sigma_{n}$
+\end_inset
+
+.
+ Consequently, the linear fitting weights also need to be expressed as a
+ distribution that is assumed to be a Gaussian distribution as well for
+ the ensuing mathematical necessity.
+ The target variable also now is obtained as a statistical process, y =
+ {
+\begin_inset Formula $y_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $y_{2},$
+\end_inset
+
+ 
+\begin_inset Formula $y_{3}$
+\end_inset
+
+, ..., 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+, ...}.
+ It can be noted that if a Gaussian noise is assumed together with the assumptio
+n that linear weights are also Gaussian distributed, then calculating the
+ joint probability of the process 
+\begin_inset Formula $y$
+\end_inset
+
+ in the presence of the feature data 
+\begin_inset Formula $X$
+\end_inset
+
+ and the chosen weights 
+\begin_inset Formula $w$
+\end_inset
+
+ is written as 
+\begin_inset Formula $p(\mathbf{y}\mid X,\mathbf{w})$
+\end_inset
+
+ and its joint probability (conditional) is calculated as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}p(\mathbf{y}\mid X,\mathbf{w}) & =\prod_{i=1}^{n}p\left(y_{i}\mid\mathbf{x}_{i},\mathbf{w}\right)\\
+ & =\prod_{i=1}^{n}\frac{1}{\sqrt{2\pi}\sigma_{n}}\exp\left(-\frac{\left(y_{i}-\mathbf{x}_{i}^{\top}\mathbf{w}\right)^{2}}{2\sigma_{n}^{2}}\right)\\
+ & =\frac{1}{\left(2\pi\sigma_{n}^{2}\right)^{n/2}}\exp\left(-\frac{1}{2\sigma_{n}^{2}}\left(\mathbf{y}-X^{\top}\mathbf{w}\right)^{\top}\left(\mathbf{y}-X^{\top}\mathbf{w}\right)\right)\\
+ & =\mathcal{N}\left(X^{\top}\mathbf{w},\sigma_{n}^{2}I\right)
+\end{aligned}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence, the likelihood distribution, as 
+\begin_inset Formula $p(\mathbf{y}\mid X,\mathbf{w})$
+\end_inset
+
+ is named, also inherits the Gaussianity with a mean distribution 
+\begin_inset Formula $X^{\top}\mathbf{w}$
+\end_inset
+
+ and the covariance being 
+\begin_inset Formula $\sigma_{n}^{2}I_{n}$
+\end_inset
+
+.
+ Hence the posterior is now essentially a Gaussian process whose mean function
+ follows the classical linear fit on the data and with a covariance matrix
+ directly following the assumed noise in the data.
+ 
+\end_layout
+
+\begin_layout Standard
+Now, in a regression task, the goal is to obtain a set of weights for a
+ suitable set of basis functions such that the data can be modelled, and
+ used for predictions of unsampled data points.
+ To enable this, we need to deduce the distribution functions that represent
+ the weights.
+ This is achieved by deploying the Bayes' theorem over the above linear
+ regression problem, i.e.
+ according to Bayes' formula, the conditional probabilities can be inverted
+ as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p(\mathbf{w}\mid\mathbf{y},X)p(\mathbf{y}\mid X)=p(\mathbf{y}\mid X,\mathbf{w})p(\mathbf{w})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here 
+\begin_inset Formula $p(\mathbf{y}\mid X,\mathbf{w})$
+\end_inset
+
+ is the likelihood, 
+\begin_inset Formula $p(\mathbf{w})$
+\end_inset
+
+ is the assumed prior belief on the distribution of weights or simply the
+ prior, and 
+\begin_inset Formula $p(\mathbf{w}\mid\mathbf{y},X)$
+\end_inset
+
+ is the conditional posterior distribution on the weights, conditioned on
+ the available sample points 
+\begin_inset Formula $(\mathbf{y},X)$
+\end_inset
+
+.
+ The second term on the left hand side is 
+\begin_inset Formula $p(\mathbf{y}\mid X)$
+\end_inset
+
+ is called the marginal likelihood, being dependent only on the available
+ data, and can be expressed as an integral over the weight distribution
+ as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p(\mathbf{y}\mid X)=\int p(\mathbf{y}\mid X,\mathbf{w})p(\mathbf{w})d\mathbf{w}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this perspective, the marginal likelihood is the likelihood of the dataset
+ integrated over the space of all possible weight distributions and serves
+ as a normalization factor.
+ To enable the calculation of the posterior, it is also now necessary to
+ define the prior distribution of the weights.
+ Assuming Gaussianity such that 
+\begin_inset Formula $\mathbf{w}\sim\mathcal{N}\left(\mathbf{0},\Sigma_{p}\right)$
+\end_inset
+
+, the posterior distribution of weights 
+\begin_inset Formula $p(\mathbf{w}\mid\mathbf{y},X)$
+\end_inset
+
+ given a set of observations from the dataset 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+, follows 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}p(\mathbf{w}\mid X,\mathbf{y}) & \propto p(\mathbf{y}\mid X,\mathbf{w})p(\mathbf{w})\\
+ & \propto\exp\left(-\frac{1}{2\sigma_{n}^{2}}\left(\mathbf{y}-X^{\top}\mathbf{w}\right)^{\top}\left(\mathbf{y}-X^{\top}\mathbf{w}\right)\right)\exp\left(-\frac{1}{2}\mathbf{w}^{\top}\Sigma_{p}^{-1}\mathbf{w}\right)
+\end{aligned}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and for sake of notational simplicity, is written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+p(\mathbf{w}\mid X,\mathbf{y}) & \propto\exp\left(-\frac{1}{2}(\mathbf{w}-\overline{\mathbf{w}})^{\top}\left(\frac{1}{\sigma_{n}^{2}}XX^{\top}+\Sigma_{p}^{-1}\right)(\mathbf{w}-\overline{\mathbf{w}})\right)\\
+\mid X,\mathbf{y}) & \propto\mathcal{N}\left(\overline{\mathbf{w}},A^{-1}\right)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\overline{\mathbf{w}}=\sigma_{n}^{-2}A^{-1}X\mathbf{y}$
+\end_inset
+
+, and 
+\begin_inset Formula $A=\sigma_{n}^{-2}XX^{\top}+\Sigma_{p}^{-1}$
+\end_inset
+
+.
+ The posterior also thus inherits the Gaussianity assumed on the prior probabili
+ty on the weights and the additive statistical noise.
+ 
+\end_layout
+
+\begin_layout Standard
+Now that a posterior distribution of the weights conditioned by the available
+ data can be computed, a regression based on the Gaussian process representation
+ of the target variable is possible.
+ For this, the only assumption to be made is the prior probability distribution,
+ or precisely its correlation matrix.
+ However, in the Bayesian perspective, the prior distribution only represents
+ the initial belief about a hypothesis, and given that Bayesian posterior
+ enables the conditioning the prior on the available data, the initial assumptio
+n on the prior does not affect the calculation significantly.
+ Or in other words, within the Bayes' formula, the prior and the likelihood
+ terms compete with each other to influence the posterior distribution,
+ and by the effect of this conditioning, the posterior develops adherence
+ to the available data.
+ In the event that sufficient data is available to obtain a well fitted
+ model by using the underlying basis function, the significance of the prior
+ reduces and the posterior converges to the true distribution that can be
+ inferred from the available data as the dataset grows.
+ This convergence with only weak assumptions of the prior distribution of
+ weights is what in essence makes the Bayesian regression using Gaussian
+ process a powerful regression tool.
+ 
+\end_layout
+
+\begin_layout Standard
+To obtain the predictive distribution 
+\begin_inset Formula $p\left(f_{*}\mid\mathbf{x}_{*},X,\mathbf{y}\right)$
+\end_inset
+
+ for an output 
+\begin_inset Formula $f_{*}$
+\end_inset
+
+ at a query point 
+\begin_inset Formula $\mathbf{x}_{*}$
+\end_inset
+
+, after conditioning the regression on the dataset 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+, an averaging of all the possible predictions over the space of the linear
+ weights can be done.
+ Such an averaging can be written as the integral
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+p\left(f_{*}\mid\mathbf{x}_{*},X,\mathbf{y}\right) & =\int p\left(f_{*}\mid\mathbf{x}_{*},\mathbf{w}\right)p(\mathbf{w}\mid X,\mathbf{y})d\mathbf{w}\nonumber \\
+ & =\mathcal{N}\left(\sigma_{n}^{-2}\mathbf{x}_{*}^{\top}A^{-1}X\mathbf{y},\mathbf{x}_{*}^{\top}A^{-1}\mathbf{x}_{*}\right)\label{eq:predictiveformula}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that the final predictive distribution is obtained analytically with
+ the help of the assumption of Gaussianity on all the variables involved.
+ The terms involved are the covariance of the assumed statistical noise,
+ covariance of the prior distribution, and the dataset only and thus simplifies
+ the actual calculation as opposed to the rather esoteric definition of
+ a Gaussian process regressor itself.
+\end_layout
+
+\begin_layout Standard
+That being the case, the linear regression using this Bayesian technique
+ can be easily translated to a non-linear regression using arbitrary basis.
+ For this the linear approximation function can be replaced as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y=f(\mathbf{x})+\varepsilon=\phi(\mathbf{x})^{\top}\mathbf{w}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+i.e.
+ by replacing the raw feature space 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ with 
+\begin_inset Formula $\phi(\mathbf{x})$
+\end_inset
+
+, its transformation using an arbitrary non-linear basis 
+\begin_inset Formula $\phi$
+\end_inset
+
+ .
+ Note that 
+\begin_inset Formula $\phi(\mathbf{x})$
+\end_inset
+
+ is a projection of the input vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ onto the basis 
+\begin_inset Formula $\phi$
+\end_inset
+
+ using the matrix product between 
+\begin_inset Formula $\phi$
+\end_inset
+
+ and 
+\begin_inset Formula $X$
+\end_inset
+
+, and 
+\begin_inset Formula $\phi$
+\end_inset
+
+ itself is a collection of the unit column vectors or arbitrary dimensions
+ of the feature space.
+ Hence 
+\begin_inset Formula $\phi(\mathbf{x})^{\top}\Sigma_{p}\phi(\mathbf{x}')$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi\left(\mathbf{x}_{*}\right)^{\top}\Sigma_{p}\phi\left(\mathbf{x}_{*}\right)$
+\end_inset
+
+, all use the same kernel 
+\begin_inset Formula $k=\phi^{\top}\Sigma_{p}\phi$
+\end_inset
+
+ and then 
+\begin_inset Formula $k(\boldsymbol{x}_{1},\boldsymbol{x}_{2})=\boldsymbol{x}_{1}^{\top}\phi^{\top}\Sigma_{p}\phi\boldsymbol{x}_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The previous calculations then lead to the predictive distribution as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{*}\mid\mathbf{x}_{*},X,\mathbf{y}\sim\mathcal{N}\left(\sigma_{n}^{-2}\phi\left(\mathbf{x}_{*}\right)^{\top}A^{-1}\phi(X)\mathbf{y},\phi\left(\mathbf{x}_{*}\right)^{\top}A^{-1}\phi\left(\mathbf{x}_{*}\right)\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+or by eliminating 
+\begin_inset Formula $A^{-1}$
+\end_inset
+
+ and the making the choice that 
+\begin_inset Formula $K(x,x)=\phi^{\top}(x)\Sigma_{p}\phi(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}f_{*}\mid\mathbf{x}_{*},X,\mathbf{y} & \sim\mathcal{N}(\phi\left(\mathbf{x}_{*}\right)^{\top}\Sigma_{p}\phi(\mathbf{x})\left(K+\sigma_{n}^{2}I\right)^{-1}\mathbf{y},\\
+ & \left.\phi\left(\mathbf{x}_{*}\right)^{\top}\Sigma_{p}\phi\left(\mathbf{x}_{*}\right)-\phi\left(\mathbf{x}_{*}\right)^{\top}\Sigma_{p}\phi(X)\left[K+\sigma_{n}^{2}I\right]^{-1}\phi(X)^{\top}\Sigma_{p}\phi\left(\mathbf{x}_{*}\right)\right)\\
+ & \sim\mathcal{N}(K(\mathbf{x}_{*},\mathbf{x}_{*})\left[K(X,X)+\sigma_{n}^{2}I\right]^{-1}f,\\
+ & K(\mathbf{x}_{*},\mathbf{x}_{*})-K(\mathbf{x}_{*},X)\left[K(X,X)+\sigma_{n}^{2}I)\right]^{-1}K(X,\mathbf{x}_{*}))
+\end{aligned}
+\label{eq:predictive_eqn}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Such a formulation leads us to the previously mentioned 
+\begin_inset Quotes eld
+\end_inset
+
+kernel trick
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It can be observed that in this form of the predictive distribution, the
+ arbitrary basis 
+\begin_inset Formula $\phi$
+\end_inset
+
+ always appears as part of an inner product of the form 
+\begin_inset Formula $\phi(\mathbf{x})^{\top}\Sigma_{p}\phi(\mathbf{x})$
+\end_inset
+
+ be it for query points as 
+\begin_inset Formula $\phi(\mathbf{x}_{*})$
+\end_inset
+
+ or datapoints as 
+\begin_inset Formula $\phi(\mathbf{x})$
+\end_inset
+
+.
+ However, the matrix 
+\begin_inset Formula $\phi^{\top}\Sigma_{p}\phi$
+\end_inset
+
+ is a quadratic form, an inner product on 
+\begin_inset Formula $\Sigma_{p}$
+\end_inset
+
+ which is a positive definite, regardless of the assumptions on 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
+ Hence, a square root 
+\begin_inset Formula $\Sigma_{p}^{1/2}$
+\end_inset
+
+ is always defined and 
+\begin_inset Formula $K(x,x')=\phi^{\top}(\mathrm{x})\Sigma_{p}\phi(\mathrm{x})$
+\end_inset
+
+ can be represented purely as an inner product 
+\begin_inset Formula $K(x,x')=\psi(\mathrm{x})\cdot\psi\left(\mathrm{x}^{\prime}\right)$
+\end_inset
+
+.
+ Thus to project the inputs to the feature space, it is indeed not necessary
+ to transform the raw inputs to a high-dimensional input space, but instead
+ the formulation can be used with only the kernel function in every instance
+ of the inner product.
+ In plain simple terms, since 
+\begin_inset Formula $\phi^{\top}(\mathrm{x})$
+\end_inset
+
+ is a matrix product of the collection of high dimensional basis vectors
+ of 
+\begin_inset Formula $\phi$
+\end_inset
+
+ and the input vector 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Thus the kernel being representable as an inner product means that when
+ 
+\begin_inset Formula $K(x,x')=\phi^{\top}(\mathrm{x})\Sigma_{p}\phi(\mathrm{x}')$
+\end_inset
+
+, it can be written as 
+\begin_inset Formula $K(x,x')=x^{\top}\phi\Sigma_{p}\phi\mathrm{x}'$
+\end_inset
+
+, where 
+\begin_inset Formula $\phi\Sigma_{p}\phi$
+\end_inset
+
+ remain an inner kernel regardless of the inputs.
+ Now, if 
+\begin_inset Formula $\phi$
+\end_inset
+
+ always occurs only in the form of the inner product, then we does not need
+ to know the actual form of 
+\begin_inset Formula $\phi$
+\end_inset
+
+ but only of the finite dimensional inner product 
+\begin_inset Formula $\phi\Sigma_{p}\phi$
+\end_inset
+
+ .
+ This means that one can have a theoretically infinite dimensional feature
+ space of arbitrary functionality, but in calculation use only a simpler
+ representation of the inner product 
+\begin_inset Formula $\phi\Sigma_{p}\phi$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\color black
+The predictive covariance according from Eq.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:predictiveformula"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ has an intuitive explanation as well.
+ The first term 
+\begin_inset Formula $\phi\left(\mathbf{x}_{*}\right)^{\top}\Sigma_{p}\phi\left(\mathbf{x}_{*}\right)$
+\end_inset
+
+ is a quadratic form representing the variance arising from position of
+ query point with respect to the existing prior probability distribution
+ and is always non-zero.
+ This hence represent the maximum possible uncertainity according to the
+ prior at the query point 
+\begin_inset Formula $\mathbf{x}_{*}$
+\end_inset
+
+ before any observation is available at this point and is fully dependent
+ on the prior or in the same sense the kernel choice.
+ The second term on the other hand represent the reduction in uncertainity
+ due to the observed data from the available dataset in the vicinity of
+ the query point 
+\begin_inset Formula $\mathbf{x}_{*}$
+\end_inset
+
+.
+ If no noise is assumed in the data, which corresponds to the case of 
+\begin_inset Formula $\sigma_{n}=0$
+\end_inset
+
+, the full term reduces to 
+\begin_inset Formula $K(\mathbf{x}_{*},X)K(X,X)^{-1}K(X,\mathbf{x}_{*})$
+\end_inset
+
+ which is non-zero only at a point which is not present in the dataset 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ In the case 
+\begin_inset Formula $\mathbf{x}_{*}\in X$
+\end_inset
+
+, then the term simplifies to 
+\begin_inset Formula $K(\mathbf{x}_{*},\mathbf{x}_{*})$
+\end_inset
+
+ by property of the matrix multiplication thereby collapsing the predictive
+ variance.
+ This is hence the iconic behavior of the GP regression that in the absence
+ of assumed noise in the dataset, the GP regressor captures the training
+ points exactly and with a zero variance.
+ However, for points which are not in the dataset, the variance is inevitably
+ non-zero.
+\end_layout
+
+\begin_layout Standard
+It must also be noted that by choosing a kernel function, we are also choosing
+ the prior distribution in the Gaussian processes since the kernel also
+ has the term 
+\begin_inset Formula $\Sigma_{p}$
+\end_inset
+
+.
+ Hence the only actual choice to be made in the formulation of a problem
+ for deploying this algorithm are the kernel parameters.
+ Hence, finally obtaining the predictive distribution using the Gaussian
+ Process regression is by a straightforward calculation written as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left[\begin{array}{l}
+\mathbf{y}\\
+\mathbf{f}_{*}
+\end{array}\right]\sim\mathcal{N}\left(\mathbf{0},\left[\begin{array}{cc}
+K(X,X)+\sigma_{n}^{2}I & K\left(X,X_{*}\right)\\
+K\left(X_{*},X\right) & K\left(X_{*},X_{*}\right)
+\end{array}\right]\right)\label{eq:predictivedist}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This kernel trick then involves only the selection of a suitable kernel
+ which has a suitable family of basis functions.
+ For an arbitrary positive semi-definite matrix, the underlying basis can
+ be numerically obtained by calculating its eigen decomposition, where the
+ matrix is decomposed as 
+\begin_inset Formula $M=U\Sigma U^{\top}$
+\end_inset
+
+.
+ For an analytic example, if we choose squared exponential function as a
+ kernel, this kernel can be written as an infinite sum of Gaussian functions
+ since
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}k\left(x_{p},x_{q}\right) & =\sigma_{p}^{2}\int_{-\infty}^{\infty}\exp\left(-\frac{\left(x_{p}-c\right)^{2}}{2\ell^{2}}\right)\exp\left(-\frac{\left(x_{q}-c\right)^{2}}{2\ell^{2}}\right)dc\\
+ & =\sqrt{\pi}\ell\sigma_{p}^{2}\exp\left(-\frac{\left(x_{p}-x_{q}\right)^{2}}{2(\sqrt{2}\ell)^{2}}\right)
+\end{aligned}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One particular kernel that is popular among the Machine Learning community
+ is the Matern kernel.
+ This takes the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+k_{\text{Matern }}(r)=\frac{2^{1-\nu}}{\Gamma(\nu)}\left(\frac{\sqrt{2\nu}r}{\ell}\right)^{\nu}K_{\nu}\left(\frac{\sqrt{2\nu}r}{\ell}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, 
+\begin_inset Formula $\nu$
+\end_inset
+
+ and 
+\begin_inset Formula $l$
+\end_inset
+
+ are tuning parameters and 
+\begin_inset Formula $K_{\nu}$
+\end_inset
+
+ is a modified Bessel function.
+ For the values of 
+\begin_inset Formula $\nu$
+\end_inset
+
+, the properties of the resulting kernel are usually matched for the requirement
+ of the problem.
+ If we set the value 
+\begin_inset Formula $\nu=\frac{1}{2}$
+\end_inset
+
+, the resulting function reduces to a simple exponential kernel 
+\begin_inset Formula $k(r)=\exp(-r/\ell)$
+\end_inset
+
+.
+ This kernel in 1D is the covariance function of the Ornstein-Ulhenbeck
+ process that models the Brownian motion.
+ The kernel thus gives a function that is excessively random for a smooth
+ regression.
+ A smoother version of the kernel is possible by choosing 
+\begin_inset Formula $\nu=\frac{3}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{5}{2}$
+\end_inset
+
+, commonly called Matern32 and Matern52, and allows for modelling functions
+ for practical applications.
+ A value of 
+\begin_inset Formula $\nu>\frac{7}{2}$
+\end_inset
+
+ also is not generally chosen since the resulting function tends to be excessive
+ly noisy and is difficult to distinguish from slightly noisy input data
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rasmussen2008"
+literal "false"
+
+\end_inset
+
+.
+ For the purpose of our work, we test both Matern32 and Matern52 and chose
+ Matern52 as it delivers a smoother model.
+\end_layout
+
+\begin_layout Section
+Feature Engineering for Noise Surrogate
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Noise Surrogate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This section aims to develop a noise surrogate model for farfield spectra
+ of high lift device where the position of the slat relative to the main
+ element is the varying parameter.
+ The input domain is hence composed of the slat position coordinates relative
+ to the main element, namely, Slat Gap, Slat Deflection Angle, Slat Overlap,
+ and Angle of Attack.
+ A 4-dimensional input domain is finely suited for the Gaussian Process
+ Regression model, given the fact that GP methods are cost prohibitive at
+ higher dimensions 
+\begin_inset Formula $D>10$
+\end_inset
+
+.
+ In addition, the target space is the far-field noise spectra and a spectrum
+ as such is not amenable to modelling by Gaussian processes.
+ 
+\end_layout
+
+\begin_layout Standard
+The frequency range of interest for slat noise was determined to be 20 kHzkHz.
+ For a spectrum collected experimentally, the frequency resolution is typically
+ 1Hz and hence results in number of bins being 20,000.
+ For a spectrum sampled from CFD, a resolution of 40Hz is typical, and will
+ result in 500 frequency bins.
+ This is still cost prohibitive in terms of modelling using GP.
+ 
+\end_layout
+
+\begin_layout Standard
+As a solution, the spectrum needs to be converted to an alternative low
+ order representation.
+ One approach to this problem is to use a spline fit and to use the parameters
+ of the spline functions as the predicted variable.
+ However, this removes the physics informed modelling approach that is already
+ available from the slat noise literature.
+ A robust model of the slat noise was already developed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Guo1997"
+literal "false"
+
+\end_inset
+
+ based on the surface FWH equations on the radiating surface of the slat
+ and is explained in Chapter 02.
+ This is not reiterated here and instead we here design a reduced order
+ approach for the representation of the power spectral density data.
+\end_layout
+
+\begin_layout Standard
+As mentioned, Guo's model gives the representation of the spectra in terms
+ of multiple components as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Pi=\rho_{0}^{2}c_{0}^{2}A_{G}A_{F}W(M)F(f,M)D(\theta,\phi)\frac{c_{s}b}{r^{2}}\label{eq:guo1-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $A_{G}$
+\end_inset
+
+, 
+\begin_inset Formula $A_{F}$
+\end_inset
+
+ are scaling factors depending on the flow geometry and flow parameters,
+ 
+\begin_inset Formula $W(M)$
+\end_inset
+
+ is a weighting function dependent on the Mach number, 
+\begin_inset Formula $F(f,M)$
+\end_inset
+
+ is the shape function, and 
+\begin_inset Formula $D(\theta,\phi)$
+\end_inset
+
+ is the directionality function.
+ This formula hence only contains terms which are derived from the physics
+ of the problem and has no calibration parameters, and recovers the spectra
+ satisfactorily for a good range of flow parameters and observer positions.
+ However, for the purpose of extracting only the essential features of the
+ PSD to aid simplification, we reduce the formula to the form 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Pi=a\times F(f,M)D(\theta,\phi)\label{eq:shapefunctionfeature}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, only the shape function and the directionality functions are retained
+ and other factors are replaced with a single calibration parameter 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ The shape function as function of Strouhal number has the definition 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F(St,M)=\frac{M^{2}L_{S}}{c_{0}}\frac{St^{2}}{\left(1+\mu_{0}^{2}St^{2}\right)\left(1+\mu_{1}^{2}(1+M)^{2}St^{2}\right)\left(1+\mu_{2}^{2}M^{2}St^{2}\right)\left(1+\mu_{3}MSt\right)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, the coefficients 
+\begin_inset Formula $\mu_{0},$
+\end_inset
+
+
+\begin_inset Formula $\mu_{1},$
+\end_inset
+
+
+\begin_inset Formula $\mu_{2},$
+\end_inset
+
+
+\begin_inset Formula $\mu_{3}$
+\end_inset
+
+, are adjustable parameters, 
+\begin_inset Formula $M$
+\end_inset
+
+ is the flow Mach number, 
+\begin_inset Formula $L_{s}$
+\end_inset
+
+ is the characteristic length, taken to be the slat chord length, and 
+\begin_inset Formula $St$
+\end_inset
+
+ is the Strouhal number.
+ This function captures the shape of the characteristic broadband hump of
+ the slat at a given Mach number.
+ Since in our experiment, the inlet velocity is kept constant, the flow
+ Mach number is not a variable.
+ Hence this function adds additional four calibration coefficients to fit
+ the spectra.
+ For the case of directivity function, we retain the function as suggested
+ originally by Guo for the initial development and hence it does not contribute
+ new parameters.
+ Finally, the total parameters from Guo's functions are 
+\begin_inset Formula $y=\{a,\mu_{0},\mu_{1},\mu_{2},\mu_{3}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second dominant feature of a slat noise spectra are the spectral peaks.
+ These peaks are strongly suspected to be due to aeroacoustic resonance
+ mechanism, but however the spacing between the peaks are not exactly homogeneou
+s.
+ Both peak frequencies and peak width at different frequencies are shown
+ to have variations when the flow configurations change.
+ Hence we choose to model them separately.
+ For capturing the shape of the peak, we use the Lorentz pulse function
+ form 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+L=\frac{h_{n}}{1+\left(\frac{\text{St}-\text{St}_{n}}{\text{w}_{n}/2}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for which the three parameters are the pulse height 
+\begin_inset Formula $h_{n}$
+\end_inset
+
+, the pulse width 
+\begin_inset Formula $w_{n}$
+\end_inset
+
+, and the central frequency 
+\begin_inset Formula $\text{St}_{n}.$
+\end_inset
+
+ The slat noise spectra typically contain five dominant peaks over the broadband
+ range and the number vary with the positioning of the slat.
+ We choose to keep the number of peaks modeled to six.
+ Three parameters for each peak then leads to a total of 12 parameters for
+ the peaks.
+ Hence in total, the total number of parameters to represent the spectra
+ becomes 17.
+ This target dimensionality is suitable for a low dimensional Gaussian process
+ regression task.
+ 
+\end_layout
+
+\begin_layout Standard
+Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:guo1-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ gives the spectral density in raw power units.
+ Combining the broadband spectral shape and the Lorentzian peaks function
+ can be done in the deciBel units.
+ Following Eq.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:shapefunctionfeature"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and assuming that the total spectral density is the product of the broadband
+ spectrum and the 6 Lorentzian shape functions, the combined spectral density
+ model can be written in deciBels as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{\Pi}=\hat{a}+\hat{F}\left(\text{St},M\right)+\hat{D}(\theta,\phi)+\sum_{n=1}^{N_{p}}\hat{L}(\text{St_{n}},h_{n},w_{n})\label{eq:surrogatetarget}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where (
+\begin_inset Formula $\hat{.}$
+\end_inset
+
+) denotes each quantity in deciBel.
+\end_layout
+
+\begin_layout Standard
+Hence finally, the dataset will be represented as an input space of the
+ four slat positioning coordinates 
+\begin_inset Formula $\{AOA,SGP,SDA,SOL\}$
+\end_inset
+
+, and the target space of parameters from Eq.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:surrogatetarget"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ as {
+\begin_inset Formula $a,\mu_{0},\mu_{1},\mu_{2},\mu_{3}\}\bigcup\{h_{i},w_{i},\text{St_{i}}:1\leq i<6\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Initial dataset
+\end_layout
+
+\begin_layout Standard
+To generate a Gaussian Process regression model and to enable active-learning
+ as a sampling technique, an initial dataset is required over which a naive
+ surrogate model has to operate.
+ For this we choose to generate our first set of simulations using the Latin
+ Hypercube sampling.
+ A Latin Hypercube is an efficient method to sample points from a multi-dimensio
+nal space with the guarantee that all discrete intervals of the domain are
+ sampled at least once.
+ This type of sampling guarantees that the whole of the domain is covered
+ in a fairly uniform manner obtaining a reasonable representation of the
+ response surface, however much more sparsely than an interpretable form.
+ Here although the canonical Latin Hypercube Sampling is widely used, the
+ sampling algorithm can generate samples which are not most uniformly distribute
+d in the multi-dimensional space.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Deutsch2012"
+literal "false"
+
+\end_inset
+
+ suggests a modified version of the LHS algorithm to have an improved uniformity
+ of distribution of points in multidimensional space.
+ They achieve the improvement by sequential elimination of samples that
+ obtain the smallest average distance from other sampled points while generating
+ the samples for each dimensions.
+ The rest of the procedure remains the same as in the canonical method.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename chapter04_figs/LHSnoMDU.png
+	lyxscale 50
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename chapter04_figs/LHSMDU.png
+	lyxscale 50
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A sampling of the space of three slat positional variables using canonical
+ LHS (left) and with LHS-MDU (right).
+ A total of 20 samples were made to create the initial set.
+ 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+A sampling of the space of three slat positional variables using canonical
+ LHS (left) and with LHS-MDU 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lhsmdu"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To generate the initial dataset, we then use the following ranges for the
+ variables of slat positional coordinates.
+ These coordinates are obtained around the standard position of the slat.
+ A total of 10 samples, number 10 being only a convenient choice, were then
+ generated to launch the simulation.
+ A plot comparing the sampling methods, between Latin Hypercube and Latin
+ Hypercube with Multi-Dimensional Uniformity is shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lhsmdu"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The final 10 samples in a reduced 3D space are shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sample"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It must be mentioned that in our iterations to generate the initial dataset
+ and while facilitating the analysis of the dynamics of the cove flow, it
+ was found that cases with positive slat overlap are particularly silent
+ in view of characteristic slat noise.
+ This is due to the fact that in such cases the slat is positioned too close
+ to the leading edge of the airfoil and the resulting mean shear layer is
+ deformed is such a way that the aeroacoustic resonance mechanism is not
+ favored.
+ Hence for the presentation of this surrogate model we chose to omit the
+ domain with positive slat overlap.
+ The complete range of parameters used to initialize the dataset is shown
+ in Table.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:domain"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lower limit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Upper limit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Standard Geometry
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AOA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SDA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+35.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SGP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.94
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-9.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-6.36
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Table of upper and lower bounds for slat positional variables and angle
+ of attack used to generate the initial sample using LHS-MDU 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:domain"
+
+\end_inset
+
+.
+ This is also the test domain used for the surrogate model.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Table of upper and lower bounds for slat positional variables and angle
+ of attack used to generate the initial sample using LHS-MDU 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/InitialSampl.png
+	lyxscale 30
+	width 8cm
+	height 8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A scatter plot of the initial samples drawn from the domain to create the
+ initial dataset using LHS-MDU
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sample"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bayesian Active Learning
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Active Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By deploying LHS-MDU, the initial sample to enable the surrogate model is
+ made.
+ These samples were then used to run simulations using the LBM-CAA routines
+ as described in Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Lattice-Boltzmann-Method"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The resulting data then generates the Power Spectral Densities (PSD) of
+ the far-field noise of the corresponding slat positions.
+ These PSDs are then transformed into the feature space by least square
+ fitting of the spectra onto the reduced order model according to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:surrogatetarget"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ To reduce the least square error, we deployed the Nelder-Mead algorithm
+ taking into account the dimensionality of the problem and the fact that
+ the optimization is unconstrained
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Nelder1965"
+literal "false"
+
+\end_inset
+
+.
+ The obtained dataset is then used to fit a Gaussian Process regression
+ implemented using the Surrogate Modelling Toolbox developed under the name
+ SMT 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Saves2024,Saves2023"
+literal "false"
+
+\end_inset
+
+.
+ The surrogate model is obtained using a sample of 10 simulations over the
+ 4D space of parameters.
+ 
+\end_layout
+
+\begin_layout Standard
+To generate samples for further simulations, and to improve the surrogate
+ model to a satisfactory accuracy, the epistemic uncertainty in the predictions
+ of 
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash textcolor{red}{the model needs to be understood}
+\end_layout
+\end_inset
+.
+ As mentioned in the previous section, a Bayesian regression model generates
+ a predictive distribution for the target variables of interest.
+ Since these distributions are essentially a Gaussian probability distribution,
+ the mean and variance of the variable can be computed over a range of values.
+ The surface generated by the mean values of the predicted variable is output
+ as the mean response surface.
+ The variance is then used to estimate the confidence of the model for the
+ prediction of the mean value.
+ The confidence interval is a range of values for which there is a prescribed
+ probability, 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, for the value of the prediction to fall within and can is expressed by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+1-\alpha=\text{Pr}\left(\frac{|X-\mu|}{\sigma/\sqrt{n}}<z\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, 
+\begin_inset Formula $X$
+\end_inset
+
+ is the variable, 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is the mean, 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is the standard deviation or the square root of variance, 
+\begin_inset Formula $z$
+\end_inset
+
+ is the number of standard deviations from the mean, commonly called the
+ z-score, and 
+\begin_inset Formula $n$
+\end_inset
+
+ is the sample size used for the estimation if it is not done on an infinite
+ sample.
+ Accordingly, for a Gaussian distribution, 5% confidence interval is the
+ region where the value of the variable falls with 95% probability and the
+ corresponding z-score is 
+\begin_inset Formula $1.96$
+\end_inset
+
+.
+ A list of z-scores and corresponding confidence levels are given in Table.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:zscore"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+z-score (Standard Deviations)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+p-value (Probability)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Confidence level
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< -1.65 or > +1.65
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< 0.10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+90%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< -1.96 or > +1.96
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< 0.05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+95%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< -2.58 or > +2.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< 0.01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+99%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Table of p-value and z-score of a Gaussian distribution
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:zscore"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The goal of the regression process is to reduce the epistemic uncertainty
+ of the model arising from the noise in the data.
+ But the noise that is added to the linear regressor for formulating the
+ Gaussian Process Regression, as in Eq.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:gpeqn"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, is in fact the aleatoric uncertainty assumption, i.e.
+ the uncertainty assumed inherent in the training data due to measurement
+ errors and inherent noise which are not reducible.
+ The other type of uncertainty, which is the epistemic uncertainty, arises
+ from modelling errors due to unoptimal parameters to fit the data, and
+ due to insufficient data points.
+ This uncertainty can be minimized by obtaining a better fit to the data
+ through optimizing the model parameters.
+ In the GP based Bayesian regression, the only model parameter to tune is
+ the type of kernel and its correlation length scale.
+ Optimising these parameters are the process of offline 'learning' in a
+ GP regression.
+ 
+\end_layout
+
+\begin_layout Standard
+The uncertainty for the model arising from lack of datapoints can only be
+ reduced by addition of new datapoints.
+ However, since the predicted distribution is heteroscedastic, the sampling
+ can be adapted to ensure an uncertainty informed sampling.
+ For each new datapoint collected or batches of datapoints, the parameters
+ of the model can be optimized to obtain a new model with reduced epistemic
+ uncertainty.
+ The new model uncertainties can then be used to obtain a suggestion for
+ sampling the next datapoint or batch of points, thereby obtaining better
+ sampling techniques that progressively minimizes the epistemic uncertainty.
+ This approach to reducing the model uncertainty is called the active learning
+ approach and is attempted in our work.
+\end_layout
+
+\begin_layout Standard
+For the calculation using the first 10 data points, we use the Squared Exponenti
+al kernel.
+ A noise of 5% is assumed to enable the uncertainty calculation.
+ This noise value is obtained by first enabling an iterative search for
+ optimal noise value so as to obtain the best fit of the model output using
+ least-square fitting of the predicted and available data.
+ Then the noise value is kept fixed and the resulting predictive uncertainty
+ is then used for the active learning.
+ The hyperparameters of the model are the kernel parameters, namely the
+ inverse of correlation length 
+\begin_inset Formula $\theta_{l},$
+\end_inset
+
+ using which the kernel can be written as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K=\prod_{l=1}^{nx}\exp\left(-\theta_{l}\left(x_{l}^{(i)}-x_{l}^{(j)}\right)^{2}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The search bounds for this parameter is set to 
+\begin_inset Formula $\theta_{l}\in[0.05,20]$
+\end_inset
+
+ and initialized at 10.
+ The parameter is then optimized using the gradient free optimizer COBYLA
+ (Constrained Optimization BY Linear Approximation) available with the SMT
+ toolbox using default parameters.
+\end_layout
+
+\begin_layout Section
+Uncertainty Propagation for the Surrogate Model
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Uncertainitypropagation"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Uncertainty Propagation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As mentioned in the previous section, we use a reduced order representation
+ of the slat noise spectra to enable the regression.
+ This means that predicted mean and uncertainties are in terms of the calibratio
+n variables in the model.
+ These uncertainties then need to be propagated through the model equations
+ in order to obtain the uncertainty of the spectra calculation and allow
+ a quantitative understanding of the model's confidence in the predictions.
+\end_layout
+
+\begin_layout Standard
+From Guo's formula, the power spectral density of far-field slat noise can
+ be taken as a sum of the shape function and Lorentzian peaks, in deciBel
+ units, and can be written as
+\begin_inset Formula 
+\begin{equation}
+\hat{\Pi}=\hat{a}+\hat{F}\left(f_{d},M\right)+\hat{D}(\theta,\phi)+\sum_{n=1}^{N_{p}}\hat{L}(St_{n},h,w)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+whose uncertainty arising from individual terms can be combined using the
+ general derivative formula for the variances, i.e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\sigma_{\hat{\Pi}}^{2} & =\frac{\partial\hat{\Pi}}{\partial\hat{a}}\sigma_{\hat{a}}^{2}+\frac{\partial\hat{\Pi}}{\partial\hat{F}}\sigma_{\hat{F}}^{2}+\frac{\partial\hat{\Pi}}{\partial\hat{D}}\sigma_{\hat{D}}^{2}+\sum_{n=1}^{N_{p}}\frac{\partial\hat{\Pi}}{\partial\hat{L_{n}}}\sigma_{\hat{L_{n}}}^{2}\\
+ & =\sigma_{\hat{a}}^{2}+\sigma_{\hat{F}}^{2}+\sigma_{\hat{D}}^{2}+\sum_{n=1}^{N_{p}}\sigma_{\hat{L_{n}}}^{2}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The shape function is taken directly from Guo's model and has the following
+ form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F(St,\text{M})=\frac{\text{M}^{2}L_{S}}{c_{0}}\frac{\text{St}^{2}}{\left(1+\mu_{0}^{2}\text{St}^{2}\right)\left(1+\mu_{1}^{2}(1+\text{M})^{2}\text{St}^{2}\right)\left(1+\mu_{2}^{2}\text{M}^{2}\text{St}^{2}\right)\left(1+\mu_{3}\text{M}\text{St}^{2}\right)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+or by collecting the variables as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F_{1}=\frac{\text{M}^{2}L_{S}}{c_{0}}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F_{2}=\frac{1}{1+\mu_{0}^{2}\text{St}^{2}}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F_{3}=\frac{1}{1+\mu_{1}^{2}(1+\text{M})^{2}\text{St}^{2}}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F_{4}=\frac{1}{1+\mu_{2}^{2}\text{M}^{2}\text{St}^{2}}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F_{5}=\frac{1}{1+\mu_{3}\text{M}\text{St}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we have
+\begin_inset Formula 
+\begin{equation}
+F=\frac{F_{1}}{F_{2}F_{3}F_{4}F_{5}}\text{St}^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here the calibrating coefficients 
+\begin_inset Formula $\mu_{0},\mu_{1},\mu_{2},\mu_{3}$
+\end_inset
+
+ were predicted by the surrogate model as a function of the slat position.
+ Uncertainties in the calculation of these variables can be translated to
+ the uncertainty of the predicted spectra by considering their sensitivities
+ via the gradients, and can be written in primitive units as
+\end_layout
+
+\begin_layout Standard
+i.e.
+ 
+\begin_inset Formula 
+\begin{equation}
+\sigma_{F}^{2}=\left(\frac{\partial F}{\partial\mu_{0}}\right)^{2}\sigma_{\mu_{0}}^{2}+\left(\frac{\partial F}{\partial\mu_{1}}\right)^{2}\sigma_{\mu_{1}}^{2}+\left(\frac{\partial F}{\partial\mu_{2}}\right)^{2}\sigma_{\mu_{2}}^{2}+\left(\frac{\partial F}{\partial\mu_{3}}\right)^{2}\sigma_{\mu_{3}}^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the partial derivatives can be obtained as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial F}{\partial\mu_{0}}=\frac{F_{1}}{F_{3}F_{4}F_{5}}\times\frac{-2\mu_{0}St^{2}}{\left(1+\mu_{0}^{2}St^{2}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial F}{\partial\mu_{1}}=\frac{F_{1}}{F_{2}F_{4}F_{5}}\times\frac{-2\mu_{1}(1+M)^{2}St^{2}}{\left(1+\mu_{1}^{2}(1+M)^{2}St^{2}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial F}{\partial\mu_{2}}=\frac{F_{1}}{F_{2}F_{3}F_{5}}\times\frac{-2\mu_{2}M^{2}St^{2}}{\left(1+\mu_{2}^{2}M^{2}St^{2}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial F}{\partial\mu_{3}}=\frac{F_{1}}{F_{2}F_{3}F_{4}}\times\frac{-MSt}{\left(1+\mu_{3}MSt\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The above formulation is used to calculate the uncertainty of the broadband
+ shape function output by the surrogate model.
+ This gives the power spectral density and now needs to the converted to
+ decibels.
+\end_layout
+
+\begin_layout Standard
+The formula for the Lorentzian peak functions has the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+L_{n}=L(St_{n},h,w)=\frac{h}{1+\left(\frac{St-St_{n}}{w/2}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and where h is the height of the peak, 
+\begin_inset Formula $St_{n}$
+\end_inset
+
+is the central frequency and 
+\begin_inset Formula $w$
+\end_inset
+
+ is the peak width.
+ The uncertainty with respect to these parameters can be obtained as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sigma_{L}^{2}=\left(\frac{\partial L}{\partial St_{n}}\right)^{2}\sigma_{St_{n}}^{2}+\left(\frac{\partial L}{\partial h}\right)^{2}\sigma_{h}^{2}+\left(\frac{\partial L}{\partial w}\right)^{2}\sigma_{w}^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, the partial derivatives can be obtained as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial L}{\partial St_{n}}=\frac{8(St-St_{n})\times h}{w^{2}\left(1+4\left(\frac{St-St_{0}}{w}\right)^{2}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial L}{\partial h}=\frac{1}{1+\left(\frac{St-St_{0}}{w/2}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial L}{\partial w}=\frac{8h\left(St-St_{n}\right){}^{2}}{w^{3}\left(1+\left(\frac{St-St_{0}}{w/2}\right)^{2}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since the uncertainties of the individual peaks can be taken to be independent
+ of each other,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sigma_{\sum_{n=1}^{N_{p}}L_{n}}^{2}=\sum_{n=1}^{N_{p}}\sigma_{L_{n}}^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For converting the uncertainty to dB, we need the formula for error propagation
+ in a logarithm function, i.e.
+ if 
+\begin_inset Formula $f=ln(z)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then, by the gradient formula,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sigma_{f}=\frac{\sigma_{z}}{z}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, since the acoustic spectra in dB with reference to the 
+\begin_inset Formula $20\mu Pa$
+\end_inset
+
+ level,
+\begin_inset Formula 
+\begin{equation}
+\hat{\Pi}=10\log_{10}\left(\frac{\Pi}{P_{ref}^{2}}\right)=10\frac{\ln\left(\frac{\Pi}{P_{ref}^{2}}\right)}{\ln(10)}=10\frac{\ln\left(\Pi\right)-\ln\left(P_{ref}^{2}\right)}{\ln(10)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sigma_{\hat{\Pi}}=\frac{10}{\ln(10)}\frac{\sigma_{\Pi}}{\Pi}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which applies to all terms which are not modeled in the decibel units.
+ Hence, finally for the spectra computed using the surrogate model, we have
+ the total uncertainty as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\sigma_{\hat{\Pi}}^{2} & =\sigma_{\hat{a}}^{2}+\sigma_{\hat{F}}^{2}+\sigma_{\hat{D}}^{2}+\sum_{n=1}^{N_{p}}\sigma_{\hat{L_{n}}}^{2}\\
+\sigma_{\hat{\Pi}}^{2} & =\sigma_{\hat{a}}^{2}+\left(\frac{10}{\ln(10)}\right)^{2}\left(\frac{\sigma_{F}^{2}}{F}+\frac{\sigma_{D}^{2}}{D}\right)+\sum_{n=1}^{N_{p}}\sigma_{\hat{L_{n}}}^{2}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, to obtain the total uncertainty of the predicted spectra over the
+ range of frequencies, we consider the integral of the spectral uncertainties
+ in the dB units as appropriate, which can be written as
+\begin_inset Formula 
+\begin{equation}
+\hat{\Sigma}^{2}=\int\sigma_{\hat{\Pi}}^{2}(f)df\label{eq:spectratotaluncertainity}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Acquisition Function for Uncertainty Cased Sampling
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Acquisition Function
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sampling the next simulation based on the current dataset is enabled in
+ Bayesian optimization by combining the two above said techniques, i.e.
+ by using the surrogate model and its uncertainty estimate.
+ The straightforward approach for uncertainty based sampling is to look
+ at points where the uncertainty is highest and sample a new point from
+ this vicinity.
+ Such a criteria looks only at the current state of the model and the effect
+ of sampling on the immediate next state after the sampling.
+ However this approach has shown to be sub-optimal when it comes to obtaining
+ the best sample.
+ To obtain a better estimate of the most efficient sample, a sample estimator
+ is typically used in Bayesian optimization and is called the Acquisition
+ function.
+ 
+\end_layout
+
+\begin_layout Standard
+Many acquisition functions have been proposed in the literature, with one
+ of the early ones being the Probability of Improvement (PI).
+ This method is based on an estimate of the aforementioned acquisition function
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+utilizes an estimate of the probability of improvement of the function
+\end_layout
+
+\end_inset
+
+ with the objective of minimizing a given cost function and select the sample
+ which has the best probability.
+ However, by nature of its formalism, it suffers from the problem of local
+ minima.
+ This difficulty is overcome by the Expected Improvement function in the
+ work of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "mockus1978"
+literal "false"
+
+\end_inset
+
+.
+ As elucidated by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Letham2018"
+literal "false"
+
+\end_inset
+
+, here the a utility function was chosen such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u(x)=\max(0,g'-g(x))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $g'$
+\end_inset
+
+ is a current estimate of the minima of an arbitrary function of interest
+ approximated by a Gaussian posterior 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+This cost function thus takes into account the gradient of the function
+ 
+\begin_inset Formula $g$
+\end_inset
+
+ as a quantitative measure of the possible improvement.
+\end_layout
+
+\end_inset
+
+The utility function 
+\begin_inset Formula $u(x)$
+\end_inset
+
+ then collects a reward equal to the improvement 
+\begin_inset Formula $g'-g(x)$
+\end_inset
+
+ or otherwise collects nothing.
+ The expected improvement for acquisition for a given sample 
+\begin_inset Formula $x$
+\end_inset
+
+ in its formal definition is the expectation of this utility function defined
+ as 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\[
+\begin{array}{cc}
+a_{EI}(x) & =\mathbb{E}[u(x)\mid x,\mathcal{D}]\\
+ & =(g'-\mu(x))\Phi(g';\mu(x),K(x,x))+K(x,x)\mathcal{N}(g';\mu(x),K(x,x))
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathcal{N}$
+\end_inset
+
+ and
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ are the density and cumulative distributions functions of a standard normal
+ distribution and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $K$
+\end_inset
+
+ are its mean and covariance matrix.
+ A more rigorous account of the same is available from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Zhan2020"
+literal "false"
+
+\end_inset
+
+.
+ Here the two terms arising from this definition contribute to two different
+ factors that control an exploratory process.
+ One is the contribution from the mean function which biases the estimated
+ sample to minimize the mean function leading to finding the optima.
+ The other terms proportional to the variance will bias the function towards
+ areas where the function has large predictive variances, leading the optimizer
+ to explore the domain potentially away from optimas.
+ Thus there is a competition between the exploration and exploitation of
+ the domain.
+ Essentially, all acquisition functions fundamentally address this tradeoff
+ and attempts to minimize the overall uncertainty in the least number of
+ sampling operations.
+ In this regard, the Expected Improvement (EI) is considered the standard
+ procedure in application to finding the optima using Bayesian Optimization.
+\end_layout
+
+\begin_layout Standard
+A further improvement of the acquisition function came from the work of
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hennig2012"
+literal "false"
+
+\end_inset
+
+.
+ Their suggestion was to use an acquisition function that minimize the uncertain
+ty present in the location of the already computed optimal value.
+ The method thus called the Entropy Search attempts to minimize the information
+ entropy of the predictive distribution, but however due to the excessively
+ complicated formalism, a closed form of the function is not derivable analytica
+lly and for applications, an approximate form is used for the computations.
+ 
+\end_layout
+
+\begin_layout Standard
+An acquisition function applicable to the case of surrogate modelling with
+ a straight forward explicit calibration of the exploitation-exploration
+ trade off is the Upper Confidence Bound (UCB) proposed in the work of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kaufmann2012"
+literal "false"
+
+\end_inset
+
+.
+ This function uses a simple algebraic form to obtain a utility function
+ defined as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+a_{\text{UCB}}(x;\beta)=\mu(x)+\beta\sigma(x)\label{eq:ucb}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The two terms are the mean function 
+\begin_inset Formula $\mu(x)$
+\end_inset
+
+ and the scaled standard deviation 
+\begin_inset Formula $\beta\sigma(x)$
+\end_inset
+
+ and the scaling factor 
+\begin_inset Formula $\beta$
+\end_inset
+
+ serves as a control between biasing the functions towards the maxima (exploitat
+ion) or to uncertain regions of the domain (exploration).
+ For using the UCB algorithm, two approaches can be followed.
+ One is that the extremum of 
+\begin_inset Formula $a_{\text{UCB}}$
+\end_inset
+
+ can be used to pick a sample for next data acquisition step and only 
+\begin_inset Formula $\beta$
+\end_inset
+
+ needs to be adjusted in order to calibrate the acquisition process.
+ The other is to use 
+\begin_inset Formula $a_{\text{UCB}}$
+\end_inset
+
+ as a probability density function and sample from the distribution.
+ The second variant leads to the stochastic UCB algorithm and allows to
+ maintain a distributed random sampling over the domain.
+ Compared to the non-stochastic version, this allows to ensure that the
+ algorithm does not tend to conservatively follow the acquisition function
+ itself but also allows a reasonable calibrated exploration of the domain.
+\end_layout
+
+\begin_layout Standard
+For the purpose of our work, we choose to use an adapted version of the
+ stochastic UCB algorithm.
+ For this, we use the utility function in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ucb"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, and use an additional thresholded distribution with 99% percent of the
+ maximum as the threshold.
+ The additional thresholding was found to be aiding in amplifying the PDF
+ generated by the raw utility function 
+\begin_inset Formula $a_{\text{UCB}}$
+\end_inset
+
+ and hence enabled a more conservative sampling in terms of sampling efficiency.
+ Consequently we chose to sample in batch sizes of 5 points to carry out
+ the CAA simulation and acquire spectra from the space of slat position
+ parameters.
+ 
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Subsection
+Feature Extraction
+\end_layout
+
+\begin_layout Standard
+The feature extraction module was designed and implemented for our work
+ using a Python workflow.
+ Each of the simulated spectra was obtained at a frequency resolution of
+ 44Hz and was then fed into a Least Square fitting algorithm using the python
+ package SciPy.
+ The obtained feature extraction module is observed to be of sufficient
+ accuracy to extract the broadband and tonal characteristics of the spectra
+ and a few select cases are shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Featurextraction"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ In contrast, the true spectra has a large variance in the frequency domain,
+ the obtained Guo's shape function fit is a smooth representation of the
+ same.
+ Regarding the peaks, the Lorentzian peak functions are a satisfactory fit
+ for the actual tonal characteristics in a representative fashion.
+ The convergence of the feature extractor to extract the central frequencies
+ and peaks heights are also found to be satisfactory.
+ However, from an aeroacoustic perspective, the broadening of a tonal peak
+ has its own implications related to the convection of the waves, source
+ effects, and effects of the presence of solid bodies which are all pertinent
+ to the slat geometry case.
+ In our study, this factor is not investigated and is hence not included
+ in the design of the surrogate model.
+ The typical broadband shape function also models the spectra such that
+ there is a larger deviation at the lower frequencies which are considered
+ to be the range where the background noises are prominent in a real experiment.
+ This noise is minimal in the numerical case but the levels obtained using
+ our simulations are still higher that modeled using the Guo's shape function.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/AOAp180SDAp352SGPp079SOLn064_OAn90.pickle_lsfit.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 01
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/AOAp180SDAp352SGPp089SOLn064_OAn90.pickle_lsfit.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 02
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/AOAp180SDAp393SGPp094SOLn042_OAn90.pickle_lsfit.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 26
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/AOAp181SDAp352SGPp078SOLp059_OAn90.pickle_lsfit.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Case 27 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Feature extraction for the spectra using Guo's shape function and Lorentzian
+ peaks, showcasing few cases from the dataset 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Featurextraction"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Surrogate model
+\end_layout
+
+\begin_layout Standard
+The Bayesian Surrogate model approximates a high-dimensional map from the
+ space of 4-dimensional positional parameters of the slat to the 17-dimensional
+ representative variables for the far-field noise spectra.
+ A measure of the accuracy of the model is the overall uncertainty of the
+ model integrated over the domain of experimentation.
+ This uncertainty however is not easily calculable since it involves computing
+ the predictive variance over the 4D domain with sufficient resolution.
+ Hence for a direct comparison on the predictive accuracy of the targets
+ with training data and within the domain of interest, only the quantitative
+ measures are useful whereas the graphical representation provides a qualitative
+ idea of the accuracy.
+\end_layout
+
+\begin_layout Standard
+The Bayesian model was initialized using 10 data points from the prescribed
+ domain as shown in Table.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:domain"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ For a total of 18 simulations, the fitting of target variables in training
+ dataset were visualized using a residual scatter plot in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:residualplot"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Different target features have shown an excellent fit while using the Squared
+ Exponential Kernel and with an initial noise parameter, 
+\begin_inset Formula $\sigma_{n}=5\%$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/a.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/mu_0.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/mu_1.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/mu_2.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/mu_3.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/St0.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/St1.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/St2.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/St3.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/St4.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/St5.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/pSt0.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/pSt1.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/pSt2.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/pSt3.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/pSt4.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/pSt5.png
+	lyxscale 5
+	width 3.8cm
+	height 3.8cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Scatter plots of the input targets against the 17 predicted target variables
+ used in regression, over datapoints in the training set of first 18 simulations.
+ The diagonal line 
+\begin_inset Formula $y=x$
+\end_inset
+
+ is given for comparison representing a zero residual.
+ For this demonstration, 
+\begin_inset Formula $\sigma_{n}=5\%$
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:residualplot"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Scatter plots of the input targets against the 17 predicted target variables
+ used in regression, over datapoints in the training set of first 18 simulations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The predicted parameters were then used to predict the model parameters
+ of the spectra which were then used to reconstruct the spectra in deciBel
+ units.
+ The uncertainties of the predicted variables were also propagated to the
+ frequency domain of the spectral predictions using the methods described
+ in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Uncertainitypropagation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ With the availability of the first 10 data points, a prediction of the
+ spectra is possible for any query point within the domain.
+ Hence, to demonstrate the working of the model, a prediction on a randomly
+ selected training point is shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Spectratest"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The four predictions shown are obtained by varying the initial noise parameter,
+ 
+\begin_inset Formula $\sigma_{n}(\%)=[50,5,1,0]$
+\end_inset
+
+ that is used to generate the model and the predicted variances are also
+ proportional to the initial assumption according to Eq.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:predictiveformula"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ It can be seen in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spectraN0"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ that if the initial noise is assumed to be 0%, then the predictive variance
+ will also collapse to null leading to the GP model having 100% confidence
+ in the training datapoints.
+ The predicted response surface of this model fits the training target values
+ exactly and hence leads to an exact reconstruction of the spectra.
+ The resulting predictive variance is then zero and hence is absent in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spectraN0"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ As the variable 
+\begin_inset Formula $\sigma_{n}$
+\end_inset
+
+ is increased, the predictive variance is also amplified accordingly.
+ As can be noticed in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spectraN50"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, a sufficient initial noise assumption leads to a non-zero predictive variance
+ as well as lower confidence of model in the training dataset.
+ The non-zero variance assumption leads to a non-zero variance prediction
+ for the response surface at the collocation points from training data and
+ hence a slightly inaccurate prediction of the spectra.
+ The inaccuracy is noticeable in the prediction of the central frequencies
+ of the tones as they are visibly deviating from the original peaks in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spectraN50"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/SpectraPredictionN0.png
+	lyxscale 50
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{n}=0\%$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:spectraN0"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/SpectraPredictionN1.png
+	lyxscale 50
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{n}=1\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/SpectraPredictionN5.png
+	lyxscale 50
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{n}=5\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/SpectraPredictionN50.png
+	lyxscale 50
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma_{n}=50\%$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:spectraN50"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Spectra predicted using the Gaussian Process Surrogate model by using the
+ first 10 initial samples, tested on a randomly selected datapoint (AOA=
+\begin_inset Formula $17.39^{o}$
+\end_inset
+
+, SGP=8.53mm, SOL=-4.88mm, SDA=35.2mm) from the training set, and when the
+ initial noise parameter is set to four different values are shown.
+ The total estimate at a datapoint reduces to the aleatoric uncertainity
+ by the nature of GP regression and hence is only sourced by the aleatoric
+ uncertainity represented by the prior noise assumption in data through
+ 
+\begin_inset Formula $\sigma_{n}$
+\end_inset
+
+ .
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Spectratest"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Spectra predicted using the Gaussian Process Surrogate model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The predictive variance for the broadband shape seems to have a good agreement
+ even with a noise assumption of 
+\begin_inset Formula $\sigma_{n}=5\%$
+\end_inset
+
+.
+ However, the uncertainty for the peaks have a higher value on both sides
+ of the peaks.
+ This is due to the fact that in our routines, we only extract the central
+ frequency and the peak height while modelling the peak using the Lorentzian
+ peak function.
+ This leaves out the peak width parameter that is kept constant and is hence
+ not extracted from the training data or used in the prediction.
+ This omission leads to a difference of levels between the predicted spectra
+ and the modeled spectra on the both sides of the peak while the zenith
+ is rightly modeled from the peak height.
+ This problem is infact solvable by taking into account the peak width parameter
+ in the regression, but the feature extraction procedure needs to take into
+ account at total of 23 features instead of 17, and was found to be unstable
+ during the feature extraction using least square fitting.
+ An upgradation of this feature extraction technique using advanced methods
+ must therefore eliminate the amplified variances on the slopes of the peaks
+ resulting in a uniform predictive variance in the spectral domain.
+ 
+\end_layout
+
+\begin_layout Standard
+It must also be mentioned that the noise assumption in the input data stems
+ from the assumption of aleatoric uncertainty in the data acquisition and
+ processing.
+ However, the predictive variance represents the total uncertainty of the
+ model prediction including the additional epistemic uncertainty arising
+ from the Bayesian surrogate modelling.
+ The fact that the initial noise assumption is necessary to obtain a non-zero
+ predictive variance is due to the fact that in the Bayesian regression
+ formalism, the predictive variance arises as a function of the initial
+ noise assumption as seen in Eq.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:predictivedist"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/CoVNsim18.png
+	lyxscale 50
+	width 10cm
+	height 10cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Maximum Coefficient of Variation in the test domain after the last step
+ of active learning executed with total number of simulations at 18.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter04_figs/TSNEofSamplesNsim18.png
+	lyxscale 40
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/MeanTSV.png
+	lyxscale 30
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Left: A t-SNE visualization of the high dimensional feature space of the
+ training dataset of 18 simulations together with 5 newly sampled points
+ to be used for subsequent data acquisition.
+ The t-SNE hyperparameter 'perplexity' is maintained at value 5.
+ Right: Mean variance over the domain for the surrogate model expressed
+ as a percentage of the initial model, plotted as a function of the number
+ of samples acquired during the active learning procedure.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MeanModelVariance"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Progressions during the Bayesian Active Learning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now that the inaccuracies arising from omission of peak width in the regression
+ module and the effect of the noise parameter is understood, we choose to
+ keep the noise parameter at 5% and assess the overall variance of the model
+ over the chosen domain of the slat positional parameters.
+ For this the model is used to make predictions of the target variables
+ and the spectra is reconstructed for collocations points on a uniform grid
+ in the 4D domain.
+ We call this the test domain and is the same as defined by Table.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:domain"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Also, for computing the total uncertainty for each spectra, we integrate
+ the predicted variance over a range of [100, 20000]Hz, and this sum, without
+ averaging over the frequency domain, is what we call Total Spectral Variance
+ (TSV) as defined in Eq.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:spectratotaluncertainity"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ This value is then obtained over the discretized test domain whose grid
+ size is kept at 8 points within the corresponding interval for each variable.
+ In the initial state of the model using 10 input points, the TSV is obtained
+ at 68.84 dBdB.
+ 
+\end_layout
+
+\begin_layout Standard
+The Total Spectral Variance distribution over the test domain is a measure
+ of the statistical accuracy of the surrogate model, expressing the total
+ epistemic uncertainty.
+ Hence the Mean Total Spectral Variance (MTSV) can be used to monitor the
+ progress of the surrogate model during the course of the active learning
+ procedure.
+ The active learning model is then used to progressively update the model
+ to obtain a reduction on the MTSV until satisfactory convergence.
+ Here, as an experiment we choose to use a batch size of 5 simulations to
+ sample the spectra.
+ Note that although the sample size is set to 5 for each set, the number
+ of successful simulations can be lesser due to technical errors and on
+ average is maintained at 4.
+ The evolution of the MTSV with respect to the active learning steps during
+ the initial stages of the model development are shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MeanModelVariance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Additionally to monitor the sampling of points, we choose to visualize
+ the 4D domain using a dimensionality reduction using t-Stochastic Neighbor
+ Embedding.
+ The visualization allows to monitor the relation between the sampled points
+ and the points in the dataset based on their Eulerian distance in the 4D
+ domain.
+ Here the clustering of the points represents close proximities and the
+ sampling is monitored to generate points which maintains a compromise between
+ conformance to the clustering (exploitation) and sufficiently balancing
+ the different clusters (exploration).
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+
+\color black
+A method for automating the exploration of parameter space of slat positioning
+ with respect to the airfoil was developed for the particular application
+ to aeroacoustic investigation.
+ By no means we claim the optimality of the design of the current state
+ of this approach but is an experimental step towards a more advanced applicatio
+n in the domain.
+ Currently, a framework which is able to handle the spectral data – including
+ the broadband components and the tonal peaks – as the target features and
+ slat coordinates as the input variable is developed by appropriate feature
+ extractions.
+ Then a Gaussian Process Regression is used to obtain a surrogate model
+ of the available data.
+ Gaussian Processes being a statistical regression tool based on the Bayesian
+ formalism, a measure of uncertainty of the model is implicitly available
+ along with its concurrent state.
+ This epistemic uncertainty is high during the initial phase of the exploration
+ and the sampling process is then adapted to minimize this uncertainty.
+ A few methods to leverage the uncertainty information and obtain an optimal
+ sampling were attempted and finally the Upper Confidence Bound method is
+ chosen for the current application.
+ Consequently a roadmap for uncertainty calculations for the spectra predictions
+ are also developed that are extensible to more complex scenarios.
+ The algorithm is then shown to carry out exploration where the model is
+ pinned to the most noisy configuration which is close to the standard slat
+ positioning.
+ The epistemic uncertainty is then shown to have a monotonic decrease.
+\end_layout
+
+\begin_layout Standard
+
+\color black
+As for demonstration of the model, a few predictions based on parametric
+ variation of the slat overlap and slat gap is made.
+ Variation of the spectra for the strength of the peak and the distribution
+ of energy between the peaks can be observed.
+ For an progressive increase of the slat overlap from extreme value of -15.0
+ to -4.0, the surrogate model predicts the standard spectra as the base line.
+ For further increase from -3.0 to -2.0, a region where data is available
+ from the dataset, the peaks show a decrease in the resonant frequency as
+ expected.
+ This consistent with the fact that the increase in overlap leads to additionall
+y skewed shear layer path length which is longer in length and thus reduce
+ the Rossiter frequencies due to higher vortex travel times.
+ The effect is nullified and the model returns to standard spectra as the
+ slat overlap is further increased to -1.0 where data is not available in
+ the dataset.
+ Note that the prediction now can be made for any continuous trajectory
+ in the parameter space.
+\color magenta
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\color magenta
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/parameter_variation_labeled.pdf
+	width 3.5in
+	height 3.5in
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parametric predictions using the surrogate model by varying the slat overlap
+ (SOL).
+ Other coordinates: AOA:
+\begin_inset Formula $18.0mm$
+\end_inset
+
+, SGP:
+\begin_inset Formula $4.0mm$
+\end_inset
+
+, SDA:
+\begin_inset Formula $35.2^{o}$
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Parametric predictions using the surrogate model by varying the slat overlap
+ (SOL)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\color magenta
+\begin_inset Float figure
+placement tbh
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\color magenta
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/parameter_variation_labeled_SGP1.pdf
+	width 3in
+	height 3in
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+AOA:
+\begin_inset Formula $18.0mm$
+\end_inset
+
+, SOL:-
+\begin_inset Formula $6.3mm$
+\end_inset
+
+ SDA:
+\begin_inset Formula $35.2^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tbh
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\color magenta
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter07/activelearning/parameter_variation_labeled_SGP2.pdf
+	width 3in
+	height 3in
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+AOA:
+\begin_inset Formula $18.0mm$
+\end_inset
+
+, SOL:
+\begin_inset Formula $-5.0mm$
+\end_inset
+
+, SDA:
+\begin_inset Formula $35.2^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\color magenta
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parametric predictions using surrogate model by varying the slat gap (SGP).
+ a) The sensitivity of SGP is higher with SOL as 
+\begin_inset Formula $-6.3mm$
+\end_inset
+
+.
+ b) The sensitivity is reduced at an increased overlap and is the same case
+ for further increase.
+ The slat gap parameter is most sensitive thus close to the nominal slat
+ overlap configuration.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Parametric predictions using surrogate model by varying the slat gap (SGP)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color black
+That being demonstrated that the model is fully viable for a data-driven
+ noise surrogate model for industrial cases, it is imperative to delineate
+ the limitations of the current implementation.
+ The surrogate model currently has been fed with only few datapoints, i.e.
+ 18 data points.
+ This occurred due to the technical difficulties and to obtain a fully viable
+ surrogate model, the simulation based on active learning must be continued
+ for sufficient number of acquisitions such that the Mean Total Spectral
+ Variance is converged to the best possible value.
+ Further improvements can also be made in the design of acquisition function,
+ in accordance with the evolving literature, such that the active learning
+ methodology itself is improved leading to a higher sample efficiency.
+ However this is beyond the scope of our work within the premise of the
+ slat noise investigation.
+ Thus although the surrogate model is used for exploring the parameter space
+ utilizing the Bayesian sampling technique, the model itself is declared
+ as requiring further accuracy before deployment for use in the HLD design
+ setting.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\color black
+Now, for the continuation of slat noise investigation, the aeroacoustic
+ LBM simulations that we conducted were used to record pertinent information
+ regarding the flow dynamics.
+ These datasets thus allows for a fundamental analysis into the flow dynamics.
+ This will be attempted in the upcoming chapter.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "/home/amurali/Desktop/References/zoterolibrary"
+options "unsrtnat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

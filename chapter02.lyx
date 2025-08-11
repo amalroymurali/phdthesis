@@ -152,7 +152,7 @@ literal "false"
 
 .
  The flow past a trailing edge convects the turbulent structures who themselves
- behave as quadrupole sources
+ behave as quadrupole like sources
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Lighthill1952"
@@ -162,8 +162,8 @@ literal "false"
 
 .
  The resulting fluctuations in the immediate vicinity of a sharp trailing
- edge are then scattered by the edge and results in a dipole source centered
- at the edge.
+ edge are then scattered by the edge and results in a dipole like source
+ centered at the edge.
  Although a debated topic, this effect was suggested to be largely independent
  of the unsteady Kutta condition except for high frequency noise and non-linear
  effects in the directivities
@@ -183,7 +183,7 @@ literal "false"
 \begin_inset Formula $M$
 \end_inset
 
- is the flow Mach number
+ is the free stream Mach number
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Williams1970"
@@ -293,8 +293,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-In addition to classical explanation, more recent advanced post processing
- methods have been used to further TE noise studies
+In addition to classical theory and explanations, more recent and advanced
+ post processing methods have been used to further TE noise studies via
+ numerics
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Greschner2010,Finez2011,Sano2019,Alguacil2023,Redonnet2024"
@@ -318,8 +319,8 @@ literal "false"
  most part of the acoustic energy.
  The corresponding modes were also shown to have an extended structure spanning
  from the location of boundary layer detachment to the trailing edge.
- They hence suggested that the trailing edge noise thus is related to non-compac
-t source fluctuations.
+ They hence suggested that the trailing edge noise is related to non-compact
+ source fluctuations.
  They also suggested that the phase of the fluctuations also have an impact
  such that the maximum source efficiency occurs when the incoming perturbations
  are out of phase between the suction side and the pressure side.
