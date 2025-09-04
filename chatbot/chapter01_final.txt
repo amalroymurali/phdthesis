@@ -1,0 +1,1211 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/
+\textclass report
+\begin_preamble
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{chapter}{0}
+
+\usepackage{xcolor}
+\end_preamble
+\use_default_options false
+\master Thesis_Manuscript_ARM.lyx
+\begin_modules
+algorithm2e
+enumitem
+fixltx2e
+theorems-ams
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "beramono" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command bibtex
+\index_command default
+\float_placement th
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "PhD Thesis Draft"
+\pdf_author "Ama Roy Murali"
+\pdf_subject "Noise prediction for high lift devices"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style unsrtnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\rightmargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Introduction
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Introduction to Slat Noise
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{This thesis was conducted within the VALIANT project at IMSIA
+ (ENSTA Paris), focusing on aeroacoustic mechanisms of high-lift devices.
+ The laboratory has a long tradition in computational and experimental aeroacous
+tics, with prior studies on slat noise that motivated and framed the present
+ work.}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+High-Lift Devices (HLDs) were conceived and tested as an apparatus to improve
+ airplane lift performance as early as the 1940s
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Weyl1945"
+literal "false"
+
+\end_inset
+
+.
+ They primarily enabled aircrafts to take off from shorter runways as in
+ the case of military requirements and as the jet engine designs were adapted
+ for high-speed cruise, the high-lift wings became necessary to enable take
+ offs and landings with heavy payloads.
+ HLDs also delayed the stall of the airfoil as well as reduced the required
+ angle of attack during take-off allowing better flight controls and enhanced
+ visibility over the main-body leading edge.
+ The aeroacoustics of HLDs became an active area of research slightly later
+ when the airframe noise was identified as a major contributor to aircraft
+ noise
+\begin_inset CommandInset citation
+LatexCommand citeyearpar
+key "Fink1979"
+literal "false"
+
+\end_inset
+
+.
+ This was an effect of the rising popularity of high-bypass turbofan engine
+ designs in the 1970s implicitly leading to a sharp reduction in engine
+ noise, making them comparable to noise from landing-gears and HLDs.
+ The latter two, conveniently called the airframe noise, is to date the
+ next engineering bottleneck towards quieter aircraft designs fit for modern
+ aviation
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Morgan1975"
+literal "false"
+
+\end_inset
+
+.
+ In light of these developments, renewed efforts in airframe noise research
+ were promoted by major economies and set the target for noise reduction
+ efforts by atleast -10 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{dB}
+\end_layout
+
+\end_inset
+
+ on average per aircraft operation (operations near airport) for the year
+ 2020
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Collin2016"
+literal "false"
+
+\end_inset
+
+.
+ In the European vision for aviation towards 2050, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "EuropeanCommission.DirectorateGeneralforMobilityandTransport.2011"
+literal "false"
+
+\end_inset
+
+ published in 2011, the long-term target was officially declared as to reduce
+ the noise by 
+\begin_inset Quotes eld
+\end_inset
+
+atleast 65%
+\begin_inset Quotes erd
+\end_inset
+
+ from that of aircraft technologies in the 2000s – which in quantitative
+ terms is by -15 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{dB}
+\end_layout
+
+\end_inset
+
+, a representation of the urgency for quieter civil aviation in view of
+ a more sustainable aviation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Collin2016,Leylekian2022,Dobrzynski2010"
+literal "false"
+
+\end_inset
+
+.
+ This also is the fuel behind our current activity and our primary focus
+ is on further detailed characterization of HLD noise sources using advanced
+ computational methods.
+ In this process we also develop tools which enable rapid and data-driven
+ aeroacoustic characterization of such complex engineering flows attempting
+ to bypass the complexity of its numerical modelling.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter01_figs/leading edge slat.png
+	lyxscale 14
+	width 13cm
+	height 13cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An Airbus A310-300 wing with slat and flaps deployed
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:An-Airbus-A310-300"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+HLDs typically includes two additional components on a standard wing aerofoil,
+ namely the leading edge slat and the trailing edge flap as shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:An-Airbus-A310-300"
+
+\end_inset
+
+.
+ Both slats and flaps are commonly deployed in tandem during take-off and
+ landing and are thus active noise sources for operation near airports.
+ Among them the leading edge slat cavity has been identified as the dominant
+ noise source for low and mid-frequency characteristics and the trailing
+ edge flap for high frequency noise respectively
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dobrzynski1998"
+literal "false"
+
+\end_inset
+
+.
+ In general, a wing with HLD generate 10 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{dB}
+\end_layout
+
+\end_inset
+
+ of additional noise than a normal wing 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dobrzynski2010"
+literal "false"
+
+\end_inset
+
+.
+ However a complete analysis of its noise mechanisms are hindered when it
+ is part of a larger set of noise sources including the airframe cavity
+ noise, landing gear noise, and installation effects.
+ Hence as part of efforts to isolate behavior of HLD noise sources, standardized
+ sub-scale geometries were created as part of BANC workshops
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Choudhari2012"
+literal "false"
+
+\end_inset
+
+.
+ The popular configuration is the 30P30N where the slat and flap are deflected
+ at 
+\begin_inset Formula $30$
+\end_inset
+
+ degrees from the main element.
+ A schematic of the same is shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:geometries_30p30n-1"
+
+\end_inset
+
+.
+ Now, although both the slats and flaps contribute significantly to the
+ total noise, the mechanisms behind the mid-frequency noise generation in
+ the leading edge slat cavity are particularly elusive to engineers due
+ to the complex cove flow dynamics.
+ Hence on further sophistication of the investigations, the slat only configurat
+ion had to be isolated and studied in detail.
+ For the same, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+, as part of the recent VALIANT initiative
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Manoha2012"
+literal "false"
+
+\end_inset
+
+, generated an optimized 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{3 element}
+\end_layout
+
+\end_inset
+
+ configuration with only the slat and main element.
+ Here the flap was replaced with a sharp trailing edge for which the exact
+ shape was determined via numerical optimization – the objective being minimizin
+g numerical difference between the CFD solutions of cove flow between an
+ optimized 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{3 element}
+\end_layout
+
+\end_inset
+
+ geometry and the original 3-element one
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Manoha2012"
+literal "false"
+
+\end_inset
+
+.
+ A drawing of the resulting 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{3 element}
+\end_layout
+
+\end_inset
+
+ airfoil is shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:geometries_valiant-1"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Our study is primarily intended to investigate the slat-only noise phenomena.
+ It includes the cove flow dynamics and the noise generation mechanisms
+ arising from such dynamics.
+ Hence we use the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{3 element}
+\end_layout
+
+\end_inset
+
+ geometry provided by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+ and refer to the same as the VALIANT HLD.
+ The positioning of the slat with respect to the main element in this configurat
+ion, as shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:geometries_valiant-1"
+
+\end_inset
+
+, will be referred to as the standard geometry as well in contrast to the
+ cases where we change this positioning.
+ It must be emphasized that given the trailing edge of this geometry is
+ not of practical relevance, and the noise associated with the same are
+ also not of interest, given that there are no suspected interactions between
+ this trailing edge and the cove flow dynamics via their acoustics.
+ This is so far the case.
+ Additionally, the removal of the trailing edge flap has an important advantage
+ in enabling experimental studies.
+ The 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{3 element}
+\end_layout
+
+\end_inset
+
+ HLD by design generates a strong lift resulting in a significant deflection
+ of the incoming jet while mounted in the wind tunnel.
+ The deflection necessitates that the wind tunnel installations must be
+ adapted to allow this deflection.
+ In the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{3 element}
+\end_layout
+
+\end_inset
+
+ case, the deflection is now reduced due to removal of the deflection by
+ the flap and therefore generates less lift and less deflection.
+ The wind tunnel setup is thus simplified.
+ Given these features VALIANT HLD is adopted for both numerical and computationa
+l campaigns at carried out at Ecole Centrale de Lyon.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter01_figs/P30N-airfoil-geometry.png
+	lyxscale 40
+	width 11cm
+	height 11cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The 30P30N high-lift airfoil is the three-element standard geometry for
+ experimental and numerical campaigns 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:geometries_30p30n-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter01_figs/VALIANT Profile.png
+	lyxscale 15
+	width 11cm
+	height 11cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The VALIANT two-element geometry numerically optimized to reduce the effect
+ of flap removal upon cove flow dynamics.
+ The chord size 
+\begin_inset Formula $C$
+\end_inset
+
+ used for the current activity is 0.3m 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:geometries_valiant-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison of standardized HLD geometries
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+That being the context of our research, to re-investigate slat noise phenomena,
+ it is important to understand the current state of knowledge.
+ We will summarize the current known features here with an extended account
+ of the same and some closely related phenomena in the upcoming chapter.
+ 
+\end_layout
+
+\begin_layout Standard
+The slat-only noise phenomena has been extensively documented, although
+ with incomplete explanation, through both experimental campaigns and computatio
+nal efforts since 1990s
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dobrzynski1998,Molin2003,Lockard2009,Choudhari2011,Manoha2012,Terracol2016,Pascioni2016,Pagani2017,Bolivar2018"
+literal "false"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dobrzynski1998"
+literal "false"
+
+\end_inset
+
+ were among the early researchers to initiate large scale experiments to
+ investigate this phenomena and showed that the leading edge slat has a
+ tonal noise signature.
+ These tones reaching upto 80 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{dB}
+\end_layout
+
+\end_inset
+
+ were first explained to vanish in case of tripped turbulence at the slat's
+ pressure side cusp but additional studies showed that they are persistent
+ irrespective of turbulence conditions
+\begin_inset CommandInset citation
+LatexCommand citep
+key "kolb2007,Pott-pollenske2003"
+literal "false"
+
+\end_inset
+
+.
+ They are typically below 
+\begin_inset Formula $10\,kHz$
+\end_inset
+
+ in frequency range and are identified as mid-frequency tones
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Botero-bolivar2020"
+literal "false"
+
+\end_inset
+
+.
+ A set of five or more of these tones are supported by a broadband noise
+ component which scales with approximately fifth power of the free stream
+ Mach number
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Guo2012"
+literal "false"
+
+\end_inset
+
+.
+ As the wind tunnel facilities improved, in the recent years, an additional
+ tone which appears to be the fundamental of the main evident ones were
+ also identified.
+ It is referred to as the low frequency hump since this component has a
+ broadband and stochastic nature compared to the other tones
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Souza2019,KamliyaJawahar2021"
+literal "false"
+
+\end_inset
+
+.
+ An additional broadband peak at very high frequency of 
+\begin_inset Formula $20\,kHz$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{is also reported and is}
+\end_layout
+
+\end_inset
+
+ attributed to the vortex shedding from the thick trailing edge of the slat
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yamamoto2023"
+literal "false"
+
+\end_inset
+
+.
+ A typical slat-only noise spectra showing these major components are shown
+ in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:schematic"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbh
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter01_figs/slatsources.png
+	lyxscale 20
+	width 12cm
+	height 12cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schematic showing the potential noise sources in turbulent flow of a leading
+ edge slat cove, reproduced from the work of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Choudhari2007"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:schematic_a"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:schematic"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Schematic showing the potential noise sources in turbulent flow of a leading
+ edge slat cove
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The study, or in particular the reasoning on mechanisms underlying slat
+ tones, is but incomplete in the literature.
+ The tonal noise is largely explained based on the feedback mechanism typical
+ in a cavity flow and is called the Rossiter modes
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Casalino2022"
+literal "false"
+
+\end_inset
+
+.
+ The flow develops strong turbulence as it encounters the pressure side
+ cusp of the slat since there occurs strong shearing of flow between the
+ two sides of the cusp.
+ The phenomena can be explained based on Kelvin-Helmholtz (K-H) instability
+ and leads to periodic shedding of vortices
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Terracol2016,Manoha2012"
+literal "false"
+
+\end_inset
+
+.
+ Since the mean flow after the cusp deviates from free stream to pass through
+ the slat cove, the vortices are also convected through the slat gap.
+ See Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:schematic_a"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for a schematic.
+ The nozzle effect due to constriction between the slat and main element
+ accelerates the flow and hence the vortices are also accelerated as distorted
+ before ejection.
+ At low angle of attacks, these accelerated vortices impinges on inner wall
+ of the slat trailing edge leading to strong momentum fluctuations near
+ the trailing edge.
+ The flow then splits where one part enters the recirculation in the cove
+ while the other part is ejected out of the slat gap.
+ The impinged vortices generate acoustic waves due to momentum fluctuations
+ and these waves, both the original ones and those amplified by the trailing
+ edge scattering, travel back to the pressure side cusp, influencing the
+ periodicity of vortex shedding at the cusp.
+ Thus the periodic vortex shedding and resulting influence from acoustic
+ waves due to its impingement leads to a resonant cycle in the cove region
+ leading to selection of discrete frequencies and the resulting pressure
+ fluctuations emanate as acoustic waves towards farfield
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rossiter1964,Terracol2016"
+literal "false"
+
+\end_inset
+
+.
+ These tonal waves manifest as narrow band peaks in the noise spectra.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter05/PSD composition with Gauss peaks.png
+	lyxscale 20
+	width 11cm
+	height 11cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schematic of a typical slat noise spectrum showing the broadband component,
+ tones, and high frequency hump
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:schematic_b"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The broadband components in the spectra has an alternative explanation although
+ incomplete.
+ It is suggested that the mid-frequency hump (See Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:schematic_b"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) is generated due to the high speed turbulence ejection from the slat gap
+ with a particular influence from the high-amplitude low-frequency fluctuations
+ due to vortex impingement in the upstream.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Imamura2007"
+literal "false"
+
+\end_inset
+
+ showed that PSD of turbulence fluctuations downstream of the trailing edge
+ have strong correlation with frequencies of the mid-frequency hump in far-field
+ spectra.
+ Regarding the high frequency hump, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Botero-bolivar2020"
+literal "false"
+
+\end_inset
+
+ showed that frequency of this hump increases with decreasing trailing edge
+ thickness.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Imamura2007"
+literal "false"
+
+\end_inset
+
+ also showed that the frequency of this hump have a high energy content
+ in the PSD of ejected turbulence.
+ Hence, it can be assumed that both mid-frequency and high frequency broadband
+ humps are directly related to the turbulence ejection at trailing edge.
+ It is worthy to note that there may exist additional high frequency tones
+ in experimental data due to periodic vortex shedding at the trailing edge
+ but this is not observed in flight conditions
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hayes1997,Pott-pollenske2003"
+literal "false"
+
+\end_inset
+
+.
+ Additionally, more recent advances based on advanced signal processing
+ methods like that of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jawahar2021"
+literal "false"
+
+\end_inset
+
+ has shed light on the intermittent characteristic of the tones and the
+ low frequency broadband hump thus shedding more light into their possible
+ mechanisms.
+ A detailed picture of these dynamics as known in the existing literature
+ are presented in Chapter 2 and further insights from our investigations
+ are presented in Chapter 4.
+\end_layout
+
+\begin_layout Standard
+At the current juncture of this research, it must be acknowledged that the
+ technical tool set available for scientific computing and computational
+ aeroacoustics are also undergoing a rapid expansion.
+ In a recent review on computational aeroacoustics, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Moreau2022"
+literal "false"
+
+\end_inset
+
+ has promptly underlined the importance of advanced CFD methods including
+ the Lattice Boltzmann Method (LBM) simulations.
+ On par with expensive high-order schemes for Navier-Stokes equations designed
+ to obtain high fidelity data of the flow dynamics, LBMs enable fast turnaround
+ simulations and bring in additional features such as adaptability to complicate
+d geometries using Cartesian meshes by deploying Immersed Boundary Methods
+ together with a high level of parallelism
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Feng2010a,Marie2009,Satti2012,Soni2022"
+literal "false"
+
+\end_inset
+
+.
+ Such advancements have lead to considerable reduction in the engineering
+ effort required to unravel complex flow scenarios such as for those in
+ real world aeroacoustic applications including slat noise
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Souza2019,Souza2022"
+literal "false"
+
+\end_inset
+
+.
+ Popular LBM solvers like PowerFLOW have also already been demonstrated
+ to have the capability to accurately capture both noise generation mechanisms
+ and propagation in slat noise simulations enabling direct computation of
+ their noise signatures
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bolivar2018,Bres2007,Astoul2021"
+literal "false"
+
+\end_inset
+
+.
+ Well in line with these developments, we also deploy the LBM simulations,
+ to investigate the HLD noise using a newly released LBM solver 
+\shape italic
+ProLB
+\shape default
+.
+ This solver is under active development during the work on this thesis,
+ and although our work is not directly involved in the source code development,
+ Ecole Centrale de Lyon's partnership in the solver development as been
+ leveraged to obtain the necessary technical capabilities and expertise.
+ Consequently, we also take maximal effort to test and validate the solver
+ for our applications.
+ As for contributions from this thesis towards this development, we put
+ forward a cost effective simulation framework using 
+\shape italic
+ProLB
+\shape default
+ coupling it with an independent in-house acoustic analogy module based
+ on the method of Ffowcs Williams-Hawkings
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Williams1969,Casalino2003"
+literal "false"
+
+\end_inset
+
+.
+ Details and technical aspects of these implementations are presented in
+ Chapter 3 of this thesis.
+\end_layout
+
+\begin_layout Standard
+A second advancement pertinent to modern aeroacoustics also comes from the
+ data-driven paradigm
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mendez_Ianiro_Noack_Brunton_2023"
+literal "false"
+
+\end_inset
+
+.
+ In this perspective, reduced order models for flow and acoustics computations
+ are possible by leveraging on the high-quality datasets available from
+ both simulations and laboratory experiments.
+ Their applications in aeroacoustics are still in its infancy and hence
+ a few curious experimentation are also undertaken as part of this work.
+ In particular we deploy a statistical inference method based on Bayesian
+ Active Learning to enable an automated inference procedure regarding the
+ nature of the far-field sound spectra with respect to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{position}
+\end_layout
+
+\end_inset
+
+ of the slat.
+ Using this framework and by committing the required high-performance compute
+ resources, we enabled an extensive data generation campaign collecting
+ more than 30 high-fidelity slat noise simulations.
+ The details of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{its development and associated theoretical specifications}
+\end_layout
+
+\end_inset
+
+ are presented in Chapter 5.
+ Finally in Chapter 6, we utilize the data generated from these simulations
+ to obtain new insights into the cove dynamics thereby facilitating advancement
+ in the fundamental understanding of its phenomenology.
+ All further details on the technical specifications and intermediate results
+ that facilitated our progress are also included in the Appendices for completen
+ess and to enable future investigators.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "/home/amurali/Desktop/References/zoterolibrary"
+options "unsrtnat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
