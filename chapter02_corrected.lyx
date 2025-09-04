@@ -1,0 +1,1740 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/
+\textclass report
+\begin_preamble
+\setcounter{chapter}{1}
+\end_preamble
+\use_default_options false
+\master Thesis_Manuscript_ARM.lyx
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "beramono" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command bibtex
+\index_command default
+\float_placement th
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "PhD Thesis Draft"
+\pdf_author "Ama Roy Murali"
+\pdf_subject "Noise prediction for high lift devices"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style unsrtnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\rightmargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Literature Review
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Literature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This chapter aims to review the existing literature necessary to facilitate
+ the study of slat noise.
+ Given that the aeroacoustic mechanism in slat noise is a composite of fluid
+ dynamic interactions arising from its shear layer behavior, trailing edge
+ scattering, and aeroacoustic resonance, and that the three are simultaneously
+ active under the setting of a cavity flow, we start by presenting these
+ fundamental processes separately before presenting the actual slat noise
+ literature.
+ Thanks to the very recent revitalization of research interest in aeroacoustics,
+ many of these topics have been thoroughly reviewed on their historic context
+ and developments to until as late as the previous year.
+ Hence we do not reproduce such extensive versions here but only present
+ their summaries with a perspective pertinent to our intended study.
+\end_layout
+
+\begin_layout Section
+Trailing Edge Noise
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+TE Noise
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Trailing edge noise or the turbulent boundary layer trailing-edge noise
+ (TBL-TE) is an elementary noise source in the aeroacoustics of solid bodies
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Williams1970"
+literal "false"
+
+\end_inset
+
+.
+ The flow past a trailing edge convects the turbulent structures who themselves
+ behave as quadrupole like sources
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lighthill1952"
+literal "false"
+
+\end_inset
+
+.
+ The resulting fluctuations in the immediate vicinity of a sharp trailing
+ edge are then scattered by the edge and results in a dipole like source
+ centered at the edge.
+ Although a debated topic, this effect was suggested to be largely independent
+ of the unsteady Kutta condition except for high frequency noise and non-linear
+ effects in the directivities
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Amiet1976,Howe1978,Crighton1985,Sandberg2006"
+literal "false"
+
+\end_inset
+
+.
+ The farfield sound intensity is proportional to 
+\begin_inset Formula $M^{5}$
+\end_inset
+
+, where 
+\begin_inset Formula $M$
+\end_inset
+
+ is the free stream Mach number
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Williams1970"
+literal "false"
+
+\end_inset
+
+.
+ Compared to the noise of free turbulence which scales with 
+\begin_inset Formula $M^{8}$
+\end_inset
+
+, and that of unsteady surface fluctuations which scale with 
+\begin_inset Formula $M^{6}$
+\end_inset
+
+, the trailing edge scattering serves as a dominant mechanism when flow
+ speeds are sufficiently low.
+\end_layout
+
+\begin_layout Standard
+For the intensity of the farfield noise, the trailing edge scattering efficiency
+ is dependent on the spanwise coherence length
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cavalieri2014"
+literal "false"
+
+\end_inset
+
+.
+ This is due to the fact that when the structures are spanwise oriented
+ – with respect to the largely two dimensional flow – the input pressure
+ fluctuations at the TE will also be coherent along the spanwise edge length
+ leading to their strong radiation by scattering.
+ According to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Williams1970"
+literal "false"
+
+\end_inset
+
+, if the distance between the passing eddy and the TE is increased such
+ that the Helmholtz number 
+\begin_inset Formula $k\bar{r_{0}}\gg1$
+\end_inset
+
+, where 
+\begin_inset Formula $\bar{r_{0}}$
+\end_inset
+
+ is the distance of the passing eddy from the edge and 
+\begin_inset Formula $k$
+\end_inset
+
+ is the wavenumber of the radiated acoustic wave of interest, the trailing
+ edge noise efficiency decreases.
+ But within the proximity of 
+\begin_inset Formula $k\bar{r_{0}}<0.5$
+\end_inset
+
+, the noise level increases by a factor of 
+\begin_inset Formula $k\bar{r_{0}}^{-3}$
+\end_inset
+
+.
+ This partially can be attributed to the effective coherence of the incident
+ fluctuations which also is inversely proportional to 
+\begin_inset Formula $\bar{r_{0}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The incident fluctuations at the trailing edge can thus be used as the input
+ to model far-field TE noise as in the work of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Amiet1976"
+literal "false"
+
+\end_inset
+
+.
+ His model uses the pressure fluctuations at a location slightly upstream
+ of the trailing edge together with an infinite chord assumption.
+ This then by the Schwarzchild technique for the wave equation of the acoustic
+ potential enables calculating the pressure variation across the sharp trailing
+ edge which then act as a distribution of acoustic sources at the TE.
+ Then the radiation can be propagated to the farfield by calculating noise
+ using the canonical Green's function.
+ This method thus provides a physically valid method of calculation of the
+ TE scattering phenomena and also validated the theory.
+ An extension to the TE noise theory for engineering application was also
+ given by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Roger2005"
+literal "false"
+
+\end_inset
+
+ where the possible backscattering from the leading edge of a finite chord
+ blade was taken in to account for the calculation.
+\end_layout
+
+\begin_layout Standard
+In addition to classical theory and explanations, more recent and advanced
+ post processing methods have been used to further TE noise studies via
+ numerics
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Greschner2010,Finez2011,Sano2019,Alguacil2023,Redonnet2024"
+literal "false"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Sano2019"
+literal "false"
+
+\end_inset
+
+ studied the data from large eddy simulation and used Spectral Proper Orthogonal
+ Decomposition (SPOD) to isolate the dominant structures that are responsible
+ for the pressure fluctuations at the trailing edge.
+ Their analysis suggested that the largest eigen value modes represented
+ most part of the acoustic energy.
+ The corresponding modes were also shown to have an extended structure spanning
+ from the location of boundary layer detachment to the trailing edge.
+ They hence suggested that the trailing edge noise is related to non-compact
+ source fluctuations.
+ They also suggested that the phase of the fluctuations also have an impact
+ such that the maximum source efficiency occurs when the incoming perturbations
+ are out of phase between the suction side and the pressure side.
+ 
+\end_layout
+
+\begin_layout Section
+Other mechanisms of Airfoil Self-Noise 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Airfoil Self-Noise 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Airfoil self-noise refers to the noise generated by a single element airfoil
+ due to interactions with the turbulence developing along its surface
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Brooks1989,Moreau2009,ArroyoRamo2023"
+literal "false"
+
+\end_inset
+
+.
+ The primary source of turbulence here is the boundary layer turbulence
+ generated by the boundary layer flow over the walls.
+ For subsonic speeds, the major noise source mechanism is the above mentioned
+ TBL-TE noise phenomenon and contributes to a broadband noise in the farfield.
+\end_layout
+
+\begin_layout Standard
+Apart from the TE phenomena another major noise mechanism occurs when the
+ airfoil is stalled
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Moreau2009"
+literal "false"
+
+\end_inset
+
+.
+ When it happens that the flow on the suction side of the airfoil separates
+ prematurely, before reaching the trailing edge, large scale vortex structures
+ are shed from the suction side of the airfoil, leading to strong generation
+ of turbulence.
+ In a mildly separated flow, the noise mechanism will stay similar to the
+ trailing edge radiation but due to stronger incoming vorticity at TE.
+ Hence a broadband increase by about 10dB over TBL-TE
+\color black
+ in the low frequency range – typically 
+\begin_inset Formula $St\in[0.02,0.03]$
+\end_inset
+
+ where the Strouhal number is defined in terms of the projected width obstructin
+g the flow – is the characteristic development
+\color brown
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lacagnina2019"
+literal "false"
+
+\end_inset
+
+
+\color black
+.
+ As the angle of attack increases, the flow separation point moves towards
+ the leading edge and the noise progressively shifts to a lower frequency
+ range.
+
+\color inherit
+ During deep stall, the airfoil operates as a bluff body and the noise is
+ generated from the full surface of the chord and the low frequency component
+ are diminished together with the development of narrow band peaks in 
+\color black
+same Strouhal range
+\color inherit
+.
+ These are attributed to the periodic shedding of large scale vortices and
+ their interaction with the leading and trailing edges
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Laratro2017"
+literal "false"
+
+\end_inset
+
+.
+ The sharpness of transition from mild stall noise to deep stall noise is
+ also determined by the thickness of the airfoil.
+ The stall noise is a dominant component of the total noise when present
+ but however is less prevalent in high-lift applications.
+ It is so since the high-lift device (HLD) primarily delays the stall on
+ the main body, i.e.
+ an HLD allows the airfoil to operate at a higher angles of attack without
+ initiating stall due to the secondary turbulent flow generated by the leading
+ edge slat.
+ The large scale periodic vortex shedding from the suction side wall on
+ an airfoil is hence replaced by the reattachment of a periodically oscillating
+ shear layer from the slat trailing edge for the HLD.
+ The only related possible mechanism in HLDs is thus of a mild-stall condition
+ on its main element with strongly turbulent inflow conditions due to presence
+ of upstream cove flow.
+ This can potentially explain mid-frequency broadband components.
+\end_layout
+
+\begin_layout Standard
+A third noise mechanism for airfoils arise from the vortex shedding from
+ a low Reynolds number laminar boundary layer on the airfoil wall.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Arbey1983"
+literal "false"
+
+\end_inset
+
+ were the early experimenters to show that an airfoil placed in a uniform
+ laminar flow generated broadband noise with dominant tonal components and
+ the tone frequencies followed a ladder-type evolution with the flow velocity.
+ The laminar boundary layers at low Reynolds numbers without pressure gradients
+ are stable according to the Rayleigh criteria.
+ However, any slight incoming perturbation can excite the boundary layer
+ (BL) instabilities.
+ The most unstable modes in a viscous laminar parallel flat 2D BL flow are
+ known as the Tollmien-Schlichting (T-S) waves
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lowson1994"
+literal "false"
+
+\end_inset
+
+.
+ These pressure and velocity perturbations, when excited at a source location
+ on the airfoil surface by external factors, grow along the streamwise direction
+ until their amplitude saturates non-linearly into turbulence generating
+ vortices which are then convected past the trailing edge
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Longhouse1977"
+literal "false"
+
+\end_inset
+
+.
+ The trailing edge scattering then generates acoustic waves that travel
+ back to the location of the T-S wave onset to enhance their excitation,
+ thereby completing an aeroacoustic loop
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Vittal-shenoy2023"
+literal "false"
+
+\end_inset
+
+.
+ This mode of resonance thus destabilizes a laminar boundary layer on an
+ airfoil even when there is no adverse pressure gradient along the wall.
+ Since the TS instability is receptive to a broadband range of incoming
+ perturbations, the presence of the turbulent boundary layer on one side
+ of the airfoil is sufficient to excite the instability on both sides, given
+ the angle of attack and Reynolds numbers.
+ The resulting noise spectra will also have quasi-tones related to the shedding
+ rates at the trailing edge
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Brooks1985"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A fourth mechanism for airfoil self-noise arises from the trailing edge
+ shape.
+ A blunt trailing edge can facilitate shedding of vorticity if the edge
+ thickness is comparatively larger than the boundary layer thicknesses.
+ The vortex shedding is certain if the ratio of TE thickness to boundary
+ layer displacement thickness is larger than 2.0
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Blake1988"
+literal "false"
+
+\end_inset
+
+.
+ The pressure fluctuations associated with the vortices shed, which form
+ a von Karman street downstream of the TE, are scattered by the edges resulting
+ in an efficient noise source.
+ The associated far-field noise is typically a tone in the high frequency
+ range.
+ A similarity of the spectra was obtained when plotted as function of Strouhal
+ numbers based on the TE thickness and the displacement thicknesses of the
+ incoming boundary layer
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bilka2014"
+literal "false"
+
+\end_inset
+
+.
+ The St of the tones are in the range of 
+\begin_inset Formula $St=[0.2,0.3]$
+\end_inset
+
+ while the vortex shedding frequency based on the TE thickness are widely
+ agreed to be at 
+\begin_inset Formula $St\approx0.21$
+\end_inset
+
+ for the Reynolds numbers of interest
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parker1983,Thompson2002"
+literal "false"
+
+\end_inset
+
+.
+ Prediction methods for this noise component have also been shown to have
+ high fidelity while taking into account the lateral fluctuation pressure
+ frequency and the spanwise coherence length of incoming vortices at the
+ edge
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Roger2006"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+This feature of a blunt trailing edge tonal noise is important for slat
+ aeroacoustics.
+ The trailing edge of the slat geometry in the reference configuration of
+ VALIANT, introduced in the previous chapter, has a thickness of 
+\begin_inset Formula $1\,mm$
+\end_inset
+
+.
+ The peak velocity of the ejected flow from the slat gap rises to approximately
+ 
+\begin_inset Formula $2$
+\end_inset
+
+ times the ambient speed and hence a velocity of 
+\begin_inset Formula $100\,m/s$
+\end_inset
+
+ can be taken an an estimate.
+ Consequently the resulting trailing edge shedding frequency will be around
+ 
+\begin_inset Formula $20\,kHz$
+\end_inset
+
+ and hence can explain the high frequency hump typical for slat noise spectra.
+ However, as shown by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Roger2006"
+literal "false"
+
+\end_inset
+
+, the coherence of the eddies along the slat trailing edge will be an important
+ factor determining the source efficiency.
+ In the slat cove flow, this source will hence be weakened by the vorticity
+ dynamics in the cove which favors a disintegration of the spanwise coherent
+ vorticity from the cusp while being convected towards the trailing edge.
+ Moreover, given that for the high speed ejection at the slat gap, the vortex
+ shedding noise is at the very high frequency range of 
+\begin_inset Formula $20kHz$
+\end_inset
+
+, it does not interact directly with the characteristic resonance mechanisms
+ that occur at much lower frequencies.
+\end_layout
+
+\begin_layout Section
+Cavity Noise
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Cavity Noise
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cavity noise is another fundamental phenomenon of aeroacoustics which is
+ of importance for the slat noise.
+ The recent view of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "HamiltonSmith2024"
+literal "false"
+
+\end_inset
+
+, presents most of the significant developments.
+ The canonical cavity flow addressed in fluid dynamics is a regular shaped
+ rectangular cavity under a grazing flow, where a turbulent shear layer
+ develops over the open side.
+ The shear layer at the upstream edge of the open side develops the canonical
+ K-H instability and leads to vortex shedding.
+ These vortices then impinge on the downstream edge of the cavity leading
+ to partial convection of the flow past the edge and partial recirculation
+ of the reminiscent flow within the volume of the cavity.
+ The resulting oscillatory motion at the slat trailing edge leads to periodic
+ variations of the static pressure inside the cavity which then leads to
+ periodic oscillation of the shear layer itself.
+ The perturbations that reach back to the leading edge then provide the
+ trigger for the K-H instability.
+ The combination of vortex shedding and acoustic waves form and aeroacoustic
+ feedback loop that leads to the formation and impingement of strongly coherent
+ large vorticity structures thereby generating acoustic waves at the frequency
+ corresponding to the acoustic wave propagation time.
+ These oscillations were understood early on by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Strouhal1878"
+literal "false"
+
+\end_inset
+
+ to be primarily determined by the incoming velocity and associated length
+ scales which led him to formulate the non-dimensional characteristic frequency
+ referred to as the Strouhal number.
+ The shear layer oscillations and the impinging vortices were theorized
+ and studied later as an aeroacoustic resonance by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rossiter1964"
+literal "false"
+
+\end_inset
+
+ where he demonstrated, using shadowgraphs, that the regular impingement
+ of vortices at the trailing edge and their time of shedding were synchronized,
+ resulting in amplification of the pressure perturbations.
+\end_layout
+
+\begin_layout Standard
+The flow dynamics developed in a cavity is largely dependent on the geometric
+ proportions of the cavity.
+ For the rectangular shape, the streamwise flow types are generally categorized
+ into open and closed
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Charwat1961"
+literal "false"
+
+\end_inset
+
+.
+ The configuration is referred to as open if the streamwise length to depth
+ ratio, 
+\begin_inset Formula $L/D$
+\end_inset
+
+ is less than 5 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "HamiltonSmith2024"
+literal "false"
+
+\end_inset
+
+.
+ In this configuration the shear layer reattaches the downstream of the
+ trailing edge and hence causes large shear layer oscillations to occur
+ which are excited by the internal recirculation.
+ Both deep cavity tones are produced together with Rossiter modes in this
+ case.
+ On the contrary, the flow is treated as closed when 
+\begin_inset Formula $L/D>12$
+\end_inset
+
+.
+ In this case, the streamwise length of the cavity is sufficiently high
+ such that shear layer from the leading edge curves inwards to reattach
+ with the cavity floor before separating again at upstream of the trailing
+ edge.
+ This case hence produces significant drag due to the stagnation of the
+ flow inside the cavity
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Scarano2023"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+It is between these two extremes that the cavity flow is called transitional.
+ When closer to the open configuration with 
+\begin_inset Formula $5<L/D<7$
+\end_inset
+
+, the flow is predominantly open with the shear layer impinging at close
+ proximity to the trailing edge.
+ The flow often transition here between a closed mode or open mode depending
+ on the incoming flow velocities.
+ The transition here is also affected by the development of the flow in
+ the third dimension which depend on 
+\begin_inset Formula $L/W$
+\end_inset
+
+ where 
+\begin_inset Formula $W$
+\end_inset
+
+ is the cross flow width as shown by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Stallings1987"
+literal "false"
+
+\end_inset
+
+.
+ In view of their acoustics, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jacob1999"
+literal "false"
+
+\end_inset
+
+ showed that shallow cavities exceeding 
+\begin_inset Formula $L/D>7$
+\end_inset
+
+ predominantly behave as acoustically independent steps, i.e.
+ a one forward facing and the other backward facing
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jacob1999a,Jacob2001,Addad2003,Leclercq2012"
+literal "false"
+
+\end_inset
+
+, in their contribution to the total noise.
+ This is attributed to the fact that the distance between the steps tends
+ to obstruct the aeroacoustic loop.
+\end_layout
+
+\begin_layout Standard
+The geometry of the cavity and their arrangement has also been observed
+ to be important in view of the turbulence generated and noise characteristic.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Marsden2012"
+literal "false"
+
+\end_inset
+
+ studied the behavior of cylindrical cavities in its interaction with the
+ boundary layer and found that cylindrical cavities also generated Rossiter
+ like tones linked to the cavity depth.
+ For a staggered arrangement of the cavities on a flat plate, the local
+ turbulence characteristics were shown to shift towards the case with wall-norma
+l blowing by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Scarano2022,Scarano2022a,Scarano2023"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The three dimensionality in cavity flows, as will be shown later, is an
+ important aspect to understand the slat cove flow.
+ In the rectangular cavity configuration, the cavity is referred to as wide
+ 
+\begin_inset Formula $2D$
+\end_inset
+
+, if the width of the cavity is sufficiently high, typically 
+\begin_inset Formula $L/W<<1$
+\end_inset
+
+.
+ This is also the case of an spanwise infinite flow where the spanwise features
+ of the flow dynamics are dispersed into the infinite domain.
+ In contrast, for the case referred to as the Narrow 
+\begin_inset Formula $3D$
+\end_inset
+
+ case, the spanwise width is limited by the presence of a wall constraining
+ the domain such that 
+\begin_inset Formula $L/W>1$
+\end_inset
+
+.
+ In this case the three dimensional dynamics are retained locally within
+ the flow resulting in their influence on the larger 
+\begin_inset Formula $2D$
+\end_inset
+
+ flow.
+ This is often the scenario if experimental investigation of the slat noise
+ is carried out in a wind tunnel where the spanwise spacing of the lateral
+ supporting plates is not sufficiently large.
+\end_layout
+
+\begin_layout Standard
+For the cove flow generated in a generic case, we know from the literature
+ that the recirculation bubble roughly has a depth similar to the slat chord.
+ For an experimental setup which has a slat chord of 
+\begin_inset Formula $C_{s}=0.039\,m$
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+, the cove diameter can also be taken to be the same from rough geometrical
+ estimates.
+ Hence the cavity length to depth ratio approximates as close to 
+\begin_inset Formula $1$
+\end_inset
+
+ and hence falls in the transitional-open regime.
+ of investigators this far in the literature to treat the slat cove dynamics
+ to be a wide 
+\begin_inset Formula $2D$
+\end_inset
+
+ flow phenomena.
+ However, note that this comparison is widely inaccurate on the details
+ since for a rectangular cavity, the cavity shape is a regular rectangle
+ whereas in the cove flow, the cavity has the shape of the inner slat wall,
+ which itself approximates as circular.
+ More importantly, the shear layer in an open cavity flow bridges the open
+ side in a dominantly linear path.
+ In contrast the slat cove shear layer undergoes a curved path whose curvature
+ itself lies in the linearly unstable regime.
+ This is one perspective that we wish to study and to highlight to the community
+ through our work.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Section
+Curved Shear Layer
+\end_layout
+
+\begin_layout Plain Layout
+A last but substantial of flow phenomena that we believe is necessary to
+ understand slat cove dynamics is that of the curved shear layer.
+ This is because the argument that the slat cove is spanwise homogeneous
+ is the accepted notion among slat noise researchers thereby instructing
+ the experiments to overlook spanwise variations.
+ The fact is that in perspective of the cavity flow phenomena, the slat
+ cove flow is a wide flow with an equivalent length to depth ratio larger
+ than 1.
+ However, the key difference here lies, according to our understanding,
+ is that the shear layer in slate cove has a strongly curved trajectory
+ with a slat chord based non-dimensional radius of curvature of 
+\begin_inset Formula $R/C_{s}<0.5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+The effect of curvature on the nature of turbulence in a curved free shear
+ layer is however sparingly attended as a fundamental problem.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+The curved free shear layers however are sparingly analyzed fundamentally.
+ Instead the problem is often approached from a perspective of the Görtler
+ instability which is a dominant mechanism in the case of flow along a curved
+ wall.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Slat Cove Dynamics and Noise
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Slat Cove Dynamics and Noise 
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+High–Lift devices were in military and commercial use as early as 1995.
+ They were introduced when the airplane engines developed enough power to
+ have high speed cruise leading to requirement of high-lift devices during
+ take off and landing in order to maintain a lower speed and control.
+  enhance the lift performance of airplane's wing at low velocity flights
+ during take off and landing.
+ noise was first studied in a multi-component airframe setting by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Fink1979"
+literal "false"
+
+\end_inset
+
+.
+ Dedicated experimental campaign to study the leading edge slat noise mechanism
+ were later conducted by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dobrzynski1998"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As mentioned in the introduction, the slat cove dynamics and noise mechanisms
+ are understood largely in terms of the elementary mechanisms discussed
+ above.
+ Historically, in the very early developments on slat related noise studies,
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Fink1979"
+literal "false"
+
+\end_inset
+
+ noted that its broadband noise contributes as high as 11dB to the Overall
+ Sound Power Level (OASPL).
+ This component which was observed in the flight data did not have specific
+ tones.
+ Consequently, the early slat noise model for flight conditions by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Guo1997"
+literal "false"
+
+\end_inset
+
+ also focused on modelling the broadband component and followed the hypothesis
+ that the trailing edge noise mechanism is dominant.
+ Following this, as the first of its kind, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dobrzynski1998"
+literal "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Perennes1998"
+literal "false"
+
+\end_inset
+
+ in 1998 separately conducted dedicated experiments to study high lift device
+ noise isolated from the rest of the airframe noise sources by using a laborator
+y scale test model.
+ In these experiments, the high lift devices were found to have narrow band
+ tones in addition to the broadband spectra.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Khorrami2000a"
+literal "false"
+
+\end_inset
+
+ first hypothesized that these tones can originate from the vortex shedding
+ of the blunt trailing edge but later reported that attempts to directly
+ correlate the vortex shedding frequency to the thickness of the blunt trailing
+ edge were not successful.
+ Subsequently efforts were made to correlate the tone frequencies with the
+ boundary layer displacement thickness which also did not bear fruit
+\begin_inset CommandInset citation
+LatexCommand citep
+key "khorrami2000"
+literal "false"
+
+\end_inset
+
+.
+ In 2001, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Tam2001"
+literal "false"
+
+\end_inset
+
+ reported the discovery of 
+\begin_inset Quotes eld
+\end_inset
+
+Gap tones
+\begin_inset Quotes erd
+\end_inset
+
+ and suggested that in both the slat cove and in case of jet shear layers,
+ an aeroacoustic mechanism can explain the generation of acoustic tones.
+ The frequency of the tones were also shown to be predictable by using only
+ kinematic considerations, i.e.
+ the time lag between the vortex shedding and the acoustic generation due
+ to their interaction with the wall or the flow itself.
+ This was the first suggestion that the slat tones could possibly be explained
+ by an aeroacoustic resonance.
+ Subsequent developments can be noted to be informed of both the tonal and
+ broadband nature of slat noise with the broadband noise being the main
+ focus for modelling flight test datasets
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Guo2003"
+literal "false"
+
+\end_inset
+
+, and the tones curiously being a prominent feature in experimental investigatio
+ns on lab-scale models
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pott-pollenske2003"
+literal "false"
+
+\end_inset
+
+.
+ The computational campaigns that followed then showed that the broadband
+ noise predictions using modelled turbulence statistics in the slat cove
+ can provide a good agreement with the far-field acoustics 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Agarwal2004,Takeda2004,Ewert2005,Kaepernick2005"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the same direction 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Imamura2007"
+literal "false"
+
+\end_inset
+
+ also showed that the PSD of turbulence fluctuations downstream of the slat
+ TE have strong correlation with the mid-frequencies in the far-field spectra
+ while 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Kaepernick2005"
+literal "false"
+
+\end_inset
+
+ showed that the tones have mode switching processes suggesting that they
+ are associated with resonant processes.
+ The broadband noise was also shown to have a fifth power dependence with
+ the free stream Mach number based on the dimensional analysis by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Guo2012"
+literal "false"
+
+\end_inset
+
+ and subsequently such a model was found to have reasonable agreements with
+ their slat noise datasets from flight tests.
+ However, in his work this correspondence of the scaling law was reported
+ to be only nominal, derived from dimensional analysis, and the total slat
+ noise behavior deviates to have a Mach number power dependency of 
+\begin_inset Formula $5.3$
+\end_inset
+
+ to obtain a better agreement with observations, as first suggested by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Perennes1998"
+literal "false"
+
+\end_inset
+
+.
+ This also lies in between the noise efficiency of a classical trailing
+ edge source (
+\begin_inset Formula $M^{5}$
+\end_inset
+
+) and that of a simple airfoil in a turbulent field (
+\begin_inset Formula $M^{6}$
+\end_inset
+
+) and the difference can be attributed to the propagation effects which
+ is determined by the presence and complex nature of the flow on the slat-airfoi
+l configuration.
+ The farfield directivity of slat noise also reproduces largely a dipole
+ shaped radiation centered at the trailing edge of the slat as shown in
+ the work of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lockard2009"
+literal "false"
+
+\end_inset
+
+, providing further evidence that the trailing edge mechanism is the driver
+ of the broadband noise.
+\end_layout
+
+\begin_layout Standard
+The explanations for broadband and tonal noise are thus mostly satisfactory
+ for their source mechanisms.
+ Accordingly, modern investigations of slat noise attempt to capture the
+ farfield noise quantitatively and engineering efforts attempt to reduce
+ the noise by using geometrical interventions.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Khorrami2010"
+literal "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Konig2010"
+literal "false"
+
+\end_inset
+
+ showed that the strength of the shear layer vorticity determines the strength
+ of the radiated noise.
+ The former used a blade seal to reduce the strength of the shed vorticity
+ while the latter showed that the perturbations near the slat gap are correlated
+ to the broadband noise in the farfield.
+ 
+\end_layout
+
+\begin_layout Standard
+Following a reinvigorated research interest, the standardized geometry of
+ the 30P30N configuration was adopted as part of the Benchmark problems
+ for Airframe Noise Computations (BANC)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Choudhari2017,Murayama2014"
+literal "false"
+
+\end_inset
+
+.
+ For this geometry, the Mach number dependence of slat related OASPL was
+ found to be 
+\begin_inset Formula $M^{4.5}$
+\end_inset
+
+ in the experiments by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Pascioni2016"
+literal "false"
+
+\end_inset
+
+.
+ They also reported that the tonal components had a Strouhal number which
+ depended on the angle of attack.
+ In their suggestion, this was reasoned to be an effect of the variation
+ of the shear layer length where a longer vortex trajectory would cause
+ a longer travel times for the eddies and thus a reduction of the resonant
+ Strouhal numbers.
+ A new standardized 2-element geometry was also put forward in the VALIANT
+ project by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Manoha2012"
+literal "false"
+
+\end_inset
+
+ to isolate the slat only phenomena from that of a trailing edge flap which
+ can possibly interact with the leading edge slat.
+ Our project follows the VALIANT project in using the same 2-element generic
+ geometry.
+ For this configuration, the frequencies of cavity resonance were investigated
+ by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+ who deduced that the resonance follows the same phenomenology as the aforementi
+oned Rossiter mechanism.
+ The resulting formula based on kinematic considerations use the vortex
+ shedding location as the slat cusp and the trailing edge as the location
+ of impingement of the trailing edge.
+ The travel time for the spanwise coherent vortices shed from the cusp then
+ provides the major time delay and, together with the feedback time for
+ the acoustic wave from the trailing edge to reach back at the cusp, it
+ provides the total time period for the resonant oscillation.
+ The formula for the slat's Rossiter modes according to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+ then writes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{n}=n\frac{U_{\infty}}{L_{a}}\frac{1}{M+\frac{\alpha_{l}}{\kappa_{\nu}}}\label{eq:terracoleqn}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, 
+\begin_inset Formula $\kappa_{\nu}=U_{\nu}/U_{\infty}$
+\end_inset
+
+ is the non-dimensional vortex convection velocity, 
+\begin_inset Formula $\alpha_{l}=L_{\nu}/L_{a}$
+\end_inset
+
+ is the ratio of shear layer length to the acoustic path, and 
+\begin_inset Formula $M$
+\end_inset
+
+ is the Mach number.
+ This formula assumes that the slat tones are harmonics of a fundamental
+ which is determined by the longest possible resonance loop when 
+\begin_inset Formula $n=1.$
+\end_inset
+
+ It however needs to be reevaluated since the tones can indeed deviate from
+ harmonic behavior and give in to non-linear interactions
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wei2023,Wei2025"
+literal "false"
+
+\end_inset
+
+.
+ These non-linear interactions can lead to transfer of energy between the
+ modes and also to secondary frequencies.
+ However, the formula for most cases provides a satisfactory estimate of
+ the resonant frequencies
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Botero2018,Bolivar2020,Jawahar"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The most recent advancements in slat noise investigations focused on utilizing
+ advanced post processing and measurement methodologies.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jawahar2021"
+literal "false"
+
+\end_inset
+
+ conducted experiments of the 30P30N configuration to uncover the stochastic
+ character of the slat tones.
+ It was shown using wavelet analysis that the slat tones are not a steady
+ radiation but the leading energy modes had quasi-periodic disruptions.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Wei2025"
+literal "false"
+
+\end_inset
+
+ performed synchronized measurements of the far-field noise, wall pressure
+ sensors, and hot wire probes in 30P30N experiment and confirmed that the
+ slat tones show non-linear interactions i.e.
+ the fundamental mode tends to be unsteady in its amplitude and transfers
+ energy to the first and second harmonic causing a mode switching effect.
+\end_layout
+
+\begin_layout Standard
+To conclude our understanding of the literature, let us briefly underline
+ the current state of the art of slat noise modelling.
+ In the last section we delineate the Guo's model and Souza's most recent
+ corrected formula for the tonal frequency prediction.
+ Also note that in the literature we reviewed, we only included the efforts
+ directed towards computational modelling and omited those aimed to study
+ the various slat noise reduction techniques although such improvements
+ also have attracted well deserved engineering research interests
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jawahar,KamliyaJawahar2020"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Current State of the Art for Slat Noise Modelling
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+State of the Art
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As mentioned, among the early slat noise prediction models that are restricted
+ to the broadband component, the one developed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Guo2012"
+literal "false"
+
+\end_inset
+
+ is to date the only one dedicated to this source.
+ The theoretical model of noise generation from turbulence, its propagation
+ through mean flow gradients, and acoustic scattering effects were used
+ in his approach to derive an approximate analytical form for the slat noise
+ spectra.
+ The model has its footing in the physics of noise generation, propagation
+ effects, and scattering effects by rigid walls, and the final equation
+ is inexpensive to evaluate.
+ The proposed equation for far-field PSD reads 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Pi=\rho_{0}^{2}c_{0}^{2}A_{G}A_{F}W(M)F(f,M)D(\theta,\phi)\frac{c_{s}b}{r^{2}}\label{eq:guo1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, 
+\begin_inset Formula $ρ_{0}$
+\end_inset
+
+ is the air density, 
+\begin_inset Formula $c_{0}$
+\end_inset
+
+ the speed of sound, 
+\begin_inset Formula $A_{G}$
+\end_inset
+
+ the geometry dependent amplification factor, 
+\begin_inset Formula $A_{F}$
+\end_inset
+
+ the flow-dependent amplification factor, W(M) the Mach number dependent
+ weighting function, 
+\begin_inset Formula $F(f,M)$
+\end_inset
+
+ the spectral shape function, 
+\begin_inset Formula $D(θ,φ)$
+\end_inset
+
+ the directivity function in terms of polar and azimuthal angles, 
+\begin_inset Formula $c_{s}$
+\end_inset
+
+ the slat chord length, 
+\begin_inset Formula $b$
+\end_inset
+
+ the wing span, and 
+\begin_inset Formula $r$
+\end_inset
+
+ the source to observer distance.
+ The spectral shape function is then defined as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}F(f,M)= & \frac{M^{2}c_{s}}{c_{0}}\frac{St_{c}^{2}}{\left(1+\mu_{0}^{2}St_{c}^{2}\right)\left(1+\mu_{1}^{2}(1+M)^{2}St_{c}^{2}\right)}\times\\
+ & \frac{1}{\left(1+\mu_{2}^{2}M^{2}St_{c}^{2}\right)\left(1+\mu_{3}MSt_{c}\right)}
+\end{aligned}
+\label{eq:guo2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, the terms 
+\begin_inset Formula $\mu_{0},\mu_{1},\mu_{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $\mu_{3}$
+\end_inset
+
+, in Eq.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:guo2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ capture the dependency of the PSD on various case parameters including
+ the dependency on the Green's function, spatial and temporal coherence
+ of the sources and geometric characteristic length.
+ These parameters together with 
+\begin_inset Formula $A_{G}$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{F}$
+\end_inset
+
+ in Eq.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:guo1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ dictate the levels and shape of the spectral prediction.
+ The functions for directivity function 
+\begin_inset Formula $D(\theta,\phi)$
+\end_inset
+
+, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+and the Mach number based weighting function 
+\begin_inset Formula $W(M)$
+\end_inset
+
+ are paramount to its actual usage and are to be inferred in a data-driven
+ manner, either manually or by method of numerical deduction.
+ Nevertheless, we omit these since they are not directly used in the course
+ of our work which only adopts the shape function to enable a data-driven
+ approach.
+\end_layout
+
+\begin_layout Standard
+For tonal noise, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+'s formula based on the path length and free-stream velocity enables quick
+ calculation of tonal frequencies and is in active use to-date.
+ An example is the experimental investigations including that of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "KamliyaJawahar2020"
+literal "false"
+
+\end_inset
+
+.
+ In a recent modification, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Souza2019"
+literal "false"
+
+\end_inset
+
+ have shown that an additional constant offset of the phase by 90 degrees
+ helps in improving the previous result, especially for the higher tones.
+ The final formula was thus given as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+St_{n}=\left(n+\frac{1}{4}\right)\times\frac{U_{\infty}}{L_{a}}\frac{1}{M+\frac{\alpha_{l}}{\kappa_{\nu}}}\label{eq:souza}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The additional factor of 
+\begin_inset Formula $1/4$
+\end_inset
+
+ captures the phase shift between the vorticity impingement and acoustic
+ generation at the trailing edge.
+ The same authors also suggested that Spectral Proper Orthogonal Decomposition
+ (SPOD) for the turbulence data reveals the major flow fluctuations in the
+ cove region and how the modes display this phase shift of 90 degrees 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Himeno2021"
+literal "false"
+
+\end_inset
+
+.
+ The results for different flow cases such as one from the standard geometry
+ and other with a flow stopper in the slat wall leading to a separated bubble
+ were tested and yielded satisfactory results.
+ 
+\end_layout
+
+\begin_layout Standard
+Regarding data-driven modelling of broadband noise, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bolivar2020"
+literal "false"
+
+\end_inset
+
+ used a Lattice Boltzmann Method based commercial solver, PowerFLOW, to
+ conduct a parametric study of slat generated noise.
+ The CFD solver has a well documented literature for its low dissipation
+ and dispersion properties 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bres2009,Bolivar2018"
+literal "false"
+
+\end_inset
+
+.
+ It is hence well suited for the simulation of turbulence induced acoustics.
+ Detailed notions of why this is relevant is provided in the next chapter.
+ Their resulting data was then used to deduce approximate analytical forms
+ for the parameters in Guo's model by using a least square fitting, thereby
+ connecting Guo's model parameters to trends in the flow solution.
+ An alternative LBM based solver ProLB is also in active development showing
+ promise towards reliable acoustic predictions 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Astoul2020,Astoul2021,Moreau2022"
+literal "false"
+
+\end_inset
+
+.
+ The solver has been the subject of detailed study and development in the
+ doctoral thesis of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Astoul2021"
+literal "false"
+
+\end_inset
+
+.
+ Their acoustic studies for the standardized landing gear case LAGOON 2
+ and LAGOON 3 using ProLB solver has shown satisfactory agreement with experimen
+t.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+A review of the basic phenomena related to slat noise, namely the TE noise,
+ airfoil self noise, and cavity noise, are reviewed in this chapter together
+ with the current state of art of leading edge slat noise.
+ These phenomena in our understanding is necessary to understand the dynamics
+ and noise generation in the airfoil configuration.
+ With the conclusion that there are sound advancements in both analytical
+ modeling of tonal noise and data-driven methods using LBM, we now choose
+ the data-driven paradigm as the basis of this work.
+ This aligns with our objective of obtaining a fast-turn around aeroacoustic
+ prediction tool that can be used at a design engineers desk during design
+ optimizations.
+ For this, we deploy the commercial LBM solver ProLB, together with a Ffowcs
+ Williams-Hawkings acoustic analogy method to develop an acoustic prediction
+ framework.
+ The data is first used to investigate the slat noise phenomena in relation
+ to the above mentioned basic mechanisms of noise generation and then to
+ put forward a data-driven framework that enables to bypass the expensive
+ LBM or acoustic analogy methods to obtain a noise estimate.
+ This latter choice is primarily motivated by the aim is to develop a slat
+ noise prediction framework that is agnostic to the geometrical complexities.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "/home/amurali/Desktop/References/zoterolibrary"
+options "unsrtnat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

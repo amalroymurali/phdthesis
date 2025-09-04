@@ -1,0 +1,7 @@
+\subfigure[Case casenum]{
+    \includegraphics[width=0.25\textwidth,trim=0.0cm 0cm 0cm 0cm, clip]{figs/parametric_cases/sl_path/casename.png}
+    \includegraphics[width=0.25\textwidth,trim=0.0cm 0cm 0cm 0cm, clip]{figs/parametric_cases/sl_path/casename_criticalrat.png}
+    \includegraphics[width=0.25\textwidth,trim=0.0cm 0cm 0cm 0cm, clip]{figs/parametric_cases/fwh/FWHObserver2_casename.png}
+    \label{fig:SL_para_case_criticalrat_casenum}
+}
+

@@ -1,0 +1,635 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/
+\textclass report
+\begin_preamble
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{subfig}
+\usepackage{tikz}
+\setcounter{chapter}{2}
+
+%\begin{document}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.misc}
+
+\usepackage{xcolor}
+\definecolor{BLACK}{rgb}{0,0,0}
+\end_preamble
+\use_default_options false
+\master Thesis_Manuscript_ARM.lyx
+\begin_modules
+theorems-ams
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "beraserif" "default"
+\font_sans "default" "default"
+\font_typewriter "beramono" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command bibtex
+\index_command default
+\float_placement th
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "PhD Thesis Draft"
+\pdf_author "Ama Roy Murali"
+\pdf_subject "Noise prediction for high lift devices"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=red, urlcolor=blue, citecolor=blue, pdfstartview={FitH}, hyperfootnotes=false, unicode=true"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 2
+\use_package mathtools 2
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style unsrtnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\rightmargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Conclusions and Future Perspectives
+\end_layout
+
+\begin_layout Standard
+The research presented in this thesis attempts to advance the understanding
+ of leading-edge slat noise through high-fidelity simulation, detailed flow
+ analysis, and innovative surrogate modeling.
+ The main findings from each chapter can be summarized as follows:
+\end_layout
+
+\begin_layout Paragraph
+Literature Review – Aeroacoustic Noise Mechanisms and Slat Noise:
+\end_layout
+
+\begin_layout Standard
+The survey of past studies highlighted the canonical aeroacoustic mechanisms
+ with the objective to explain the leading-edge slat noise.
+ According to our understanding, the slat noise is a dominant contributor
+ to airframe noise in take-off and landing configurations, especially at
+ low-to-mid frequencies.
+ A striking feature of slat noise research is that there exists a discrepancy
+ between the experiment and flight test for the tonal nature of its noise.
+ The tones are not acknowledged to exist in the flight test data but are
+ a prominent feature in subscale noise testing.
+ Also despite extensive experimental efforts and analytical models, the
+ complex cove flow dynamics of slats remained only partially understood,
+ with phenomena like intermittent behavior of the tones reported but not
+ fully explained.
+ This motivated the use of advanced computational approaches.
+ The Lattice Boltzmann Method (LBM) emerged as a promising tool for aeroacoustic
+ simulation of such flows, offering inherently low dissipation and excellent
+ parallel scalability for capturing acoustic waves.
+ The literature review thus established both the need for high-fidelity
+ analysis of slat noise mechanisms to investigate it in light of known aeroacous
+tic mechanisms and the potential of LBM to meet this need.
+\end_layout
+
+\begin_layout Paragraph
+Simulation Framework – LBM validation for Aeroacoustics:
+\end_layout
+
+\begin_layout Standard
+A comprehensive study of theoretical underpinning of LBM and validation
+ LBM solver 
+\begin_inset Formula $\emph{ProLB}$
+\end_inset
+
+ was carried out for a standard slat configuration in free-stream conditions.
+ The solver was able to reproduce the mean flow field and surface pressure
+ distribution on the slat-main element configuration with good accuracy
+ when compared to experimental data.
+ In particular, the simulated wall-pressure coefficients on the slat and
+ main element showed the correct trends and magnitude, with minor discrepancies
+ attributable to differences in experimental setup.
+ The far-field sound predictions using a Ffowcs Williams–Hawkings (FWH)
+ acoustic analogy also demonstrated close agreement in overall sound pressure
+ levels and spectral content with microphone measurements, confirming that
+ the LBM approach can capture both broadband and tonal noise components
+ of the slat.
+ This validation aided to establish confidence in the numerical framework’s
+ capability for high-fidelity aeroacoustic simulation of slat noise.
+\end_layout
+
+\begin_layout Paragraph
+Flow Physics of the Slat Cove:
+\end_layout
+
+\begin_layout Standard
+Using the validated solver, an in-depth analysis of the baseline (standard)
+ slat geometry was performed to unravel the noise-generation mechanisms.
+ The study revealed the details of a highly complex unsteady flow in the
+ slat cove region characterized by spanwise-periodic cellular structures
+ in the recirculation bubble.
+ These spanwise cells – alternating converging and diverging flow regions
+ along the span – are driven by a centrifugal instability of the curved
+ shear layer in the cove.
+ As the shear layer rolls over the slat cusp, it forms spanwise coherent
+ vortices that initially organize according to the cellular pressure pattern.
+ During this thesis we have uncovered a previously unknown periodic “bursting”
+ phenomenon: at a characteristic non-dimensional frequency around St ≈ 0.16
+ (based on slat chord and freestream velocity), the spanwise vortical structure
+ abruptly breaks down into smaller-scale streamwise vortices.
+ This bursting occurs preferentially at the diverging planes of the spanwise
+ cells (where a pressure deficit accumulates) and convects downstream with
+ the shear flow.
+ The result is a recurrent injection of turbulence into the shear layer.
+ These findings augment the current understanding of slat cove dynamics
+ by pinpointing a specific mechanism for the transition from large coherent
+ structures to fine-scale turbulence via an intrinsic unsteady mode of the
+ recirculation flow.
+ Notably, the estimated frequency of the cove “pulsation” matches the low-freque
+ncy tone observed in slat noise spectra, suggesting a direct link between
+ the unsteady recirculation and acoustic emissions.
+\end_layout
+
+\begin_layout Paragraph
+Slat Noise Generation Mechanisms:
+\end_layout
+
+\begin_layout Standard
+The flow features thus understood translated into clear noise-generation
+ pathways.
+ The shear layer emanating from the slat cusp impinges on the main element
+ downstream, and its unsteadiness induces pressure fluctuations on the main
+ element leading edge, which in turn radiate as sound.
+ The intermittent breakdown of spanwise coherence in the shear layer explains
+ the tone intermittency and mode switching reported in experiments for slat
+ noise – essentially, the effective coherence length of the noise sources
+ in the gap can shorten when a burst occurs, leading to a temporary reduction
+ or shift of tonal noise, before coherence rebuilds and tones re-emerge.
+ Thus, the study provides a physical explanation for the stochastic behavior
+ of slat tones (as observed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jawahar2021"
+literal "false"
+
+\end_inset
+
+ and others) by relating it to the intrinsic variability of the cove flow.
+ In summary, the dominant slat noise sources were found to be: (1) the unsteady
+ shear layer impingement causing aeroacoustic resonance, producing a primary
+ tonal noise at the burst frequency and its harmonics, and (2) additional
+ broadband contributions from the smaller-scale turbulent structures convected
+ through the gap.
+ Importantly, no evidence was found of purely artificial acoustic modes
+ due to the computational setup – the spanwise cellular pattern was confirmed
+ to be a physical feature rather than a numerical artifact, as it persisted
+ when varying the spanwise domain length, boundary conditions, and slat
+ positioning.
+ The variability from no cell formation to wave numbers of 
+\begin_inset Formula $L_{z}/5$
+\end_inset
+
+ where 
+\begin_inset Formula $L_{z}$
+\end_inset
+
+ is the spanwise length provides a validation of the same fact.
+\end_layout
+
+\begin_layout Paragraph
+Surrogate Modeling and Parametric Study:
+\end_layout
+
+\begin_layout Standard
+To extend the analysis beyond a single geometry, a surrogate modeling framework
+ was developed to investigate slat noise across a range of slat positions.
+ Using a Gaussian Process (GP) regression as the surrogate, coupled with
+ an active learning strategy (Upper Confidence Bound, UCB), the study explored
+ the two-dimensional parameter space of slat gap and overlap, i.e.
+ positions relative to the main element.
+ The use of a statistical surrogate model was with the objective of maximizing
+ the sampling efficiency for the parametric simulation, and also to introduce
+ such methods to the aeroacoustic engineering research.
+ The surrogate model was trained on a limited set of high-fidelity LBM simulatio
+ns and was able to predict the noise spectrum for any intermediate slat
+ setting, along with an estimate of its own uncertainty.
+ This approach was presented as an optimization tool: the UCB-driven sampling
+ iteratively selected new simulation cases that were pinned to case that
+ maximize the far-field noise, thereby honing in on the loudest configurations.
+ As a result, the most acoustically critical slat setting in the considered
+ design space was identified with far fewer runs than a brute-force parameter
+ sweep.
+ The surrogate’s predictions of sound pressure levels were in close agreement
+ with subsequent LBM simulations for those configurations, demonstrating
+ the model’s utility and the benefit of uncertainty-based sampling.
+ Beyond optimization, this parametric campaign yielded a rich dataset that
+ allowed us to examine the generality of the cove flow phenomena: indeed,
+ the spanwise cell formation and bursting mechanism were observed across
+ all tested slat positions, though the exact frequency and strength of the
+ bursts showed some dependence on slat geometry.
+ For instance, moving the slat outboard (increasing gap and overlap) tended
+ to slightly alter the recirculation size and shift the burst frequency,
+ but the qualitative behavior remained the same.
+ These observations confirm that the centrifugal-instability-driven unsteadiness
+ is an inherent feature of slat cove flows.
+ In summary, the surrogate modeling effort not only facilitated rapid evaluation
+ of slat noise performance for different geometries, but also supported
+ the physical analysis by expanding the range of conditions under which
+ the newly identified noise mechanism has been validated.
+\end_layout
+
+\begin_layout Standard
+Overall, this thesis combined high-fidelity LBM simulations and data-driven
+ surrogate modeling to gain new insights into slat noise.
+ We have demonstrated that LBM can reliably capture the intricate flow physics
+ and acoustics of a leading-edge slat, provided sufficient care in its numerical
+ setup.
+ The discovery of the spanwise cellular instability and its role in modulating
+ the noise generation is a key scientific contribution, offering a deeper
+ mechanistic understanding of slat noise that bridges previously disparate
+ observations (tone interactions, intermittency, etc.).
+ Meanwhile, the surrogate modeling approach represents a step toward practical
+ aeroacoustic design optimization, showing how costly simulations can be
+ leveraged in an intelligent manner to explore design changes.
+ The tools and knowledge developed in this work lay a foundation for more
+ efficient prediction and eventually mitigation of high-lift device noise
+ in future aircraft designs.
+\end_layout
+
+\begin_layout Paragraph
+LBM Applicability and Limitations:
+\end_layout
+
+\begin_layout Standard
+It is important to critically assess the numerical approach used, to delineate
+ its range of validity for aeroacoustic predictions of slat noise.
+ The Lattice Boltzmann Method proved to be a powerful high-fidelity solver
+ in this study, but it comes with certain numerical limitations that were
+ encountered and addressed as follows:
+\end_layout
+
+\begin_layout Subparagraph
+Dispersion vs.
+ Dissipation:
+\end_layout
+
+\begin_layout Standard
+LBM inherently has very low numerical dissipation, which is advantageous
+ for preserving acoustic wave amplitude over long travel distances (a key
+ requirement in computational aeroacoustics).
+ Indeed, our simulations maintained stable and clear pressure signals without
+ excessive damping.
+ However, LBM is known to exhibit higher numerical dispersion compared to
+ some high-order Navier–Stokes solvers.
+ Numerical dispersion can slightly distort the phase speed of acoustic waves,
+ meaning that if the grid resolution is not fine enough, the predicted frequenci
+es or wave propagation angles can shift from their true values.
+ In our case, a careful grid convergence study in Chapter 3 ensured that
+ the lattice spacing was sufficiently small to accurately resolve the wavelength
+s of interest.
+ The grid was designed such that at the highest significant tone frequency,
+ there were enough points per wavelength to limit dispersion error to acceptable
+ levels.
+ As a result, the tonal frequencies and directivity matched well with theory
+ and experiment.
+ Nonetheless, the reliance on fine grids increases computational cost; future
+ applications of LBM to aeroacoustics must account for this and possibly
+ employ selective grid refinement in acoustic source regions to mitigate
+ dispersion without everywhere-uniform ultra-fine meshes.
+\end_layout
+
+\begin_layout Subparagraph
+Grid and Time-Step Requirements:
+\end_layout
+
+\begin_layout Standard
+The LBM solver used a uniform cubic lattice.
+ This requirement of maintaining an aspect ratio of 1 in cells can inflate
+ the total cell count, particularly since the boundary layer over the slat
+ and main element must be resolved with many layers of tiny cells in all
+ three directions.
+ Traditional CFD methods can use stretched grids to alleviate this, but
+ in LBM we had to use a large number of lattice points to capture both the
+ aerodynamic field and the acoustic fluctuations.
+ The computational expense was managed by leveraging GPU acceleration and
+ modern HPC resources, an approach that will be indispensable for future
+ LBM studies of realistic aircraft components.
+ We also note that the explicit time stepping of LBM with a CFL number essential
+ly fixed by lattice speed imposes very small time-steps relative to physical
+ time, especially at high Reynolds numbers, further adding to the cost.
+ Despite these challenges, the pay-off is a fully transient, high-resolution
+ solution of the flow and acoustics without numerical tuning or excessive
+ dissipation, which was crucial for revealing the subtle instability mechanisms
+ in the slat cove.
+\end_layout
+
+\begin_layout Subparagraph
+Spanwise Periodicity and Domain Size: 
+\end_layout
+
+\begin_layout Standard
+To simulate a portion of an infinite wing, periodic boundary conditions
+ in the spanwise direction were employed.
+ A known issue with spanwise-periodic CFD simulations is the potential for
+ artificial reinforcement of flow structures at the imposed periodic length
+ scale.
+ In other words, disturbances can lock into patterns that repeat every spanwise
+ period, because the domain artificially correlates the flow at those intervals.
+ We took two steps to ensure this did not compromise our results: First,
+ we chose a relatively large spanwise domain (approximately 0.7 times the
+ slat chord length) – significantly larger than the characteristic spanwise
+ coherence lengths reported in prior studies – so that the most energetic
+ flow structures including the spanwise cells in the cove had enough room
+ to develop without being overly constrained.
+ Second, we performed a comparison simulation with half the span length
+ to see if the flow features or acoustics changed.
+ The full-span and half-span cases showed that the primary two-dimensional
+ flow features (e.g.
+ time-averaged pressure distribution, overall lift and drag) remained similar,
+ but the shorter span weakened the 3D cove cell structures in the latter
+ part of the shear layer .
+ This confirms that the spanwise instability was real and not a numerical
+ artifact – it still started to form in the half-span domain – but also
+ indicates that a too-small periodic span can suppress some of the 3D developmen
+t – the cells were less pronounced and the spanwise velocity fluctuations
+ reduced in the half-span case.
+ In our main simulations with the larger span, the persistence of strong
+ spanwise cells suggests that we captured the essential 3D physics; however,
+ it is acknowledged that these periodic simulations cannot capture any non-perio
+dic or finite-wing effects.
+ In reality, a wing of finite span might allow coherent structures to drift
+ or decay in the spanwise direction beyond what a strictly periodic domain
+ permits.
+ Thus, one should be cautious in interpreting absolute coherence lengths
+ and tonal purity from a periodic simulation – those could be somewhat elevated
+ compared to a real wing where end effects or spanwise variation exist.
+ In summary, spanwise periodicity was a necessary modeling assumption for
+ tractability, and we mitigated its drawbacks by using a sufficiently large
+ domain and verifying insensitivity of results to further span increase.
+ Future studies might explore alternative approaches such as using damping
+ zones at spanwise ends to simulate an “effectively infinite” wing without
+ exact repetition, but those come with their own complexities.
+\end_layout
+
+\begin_layout Standard
+With the above considerations, the LBM approach has proven applicable and
+ reliable for high-fidelity aeroacoustic simulation of slat noise.
+ The method’s strengths (low dissipation, explicit transient solution, easy
+ parallelization) enabled us to capture subtle unsteady flow phenomena and
+ their acoustic consequence, which may have been more challenging for convention
+al Navier–Stokes solvers without enormous effort in numerical tuning.
+ The limitations encountered including grid resolution demands, dispersion,
+ periodicity constraints are manageable with careful planning and computing
+ power, as demonstrated.
+ Therefore, LBM stands out as a capable tool for aeroacoustic research of
+ complex configurations like high-lift devices, though users must remain
+ vigilant about numerical effects and perform validations to ensure physical
+ fidelity.
+ This critical assessment of LBM in our work not only underpins the trustworthin
+ess of the present results, but also provides guidance for others looking
+ to apply LBM to similar aeroacoustic problems in the future.
+\end_layout
+
+\begin_layout Section*
+Future Perspectives
+\end_layout
+
+\begin_layout Standard
+From the conclusions of this thesis, several avenues are proposed for future
+ work.
+ These include immediate next steps that naturally extend the current study,
+ as well as long-term research directions that apply emerging techniques
+ to the problem of slat noise prediction and reduction.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Near-Term Research Directions
+\end_layout
+
+\begin_layout Paragraph
+Expanded Parametric Studies: 
+\end_layout
+
+\begin_layout Standard
+A logical next step is to broaden the parameter space investigated for slat
+ noise characteristics.
+ In this thesis we varied the slat gap and overlap for a fixed airfoil geometry
+ – the VALIANT 2-element configuration at a single angle of attack, Mach
+ number, and Reynolds number.
+ Future studies should consider a more comprehensive parametric sweep, including
+ different slat deflection angles, gap sizes, profile shapes, and incoming
+ velocity.
+ For example, examining higher deployment angles or slightly reshaped slat
+ cusp geometries could reveal how robust the identified noise mechanisms
+ are under geometric changes.
+ Likewise, varying the flow conditions – such as freestream velocity (Reynolds
+ number) or angle of attack of the main wing – would provide insight into
+ the scaling of the noise sources.
+ Expanding the dataset in these ways would not only enhance the surrogate
+ model (making it more general), but also test the limits of the current
+ conclusions.
+ For instance, it can answer questions like whether the bursting Strouhal
+ number remain around 0.16 for other configurations, or does it shift with
+ different flow parameters Answering such questions would help generalize
+ the slat noise theory and potentially lead to low-order design tools.
+\end_layout
+
+\begin_layout Paragraph
+Further Validation and Diagnostics: 
+\end_layout
+
+\begin_layout Standard
+Although a validation was performed for the baseline case, it would strengthen
+ the conclusions to seek additional experimental or high-fidelity data for
+ comparison.
+ Near-term efforts could involve collaborating with experimental researchers
+ to obtain detailed measurements for a few key cases for instance, the loudest
+ slat position identified by our surrogate model.
+ Comparing measured and simulated far-field spectra, as well as any measured
+ flow features, would provide a rigorous test of the new physical insights.
+ This could include checking if the predicted burst frequency and spanwise
+ mode pattern occur in reality.
+ The recent experiments by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "KamliyaJawahar2021"
+literal "false"
+
+\end_inset
+
+ on slat noise intermittency, for example, might be re-examined in light
+ of our findings to probe whether their wall-pressure traces or acoustic
+ spectra show signatures consistent with a recirculation bubble pulsation;
+ or whether the characteristics vary along the spanwise directions.
+ A targeted experimental campaign on a slat-only configuration could directly
+ look for the spanwise cellular flows or the unsteady recirculation bubble
+ hypothesized here.
+ Validating these flow features is challenging, but indirect evidence could
+ support our conclusions.
+\end_layout
+
+\begin_layout Subsection*
+Future work 
+\end_layout
+
+\begin_layout Paragraph
+Machine Learning Surrogates with Enhanced Capability: 
+\end_layout
+
+\begin_layout Standard
+A major long-term goal is to leverage advanced machine learning (ML) techniques,
+ particularly deep neural networks, to create surrogate models of slat noise
+ that go beyond the limited-parameter Gaussian Process model developed here.
+ Neural networks can approximate high-dimensional, nonlinear mappings and
+ could thus handle a broader design space – for instance, simultaneously
+ varying the slat geometry, wing geometry, and flow conditions – something
+ infeasible to cover with a small set of simulations.
+ In the future, one could imagine training a neural-network-based surrogate
+ on a large database of aeroacoustic simulations (possibly including different
+ airfoil profiles, various slat and flap configurations, etc.) so that it
+ learns the complex relationship between design parameters and the resulting
+ noise spectrum or sound levels.
+ Such a model, once trained, would deliver near-instant predictions of slat
+ noise, enabling real-time assessments in design processes or active control
+ systems.
+\end_layout
+
+\begin_layout Paragraph
+Integration into Design and Noise Mitigation:
+\end_layout
+
+\begin_layout Standard
+In the long run, the insights and tools developed here can be directed towards
+ practical noise reduction strategies for high-lift devices.
+ One vision is to incorporate the surrogate model (enhanced by ML as discussed
+ above) into a multi-objective optimization framework for aircraft design.
+ For example, an optimizer could adjust the slat geometry or deployment
+ angle to minimize noise, perhaps aiming to disrupt the coherence or reduce
+ the strength of the cove instabilities, while still meeting lift and aerodynami
+c requirements.
+ The fast evaluation provided by a surrogate would make it feasible to explore
+ a vast design space and identify novel configurations or add-on devices
+ such as slat cove fillers or serrated slat cusps that achieve a better
+ noise-performance trade-off.
+ Any promising designs coming out of such computational optimization could
+ then be validated by targeted high-fidelity simulations and experiments.
+\end_layout
+
+\begin_layout Paragraph
+Extending High-Fidelity Simulations: 
+\end_layout
+
+\begin_layout Standard
+As computing power continues to grow, it will become increasingly feasible
+ to apply high-fidelity methods like LBM to more complex and realistic scenarios
+, which is another long-term avenue.
+ Future researchers could build on this work by simulating a full wing with
+ both slat and flap in deployed position, or a complete aircraft landing
+ configuration, capturing the interplay between multiple noise sources (slat,
+ flap, landing gear, etc.).
+ While today this would be enormously demanding, trends in GPU-based computing
+ and algorithmic improvements (e.g.
+ adaptive mesh refinement in LBM, better boundary conditions, coupling with
+ Large-Eddy Simulation turbulence models for finer near-wall resolution)
+ may bring such computations within reach.
+ These simulations would validate whether the noise mechanisms identified
+ in an isolated slat hold in the presence of other components and whether
+ new noise source interactions emerge.
+ They could also provide high-fidelity data to guide standards and regulations
+ by virtually testing noise abatement scenarios (for instance, different
+ approach configurations or modified flap schedules to reduce noise).
+ In tandem, continuing to improve the numerical methods is crucial.
+ Development of LBM variants with reduced dispersion error, or hybridizing
+ LBM with finite-volume methods in certain regions, might allow accurate
+ capture of a broader frequency range and finer flow details without overwhelmin
+g resources.
+ The spanwise periodicity issue could be tackled by simulating larger sectors
+ of the wing or using novel boundary treatments as mentioned, so that eventually
+ the simulations can directly handle finite-span effects and true random
+ (non-periodic) behavior of turbulence and sound radiation.
+ In summary, the long-term trajectory of this research field will likely
+ see a convergence of data-driven models and brute-force simulations: the
+ former (ML surrogates) will rapidly explore design changes and hypotheses,
+ while the latter (next-generation high-fidelity simulations) will verify
+ and deepen our understanding, each feeding into the other.
+\end_layout
+
+\begin_layout Standard
+In closing, the work accomplished in this thesis, in our expectations, has
+ laid a groundwork in both methodology and physical insight for addressing
+ slat noise.
+ By amalgamating an advanced CFD approach (LBM) with modern surrogate modeling,
+ we have shown a pathway to analyze, predict, and possibly mitigate the
+ complex noise generated by high-lift devices.
+ The method is also generalisable to other aeroacoustic cases where complex
+ industrial geometries need to be studied parametrically but where each
+ experimentation is computationally expensive.
+ The findings we present not only solve pieces of the long-standing puzzle
+ of slat noise dynamics, but also open the door to innovative research direction
+s.
+ Continued efforts along the lines described will bring us closer to the
+ goals of deeper scientific understanding and practical noise reduction,
+ contributing to the broader aim of more environmentally sustainable aviation.
+\end_layout
+
+\end_body
+\end_document
