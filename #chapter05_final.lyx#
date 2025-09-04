@@ -285,7 +285,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-\align block
+\align right
 \begin_inset Formula 
 \begin{equation}
 P(H\mid E)P(E)=P(E\mid H)P(H)
@@ -341,7 +341,6 @@ status open
 \end_layout
 
 \begin_layout Standard
-\align block
 Bayes' formula can be reasoned to arise from a symmetry of the probabilities,
  i.e.
  in the symmetry of argument between the probability of a hypothesis being
@@ -402,7 +401,7 @@ Bayes' formula becomes a powerful tool once written as
 \end_layout
 
 \begin_layout Standard
-\align block
+\align right
 \begin_inset Formula 
 \begin{equation}
 P(H\mid E)=\frac{P(E\mid H)P(H)}{P(E)}
@@ -4437,9 +4436,9 @@ Left: A t-SNE visualization of the high dimensional feature space of the
  training dataset of 18 simulations together with 5 newly sampled points
  to be used for subsequent data acquisition.
  The t-SNE hyperparameter 'perplexity' is maintained at value 5.
- Right: MTSV over the domain for the surrogate model expressed as a percentage
- of the initial model (MTSV is calculated in dB), plotted as a function
- of the number of samples acquired during the active learning procedure.
+ Right: Mean variance over the domain for the surrogate model expressed
+ as a percentage of the initial model, plotted as a function of the number
+ of samples acquired during the active learning procedure.
  
 \begin_inset CommandInset label
 LatexCommand label

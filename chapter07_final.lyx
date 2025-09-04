@@ -117,11 +117,11 @@ Conclusions and Future Perspectives
 \end_layout
 
 \begin_layout Standard
-The research presented in this thesis an attempt to advance the understanding
+The research presented in this thesis is an attempt to advance the understanding
  of leading-edge slat noise through high-fidelity simulations and detailed
  flow analysis.
  An innovative surrogate modeling approach, not previously used for aeroacoustic
- simulations, is also deployed with particular focus to approximating the
+ simulations, is also deployed with particular focus on approximating the
  far-field noise spectrum.
  The main findings from each chapter can be summarized as follows:
 \end_layout
@@ -131,9 +131,9 @@ Literature Review – Aeroacoustic Noise Mechanisms and Slat Noise:
 \end_layout
 
 \begin_layout Standard
-In Chapter 1 a generic introduction to slat noise and the background of
+In Chapter 1, a generic introduction to slat noise and the background of
  the thesis is presented.
- In Chapter 2 a survey of past studies was presented and highlighted the
+ In Chapter 2, a survey of past studies was presented and highlighted the
  canonical aeroacoustic mechanisms with the objective to explain the leading-edg
 e slat noise.
  One striking feature of slat noise research is that there exists a discrepancy
@@ -162,7 +162,6 @@ In Chapter 3, a comprehensive study of the theoretical underpinning of LBM
  and a validation of the LBM solver 
 \begin_inset Formula $\emph{ProLB}$
 \end_inset
-
  was carried out for a standard slat position configuration of the HLD in
  free-stream conditions.
  The solver was able to reproduce the mean flow field and surface pressure
@@ -175,7 +174,7 @@ In Chapter 3, a comprehensive study of the theoretical underpinning of LBM
  acoustic analogy also demonstrated a close agreement across the frequency
  range of interest, confirming that the LBM-FWH approach can capture both
  broadband and tonal noise components of the slat.
- This validation aided to establish confidence in the numerical framework’s
+ This validation helped establish confidence in the numerical framework’s
  capability for high-fidelity aeroacoustic simulation of slat noise.
 \end_layout
 
@@ -195,9 +194,12 @@ Using the validated solver, an in-depth analysis of the baseline (standard)
  shear layer in the cove.
  As the shear layer rolls over the slat cusp, it forms spanwise coherent
  vortices that initially organize according to the cellular pressure pattern.
- During this thesis we have uncovered a previously unknown localised and
- periodic “bursting” phenomenon at a characteristic non-dimensional frequency
- around St ≈ 0.16 (based on slat chord and freestream velocity) which corresponds
+ During this thesis, we uncovered a previously unknown localised and periodic
+ “bursting” phenomenon at a characteristic non-dimensional frequency around
+ \begin_inset Formula
+$St \approx 0.16$
+\end_inset
+ (based on slat chord and freestream velocity) which corresponds
  to the recirculation frequency of the slat cove.
  The spanwise coherent vortical structures shed from the cusp also abruptly
  breaks down into smaller-scale streamwise vortices.
@@ -219,12 +221,73 @@ Slat Noise Generation Mechanisms:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Schematic.png
+	lyxscale 10
+	width 11cm
+	height 11cm
+	keepAspectRatio
+	groupId schematic
+
+\end_inset
+ 
+\begin_inset Graphics
+	filename Schematic_DISTORTED.png
+	lyxscale 10
+	width 11cm
+	height 11cm
+	keepAspectRatio
+	groupId schematic
+
+\end_inset
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schematic of the suggested mechanism that explains the intermittency of
+ slat tones observed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jawahar2021"
+literal "false"
+
+\end_inset
+.
+ The non-dimensional frequency of the bursting has also been established
+ as the recirculation frequency of the cove flow using VALIANT geometry.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mechanismschematic"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 As part of Chapter 4, the flow features thus understood translated into
  clear noise-generation pathways as well.
  The shear layer emanating from the slat cusp impinges on the slat trailing
  edge, and its unsteadiness induces pressure fluctuations.
- These fluctuations can emanate themselves as farfield noise but also interact
- with the vortex shedding at the slat cusp to cause an aeroacoustic resonance.
+ These fluctuations can emanate as far-field noise but also interact with
+ the vortex shedding at the slat cusp to cause an aeroacoustic resonance.
  The resonant modes act as sources of tonal noise.
  The intermittent breakdown of spanwise coherence in the shear layer explains
  the tone intermittency and mode switching reported in experiments for slat
@@ -239,9 +302,18 @@ key "Jawahar2021"
 literal "false"
 
 \end_inset
-
  and others) by relating it to the intrinsic variability of the cove flow.
- In summary, the dominant slat noise sources were found to be: (1) the unsteady
+ A schematic of the suggested mechanism is given in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:mechanismschematic"
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+In summary, the dominant slat noise sources were found to be: (1) the unsteady
  shear layer impingement causing aeroacoustic resonance, producing a primary
  tonal noise at the burst frequency and its harmonics, and (2) additional
  broadband contributions from the smaller-scale turbulent structures convected
@@ -254,12 +326,10 @@ literal "false"
  The variability from no cell formation to wave numbers of 
 \begin_inset Formula $L_{z}/5$
 \end_inset
-
- where 
+, where 
 \begin_inset Formula $L_{z}$
 \end_inset
-
- is the spanwise length provides a validation of the same fact.
+ is the spanwise length, provides a validation of the same fact.
 \end_layout
 
 \begin_layout Paragraph
@@ -283,8 +353,7 @@ ns and was able to predict the noise spectra for any intermediate slat setting,
  along with an estimate of its own uncertainty.
  This approach was also presented as an optimization tool: the UCB-driven
  sampling iteratively selected new simulation cases that were pinned to
- case that maximize the far-field noise, thereby honing in on the loudest
- configurations.
+ case that maximize the far-field noise.
  As a result, the most acoustically critical slat setting in the considered
  design space was identified with far fewer runs than a naive parameter
  sweep.
@@ -390,7 +459,6 @@ key "KamliyaJawahar2021"
 literal "false"
 
 \end_inset
-
  on slat noise intermittency, for example, might be re-examined in light
  of our findings to probe whether their wall-pressure traces or acoustic
  spectra show signatures consistent with a recirculation bubble pulsation;
@@ -420,7 +488,7 @@ n of spectral data and their uncertainties.
  Finally the stochastic Upper Confidence Bound acquisition function that
  we deployed is only one among many possible techniques, which are also
  evolving in their own literature.
- An upgradation using a more optimal acquisition function for sampling will
+ An upgrade using a more optimal acquisition function for sampling will
  be highly beneficial for industrial use.
 \end_layout
 
@@ -492,6 +560,27 @@ In closing, the work accomplished in this thesis, in our expectations, has
  Continued efforts along the lines described will bring us closer to the
  goals of deeper scientific understanding and practical noise reduction,
  contributing to the broader aim of more environmentally sustainable aviation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "/home/amurali/Desktop/References/zoterolibrary"
+options "unsrtnat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

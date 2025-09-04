@@ -1036,7 +1036,7 @@ The case with the inclusion of the wind-tunnel shows a better agreement
  the cross flow direction.
  In the full configuration simulation, the static pressure was not measured
  and the velocity was also not uniform, but with minor fluctuations (
-\begin_inset Formula $\pm1 m/sm/s$
+\begin_inset Formula $\pm1 m/s$
 \end_inset
 
  which has no measurable effect on the static pressure).
@@ -5578,12 +5578,12 @@ name "fig:Velocity-Z_1"
 \begin_layout Plain Layout
 The unsteady velocity field in the slat cove visualized using a narrow colorbar
  corresponding to velocity values 
-\begin_inset Formula $U=\pm20 m/sm/s$
+\begin_inset Formula $U=\pm20 m/s$
 \end_inset
 
 .
  The freestream velocity is 
-\begin_inset Formula $50 m/sm/s$
+\begin_inset Formula $50 m/s$
 \end_inset
 
 .
@@ -10812,7 +10812,7 @@ noprefix "false"
  layer with the lowest frequency having the largest lobes.
  For higher frequencies, the lobes grow smaller, however traverses with
  a constant convection velocity of approximately 
-\begin_inset Formula $23 m/sm/s$
+\begin_inset Formula $23 m/s$
 \end_inset
 
 .
@@ -10848,7 +10848,7 @@ The dynamics of acoustic waves can also be noted to be strongly coupled
 , roughly one order of magnitude higher than the slat chord.
  Hence this tone, along with the other characteristics tones less than approxima
 tely 
-\begin_inset Formula $9 kHzkHz$
+\begin_inset Formula $9 kHz$
 \end_inset
 
 , cannot form a standing wave in the 2D plane of slat cove flow between
@@ -12810,13 +12810,13 @@ reference "fig:averagehotwiseSLmag"
 \end_inset
 
  concurs with the mean inflow velocity of 
-\begin_inset Formula $50 m/sm/s$
+\begin_inset Formula $50 m/s$
 \end_inset
 
 , and the deceleration due to presence of the main-element outside of the
  cove region.
  The mean recirculation velocity near the cusp is obtained as 
-\begin_inset Formula $15 m/sm/s$
+\begin_inset Formula $15 m/s$
 \end_inset
 
 , which also concurs with Fig.
@@ -12832,7 +12832,7 @@ noprefix "false"
 .
  The velocity magnitude profiles are also largely spanwise invariant outside
  the cove and have a deviation of 
-\begin_inset Formula $\pm5 m/sm/s$
+\begin_inset Formula $\pm5 m/s$
 \end_inset
 
  inside the recirculation.
@@ -12853,7 +12853,7 @@ noprefix "false"
 , the region outside the cove region shows negligible variation whereas
  for the region inside the cove, the velocity switched signs with a peak
  amplitudes of 
-\begin_inset Formula $7 m/sm/s$
+\begin_inset Formula $7 m/s$
 \end_inset
 
 , suggesting that the spanwise modulation is the main contributor to total
@@ -13323,7 +13323,7 @@ Such a periodic bursting if present may affect the acoustics.
 .
  Here the averaged spanwise velocity modulation is also with a higher amplitude
  approximately 
-\begin_inset Formula $7 m/sm/s$
+\begin_inset Formula $7 m/s$
 \end_inset
 
 , thereby having a higher power level for the low frequency fluctuations
@@ -13697,7 +13697,7 @@ literal "false"
 
  for the 30P30N HLD geometry.
  The experiment had a free field velocity of 
-\begin_inset Formula $30 m/sm/s$
+\begin_inset Formula $30 m/s$
 \end_inset
 
 , 
@@ -13982,7 +13982,7 @@ In this chapter, we presented the numerical investigation and major findings
 \end_inset
 
  against an inflow of 
-\begin_inset Formula $50 m/sm/s$
+\begin_inset Formula $50 m/s$
 \end_inset
 
  at a chord based Reynolds number of 

@@ -371,7 +371,7 @@ The FWH surface recordings are for velocity, pressure, and density data.
  Sampling rate is chosen according to requirements discussed in the main
  text.
  The recording frequency is 
-\begin_inset Formula $180405\,\text{Hz}$
+\begin_inset Formula $180405\,Hz$
 \end_inset
 
 , and has a total of 49200 timesteps enabling 6 averaging bins, with 8200
@@ -393,16 +393,16 @@ Unsteady data for Q-Criterion and Vorticity vectors in the slat cove region
  are recorded for visualizing the cove vortex behavior.
  The sampling rate is kept lower than FWH surface recording to save storage
  space and its sampling at 
-\begin_inset Formula $22550\,\text{Hz}$
+\begin_inset Formula $22550\,Hz$
 \end_inset
 
  is found sufficient for unsteady visualizations of the cove vortex evolution.
  A total spanwise length of 
-\begin_inset Formula $0.016\,\text{m}$
+\begin_inset Formula $0.016\,m$
 \end_inset
 
  are recorded around the span-center plane from a total of 
-\begin_inset Formula $0.2\,\text{m}$
+\begin_inset Formula $0.2\,m$
 \end_inset
 
  of spanwise length of the simulation.

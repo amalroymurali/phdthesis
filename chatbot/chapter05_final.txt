@@ -1559,7 +1559,7 @@ This section aims to develop a noise surrogate model for farfield spectra
 \end_layout
 
 \begin_layout Standard
-The frequency range of interest for slat noise was determined to be 20 kHzkHz.
+The frequency range of interest for slat noise was determined to be 20 kHz.
  For a spectrum collected experimentally, the frequency resolution is typically
  1Hz and hence results in number of bins being 20,000.
  For a spectrum sampled from CFD, a resolution of 40Hz is typical, and will

@@ -126,7 +126,7 @@ End
 \begin_body
 
 \begin_layout Chapter
-LBM and CAA
+Flow and Acoustic computation details
 \end_layout
 
 \begin_layout Section
@@ -407,10 +407,6 @@ P^{\prime}=\hat{A}\exp\left(-\alpha_{S}x\right)\exp\left[i\omega\left(x/c_{S}-t\
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 where,
 \end_layout
 
@@ -482,11 +478,11 @@ Useful approximation for Isothermal Adiabatic Pulse Propagation
 \begin_layout Standard
 With the above three piece wise analyses, we can make approximations for
  the case of a typical fluid whose kinematic viscosity 
-\begin_inset Formula $\nu=1.5\times10^{-5}m^{2}/s$
+\begin_inset Formula $\nu=1.5\times10^{-5}\,\text{m^{2}/s}$
 \end_inset
 
  and thermodynamic sound speed is 
-\begin_inset Formula $c_{0}=343m/sm/s$
+\begin_inset Formula $c_{0}=343\,\text{m/s}$
 \end_inset
 
 .
@@ -693,7 +689,7 @@ Oval FWH surface geometry and placement
 As can be noted, while using the oval surface, the farfield prediction at
  the suction side tends to generate spurious noise in frequencies greater
  than 
-\begin_inset Formula $5kHzkHz$
+\begin_inset Formula $5\text{kHz}$
 \end_inset
 
 .
@@ -749,7 +745,7 @@ noprefix "false"
 \end_inset
 
 , the drop in levels are approximately 
-\begin_inset Formula $4.5dBdB$
+\begin_inset Formula $4.5\text{dB}$
 \end_inset
 
 , on average, suggesting that the contribution for farfield sound from the
@@ -771,7 +767,7 @@ d to the fact that in the FWH routine, the fluctuating pressure is obtained
 Nevertheless,
 \color inherit
  very low frequencies typically 
-\begin_inset Formula $<600Hz$
+\begin_inset Formula $<600\text{Hz}$
 \end_inset
 
  are not considered amenable to interpretation in the experimental data
@@ -824,7 +820,7 @@ The upper and lower surface regions contribute differently to the observer
  excellent agreement for the higher frequencies.
  The tone levels are identical with the surface truncated downstream only,
  whereas the lower frequencies below 
-\begin_inset Formula $800Hz$
+\begin_inset Formula $800\text{Hz}$
 \end_inset
 
  drops further.
@@ -1406,14 +1402,11 @@ The complete configuration of the wind tunnel setup of the original VALIANT
  The full simulation requires significantly larger compute resources than
  free stream simulation since the three dimensional shear layers from the
  wind tunnel need to be resolved adequately to avoid spurious effects.
- Hence its needs a few adaptations which make the free stream simulation
+ Hence it needs a few adaptations which make the free stream simulation
  computationally cheaper while maintaining the same fidelity as when including
  the wind tunnel.
  As such, the wind tunnel simulation has the following differences from
  the free stream case:
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1530,48 +1523,13 @@ Wind tunnel simulation setup in ProLB
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-placement t
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename chapter06_figs/WindTunnelDrawing.png
-	lyxscale 30
-	width 7cm
-	height 7cm
-	keepAspectRatio
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Dimensions of the wind tunnel nozzle exit
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Enumerate
 The total physical time of wind tunnel simulation is 
-\begin_inset Formula $0.078s$
+\begin_inset Formula $0.078\,\text{s}$
 \end_inset
 
 , in comparison to 
-\begin_inset Formula $0.2s$
+\begin_inset Formula $0.2\,\text{s}$
 \end_inset
 
  in the standard free stream case.
@@ -1581,14 +1539,15 @@ The total physical time of wind tunnel simulation is
 \begin_layout Enumerate
 The spanwise length of the domain is 1 chord length, i.e.
  
-\begin_inset Formula $0.3m$
+\begin_inset Formula $0.3\text{m}$
 \end_inset
 
  for wind tunnel simulation whereas it is 
-\begin_inset Formula $0.2m$
+\begin_inset Formula $0.2\,\text{m}$
 \end_inset
 
  for free flow simulations.
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -1612,6 +1571,53 @@ For the case of simulation with the inclusion of tunnel geometry, the coordinate
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter06_figs/WindTunnelDrawing.png
+	lyxscale 30
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dimensions of the wind tunnel nozzle exit
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dimensions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 Consequently, for spanwise periodic condition in the free stream case, the
  acoustic domain is theoretically infinite allowing the waves to propagate
  without being reflected by solid spanwise boundaries.
@@ -1621,9 +1627,14 @@ Consequently, for spanwise periodic condition in the free stream case, the
  Hence, although the domain is infinite for acoustic propagation, it may
  trigger spurious periodic behaviors in the flow with wavelengths that confer
  to the domain length.
- Another effect of the spanwise periodic condition is that it tends to exert
- spanwise homogeneity in the flow if the spanwise domain length is smaller
- than that which would allow three dimensionality to develop.
+ 
+\end_layout
+
+\begin_layout Standard
+As mentioned in the Section 3.7 of main text, another known limitation of
+ spanwise periodic conditions is their tendency to enforce artificial uniformity
+ across the span when the computational width is insufficient to capture
+ natural three-dimensional development.
  This has been investigated in previous works for the same geometry as that
  used in the present simulations
 \begin_inset CommandInset citation
@@ -1657,16 +1668,17 @@ literal "false"
 
  is necessary.
  For the current case simulated, this corresponds to a length of 
-\begin_inset Formula $0.0312m$
+\begin_inset Formula $0.0312\text{m}$
 \end_inset
 
  while the actual simulated span length is 
-\begin_inset Formula $0.2m$
+\begin_inset Formula $0.2\text{m}$
 \end_inset
 
  corresponding to more than 6 times the suggested value.
  Hence this factor is not expected to affect the features of the flow simulated
  in our case and the three dimensionality is expected to develop unhindered.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1719,7 +1731,7 @@ reference "fig:FWH_AirbusLBM"
  It can be noted that a good agreement is obtained regarding the tonal frequenci
 es in both cases.
  For the SPL, the first tone at 
-\begin_inset Formula $1771Hz$
+\begin_inset Formula $1771\text{Hz}$
 \end_inset
 
  tends to be captured adequately by the wind tunnel simulation whereas it
@@ -1808,37 +1820,15 @@ reference "fig:Coefficient-of-pressure"
 \end_inset
 
 ).
- 
 \begin_inset Note Comment
 status open
 
 \begin_layout Plain Layout
-The discrepancies in the suction peak is hence suspected to be the effect
- of irregularity in the measurement of inlet velocity, which in our investigatio
-ns was not uniform at the nozzle exit of the wind tunnel simulation, suggesting
- that the potential effect of the airfoil distorts the inlet velocity profile.
- The 
-\begin_inset Formula $U_{\infty}$
-\end_inset
-
- value used can hence lead to an erroneous 
-\begin_inset Formula $C_{p}$
-\end_inset
-
- value calculation.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
-placement tb
+placement tbh
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -2075,7 +2065,12 @@ status open
 
 \begin_layout Plain Layout
 The sound pressure spectra obtained from the FWH analogy applied to the
- ECL computation of the installed configuration 
+ ECL computation of the installed configuration
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2095,7 +2090,7 @@ The sound pressure spectra obtained from the FWH analogy applied to the
 placement tb
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -2300,12 +2295,12 @@ ProLB
 \emph default
  and FWH approach for the full wind-tunnel installation and for physical
  time of 
-\begin_inset Formula $0.2s$
+\begin_inset Formula $0.2\,\text{s}$
 \end_inset
 
 , obtaining a closer match between simulation and experiment.
  Signal spectra parameters: Total time
-\begin_inset Formula $=0.2s$
+\begin_inset Formula $=0.2\,\text{s}$
 \end_inset
 
 , NFFT
@@ -2313,7 +2308,7 @@ ProLB
 \end_inset
 
 , Sampling Freq.
-\begin_inset Formula $=180405Hz$
+\begin_inset Formula $=180405\,\text{Hz}$
 \end_inset
 
 , N.Avg.
@@ -2321,7 +2316,7 @@ ProLB
 \end_inset
 
  and 
-\begin_inset Formula $\Delta f=22Hz$
+\begin_inset Formula $\Delta f=22\,\text{Hz}$
 \end_inset
 
  
@@ -2371,7 +2366,7 @@ noprefix "false"
 .
  A good agreement of the farfield noise with experiment can be noted particularl
 y for the broadband noise levels in the range 
-\begin_inset Formula $1-10\,kHz$
+\begin_inset Formula $1-10\,\text{kHz}$
 \end_inset
 
 .
@@ -2419,14 +2414,21 @@ reference "fig:wp_spectras_slat-1-1"
 
 \end_inset
 
- and 
+, 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:wp_spectras-mainelement-1-1"
 
 \end_inset
 
- to show the variation of the spectra along the wall geometry.
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:wp_spectras_mainelement2-1-1"
+
+\end_inset
+
+, and to show the variation of the spectra along the wall geometry.
  As can be noted the wall pressure spectra along the wall shows a progressive
  variation of the tonal peaks corresponding to the same in far-field spectra.
  
@@ -2441,8 +2443,11 @@ For slat geometry, in region near the cusp the turbulent fluctuations are
 \end_layout
 
 \begin_layout Standard
-For the main element, the strongest peak is seen for Probe 21 for 1771Hz,
- corresponding to the first main tone.
+For the main element, the strongest peak is seen for Probe 21 for 
+\begin_inset Formula $1771\,\text{Hz}$
+\end_inset
+
+, corresponding to the first main tone.
  This location is also close to the cusp.
  For other probes which are farther from the cove but on the pressure side,
  the tones are visible with progressively weakened levels towards the trailing
@@ -2459,7 +2464,7 @@ ns due to the reattached turbulence.
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2790,7 +2795,7 @@ name "fig:wp_spectras_slat-1-1"
 placement ph
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center

@@ -7,8 +7,7 @@
 \textclass report
 \begin_preamble
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{chapter}{0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\setcounter{chapter}{0}
 
 \usepackage{xcolor}
 \end_preamble
@@ -236,7 +235,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-An Airbus A310-300 wing with slat and flaps deployed
+An Airbus A310-300 wing with slat and flaps deployed.
+ Photo Credit: By Adrian Pingstone (2007), from public domain.
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Coutu2010"
+literal "false"
+
+\end_inset
+
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:An-Airbus-A310-300"
@@ -279,8 +287,11 @@ literal "false"
 \end_inset
 
 .
- In general, a wing with HLD generate 10 dB of additional noise than a normal
- wing 
+ In general, a wing with HLD generate 
+\begin_inset Formula $10\,\text{dB}$
+\end_inset
+
+ of additional noise than a normal wing 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Dobrzynski2010"
@@ -405,11 +416,29 @@ n.
 \end_layout
 
 \begin_layout Standard
-The activities to reported in this thesis was conducted within the MAMBO
- project at the Laboratory of Fluid Mechanics and Acoustics.
- The laboratory, hosted by ECL, has a long tradition in computational and
- experimental aeroacoustics, with many prior experimental studies on slat
- noise.
+The activities reported in this thesis was conducted within the MAMBO project
+ at the Laboratory of Fluid Mechanics and Acoustics (LMFA).
+ The laboratory, hosted by Ecole Centrale de Lyon (ECL), has a long standing
+ tradition in computational and experimental aeroacoustics, with many prior
+ experimental studies on slat noise as early as 1998.
+ Ones that deserve special mention are the early experimental studies of
+ slat noise by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Perennes1998"
+literal "false"
+
+\end_inset
+
+, and its modelling attempts by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Molin2000"
+literal "false"
+
+\end_inset
+
+.
  The computing facility of ECL, named Newton, and the Irene national supercomput
 ing facility was used to obtain the results presented in our work.
  A contemporary experimental campaign was also completed during the progress
@@ -576,13 +605,13 @@ literal "false"
 
 .
  They are typically below 
-\begin_inset Formula $10\,kHz$
+\begin_inset Formula $10\,\text{kHz}$
 \end_inset
 
  in frequency range and are identified as mid-frequency tones
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Botero-bolivar2020"
+key "Bolivar2020"
 literal "false"
 
 \end_inset
@@ -613,7 +642,7 @@ literal "false"
 
 .
  An additional broadband peak at very high frequency of 
-\begin_inset Formula $20\,kHz$
+\begin_inset Formula $20\,\text{kHz}$
 \end_inset
 
  is also reported and is attributed to the vortex shedding from the thick
@@ -856,7 +885,7 @@ literal "false"
  Regarding the high frequency hump, 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "Botero-bolivar2020"
+key "Bolivar2020a"
 literal "false"
 
 \end_inset
@@ -910,7 +939,7 @@ At the current juncture of this research, it must be acknowledged that the
  In a recent review on computational aeroacoustics, 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "Moreau2022"
+key "Moreau2022a"
 literal "false"
 
 \end_inset
@@ -924,7 +953,7 @@ d geometries using Cartesian meshes by deploying Immersed Boundary Methods
  together with a high level of parallelism
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Feng2010a,Marie2009,Satti2012,Soni2022"
+key "Marie2009,Satti2012,Fang2020,Soni2022"
 literal "false"
 
 \end_inset
@@ -1027,6 +1056,16 @@ Finally, the single objective of this thesis is to advance the current state
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Comment
 status open
 

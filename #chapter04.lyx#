@@ -6585,7 +6585,7 @@ R & =\left\Vert \frac{d\vec{T}}{ds}\right\Vert \\
 
 \end_inset
 
-where 
+where, 
 \begin_inset Formula $R$
 \end_inset
 
@@ -6611,7 +6611,11 @@ R & =\sqrt{\left(\frac{\partial^{2}x}{\partial s^{2}}\right)^{2}+\left(\frac{\pa
 
 \end_inset
 
-where 
+
+\end_layout
+
+\begin_layout Standard
+where, 
 \begin_inset Formula $ds$
 \end_inset
 
@@ -6822,7 +6826,11 @@ D=-V\frac{dV}{ds}
 
 \end_inset
 
-where V is the streamwise velocity magnitude.
+
+\end_layout
+
+\begin_layout Standard
+where, V is the streamwise velocity magnitude.
  Here the velocity magnitude is taken to be 
 \begin_inset Formula $V=\sqrt{U_{X}^{2}+U_{Y}^{2}}$
 \end_inset
@@ -7060,7 +7068,11 @@ f_{n}=n\frac{U_{\infty}}{L_{a}}\cdot\frac{1}{\mathcal{M}+\frac{\alpha_{l}}{\kapp
 
 \end_inset
 
-where 
+
+\end_layout
+
+\begin_layout Standard
+where, 
 \begin_inset Formula $L_{a}$
 \end_inset
 
@@ -7280,7 +7292,11 @@ dM_{c}=\frac{U^{2}}{R}\frac{ds}{U}=\frac{U}{R}ds
 
 \end_inset
 
-where 
+
+\end_layout
+
+\begin_layout Standard
+where, 
 \begin_inset Formula $V$
 \end_inset
 
@@ -7788,7 +7804,11 @@ The acoustic waves are best identified in the pressure or density field
 
 \end_inset
 
-where 
+
+\end_layout
+
+\begin_layout Standard
+where, 
 \begin_inset Formula $\frac{D}{Dt}=\frac{\partial}{\partial t}+\mathbf{u}.\nabla$
 \end_inset
 

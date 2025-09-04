@@ -589,13 +589,13 @@ This feature of a blunt trailing edge tonal noise is important for slat
 \end_inset
 
  times the ambient speed and hence a velocity of 
-\begin_inset Formula $100\,m/s$
+\begin_inset Formula $100\,\text{m/s}$
 \end_inset
 
  can be taken as an estimate.
  Consequently the resulting trailing edge shedding frequency will be around
  
-\begin_inset Formula $20\,kHz$
+\begin_inset Formula $20\,\text{kHz}$
 \end_inset
 
  and hence can explain the high frequency hump typical for slat noise spectra.
@@ -614,7 +614,7 @@ literal "false"
  vorticity from the cusp while being convected towards the trailing edge.
  Moreover, given that for the high speed ejection at the slat gap, the vortex
  shedding noise is at the very high frequency range of 
-\begin_inset Formula $20kHzkHz$
+\begin_inset Formula $20\text{kHz}$
 \end_inset
 
 , it does not interact directly with the characteristic resonance mechanisms
@@ -787,7 +787,7 @@ literal "false"
  a one forward facing and the other backward facing
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Jacob1999a,Jacob2001,Addad2003,Leclercq2012"
+key "Jacob1999,Jacob2001,Addad2003,Leclercq2012"
 literal "false"
 
 \end_inset
@@ -1009,7 +1009,7 @@ literal "false"
 
 \end_inset
 
- noted that its broadband noise contributes as high as 11 dBdB to the Overall
+ noted that its broadband noise contributes as high as 11 dB to the Overall
  Sound Power Level (OASPL).
  This component which was observed in the flight data did not have specific
  tones.
@@ -1054,7 +1054,7 @@ Slat Noise Mechanisms
 \begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand citet
-key "Khorrami2000a"
+key "Khorrami2000"
 literal "false"
 
 \end_inset
@@ -1067,7 +1067,7 @@ literal "false"
  boundary layer displacement thickness which also did not bear fruit
 \begin_inset CommandInset citation
 LatexCommand citep
-key "khorrami2000"
+key "Khorrami2000"
 literal "false"
 
 \end_inset
@@ -1349,7 +1349,7 @@ literal "false"
  the resonant frequencies
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Botero2018,Bolivar2020,Jawahar"
+key "Botero2018,Bolivar2020,Jawahar2019"
 literal "false"
 
 \end_inset
@@ -1398,7 +1398,7 @@ To conclude our understanding of the literature, let us briefly underline
  also have attracted well deserved engineering research interests
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Jawahar,KamliyaJawahar2020"
+key "Jawahar2019,KamliyaJawahar2020"
 literal "false"
 
 \end_inset
@@ -1668,7 +1668,7 @@ literal "false"
  promise towards reliable acoustic predictions 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Astoul2020,Astoul2021,Moreau2022"
+key "Astoul2020,Astoul2021,Moreau2022a"
 literal "false"
 
 \end_inset

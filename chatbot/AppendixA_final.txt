@@ -486,7 +486,7 @@ With the above three piece wise analyses, we can make approximations for
 \end_inset
 
  and thermodynamic sound speed is 
-\begin_inset Formula $c_{0}=343 m/sm/s$
+\begin_inset Formula $c_{0}=343 m/s$
 \end_inset
 
 .
@@ -693,7 +693,7 @@ Oval FWH surface geometry and placement
 As can be noted, while using the oval surface, the farfield prediction at
  the suction side tends to generate spurious noise in frequencies greater
  than 
-\begin_inset Formula $5 kHzkHz$
+\begin_inset Formula $5 kHz$
 \end_inset
 
 .

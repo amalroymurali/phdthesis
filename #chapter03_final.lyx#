@@ -138,16 +138,16 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-The first objective of this theses is to concoct a suitable framework that
+The first objective of this thesis is to concoct a suitable framework that
  will enable the investigation of slat noise phenomena numerically.
  Due to the inherent complexity of accelerated shear flow along the curved
- path through slat gap and the impingement and flow past the sharp edges
+ path through slat gap and the impingement of the flow past the sharp edges
  of both the slat cusp and the trailing edge, the flow itself necessitates
  a high-fidelity simulation that can capture unsteady evolution of shear
  layer and its dynamic interactions.
  The three dimensional aspect of flow has also not been investigated in
- detail so far although the flow features are acknowledged to have strong
- three dimensionality from early studies itself 
+ detail so far, although the flow features are acknowledged to have strong
+ three dimensionality from early studies
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Khorrami2006,Choudhari2007,Manoha2012"
@@ -201,14 +201,14 @@ literal "false"
 
 , variation of the shear layer shape with respect to the slat positioning
  has to be documented in order to form a deeper understanding.
- To enable this, the first difficulty is in generating meshes through the
+ To enable this, the first difficulty is in generating meshes inside the
  cove geometry.
  The mesh has to be adapted in case of parametric slat positions and hence
  an extensive exploration is not possible unless automatic mesh generation
  is enabled.
  Additionally, the noise generation in the slat cove needs to be captured
  with high fidelity in all cases computed and needs to be propagated without
- numerical loss and artifacts to a far-field numerical observer.
+ numerical loss and artifacts to a far-field observer.
  This requires that the mesh choices must enable accurate source modelling
  together with wave propagation with low numerical dissipation and dispersion,
  and at minimal computational cost.
@@ -237,14 +237,14 @@ literal "false"
  will provide the same level of fidelity regarding the noise phenomena
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Moreau2022"
+key "Moreau2022a"
 literal "false"
 
 \end_inset
 
 .
- Hence the canonical WMLES and DNS are not viable in our study which aims
- to obtain an extensive dataset by variation of slat position.
+ Hence the canonical wall-resolved LES and DNS are not viable in our study
+ which aims to obtain an extensive dataset by variation of slat position.
 \end_layout
 
 \begin_layout Standard
@@ -252,7 +252,7 @@ A more advanced technique has been deployed in the recent years which uses
  the Lattice Boltzmann framework to obtain an equivalent WMLES.
  It has been demonstrated that this method sufficiently captures the noise
  mechanisms and the propagation effects.
- Here a Very Large Eddy Simulations (VLES) were introduced for slat noise
+ Here, Very Large Eddy Simulations (VLES) were introduced for slat noise
  simulations by 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -303,14 +303,14 @@ literal "false"
 Hence the expedited meshing procedure and low numerical dissipation characterist
 ics of LBM places the same as a niche technique to be useful in a detailed
  study of slat aeroacoustics.
- The same was thus chosen for the progress of our work.
+ It was thus chosen for the progress of our work.
  We now look into a detailed view of the LBM framework for its theoretical
- guarantees before delineating the methods that we use to adapt a commercial
+ developments before delineating the methods that we use to adapt a commercial
  LBM software 
 \emph on
 ProLB
 \emph default
-  for our slat noise investigation.
+ for our slat noise investigation.
 \end_layout
 
 \begin_layout Section
@@ -357,7 +357,7 @@ literal "false"
  The fluidic behavior is then modeled on a discrete lattice in space by
  time-stepping the properties of the lattices depending on its current state
  and the state of its immediate neighbors.
- This means that by suitable choice of the state variables and a physically
+ This means that by a suitable choice of the state variables and a physically
  consistent model for interaction of the cells, the macroscopic behavior
  of a fluid medium can be simulated.
  Since evolution of each lattice is driven by its own state and those of
@@ -377,7 +377,7 @@ ures and Graphics Processing Units (GPUs) available in modern scientific
  computing especially in the field of Computational Fluid Dynamics (CFD)
  in application to High-Fidelity (Hi-Fi) simulation of turbulence.
  Its applications are hence growing in a wide range of topics including
- aeronautics research, multi-phase flows, and medical heamodynamics.
+ aeronautics research, multi-phase flows, and medical hemodynamics.
 \end_layout
 
 \begin_layout Standard
@@ -401,7 +401,7 @@ For simulating a fluid using LBM, the first assumption is that the fluid
 
 \end_inset
 
-Looking at the same formally, the total number of particles in a fluidic
+Looking at it more formally, the total number of particles in a fluidic
  medium located at a position 
 \begin_inset Formula $x$
 \end_inset
@@ -433,7 +433,7 @@ where
 \begin_inset Formula $f_{N}(\boldsymbol{x},\boldsymbol{\xi},$
 \end_inset
 
-t) denotes the particle density probabilty distribution as a function of
+t) denotes the particle density probability distribution as a function of
  
 \begin_inset Formula $\boldsymbol{x}$
 \end_inset
@@ -584,7 +584,7 @@ where
 \end_inset
 
 where the left hand side is a convection equation for the particle velocity
- distribution whereas the right hand term 
+ distribution whereas the right-hand term 
 \begin_inset Formula $\Omega(f)$
 \end_inset
 
@@ -742,7 +742,11 @@ where
  denotes the Knudsen number.
  The Knudsen number denotes the spatial rarity of the fluid particles and
  formally has the definition as a dimensionless number being the ratio of
- the mean free path of the particles to a characteristic length scale.
+ the mean free path of the particles to a characteristic length scale 
+\begin_inset Formula $l_{0}$
+\end_inset
+
+.
  It can typically be translated into a ratio of corresponding time scales
  as,
 \end_layout
@@ -804,7 +808,7 @@ Chapman and Enskog independently developed this approximation further under
 Now that an approximate relation between the non-equilibrium and equilibrium
  distribution is available, it is possible to analyze the behavior of the
  Lattice Boltzmann Equation in its fidelity to the Navier-Stokes behavior.
- For this the asymptotic expansion in Eq.
+ For this, the asymptotic expansion in Eq.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:asymptoticexp"
@@ -884,7 +888,7 @@ Here typically, LBM utilizes the Gauss-Hermite quadratures for this purpose.
  Here the minimum number of discrete velocities is 39 for the 3D lattice
  and is more affordable than the previous case.
  A detailed comparison of the schemes and formulations can be found in the
- work of 
+ doctoral thesis of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Astoul2021"
@@ -988,9 +992,10 @@ literal "false"
  studied in detail the wave dispersion and dissipation of LBM schemes in
  comparison with canonical schemes used for isothermal Navier-Stokes equation.
  Their work suggested that lattice Boltzmann schemes, which including the
- BGK and MRT models, have better dissipation performance when compared to
- high-order schemes typically used for Navier-Stokes, i.e.
- for propagating waves though the fluidic medium using a discrete mesh.
+ Bhatnagar-Gross-Krook (BGK) and Multi-Relaxation Time (MRT) collision models,
+ have better dissipation performance when compared to high-order discretisation
+ schemes typically used for Navier-Stokes, i.e.
+ for propagating waves through the fluidic medium using a discrete mesh.
  LBM schemes better preserve the wave energy across the discretised medium
  than Navier-Stokes solvers for a comparable grid size.
  In this regard, LBM models with the MRT scheme were also shown to be more
@@ -1037,9 +1042,9 @@ That being said, to use LBM for practical applications involving complex
  enabling a significant reduction of the total number of nodes in the mesh.
  The assumptions of the boundary layer allow this geometric shortcut without
  reducing the fidelity of the simulation as well.
- However this method is not valid for LBM simulations cannot be utilized
- in the LBM simulations and in cases where the boundary layer behavior are
- important, the number of nodes in the simulation grows rapidly.
+ However this method cannot be utilized in the LBM simulations and in cases
+ where the boundary layer behavior are important, the number of nodes in
+ the simulation grows rapidly.
 \end_layout
 
 \begin_layout Standard
@@ -1107,7 +1112,7 @@ literal "false"
 
 \end_inset
 
-, and can generate of fluctuations that can be amplified by numerical errors
+, and can generate fluctuations which can be amplified by numerical errors
  arising from discretisation.
  These modes need to be adequately modelled.
  Hence accumulation of their errors eventually pollute the numerical solution
@@ -1161,7 +1166,7 @@ ProLB
  was done using a planar Gaussian pulse.
  For this, a one dimensional Gaussian pulse with a pressure amplitude of
  
-\begin_inset Formula $100Pa$
+\begin_inset Formula $100\,\text{Pa}$
 \end_inset
 
  was initialized over an otherwise quiescent initial state.
@@ -1171,7 +1176,7 @@ ProLB
 \shape default
  was then used to advance the solution in time to propagate the pulse for
  a distance of 
-\begin_inset Formula $1m$
+\begin_inset Formula $1\,\text{m}$
 \end_inset
 
 .
@@ -1186,12 +1191,13 @@ literal "false"
 
 \end_inset
 
- and considers the propagation of a plane wave in a viscous medium.
- The theoretical solution of the linearized NS equation is described in
- Appendix A, showing the effect of viscosity in terms of dissipation and
- dispersion.
- When the associated propagation equation is solved in a discretized, the
- numerical dissipation and dispersion is accounted for by a numerical viscosity.
+ and consider the propagation of a plane wave in a viscous medium.
+ The analytical solution of a plane wave propagating according to the linearized
+ NS equation is described in Appendix A, showing the effect of viscosity
+ on the wave's dissipation and dispersion.
+ When the associated propagation equation is solved on a discretized mesh,
+ the effective dissipation and dispersion is accounted for by an additional
+ numerical viscosity.
  The solution for a plane wave pulse propagating into a direction x is described
  hereafter along with the numerical dissipation and dispersion.
 \end_layout
@@ -1303,11 +1309,11 @@ m, corresponding to 17 points per wavelength at 10~kHz.
 \backslash
 % variation in phase speed.
  A similar but better resolution of 
-\begin_inset Formula $0.0016m$
+\begin_inset Formula $0.0016\text{m}$
 \end_inset
 
  corresponding to a multiple of boundary layer mesh sizing of 
-\begin_inset Formula $0.0002m$
+\begin_inset Formula $0.0002\text{m}$
 \end_inset
 
  is hence chosen for the propagation of acoustic waves in the High-Lift
@@ -1712,7 +1718,7 @@ A first step towards the automated LBM simulation from input variable was
  A pre-processing module which takes the slat and main element geometries
  to generate a geometrical case of LBM simulation was completed successfully.
  Here the slat configuration with respect to the main element is specified
- using a three variable coordinate system popular in the literature
+ using a four variable coordinate system popular in the literature
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Lu2021"
@@ -1911,14 +1917,26 @@ Choice of initial pulse
 \begin_layout Standard
 The Gaussian pulse propagated for the simulation should contain the frequencies
  of interest, i.e.
- the bandwidth of the signal should be at least 10kHz in frequency or 
-\begin_inset Formula $10^{3}/343=30m^{-1}$
+ the bandwidth of the signal should be at least 
+\begin_inset Formula $10\text{\,kHz}$
+\end_inset
+
+ in frequency or 
+\begin_inset Formula $10^{4}/343=30\,\text{m}^{-1}$
 \end_inset
 
  in the spatial wavenumber domain.
  This is adjusted by choosing a sufficiently small pulse width.
  Here the Fourier bandwidth of a Gaussian pulse varies inversely as pulse
  width with bandwidth of a Dirac Delta function being infinite.
+ The selected pulse in spatial domain is plotted in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:A-Gaussian-pulse"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1968,7 +1986,7 @@ status open
 \begin_layout Plain Layout
 (Left:) Spatial distribution of the initial Gaussian pulse and (Right:)
  its spatial Fourier Transform showing wavenumber contents upto 
-\begin_inset Formula $50m^{-1}$
+\begin_inset Formula $50\text{m}^{-1}$
 \end_inset
 
 
@@ -2014,6 +2032,13 @@ A Gaussian pulse of pulse width
 \end_inset
 
 m in the frequency domain, which is also a Gaussian
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:A-Gaussian-pulse"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2064,20 +2089,20 @@ P^{\prime}(x,y,z,0)=10^{-3}P_{0}\exp\left(-\ln(2)\frac{x^{2}}{\sigma^{2}}\right)
 \end_inset
 
 where 
-\begin_inset Formula $\sigma=0.01m$
+\begin_inset Formula $\sigma=0.01\,\text{m}$
 \end_inset
 
  is the pulse width which contains wave numbers upto 
-\begin_inset Formula $50m^{-1}$
+\begin_inset Formula $50\,\text{m}^{-1}$
 \end_inset
 
  and corresponding maximum time-frequency of 
-\begin_inset Formula $17\,kHz$
+\begin_inset Formula $17\,\text{kHz}$
 \end_inset
 
 , which is sufficient in view of slat noise since the interesting frequencies
  are below 
-\begin_inset Formula $10\,kHz$
+\begin_inset Formula $10\,\text{kHz}$
 \end_inset
 
 .
@@ -2432,11 +2457,14 @@ Number of Points Per Wavelength (PPW) for relevant values of wavenumbers
 \begin_layout Standard
 Hence the performance of the code with respect to the wave of wavenumber
  of 
-\begin_inset Formula $50m^{-1}$
+\begin_inset Formula $50\,\text{m}^{-1}$
 \end_inset
 
-for the case of a resolution of 0.001m corresponds to its performance at
- 20 points per wavelength.
+for the case of a resolution of 
+\begin_inset Formula $0.001\,\text{m}$
+\end_inset
+
+ corresponds to its performance at 20 points per wavelength.
  The wave propagation and its numerical effects are linear in the frequency
  domain – being captured by the linearized Navier-Stokes – and hence the
  behavior of the pulse in the frequency domain is an adequate indicator
@@ -2465,8 +2493,8 @@ literal "false"
 \end_inset
 
 .
- The propagation of pulse, starting at the initial position x=0, as a time
- series at different probe locations of the domain, 
+ The propagation of the pulse, starting at the initial position x=0, as
+ a time series at different probe locations of the domain, 
 \begin_inset Formula $x=[0.1,0.6,1.1]\,m$
 \end_inset
 
@@ -2483,14 +2511,14 @@ noprefix "false"
 .
  The propagated pulse shows evident dispersion and dissipation for the coarse
  mesh cases 
-\begin_inset Formula $\Delta x=0.002$
+\begin_inset Formula $\Delta x=0.002\,\text{m}$
 \end_inset
 
-m and 
-\begin_inset Formula $0.004$
+ and 
+\begin_inset Formula $0.004\,\text{m}$
 \end_inset
 
-m.
+.
  But the propagation is apparently efficient for the case 
 \begin_inset Formula $\Delta x=0.001$
 \end_inset
@@ -2684,15 +2712,15 @@ Time history of the propagating pulse at positions downstream of the right
 ProLB
 \emph default
   simulation with resolution a)
-\begin_inset Formula $\Delta x=0.004m$
+\begin_inset Formula $\Delta x=0.004\,\text{m}$
 \end_inset
 
 , b)
-\begin_inset Formula $\Delta x=0.002m$
+\begin_inset Formula $\Delta x=0.002\,\text{m}$
 \end_inset
 
 , c)
-\begin_inset Formula $\Delta x=0.001m$
+\begin_inset Formula $\Delta x=0.001\,\text{m}$
 \end_inset
 
 .
@@ -2796,6 +2824,13 @@ literal "false"
 
 \end_inset
 
+ which is shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bresplot"
+
+\end_inset
+
 .
  Nevertheless, for the 
 \emph on
@@ -2825,20 +2860,27 @@ noprefix "false"
 
 \end_inset
 
-, for our frequencies of interest which is less that 10kHz, it is is deduced
- that a cell size of 
-\begin_inset Formula $0.002m$
+, for our frequencies of interest which is less that 
+\begin_inset Formula $10\,\text{kHz}$
 \end_inset
 
- will give a system able tor propagate the acoustic waves with a loss of
- approximately 0.01Np/m.
+, it is is deduced that a cell size of 
+\begin_inset Formula $0.002\,\text{m}$
+\end_inset
+
+ will give a system able to propagate the acoustic waves with a loss of
+ approximately 
+\begin_inset Formula $0.01\,\text{Np/m}$
+\end_inset
+
+.
  This translates to 
-\begin_inset Formula $\approx0.09dB$
+\begin_inset Formula $\approx0.09\,\text{dB}$
 \end_inset
 
  reduction in the amplitude of the acoustic wave while propagated through
  a distance of 
-\begin_inset Formula $1\,m$
+\begin_inset Formula $1\,\text{m}$
 \end_inset
 
 .
@@ -2880,13 +2922,13 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The dissipation and dispersion results for an initial acoustic Gaussian
- pulse of amplitude 
-\begin_inset Formula $100Pa$
+The dispersion(left) and dissipation(right) results for an initial acoustic
+ Gaussian pulse of amplitude 
+\begin_inset Formula $100\text{Pa}$
 \end_inset
 
 , (above mean pressure, SPL: 
-\begin_inset Formula $134dB$
+\begin_inset Formula $134\text{dB}$
 \end_inset
 
 ) for propagation over 1m using 
@@ -2949,8 +2991,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The dissipation and dispersion results for the same case using PowerFLOW
- from the work of 
+The dispersion(left) and dissipation(right) results for the same case using
+ PowerFLOW from the work of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Bres2009"
@@ -2966,6 +3008,13 @@ status open
 The dissipation and dispersion results for an initial acoustic Gaussian
  pulse - PowerFlow
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bresplot"
 
 \end_inset
 
@@ -3011,8 +3060,13 @@ FWH Analogy
 \end_layout
 
 \begin_layout Standard
-A mesh size of approximately 0.002 m meets the criteria for near lossless
- propagation of the acoustic waves upto 10kHz.
+As deduced from the direct pulse propagation test case, a mesh size of approxima
+tely 
+\begin_inset Formula $0.002\,\text{m}$
+\end_inset
+
+ meets the criteria for near lossless propagation of the acoustic waves
+ upto 10 kHz.
  Nevertheless, the number of voxels in the Cartesian mesh used for LBM simulatio
 ns scales with 
 \begin_inset Formula $(∆x)^{3}$
@@ -3107,11 +3161,11 @@ Here,
 \end_inset
 
  is the Dirac Delta function capturing the solid body surface.
- On the right hand side, 
+ The first term on the right-hand side contains 
 \begin_inset Formula $T_{ij}$
 \end_inset
 
- is the Lighthill's stress tensor written as 
+ which is the Lighthill's stress tensor written as 
 \begin_inset Formula 
 \[
 T_{ij}=\rho u_{i}u_{j}+p_{ij}-c^{2}\left(\rho-\rho_{0}\right)\delta_{ij}
@@ -3119,15 +3173,39 @@ T_{ij}=\rho u_{i}u_{j}+p_{ij}-c^{2}\left(\rho-\rho_{0}\right)\delta_{ij}
 
 \end_inset
 
+where 
+\begin_inset Formula $i$
+\end_inset
 
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ are the directional indices and 
+\begin_inset Formula $p_{ij}=p\delta_{ij}+\tau_{ij}$
+\end_inset
+
+ is the fluid stress tensor.
+ Due to the second order derivative, this term represents a quadrupole source.
+ 
 \end_layout
 
 \begin_layout Standard
-and, 
+The formulation has two additional sources on the right-hand side than the
+ canonical form of the wave equation due to the treatment of the variables
+ using the Heaviside function.
+ The first of these, 
+\begin_inset Formula $\frac{\partial}{\partial x_{i}}\left[L_{i}\delta(f)\right]$
+\end_inset
+
+, is called the loading noise term.
+ It involves a first order spatial derivative over the surface and is hence
+ a dipole source term.
+ The term 
 \begin_inset Formula $L_{i}$
 \end_inset
 
- is the loading noise term, written as 
+ can be obtained as 
 \end_layout
 
 \begin_layout Standard
@@ -3138,15 +3216,81 @@ and,
 
 \end_inset
 
+where 
+\begin_inset Formula $n_{j}$
+\end_inset
 
+ is the surface unit normal vector, 
+\begin_inset Formula $u^{\Sigma}$
+\end_inset
+
+ is the velocity vector of the surface in case of a moving surface, and
+ 
+\begin_inset Formula $P_{ij}$
+\end_inset
+
+ is same as the stress tensor 
+\begin_inset Formula $p_{ij}$
+\end_inset
+
+.
+ The difference of notation between 
+\begin_inset Formula $P_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $p_{ij}$
+\end_inset
+
+ is canonically used to differentiate the context of source integration,
+ where 
+\begin_inset Formula $p_{ij}$
+\end_inset
+
+ contributes as a volume stress tensor in the Lighthill term while 
+\begin_inset Formula $P_{ij}$
+\end_inset
+
+ contributes only as the surface stress or traction via 
+\begin_inset Formula $P_{ij}n_{j}$
+\end_inset
+
+ in the loading noise term.
+ In the inviscid case, both 
+\begin_inset Formula $p_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{ij}$
+\end_inset
+
+ reduce to 
+\begin_inset Formula $p\delta_{ij}$
+\end_inset
+
+, and the surface traction simplifies to 
+\begin_inset Formula $P_{ij}n_{j}=pn_{i}$
+\end_inset
+
+, i.e.
+ the wall-normal pressure component.
+ 
 \end_layout
 
 \begin_layout Standard
-and, 
+The second additional term, 
+\begin_inset Formula $\frac{\partial}{\partial t}[Q\delta(f)]$
+\end_inset
+
+, is called the thickness noise and captures the mass flow rate fluctuation
+ on the surface.
+ It is omnidirectional (time derivative) and thus described as a monopole
+ term.
+ Here 
 \begin_inset Formula $Q$
 \end_inset
 
- is the thickness noise term, written as 
+ can be obtained as 
 \end_layout
 
 \begin_layout Standard
@@ -3157,29 +3301,32 @@ and,
 
 \end_inset
 
-where 
+
+\end_layout
+
+\begin_layout Standard
+The FWH equation presented here represents the generalized FWH sources.
+ When applied to a real solid surface, the wall normal flow velocity 
+\begin_inset Formula $u_{j}$
+\end_inset
+
+ vanishes and if the solid body is at rest, 
 \begin_inset Formula $u^{\Sigma}$
 \end_inset
 
- is the velocity of the surface in case of a moving surface.
- The formulation thus leads to two additional sources than the canonical
- form of the wave equation due to the treatment of the variables using the
- Heaviside function.
- The first of these, 
-\begin_inset Formula $\frac{\partial}{\partial x_{i}}\left[L_{i}\delta(f)\right]$
+ also vanishes.
+ This means that when applied to a solid body surface at rest, the loading
+ noise term reduces to 
+\begin_inset Formula $L_{i}=P_{ij}n_{j}$
 \end_inset
 
-, is called the loading noise term, and involves a first order spatial derivativ
-e over the surface and is hence a dipole source term.
- The second term, 
-\begin_inset Formula $\frac{\partial}{\partial t}[Q\delta(f)]$
+, which under the inviscid assumption further reduces to the wall normal
+ pressure loading 
+\begin_inset Formula $pn_{i}$
 \end_inset
 
-, is called the thickness noise and captures on the mass flow rate fluctuation
- on the surface.
- It is omnidirectional (time derivative) and thus described as a monopole
- term.
- 
+, i.e.
+ the fluctuating wall-normal pressure load.
 \end_layout
 
 \begin_layout Subsection*
@@ -3187,26 +3334,25 @@ Extension to arbitrary control surfaces
 \end_layout
 
 \begin_layout Standard
-Both of these appear as a mathematical consequence of truncation of the
- boundary of the propagation domain using the Heaviside function suggesting
- that the presence of a distributed set of sources inside a chosen volume
- is in effect equivalent to having surface sources on any chosen surface
- as the boundary.
- Therefore an extension of the FWH equation is to replace the solid by a
- control volume, the surface of which is a permeable control surface.
- The same FWH equation source terms are modified as they account for mass
- and momentum flux across the surface.
- The contribution of the control volume to the equation is still zero as
- 
+Both of these sources arise as a mathematical consequence of truncating
+ the propagation domain by multiplying with a Heaviside function.
+ Differentiation of the Heaviside function generates delta-function terms
+ supported on the truncation surface, thereby converting volumetric contribution
+s into equivalent surface terms.
+ This operation is analogous to Gauss’s divergence theorem, in which the
+ effect of a distributed quantity within a volume can be represented as
+ a flux through its boundary.
+ In the present context, this means that the presence of distributed sources
+ inside a volume where acoustic perturbations propagate towards the boundary
+ is equivalent to having surface sources on that boundary.
+ The best outcome of this technique is that for both loading and thickness
+ noise terms, mathematically, their is no direct contribution from inside
+ of the control volume since 
 \begin_inset Formula $H(f)$
 \end_inset
 
- vanishes.
- 
-\color brown
-The loading and thickness terms now write: (put full expressions here) 
-\color inherit
-Thus, instead of calculating the propagation of the sound from the exact
+ vanishes inside.
+ Thus, instead of calculating the propagation of the sound from the exact
  source point, it is sufficient to have the recordings of their emanating
  wavefronts while they are incident on the chosen surface, and can then
  be used to model the equivalent surface sources for further propagation
@@ -3229,8 +3375,9 @@ Another consequence of the formalism is that the canonical Lighthill's source
  If thought of as being computed on an imaginary surface enclosing a volume
  region which is first placed inside the turbulent region and then expanded
  towards outside of the active source region, the source energies associated
- with quadrupole source terms inside the volume are progressively transferred
- to the other two terms due to the mathematical analogy.
+ with quadrupole source terms inside the volume gets progressively transferred
+ to the other two terms by nature of the conservation of momentum itself
+ that is causal for the sound radiation.
 \end_layout
 
 \begin_layout Subsection*
@@ -3269,55 +3416,24 @@ To obtain a direct formula for the sound propagated to a farfield observer
 \end_inset
 
  is the time of emission, is used to convolve with the source term.
- The resulting integral equation first takes the form 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align}
-4\pi p' & =\dfrac{\partial^{2}}{\partial x_{i}\partial x_{j}}\int\int_{f>0}\frac{\delta(t-\tau-r/c)}{r}T_{ij}\,dV\,d\tau\nonumber \\
- & -\dfrac{\partial}{\partial x_{i}}\int\int_{f=0}\frac{\delta(t-\tau-r/c)}{r}L_{i}\,dS\,d\tau\\
- & +\dfrac{\partial}{\partial t}\int\int_{f=0}\frac{\delta(t-\tau-r/c)}{r}Q\,dS\,d\tau\nonumber 
-\end{align}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-where the loading 
-\begin_inset Formula $L$
-\end_inset
-
- and the thickness 
-\begin_inset Formula $Q$
-\end_inset
-
-terms are those associated with the surface type (solid or permeable) and
- 
-\begin_inset Formula $T_{ij}$
-\end_inset
-
- corresponds to the Lighthill sources outside of either volume.
- The integral is time along with the properties of 
+ Completing the integral in time along with the properties of 
 \begin_inset Formula $\delta$
 \end_inset
 
--function can be used to obtain the sound received at a particular observer
- location 
+-function support on the imaginary surface, the sound received at a particular
+ observer location 
 \begin_inset Formula $\boldsymbol{y}$
 \end_inset
 
- as 
+ is obtained as 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
 4\pi p' & =\frac{\partial^{2}}{\partial x_{i}\partial x_{j}}\int_{f>0}\left[\frac{T_{ij}}{r(1-M_{r})}\right]_{ret}dV\nonumber \\
- & -\frac{\partial}{\partial x_{i}}\int_{f=0}\left[\frac{L_{i}}{r(1-M_{r})}\right]_{ret}dS\\
- & +\frac{\partial}{\partial t}\int_{f=0}\left[\frac{Q}{r(1-M_{r})}\right]_{ret}dS\nonumber 
+ & -\frac{\partial}{\partial x_{i}}\int_{f=0}\left[\frac{L_{i}}{r(1-M_{r})}\right]_{ret}dS\nonumber \\
+ & +\frac{\partial}{\partial t}\int_{f=0}\left[\frac{Q}{r(1-M_{r})}\right]_{ret}dS
 \end{align}
 
 \end_inset
@@ -3374,8 +3490,8 @@ literal "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-4\pi p_{Q}^{\prime}(\mathbf{x},t) & =\int_{f=0}\left[\frac{\rho_{0}\left(\dot{U}_{n}+U_{\dot{n}}\right)}{r\left(1-M_{r}\right)^{2}}\right]_{ret}\mathrm{~d}S\label{eq:thicknessnoise}\\
- & +\int_{f=0}\left[\frac{\rho_{0}U_{n}\left(r\dot{M}_{r}+c\left(M_{r}-M^{2}\right)\right)}{r^{2}\left(1-M_{r}\right)^{3}}\right]_{ret}\mathrm{~d}S
+4\pi p_{Q}^{\prime}(\mathbf{x},t) & =\int_{f=0}\left[\frac{\rho_{0}\left(\dot{U}_{n}+U_{\dot{n}}\right)}{r\left(1-M_{r}\right)^{2}}\right]_{ret}\mathrm{~d}S\nonumber \\
+ & +\int_{f=0}\left[\frac{\rho_{0}U_{n}\left(r\dot{M}_{r}+c\left(M_{r}-M^{2}\right)\right)}{r^{2}\left(1-M_{r}\right)^{3}}\right]_{ret}\mathrm{~d}S\label{eq:thicknessnoise}
 \end{align}
 
 \end_inset
@@ -3391,7 +3507,7 @@ and
 \begin_inset Formula 
 \begin{align}
 4\pi p_{L}^{\prime}(\mathbf{x},t) & =\frac{1}{c}\int_{f=0}\left[\frac{\dot{L}_{r}}{r\left(1-M_{r}\right)^{2}}\right]_{ret}\mathrm{~d}S\nonumber \\
- & +\int_{f=0}\left[\frac{L_{r}-L_{M}}{r^{2}\left(1-M_{r}\right)^{2}}\right]_{ret}\mathrm{~d}S\\
+ & +\int_{f=0}\left[\frac{L_{r}-L_{M}}{r^{2}\left(1-M_{r}\right)^{2}}\right]_{ret}\mathrm{~d}S\nonumber \\
  & +\frac{1}{c}\int_{f=0}\left[\frac{L_{r}\left(r\dot{M}_{r}+c\left(M_{r}-M^{2}\right)\right)}{r^{2}\left(1-M_{r}\right)^{3}}\right]_{ret}\label{eq:loadingnoise}
 \end{align}
 
@@ -3457,12 +3573,16 @@ where
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \mathscr{T}=\frac{\mid\mathbf{x}(t+\mathscr{T})-\mathbf{y}(t)\mid}{c}
-\]
+\end{equation}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 is the time lag between the emission time and the reception time between
  a source at location 
 \begin_inset Formula $\mathbf{y}$
@@ -3476,8 +3596,8 @@ is the time lag between the emission time and the reception time between
 \end_layout
 
 \begin_layout Standard
-Using this relation, the farfield sound due to each time step of the fluctuation
- on the surface is then distributed over the full time domain of listening
+Using this relation, the farfield sound due the fluctuation on the surface
+ from each time step is distributed over the full time domain of listening
  for the observer.
  This enables simpler calculation since the data on surface is now accessed
  sequentially and only the listener time steps need to be calculated for
@@ -3514,8 +3634,8 @@ literal "false"
 
 \end_inset
 
- also leads to retaining the volume integrals for the quadrupole source
- terms causing a restriction on the placement of the FWH surface.
+ also retain the volume integrals for the quadrupole source terms causing
+ a restriction on the placement of the FWH surface.
  In our simulations of the high-lift airfoil, the surface is chosen to surround
  the acoustic sources in the vicinity of the airfoil and is kept far enough
  from the airfoil suction side to avoid strong vortices ejected from the
@@ -3723,8 +3843,8 @@ ProLB
  An XDMF file reader was designed to read the data iteratively from memory
  for each time step of the recording and was used to compute the farfield
  sound.
- The following test case was then used check the accuracy of the code and
- the new file reader.
+ The following test case was then used to check the accuracy of the code
+ and the new file reader.
 \end_layout
 
 \begin_layout Standard
@@ -3853,7 +3973,7 @@ draw[red,->,decorate,decoration={snake,amplitude=1mm,segment length=1mm}]
 
 \backslash
 draw[black,thick,line width=1.5mm] (-5,-5) rectangle (5,5) node[midway, below=43m
-m] {Domain boundaries with sponge condition};
+m] {Domain boundaries with absorbing condition};
 \end_layout
 
 \begin_layout Plain Layout
@@ -3989,8 +4109,8 @@ Analytical solution
 
 \begin_layout Standard
 For an acoustic Monopole in an otherwise quiescent medium, the pressure
- and velocity perturbation at a distance R from the surface, assuming farfield,
- is given by the equation
+ and velocity perturbations at a distance R from the surface, assuming farfield,
+ are given by the equation
 \end_layout
 
 \begin_layout Standard
@@ -4038,8 +4158,11 @@ This solution can be used as a forcing agent for the LBM simulation to mimic
 \end_inset
 
 .
- A source surface of radius 0.025m is chosen such that the Helmholtz number
- of the source surface 
+ A source surface of radius 
+\begin_inset Formula $0.025\,\text{m}$
+\end_inset
+
+ is chosen such that the Helmholtz number of the source surface 
 \begin_inset Formula $\text{He_{s}}=\frac{2\pi f}{c}r=\frac{2\pi\times5000}{c}\times0.025=2.29>1.0$
 \end_inset
 
@@ -4070,7 +4193,7 @@ noprefix "false"
 
 , the effect of point Monopole source at the center of a spherical surface
  of radius 
-\begin_inset Formula $r=0.025m$
+\begin_inset Formula $r=0.025\text{m}$
 \end_inset
 
  leads to pressure distribution on the surface given by 
@@ -4092,7 +4215,7 @@ Since the pressure on the surface is specified in the
 \emph on
 ProLB
 \emph default
- solver with the time coordinate is 
+ solver with the time coordinate 
 \begin_inset Formula $t_{s}=t-t_{0}$
 \end_inset
 
@@ -4102,11 +4225,11 @@ ProLB
 
  is the time at which the wave reaches the source surface in simulation.
  This surface was used as the forcing surface for a harmonic wave of 
-\begin_inset Formula $5000Hz$
+\begin_inset Formula $5000\text{Hz}$
 \end_inset
 
  and amplitude of 
-\begin_inset Formula $100Pa$
+\begin_inset Formula $100\text{Pa}$
 \end_inset
 
  which can be written as 
@@ -4167,7 +4290,7 @@ noprefix "false"
 \end_inset
 
  to estimate the amplitude on the FWH surface with radius 
-\begin_inset Formula $r=0.2m$
+\begin_inset Formula $r=0.2\text{m}$
 \end_inset
 
 , we get
@@ -4186,7 +4309,7 @@ P(0.2,t_{s})\approx\left(\frac{2.5}{0.2}\right)\sin\left[2\pi\times5000\times\le
 
 \begin_layout Standard
 However, this amplitude of 
-\begin_inset Formula $12.5Pa$
+\begin_inset Formula $12.5\text{Pa}$
 \end_inset
 
  is not recovered on the FWH surface during the simulation and observed
@@ -4195,7 +4318,8 @@ However, this amplitude of
  is lower than that of an actual Monopole since the specified boundary condition
 s in the LBM setting does not involve specification of the macro-variables
  but that of the particle population densities.
- The latter introduces additional complexity as mentioned related to Eq.
+ The latter introduces additional complexity, as mentioned while discussing
+ on Eq.
  34 in the work of 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -4210,11 +4334,11 @@ literal "false"
  available at the FWH surface is used to estimate the equivalent Monopole
  strength.
  Simulated pressure amplitude on the FWH surface is obtained as 
-\begin_inset Formula $6\,Pa$
+\begin_inset Formula $6\,\text{Pa}$
 \end_inset
 
  on the spherical surface having a radius 
-\begin_inset Formula $r=0.2m$
+\begin_inset Formula $r=0.2\text{m}$
 \end_inset
 
 .
@@ -4240,7 +4364,7 @@ Hence,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\left(\frac{Q_{s}}{0.2}\right)=6\implies Q_{s}=1.2Pa.m
+\left(\frac{Q_{s}}{0.2}\right)=6\implies Q_{s}=1.2\,\text{Pa.m}
 \end{equation}
 
 \end_inset
@@ -4313,7 +4437,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Cell size corresponding to the time step is obtained by setting the Cell
+Cell size corresponding to the time step is obtained by setting the cell
  Courant number to 1, which is default for the LBM scheme in 
 \emph on
 ProLB
@@ -4324,7 +4448,7 @@ ProLB
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\Delta x=c\Delta t\sqrt{3}=343.2\times2.66\times10^{-6}\sqrt{3}=1.58\times10^{-3}m\approx1.6mm
+\Delta x=c\Delta t\sqrt{3}=343.2\times2.66\times10^{-6}\sqrt{3}=1.58\times10^{-3}\text{m}\approx1.6\text{mm}
 \end{equation}
 
 \end_inset
@@ -4340,11 +4464,15 @@ ProLB
 \emph default
   was identified in a previous section.
  Considering that maximum frequency of interest is 10 kHz, a cell size of
- 0.002m was satisfactory.
+ 
+\begin_inset Formula $0.002\,m$
+\end_inset
+
+ was satisfactory.
  This corresponds to a value of 17 points per wavelength.
  The cell size used in current simulation is 1.6mm, and for a frequency of
  
-\begin_inset Formula $5000Hz$
+\begin_inset Formula $5000\,\text{Hz}$
 \end_inset
 
  of the source, this correspond to 34 points per wavelength.
@@ -4369,7 +4497,7 @@ noprefix "false"
 
 , the FWH routine implementation provides an accurate computation.
  Here the odd numbered probes are placed in the same 2D center plane as
- the source and the odd numbered probes are placed on a diagonal line and
+ the source and the even numbered probes are placed on a diagonal line and
  out of the center plane.
  For all probes, the wave shape, frequency, amplitude, and delay times,
  for different observer locations are found to be in good agreement.
@@ -4800,7 +4928,14 @@ ProLB
 
 \begin_layout Standard
 \begin_inset Float figure
-placement tb
+placement ph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
 wide false
 sideways false
 status open
@@ -4861,7 +4996,11 @@ draw[fill=red!50, opacity=0.5] (5,5) rectangle (4,0);             % Side
 \backslash
 node at ( 2.50,  -0.20) {
 \backslash
-scriptsize $L_x=25C$, P = 101325Pa}; 	
+scriptsize $L_x=25C$, $P = 101325
+\backslash
+,
+\backslash
+text{Pa}$}; 	
 \end_layout
 
 \begin_layout Plain Layout
@@ -4870,7 +5009,11 @@ scriptsize $L_x=25C$, P = 101325Pa};
 \backslash
 node at (-0.36,   2.50) [rotate=90]{
 \backslash
-scriptsize $L_y=25C$, $U_x = 50m/s$}; 	
+scriptsize $L_y=25C$, $U_x = 50
+\backslash
+,
+\backslash
+text{m/s}$};
 \end_layout
 
 \begin_layout Plain Layout
@@ -4879,7 +5022,11 @@ scriptsize $L_y=25C$, $U_x = 50m/s$};
 \backslash
 node at ( 5.3,   2.70) [rotate=90]{
 \backslash
-scriptsize $L_y=25C$, P = 101325Pa}; 	
+scriptsize $L_y=25C$, $P = 101325
+\backslash
+,
+\backslash
+text{Pa}$}; 	
 \end_layout
 
 \begin_layout Plain Layout
@@ -4888,7 +5035,11 @@ scriptsize $L_y=25C$, P = 101325Pa};
 \backslash
 node at ( 2.50,   5.26) {
 \backslash
-scriptsize $L_x=25C$, P = 101325Pa};          %Absorbing layer label 	
+scriptsize $L_x=25C$, $P = 101325
+\backslash
+,
+\backslash
+text{Pa}$};          %Absorbing layer label 	
 \end_layout
 
 \begin_layout Plain Layout
@@ -4897,7 +5048,11 @@ scriptsize $L_x=25C$, P = 101325Pa};          %Absorbing layer label
 \backslash
 node at (0.5,  0.2) {
 \backslash
-scriptsize 2m}; 	
+scriptsize $2
+\backslash
+,
+\backslash
+text{m}$}; 	
 \end_layout
 
 \begin_layout Plain Layout
@@ -4906,7 +5061,11 @@ scriptsize 2m};
 \backslash
 node at (0.22,  0.5) {
 \backslash
-scriptsize 2m}; 	
+scriptsize $2
+\backslash
+,
+\backslash
+text{m}$}; 	
 \end_layout
 
 \begin_layout Plain Layout
@@ -4915,7 +5074,11 @@ scriptsize 2m};
 \backslash
 node at (4.78,  4.5) {
 \backslash
-scriptsize 2m}; 	
+scriptsize $2
+\backslash
+,
+\backslash
+text{m}$}; 	
 \end_layout
 
 \begin_layout Plain Layout
@@ -4924,7 +5087,11 @@ scriptsize 2m};
 \backslash
 node at (4.5,  4.8) {
 \backslash
-scriptsize 2m};	                         % Draw FWH region 	
+scriptsize $2
+\backslash
+,
+\backslash
+text{m}$};                        % Draw FWH region 	
 \end_layout
 
 \begin_layout Plain Layout
@@ -4942,7 +5109,13 @@ node at (2.6,1.8) {
 \backslash
 scriptsize Res.
  Lvl.
- 4};     
+ 4 ($
+\backslash
+Delta x = 1.6
+\backslash
+,
+\backslash
+text{mm}$)};     
 \end_layout
 
 \begin_layout Plain Layout
@@ -4961,11 +5134,66 @@ end{tikzpicture}
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Schematic of the domain and boundary conditions.
- The full domain has fixed a spanwise extend and includes 1)square sponge
- regions (pink stripe), restricted domain where the refinement is at level
- 4 or finer (green rectangle), and mesh coarsening beyond sound propagation
- limit (white stripe).
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename HLD_Main_Slat_Schematic.png
+	lyxscale 50
+	width 12cm
+	height 12cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A schematic of the slat-airfoil geometry showing the slat positioning system
+ relative to the main element denoted as the Slat Gap (SGP), Slat Overlap
+ (SOL), and Slat Deflection Angle (SDA).
+ The coordinate axes used for the simulation are also shown with marking
+ of the downstream, cross stream and spanwise directions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schematic of the domain, boundary conditions, and the slat-airfoil configuration.
+ ).
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:SchematicDomain"
@@ -4977,7 +5205,7 @@ name "fig:SchematicDomain"
 status open
 
 \begin_layout Plain Layout
-Schematic of the domain and boundary conditions
+Schematic of the domain, boundary conditions, and the slat-airfoil configuration.
 \end_layout
 
 \end_inset
@@ -5015,21 +5243,21 @@ literal "false"
 \end_inset
 
 , a square domain is selected with an extent of 25C, where 
-\begin_inset Formula $C=0.3m$
+\begin_inset Formula $C=0.3\text{m}$
 \end_inset
 
  is the stowed chord length of the VALIANT airfoil.
  The boundaries are then supplied with appropriate macro flow variables
  as inlet and outlet boundaries.
  The inlet velocity is 
-\begin_inset Formula $50m/s$
+\begin_inset Formula $50,\text{m/s}$
 \end_inset
 
  for all parametric simulations planned.
  For the outlet and farfield boundaries, a constant Pressure condition of
  101325 Pa is supplied.
  The domain boundaries are then supplanted with 
-\begin_inset Formula $2m$
+\begin_inset Formula $2\text{m}$
 \end_inset
 
  of absorbing region with conditions to avoid reflection of the perturbations
@@ -5650,14 +5878,14 @@ For generating the mesh layout, prudence is given to minimize the number
  Hence, the meshing is initiated from the domain boundaries with the minimum
  possible cell size, i.e.
  same as spanwise domain length of 
-\begin_inset Formula $L_{z}=0.2m=0.66C$
+\begin_inset Formula $L_{z}=0.2\,\text{m}=0.66C$
 \end_inset
 
 .
  In previous sections, it was shown that to obtain a lossless propagation
  of the acoustics generated by the flow, we need to maintain a resolution
  of 17 points per wavelength and corresponding to the frequencies of interest
- upto 10kHz, this corresponds to a cell size of approximately 1.6mm.
+ upto 10 kHz, this corresponds to a cell size of approximately 1.6mm.
  Hence, a sub-region of the domain, marked as Resolution Level 4 in the
  Figure 
 \begin_inset CommandInset ref
@@ -5713,7 +5941,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename chapter03_figs/MeshWhole.png
+	filename chapter03_figs/MeshWhole2.png
 	lyxscale 20
 	width 8cm
 	height 8cm
@@ -5738,8 +5966,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Refinement regions upto 4th level until FWH surface (the first level close
- to wall is not visible).
+Refinement regions upto 4th level until FWH surface drawn as red line.
+ The first level corresponding to wall boundary mesh is close to the wall
+ and is not visible.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -5890,7 +6119,7 @@ literal "false"
 \end_inset
 
 .
- And although it requires a few additional manipulations, has shown to be
+ Although it requires a few additional manipulations, it has shown to be
  sufficient to recover the Navier-Stokes behavior in the boundary layer.
  Additionally, with a Cartesian grid, the wall 
 \begin_inset Formula $y^{+}$
@@ -5912,7 +6141,7 @@ literal "false"
  of 35.
  This is based on the expectation that the boundary layer development happens
  along the wall within a length of 
-\begin_inset Formula $0.039m$
+\begin_inset Formula $0.039\text{m}$
 \end_inset
 
 , which is the slat chord length.
@@ -5931,7 +6160,7 @@ With the specification of the near-wall cell size, this property is then
  The blocks of meshes with same sizes thus formed are the so called mesh
  Refinement Levels.
  Starting with the boundary cell size of 0.
-\begin_inset Formula $0002m$
+\begin_inset Formula $0002\,\text{m}$
 \end_inset
 
  as Refinement Level 1, and coarsening by factor of 2, the resolution as
@@ -5981,6 +6210,8 @@ noprefix "false"
 \end_inset
 
 .
+ The mesh for the current standard positioning of the slat is obtained with
+ 99 million nodes.
 \end_layout
 
 \begin_layout Subsection
@@ -5989,10 +6220,7 @@ Temporal scales
 
 \begin_layout Standard
 LBM simulation time steps are primarily determined by the cell sizing.
- This is due to the fact that a fixed Courant number 
-\begin_inset Formula $C$
-\end_inset
-
+ This is due to the fact that a fixed Courant–Friedrichs–Lewy (CFL) number,
  is maintained in cell calculation.
  This means that during the timestepping, the time step calculated for each
  Refinement Levels are different corresponding to its cell size.
@@ -6003,7 +6231,7 @@ LBM simulation time steps are primarily determined by the cell sizing.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-C=\frac{\Delta x}{c\Delta t\sqrt{3}}=1\implies\Delta t_{L1}=\frac{\Delta x_{L1}}{c\sqrt{3}}=3.46\times10^{-7}s
+CFL=\frac{\Delta x}{c\Delta t\sqrt{3}}=1\implies\Delta t_{L1}=\frac{\Delta x_{L1}}{c\sqrt{3}}=3.46\times10^{-7}\,\text{s}
 \end{equation}
 
 \end_inset
@@ -6017,13 +6245,12 @@ where
 \end_inset
 
  is the sound speed calculated at the reference temperature of 
-\begin_inset Formula $276.48K$
+\begin_inset Formula $276.48\,\text{K}$
 \end_inset
 
 .
- For higher Resolutions levels whose cells size grows by a factor of 2,
- the timestep also grows by a factor of 2 and hence the time stepping for
- 
+ For higher Resolution levels whose cells size grows by a factor of 2, the
+ timestep also grows by a factor of 2 and hence the time stepping for 
 \begin_inset Formula $n^{th}$
 \end_inset
 
@@ -6032,8 +6259,8 @@ resolution level is given by
 \end_inset
 
 .
- The total number time steps required for the simulation is dictated by
- the acoustic measurement requirements.
+ The total number of time steps required for the simulation is dictated
+ by the acoustic measurement requirements.
  For the reference wind tunnel experiment, the spectral resolution obtained
  is 1Hz.
  However this resolution is impossible to simulate since the number of time
@@ -6065,11 +6292,11 @@ where
  whereby the sampling rate of the signal must be at least twice the bandwidth
  of interest for the signal.
  This means that for slat noise spectra upto 
-\begin_inset Formula $20kHz$
+\begin_inset Formula $20\text{kHz}$
 \end_inset
 
 , the sampling rate must be atleast 
-\begin_inset Formula $40kHz$
+\begin_inset Formula $40\,\text{kHz}$
 \end_inset
 
 .
@@ -6078,20 +6305,20 @@ where
  according to the Nyquist-Shannon criterion.
  In the current case, the FWH propagation region at Refinement Level 4 is
  maintained at the required resolution of 
-\begin_inset Formula $1.6mm$
+\begin_inset Formula $1.6\,\text{mm}$
 \end_inset
 
 .
  The corresponding time step is hence 
-\begin_inset Formula $2^{3}$
+\begin_inset Formula $2^{4-1}=8$
 \end_inset
 
  times the simulation timestep and hence the recordings are done with 
-\begin_inset Formula $\Delta t_{FWH}=2.77\times10^{-6}s$
+\begin_inset Formula $\Delta t_{FWH}=2.77\times10^{-6}\,\text{s}$
 \end_inset
 
  and the corresponding frequency is 
-\begin_inset Formula $\approx360kHz$
+\begin_inset Formula $\approx360\,\text{kHz}$
 \end_inset
 
 .
@@ -6099,7 +6326,7 @@ where
  the resolution, we choose to sample the FWH surface at half of this frequency,
  i.e.
  
-\begin_inset Formula $f_{s-FWH}\approx180kHz$
+\begin_inset Formula $f_{s-FWH}\approx180\,\text{kHz}$
 \end_inset
 
 .
@@ -6108,7 +6335,6 @@ where
 \end_inset
 
  time steps.
- 
 \end_layout
 
 \begin_layout Standard
@@ -6126,23 +6352,26 @@ This combined with an averaging requirement for the Welsch algorithm of
  An additional transient time is required to remove the initial transients
  in the simulation due to a non-physical initialization of the near wall
  flow.
- The resulting spurious waves need to be allow to leave the domain to reach
- a converged flow state.
+ The resulting spurious waves need to be allowed to leave the domain to
+ reach a converged flow state.
  Moreover, the flow characteristics leading to the acoustics are established
  once the macro-flow converges to steady oscillatory behavior.
  Hence an initial transient of 290000 iterations, equivalent of a physical
  time of approximately 
-\begin_inset Formula $0.1s$
+\begin_inset Formula $0.1\,\text{s}$
 \end_inset
 
  (or more than 16 chord pass times for a stowed chord of 
-\begin_inset Formula $0.3m$
+\begin_inset Formula $0.3\,\text{m}$
 \end_inset
 
- in a flow at 50m/s) are run before starting the recordings for post processing
- including FWH.
+ in a flow at 
+\begin_inset Formula $50\,\text{m/s}$
+\end_inset
+
+) are run before starting the recordings for post processing including FWH.
  This together with the recording timesteps demands a total of 874200 timesteps
- for a simulation.
+ at Refinement level 1 for a simulation.
  
 \end_layout
 
@@ -6214,7 +6443,7 @@ Furthermore, the restarts were made by recording the macro-variables of
  It must be noted that this approach is only followed for the validation
  case study and for the future simulations leading to the parametric study,
  full simulations with continuous time stepping are utilized due to availability
- of compute resources.
+ of computer resources.
 \end_layout
 
 \end_inset
@@ -6330,14 +6559,14 @@ noprefix "false"
 .
  The total physical time of the simulation in our standard free stream configura
 tion is 
-\begin_inset Formula $0.2s$
+\begin_inset Formula $0.2\,\text{s}$
 \end_inset
 
  in comparison to 
-\begin_inset Formula $0.078s$
+\begin_inset Formula $0.078\,\text{s}$
 \end_inset
 
- in the current one and is driven by the necessity of compute resources
+ in the current one and is driven by the necessity of computer resources
  while including the wind tunnel geometry meshes.
  With a reduced signal length, the computation leads to spectra with lower
  resolution also.
@@ -6392,13 +6621,17 @@ literal "false"
 \begin_inset Formula $0.75c_{s}$
 \end_inset
 
- is necessary.
+, where 
+\begin_inset Formula $c_{s}$
+\end_inset
+
+ is the slat chord is necessary.
  For the current case simulated, this corresponds to a length of 
-\begin_inset Formula $0.0312m$
+\begin_inset Formula $0.0312\,\text{m}$
 \end_inset
 
  while the actual simulated span length is 
-\begin_inset Formula $0.2m$
+\begin_inset Formula $0.2\,\text{m}$
 \end_inset
 
  corresponding to more than 6 times the suggested value.
@@ -6487,11 +6720,8 @@ ings module Turb'AcAn.
  the test cases mentioned and necessary compromises are made to enable computati
 onally affordable simulations.
  
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 A high fidelity Lattice Boltzmann solver ProLB was studied and empirically
@@ -6499,10 +6729,10 @@ A high fidelity Lattice Boltzmann solver ProLB was studied and empirically
  chapter.
  Upon validation that the acoustic propagation performance is satisfactory
  and obtaining the necessary mesh requirements for aeroacoustic simulations,
- the solver was used to simulate the acoustics of the 2-element VALIANT
+ the solver was used to simulate the acoustics of the 3 element VALIANT
  high-lift geometry in free flow conditions.
  The free-stream velocity is maintained at 
-\begin_inset Formula $50m/s$
+\begin_inset Formula $50,\text{m/s}$
 \end_inset
 
  corresponding to a chord based Reynolds number of 
@@ -6527,7 +6757,7 @@ A high fidelity Lattice Boltzmann solver ProLB was studied and empirically
 \begin_layout Plain Layout
 Primary discrepancies in the free stream simulation compared to the experiment
  was that the main tone at 
-\begin_inset Formula $1771Hz$
+\begin_inset Formula $1771\text{Hz}$
 \end_inset
 
 , corresponding to the second Rossiter tone, was found to be weaker in the
@@ -6546,7 +6776,7 @@ Primary discrepancies in the free stream simulation compared to the experiment
  The results showed that the inaccuracies in the free stream simulations
  are significantly corrected by inclusion of the wind-tunnel.
  The SPL of the main tone at 
-\begin_inset Formula $1771Hz$
+\begin_inset Formula $1771\text{Hz}$
 \end_inset
 
  was recovered to obtain a better agreement with the experiment for the
@@ -6577,12 +6807,8 @@ These results using the solver thus shows that the performance of the code
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\align center
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -6643,9 +6869,6 @@ name "fig:coordinates"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Comment
 status open
 

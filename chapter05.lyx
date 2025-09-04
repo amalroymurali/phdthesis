@@ -283,7 +283,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-\align right
+\align block
 \begin_inset Formula 
 \begin{equation}
 P(H\mid E)P(E)=P(E\mid H)P(H)
@@ -291,11 +291,7 @@ P(H\mid E)P(E)=P(E\mid H)P(H)
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $P(H\mid E)$
 \end_inset
 
@@ -403,7 +399,7 @@ Bayes' formula becomes a powerful tool once written as
 \end_layout
 
 \begin_layout Standard
-\align right
+\align block
 \begin_inset Formula 
 \begin{equation}
 P(H\mid E)=\frac{P(E\mid H)P(H)}{P(E)}
@@ -411,11 +407,7 @@ P(H\mid E)=\frac{P(E\mid H)P(H)}{P(E)}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $P(H\mid E)$
 \end_inset
 
@@ -803,11 +795,7 @@ y=f(\mathbf{x})+\varepsilon=\mathbf{x}^{\top}\mathbf{w}+\varepsilon\label{eq:gpe
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $\mathcal{\varepsilon\sim N}\left(0,\sigma_{n}\right)$
 \end_inset
 
@@ -1458,11 +1446,7 @@ k_{\text{Matern }}(r)=\frac{2^{1-\nu}}{\Gamma(\nu)}\left(\frac{\sqrt{2\nu}r}{\el
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $\nu$
 \end_inset
 
@@ -2328,11 +2312,7 @@ To generate samples for further simulations, and to improve the surrogate
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $X$
 \end_inset
 
@@ -2872,11 +2852,7 @@ is the central frequency and
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, the partial derivatives can be obtained as
+where the partial derivatives can be obtained as
 \end_layout
 
 \begin_layout Standard

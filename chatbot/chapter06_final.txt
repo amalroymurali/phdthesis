@@ -3359,7 +3359,7 @@ $
 \end_inset
 
 , assuming a recirculation velocity of atleast 
-\begin_inset Formula $15 m/sm/s$
+\begin_inset Formula $15 m/s$
 \end_inset
 
 .
@@ -11744,7 +11744,7 @@ This can be explained based on the curvature instability leading to a complete
 \color brown
 Although not elaborated in our work, these cases can also be seen to have
  a high level of high frequency noise above 
-\begin_inset Formula $10 kHzkHz$
+\begin_inset Formula $10 kHz$
 \end_inset
 
  suggesting that this component is sourced by the high speed ejection of

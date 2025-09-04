@@ -350,7 +350,7 @@ reference "fig:shearlayercomp9_11_19"
 \end_inset
 
 .
- For this figure we chose cases which have a strongly distorted shear layer
+ For this figure we chose cases which have a strongly distorted sheal layer
  shape compared to the rest of the dataset.
  The mean velocity fields at spanwise center-plane averaged over 
 \begin_inset Formula $5$
@@ -2752,8 +2752,8 @@ Far-field Spectra
 
 \begin_layout Standard
 \align block
-The acoustic signature of three parametric cases whose broadband component
- is strong relative to other cases in the dataset are shown in Fig.
+The acoustic signature of three parametric cases whose broadband components
+ are strong relative to other cases in the dataset are shown in Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:cases7_15_16_17"

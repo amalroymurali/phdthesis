@@ -156,7 +156,7 @@ literal "false"
 , here with only the standard positioning of the slat with respect to the
  main element.
  This configuration has the slat coordinates [
-\begin_inset Formula $\text{Angle of Attack - }AOA=18.0^{o},\text{Slat Deflection Angle - }SDA=35.2\text{mm},\text{Slat Gap - }SGP=7.94\text{mm},\text{Slat Overlap - }SOL=-6.36\text{mm}]$
+\begin_inset Formula $\text{Angle of Attack - }AOA=18.0^{o},\text{Slat Deflection Angle - }SDA=35.2\,\text{mm},\text{Slat Gap - }SGP=7.94\,\text{mm},\text{Slat Overlap - }SOL=-6.36\,\text{mm}]$
 \end_inset
 
  and will be referred to as the reference configuration.
@@ -412,11 +412,11 @@ noprefix "false"
 .
  The unsteady loading show satisfactory convergence after a total physical
  time of 
-\begin_inset Formula $0.05\,s$
+\begin_inset Formula $0.05\,\text{s}$
 \end_inset
 
  and the mean values are steady after 
-\begin_inset Formula $0.075\,s$
+\begin_inset Formula $0.075\,\text{s}$
 \end_inset
 
 .
@@ -440,7 +440,7 @@ noprefix "false"
 .
  The same also shows good agreement with the unsteady loading and the flow
  dynamics show stationarity after 
-\begin_inset Formula $0.05\,s$
+\begin_inset Formula $0.05\,\text{s}$
 \end_inset
 
  of physical time.
@@ -1029,7 +1029,7 @@ The case with the inclusion of the wind-tunnel shows a better agreement
  the cross flow direction.
  In the full configuration simulation, the static pressure was not measured
  and the velocity was also not uniform, but with minor fluctuations (
-\begin_inset Formula $\pm1m/sm/s$
+\begin_inset Formula $\pm1\,\text{m/s}$
 \end_inset
 
  which has no measurable effect on the static pressure).
@@ -1125,7 +1125,7 @@ The wall pressure data inside the cove represents the dynamics of pressure
  Hence it captures both large scale fluctuations due to the vortex behaviors
  and the acoustics including resonances.
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1139,12 +1139,12 @@ The shapes of the spectra present some features similar to those of the
 
 \end_inset
 
-The PSD is calculated over a total time of 
-\begin_inset Formula $0.23\,s$
+ The PSD is calculated over a total time of 
+\begin_inset Formula $0.23\,\text{s}$
 \end_inset
 
  with a sampling frequency of 
-\begin_inset Formula $180405\,Hz$
+\begin_inset Formula $180405\,\text{Hz}$
 \end_inset
 
 .
@@ -1161,7 +1161,7 @@ The PSD is calculated over a total time of
 \end_inset
 
  overlap resulting in a spectral resolution of 
-\begin_inset Formula $22\,Hz$
+\begin_inset Formula $22\,\text{Hz}$
 \end_inset
 
 .
@@ -1208,7 +1208,7 @@ noprefix "false"
 It can be noted that both cases show a reasonable agreement with the experiment
  regarding the tonal frequencies.
  For the SPL, the first tone at 
-\begin_inset Formula $1771\,Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
  tends to be better captured by the wind tunnel simulation whereas it is
@@ -1241,21 +1241,21 @@ noprefix "false"
  The experiment and simulation which includes the wind tunnel installation
  geometries tend to have a better agreement of the average velocity data.
  In both cases, the velocity recovers the free stream velocity of 
-\begin_inset Formula $50\,m/s$
+\begin_inset Formula $50\,\text{m/s}$
 \end_inset
 
  and shows a mean recirculation velocity of 
-\begin_inset Formula $8\,m/s$
+\begin_inset Formula $8\,\text{m/s}$
 \end_inset
 
  on the cove side.
  In comparison, the flow in free stream simulation tends to develop a slightly
  weaker shear layer, with the free stream velocity recovering to 
-\begin_inset Formula $43\,m/s$
+\begin_inset Formula $43\,\text{m/s}$
 \end_inset
 
  and the inner cove recirculation to 
-\begin_inset Formula $12\,m/s$
+\begin_inset Formula $12\,\text{m/s}$
 \end_inset
 
 .
@@ -1556,12 +1556,12 @@ a) Pressure Coefficient,
 \begin_inset Formula $\ensuremath{C_{p}=\frac{P-P_{0}}{\frac{1}{2}\rho_{\infty}U_{\infty}^{2}}}$
 \end_inset
 
-, where, 
+, where 
 \begin_inset Formula $P_{0}=101325\,Pa$
 \end_inset
 
 , is the ambient pressure, 
-\begin_inset Formula $U_{\infty}=50\,ms^{-1}$
+\begin_inset Formula $U_{\infty}=50\,\text{m/s}$
 \end_inset
 
 , and 
@@ -1576,15 +1576,15 @@ a) Pressure Coefficient,
 .
  b) Time-averaged pressure field in the slat cove.
  Both averaging is done for 5 chord pass times (
-\begin_inset Formula $C=0.3m$
+\begin_inset Formula $C=0.3\,\text{m}$
 \end_inset
 
  and 
-\begin_inset Formula $U_{\infty}=50ms^{-1}$
+\begin_inset Formula $U_{\infty}=50\,\text{m/s}$
 \end_inset
 
 ) corresponding to a physical time of 
-\begin_inset Formula $0.03s$
+\begin_inset Formula $0.03\,\text{s}$
 \end_inset
 
 .
@@ -1656,7 +1656,7 @@ noprefix "false"
 placement t
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2029,7 +2029,7 @@ noprefix "false"
  using the same colormap leads to the erroneous inference of its insignificance
  due to the comparatively lower magnitudes.
  An alternative colormap restricted to 
-\begin_inset Formula $U_{Z}\in[-5,5]ms^{-1}$
+\begin_inset Formula $U_{Z}\in[-5,5]\text{m/s}$
 \end_inset
 
  as shown in Fig.
@@ -2233,7 +2233,7 @@ noprefix "false"
  of same velocity direction, appear to be stacked periodically with alternating
  signs.
  The magnitude of mean spanwise velocity is close to 
-\begin_inset Formula $5\,ms^{-1}$
+\begin_inset Formula $5\,\text{m/s}$
 \end_inset
 
 , which is upto 
@@ -2242,7 +2242,7 @@ $
 \end_inset
 
  times smaller than of the free stream velocity, 
-\begin_inset Formula $U=50\,ms^{-1}$
+\begin_inset Formula $U=50\,\text{m/s}$
 \end_inset
 
 .
@@ -2258,7 +2258,7 @@ $
 
  pairs of alternating signs.
  Their average spanwise wavelength is hence 
-\begin_inset Formula $\lambda_{z}=L_{span}/3=0.2/3=0.066\,m$
+\begin_inset Formula $\lambda_{z}=L_{span}/3=0.2/3=0.066\,\text{m}$
 \end_inset
 
 .
@@ -2273,7 +2273,7 @@ noprefix "false"
 \end_inset
 
  and is approximately 
-\begin_inset Formula $0.0696\thinspace m$
+\begin_inset Formula $0.0696\,\text{m}$
 \end_inset
 
  thereby giving a slat chord based non-dimensional wavelength as 
@@ -2281,7 +2281,7 @@ noprefix "false"
 \end_inset
 
 , where 
-\begin_inset Formula $C_{s}=0.039m$
+\begin_inset Formula $C_{s}=0.039\,\text{m}$
 \end_inset
 
 .
@@ -2481,6 +2481,14 @@ literal "false"
 \end_inset
 
 .
+ An image from their original work is displayed in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:barkleyspanmodes-1"
+
+\end_inset
+
+.
  Their work demonstrated the existence of large scale spanwise modulations
  in the shear layer due to the presence of a backward facing step, and argues
  that the spanwise modulations are the result of an absolute convective
@@ -2509,11 +2517,11 @@ literal "false"
 
  based on the mean flow and if considering the flow inside the cove region,
  taking the mean velocity to be 
-\begin_inset Formula $20\,m/s$
+\begin_inset Formula $20\,\text{m/s}$
 \end_inset
 
 , and the characteristic length scale to be the slat chord, 
-\begin_inset Formula $C_{s}=0.039\,m$
+\begin_inset Formula $C_{s}=0.039\,\text{m}$
 \end_inset
 
 , corresponding Reynolds number is at 
@@ -2540,10 +2548,6 @@ literal "false"
  that both cases have one side bounded by a shear layer and both have a
  recirculation bubble in which the spanwise modes tend to dominate, we suspect
  the same mechanism is also in action in the slat cove dynamics.
-\begin_inset Note Comment
-status collapsed
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 placement t
 wide false
@@ -2621,11 +2625,6 @@ name "fig:barkleyspanmodes-1"
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Enumerate
 Similarly, 
 \begin_inset CommandInset citation
@@ -2686,6 +2685,15 @@ literal "false"
 , the rectangular cavities were further analyzed using three-dimensional
  global instability analysis to show that the spanwise instability wavelength
  scales are proportional to the cavity depth.
+ An image of the spanwise modulated velocity fields from their original
+ work are shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spanwisemodesbres-2"
+
+\end_inset
+
+.
  The resulting spanwise modulated flow also develop oscillations that can
  induce a low frequency pulsation of the recirculating vortex.
  This frequency was deduced to have one order of magnitude lower than the
@@ -2712,6 +2720,87 @@ ons and the Görtler type instability that occurs on curved boundary walls.
  The spanwise modulated recirculation vortex would develop also a low frequency
  oscillation, and this additional oscillations can interfere with the Rossiter
  modes to modulate both its frequency and peak amplitudes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/chapter04_figs/Spanwisemodes_Bres.png
+	lyxscale 30
+	width 14cm
+	height 14cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The spanwise modes in a rectangular cavity with periodic spanwise conditions
+ from the work of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Bres2008"
+literal "false"
+
+\end_inset
+
+.
+ The original caption read: 
+\begin_inset Quotes eld
+\end_inset
+
+Visualization of the three-dimensional flow for run 2M0325-3D at six different
+ times (a–f ) corresponding to approximately one-sixth phase intervals of
+ a half-period of the three-dimensional instability.
+ The iso-surfaces represent the spanwise velocity levels 
+\begin_inset Formula $w/U=−0.01$
+\end_inset
+
+ and 
+\begin_inset Formula $w/U=0.01$
+\end_inset
+
+.
+ The whole spanwise extent of the cavity is shown and the wavelength 
+\begin_inset Formula $λ/D=1$
+\end_inset
+
+ of the instability can clearly be observed.
+ The velocity vectors in the streamwise cross-section at 
+\begin_inset Formula $z=0$
+\end_inset
+
+ are shown inside the cavity and once in the free-stream for comparison.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:spanwisemodesbres-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -3154,7 +3243,7 @@ literal "false"
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Ffowcs Williams-Hawkings Computation
 \begin_inset CommandInset label
 LatexCommand label
@@ -3914,12 +4003,12 @@ Sound pressure data computed at numerical microphones using FWH approach
  for the free stream configuration.
  The resonance frequencies corresponding to a flat plate resonance for plate
  separation 
-\begin_inset Formula $0.2\,m$
+\begin_inset Formula $0.2\,\text{m}$
 \end_inset
 
  are also marked.
  Signal spectra parameters: Total time 
-\begin_inset Formula $=0.2s$
+\begin_inset Formula $=0.2\,\text{s}$
 \end_inset
 
 , NFFT
@@ -3927,7 +4016,7 @@ Sound pressure data computed at numerical microphones using FWH approach
 \end_inset
 
 , Sampling Freq.
-\begin_inset Formula $=180405Hz$
+\begin_inset Formula $=180405\,\text{Hz}$
 \end_inset
 
 , N.Avg.
@@ -3935,7 +4024,7 @@ Sound pressure data computed at numerical microphones using FWH approach
 \end_inset
 
  and 
-\begin_inset Formula $\Delta f=22Hz$
+\begin_inset Formula $\Delta f=22\,\text{Hz}$
 \end_inset
 
 
@@ -3973,7 +4062,7 @@ Sound pressure data computed at numerical microphones using FWH approach
 
 \color red
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 The downstream part is kept open for the sound calculation although the
@@ -4049,12 +4138,8 @@ noprefix "false"
 
 \end_inset
 
- where they are compared with the spectra from the VALIANT experiment and
- another simulation of same kind but addition that it includes the wind
- tunnel installation.
- The latter as mentioned additionally includes lateral side plates and the
- converging duct which issues a jet, increasing the fidelity of the simulation
- towards the experiment.
+ where they are compared with the spectra from the VALIANT experiment (WT
+ experiment).
  The comparison of results show a good performance of the numerical framework
  in capturing the far-field tones and the broadband characteristic slat
  noise.
@@ -4062,13 +4147,13 @@ noprefix "false"
 \begin_inset Formula $-90^{o}$
 \end_inset
 
- at the suction side of the airfoil, the prediction obtains the peak at
+ at the pressure side of the airfoil, the prediction obtains the peak at
  
-\begin_inset Formula $1771\,Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
 , and the higher harmonics of the fundamental which is at 
-\begin_inset Formula $885\,Hz$
+\begin_inset Formula $885\,\text{Hz}$
 \end_inset
 
  corresponding to the first Rossiter tone for this case according to 
@@ -4081,12 +4166,12 @@ literal "false"
 
 .
  For the fundamental tone at 
-\begin_inset Formula $885\,Hz$
+\begin_inset Formula $885\,\text{Hz}$
 \end_inset
 
 , the experimental spectrum also misses the first tone primarily due to
  the fact that at frequencies of 
-\begin_inset Formula $800\,Hz$
+\begin_inset Formula $800\,\text{Hz}$
 \end_inset
 
  and below, the installation noise dominates the acoustic field in the experimen
@@ -4132,42 +4217,41 @@ noprefix "false"
 
 \begin_layout Standard
 For the first main tone at 
-\begin_inset Formula $1771\,Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
 , which is the second Rossiter tone, the simulation faithfully reproduces
  the experimental frequency.
  However, the measured sound level is considerably higher at this frequency,
  which is not captured by the free stream simulation.
- In comparison, for the simulation that includes the installation geometries,
- especially the lateral side plates, the prediction leads to a better matching
- of the sound level.
+ A separate simulation including the installation geometries was also performed
+ (see Appendix A.3), which showed better agreement at 1771 Hz.
  This suggests that the amplification of this tone can be due to the effect
  of the lateral side plates.
  Indeed, a spanwise resonance can be reasonably suspected to be present
  in the experiment.
  The experiment was designed with a span-to-chord ratio of 1, leading to
  separation between the plates to be 
-\begin_inset Formula $0.3\,m$
+\begin_inset Formula $0.3\,\text{m}$
 \end_inset
 
 .
  The fundamental tone for resonance between the plates is thus 
-\begin_inset Formula $f_{S0}=572\,Hz$
+\begin_inset Formula $f_{S0}=572\,\text{Hz}$
 \end_inset
 
  whose second harmonic is at 
-\begin_inset Formula $1716\,Hz$
+\begin_inset Formula $1716\,\text{Hz}$
 \end_inset
 
 .
  This is close to the 
-\begin_inset Formula $1771\,Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
 , i.e.
  the first harmonic of the cavity resonance.
- Furthermore, while comparing with the simulation that includes the spanwise
+ Furthermore, while comparing with the simulation that included the spanwise
  lateral plates, both wall pressure recording and the farfield spectra show
  that the first tone obtained in the installed case is amplified with respect
  to the free stream configuration and hence reaches better agreement with
@@ -4197,12 +4281,20 @@ For higher frequencies, the spectra downstream of the airfoil on pressure
 \begin_inset Formula $0$
 \end_inset
 
-, shows good agreement.
+ (see Fig
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:fwhobservers-1-1"
+
+\end_inset
+
+), shows good agreement.
  The obtained agreement between the simulation in free flow condition and
  wind tunnel experiment is hence reasonable.
  In contrast, microphones facing the suction side (which are not shown)
  registered higher levels for the frequencies above 
-\begin_inset Formula $10\,kHz$
+\begin_inset Formula $10\,\text{kHz}$$ $
+
 \end_inset
 
  and are possibly due to sources on the suction side of the HLD.
@@ -4231,12 +4323,12 @@ Additionally, as mentioned, the spanwise extent of airfoil is not the same
  For the experiment, the distance between lateral side plates is kept as
  1 chord length, i.e.
  
-\begin_inset Formula $C=0.3\,m$
+\begin_inset Formula $C=0.3\,\text{m}$
 \end_inset
 
 .
  On the other hand the simulation uses a chord length of 
-\begin_inset Formula $0.66C=0.2\,m$
+\begin_inset Formula $0.66C=0.2\,\text{m}$
 \end_inset
 
 .
@@ -4298,11 +4390,7 @@ Q & =\frac{1}{2}\left((\nabla\cdot\mathbf{u})^{2}+|\mathbf{\boldsymbol{\Omega}}|
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $\mathbf{u}$
 \end_inset
 
@@ -4367,7 +4455,7 @@ Iso-surfaces of Q-Criterion,
 \begin_inset Formula $\frac{Q}{M}=10^{9}$
 \end_inset
 
- where, 
+ where 
 \begin_inset Formula $M=0.14$
 \end_inset
 
@@ -4900,7 +4988,7 @@ Streamwise counter rotating vortex pairs at the slat gap visualized using
 \begin_inset Formula $\frac{Q}{M^{2}}=[10^{9},7\times10^{9}]$
 \end_inset
 
-, where, 
+, where 
 \begin_inset Formula $M=0.14$
 \end_inset
 
@@ -5325,11 +5413,11 @@ noprefix "false"
 , the velocity magnitude highlights the flow topology as the fluid accelerates
  through the slat gap.
  The ambient/inlet velocity of the simulation is at 
-\begin_inset Formula $U_{0}=50\thinspace m/s$
+\begin_inset Formula $U_{0}=50\thinspace\text{m/s}$
 \end_inset
 
 , which is accelerated upto a maximum of 
-\begin_inset Formula $105\,m/s$
+\begin_inset Formula $105\,\text{m/s}$
 \end_inset
 
  in the region downstream of the slat trailing edge as shown in Fig.
@@ -5595,12 +5683,12 @@ name "fig:Velocity-Z_1"
 \begin_layout Plain Layout
 The unsteady velocity field in the slat cove visualized using a narrow colorbar
  corresponding to velocity values 
-\begin_inset Formula $U=\pm20m/sm/s$
+\begin_inset Formula $U=\pm20\,\text{m/s}$
 \end_inset
 
 .
  The freestream velocity is 
-\begin_inset Formula $50m/sm/s$
+\begin_inset Formula $50\,\text{m/s}$
 \end_inset
 
 .
@@ -5627,7 +5715,7 @@ name "fig:The-unsteady-velocity-smaller-colorbar"
 \begin_layout Standard
 To further highlight the spanwise of flow inside the cove region, the colormap
  is further restricted to a smaller range of 
-\begin_inset Formula $U\in[-20,20]\,ms^{-1}$
+\begin_inset Formula $U\in[-20,20]\,\text{m/s}$
 \end_inset
 
  in Fig.
@@ -5717,7 +5805,7 @@ Additionally, we note that the point of stagnation on the pressure side
 \end_inset
 
  has a maximum of upto 
-\begin_inset Formula $U_{z}=10\,ms^{-1}$
+\begin_inset Formula $U_{z}=10\,\text{m/s}$
 \end_inset
 
  inside the cove, i.e.
@@ -5896,12 +5984,12 @@ a) Pressure Coefficient,
 \begin_inset Formula $\ensuremath{C_{p}=\frac{P-P_{0}}{\frac{1}{2}\rho_{\infty}U_{\infty}^{2}}},$
 \end_inset
 
-where, 
-\begin_inset Formula $P_{0}=101325Pa$
+where 
+\begin_inset Formula $P_{0}=101325\text{Pa}$
 \end_inset
 
 , is the ambient pressure, 
-\begin_inset Formula $U_{\infty}=50ms^{-1}$
+\begin_inset Formula $U_{\infty}=50\,\text{m/s}$
 \end_inset
 
 , and 
@@ -5916,11 +6004,11 @@ where,
 .
  b) time-averaged pressure field in the slat cove.
  Both averaging is done for 5 chord pass times (
-\begin_inset Formula $C=0.3m$
+\begin_inset Formula $C=0.3\text{m}$
 \end_inset
 
  and 
-\begin_inset Formula $U_{\infty}=50ms^{-1}$
+\begin_inset Formula $U_{\infty}=50\,\text{m/s}$
 \end_inset
 
 ) corresponding to a physical time of 0.03s.
@@ -6313,7 +6401,7 @@ noprefix "false"
  using the same colormap leads to the erroneous inference of its insignificance
  due to the comparatively lower magnitudes.
  An alternative colourmap restricted to 
-\begin_inset Formula $U_{Z}\in[-5,5]ms^{-1}$
+\begin_inset Formula $U_{Z}\in[-5,5]\,\text{m/s}$
 \end_inset
 
  as shown in Fig.
@@ -6497,7 +6585,7 @@ noprefix "false"
  of same velocity direction, appear to be stacked periodically with alternating
  signs.
  The magnitude of mean spanwise velocity is close to 
-\begin_inset Formula $5\,ms^{-1}$
+\begin_inset Formula $5\,\text{m/s}$
 \end_inset
 
 , which is upto 
@@ -6506,7 +6594,7 @@ $
 \end_inset
 
  of the free stream velocity, 
-\begin_inset Formula $U=50\,ms^{-1}$
+\begin_inset Formula $U=50\,\text{m/s}$
 \end_inset
 
 .
@@ -6514,7 +6602,7 @@ $
  domain length, which for the current case of standard slat positioning
  generate a total of 6 cells, or 3 pairs of alternating signs.
  Their average spanwise wavelength is hence 
-\begin_inset Formula $\lambda_{z}=L_{span}/3=0.2/3=0.066\,m$
+\begin_inset Formula $\lambda_{z}=L_{span}/3=0.2/3=0.066\,\text{m}$
 \end_inset
 
 .
@@ -6784,11 +6872,11 @@ noprefix "false"
 
  based on the mean flow and if considering the flow inside the cove region,
  taking the mean velocity to be 
-\begin_inset Formula $20\,m/s$
+\begin_inset Formula $20\,\text{m/s}$
 \end_inset
 
 , and the characteristic length scale to be the slat chord, 
-\begin_inset Formula $C_{s}=0.039\,m$
+\begin_inset Formula $C_{s}=0.039\,\text{m}$
 \end_inset
 
 , corresponding Reynolds number is at 
@@ -7512,6 +7600,13 @@ status open
 
 \begin_layout Plain Layout
 Near the slat cusp.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Near-the-slat_plane"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -7601,6 +7696,8 @@ Near the slat gap.
 Time-averaged spanwise velocity on spanwise planes at different locations
  in the slat cove region for simulation which includes the spanwise plates
  and wind tunnel geometry.
+ Note that only for this particular simulation, the coordinate system is
+ such that the spanwise direction is along the Y direction.
  The modulation of the spanwise velocity is noticeable with cell formation
  similar to the free flow simulation without spanwise plates.
  The edge effects distorting the cells are also evident on the sides which
@@ -7704,7 +7801,7 @@ The extent of the effect of lateral walls into the interior of the cavity
 Another factor worthy of mention is that in comparison with the VALIANT
  experiment which uses a spanwise length of 1 chord length, i.e.
  
-\begin_inset Formula $0.3\,m$
+\begin_inset Formula $0.3\,\text{m}$
 \end_inset
 
  as the distance between the spanwise plates, the setup for a different
@@ -7717,7 +7814,7 @@ literal "false"
 \end_inset
 
  used a spanwise length of 
-\begin_inset Formula $0.5\,m$
+\begin_inset Formula $0.5\,\text{m}$
 \end_inset
 
 .
@@ -7851,6 +7948,9 @@ status open
 
 \begin_layout Plain Layout
 Schematic of the flow simulation setup.
+ For frame coordinate system, the incoming flow is along the X axis and
+ spanwise direction is along the Z axis.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:SimulationWithPlatesSchematic"
@@ -7937,7 +8037,17 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Spanwise cell formation is still noticeable although the cove shape is distorted
+Spanwise cell formation is still noticeable although the cove shape is distorted.
+ Spanwise direction is along the Z axis and the visualization plane is akin
+ to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Near-the-slat_plane"
+
+\end_inset
+
+.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:SimulationWithPlatesSpanwiseVelocity"
@@ -8057,7 +8167,7 @@ literal "false"
  have already studied the VALIANT geometry using different spanwise extent
  to demonstrate the same phenomena.
  For the current case, spanwise length of 
-\begin_inset Formula $0.1\,m$
+\begin_inset Formula $0.1\,\text{m}$
 \end_inset
 
  is hence inferred as insufficient to reproduce the full three dimensionality
@@ -8110,13 +8220,13 @@ status open
 \begin_layout Plain Layout
 Time-averaged velocity magnitude field for simulation using reduced span
  of 
-\begin_inset Formula $0.1\,m$
+\begin_inset Formula $0.1\,\text{m}$
 \end_inset
 
 .
  Major flow features are not altered as compared to span length of standard
  simulation at 
-\begin_inset Formula $0.2\,m$
+\begin_inset Formula $0.2\,\text{m}$
 \end_inset
 
 
@@ -8173,7 +8283,7 @@ status open
 \begin_layout Plain Layout
 Time-averaged spanwise velocity field for simulation using reduced span
  of 
-\begin_inset Formula $0.1\,m$
+\begin_inset Formula $0.1\,\text{m}$
 \end_inset
 
 .
@@ -8233,13 +8343,13 @@ The spanwise mode formation is tested again in the case of a reduced chord
 
 .
  The new stowed chord of the HLD is 
-\begin_inset Formula $C=0.2\,m$
+\begin_inset Formula $C=0.2\,\text{m}$
 \end_inset
 
 .
  All the simulation parameters are kept same as the free flow standard simulatio
 n, including the spanwise length which is at 
-\begin_inset Formula $L_{s}=0.2\,m$
+\begin_inset Formula $L_{s}=0.2\,\text{m}$
 \end_inset
 
 .
@@ -8282,7 +8392,7 @@ literal "false"
 \end_inset
 
  with respect to the standard geometry, and hence is now 
-\begin_inset Formula $0.026\,m$
+\begin_inset Formula $0.026\,\text{m}$
 \end_inset
 
 .
@@ -8292,7 +8402,7 @@ literal "false"
 \end_inset
 
 , the new wavelength would be expected at 
-\begin_inset Formula $0.0464\,m$
+\begin_inset Formula $0.0464\,\text{m}$
 \end_inset
 
  corresponding to 
@@ -8305,7 +8415,7 @@ literal "false"
 \end_inset
 
  cells with a wavelength of 
-\begin_inset Formula $0.039\,m$
+\begin_inset Formula $0.039\,\text{m}$
 \end_inset
 
 .
@@ -8318,7 +8428,7 @@ The Reynolds number of the flow is also scaled by a factor of
 
  due to the scaling of characteristic length.
  However, the inlet velocity is maintained at 
-\begin_inset Formula $50\,m/s$
+\begin_inset Formula $50\,\text{m/s}$
 \end_inset
 
  and hence the flow along the shear layer maintains a similar velocity profile.
@@ -8328,7 +8438,7 @@ The Reynolds number of the flow is also scaled by a factor of
 
  and hence higher the effect of centrifugal destabilization.
  For this case the observed spanwise wavelength 
-\begin_inset Formula $0.039\,m$
+\begin_inset Formula $0.039\,\text{m}$
 \end_inset
 
  and shown in Fig.
@@ -8777,11 +8887,7 @@ R & =\left\Vert \frac{d\vec{T}}{ds}\right\Vert =\frac{\frac{d^{2}y}{dx^{2}}}{\le
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $R$
 \end_inset
 
@@ -8807,11 +8913,7 @@ R & =\left[\left(\frac{\partial^{2}x}{\partial s^{2}}\right)^{2}+\left(\frac{\pa
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $ds$
 \end_inset
 
@@ -8985,11 +9087,7 @@ D=-U\frac{dU}{ds}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, U is the streamwise velocity magnitude.
+where U is the streamwise velocity magnitude.
  Here the velocity magnitude is taken to be 
 \begin_inset Formula $U=\sqrt{U_{X}^{2}+U_{Y}^{2}}$
 \end_inset
@@ -9211,11 +9309,11 @@ The time required for the spanwise eddy to reach the location of maximum
  and the acoustic propagation time from the location of impingement to the
  source point of the streamline.
  This calculation leads to total time of 
-\begin_inset Formula $1.213ms$
+\begin_inset Formula $1.213\,\text{ms}$
 \end_inset
 
  corresponding to a frequency of 
-\begin_inset Formula $824Hz$
+\begin_inset Formula $824\,\text{Hz}$
 \end_inset
 
 .
@@ -9242,11 +9340,7 @@ f_{n}=n\frac{U_{\infty}}{L_{a}}\cdot\frac{1}{\mathcal{M}+\frac{\alpha_{l}}{\kapp
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $L_{a}$
 \end_inset
 
@@ -9271,11 +9365,11 @@ where,
 .
  Based on the location of maximum deceleration, the acoustic path length
  is obtained as 
-\begin_inset Formula $L_{a}=0.0326m$
+\begin_inset Formula $L_{a}=0.0326\,\text{m}$
 \end_inset
 
 , and the vortex path length along the shear layer as 
-\begin_inset Formula $L_{v}=0.0387m$
+\begin_inset Formula $L_{v}=0.0387\,\text{m}$
 \end_inset
 
 , leading to 
@@ -9288,7 +9382,7 @@ where,
 \end_inset
 
 , is then at 
-\begin_inset Formula $f_{1}=928Hz$
+\begin_inset Formula $f_{1}=928\,\text{Hz}$
 \end_inset
 
  and the multiples being 
@@ -9349,11 +9443,7 @@ R_{f}=-\frac{\text{extra \ensuremath{v^{2}} production}}{\text{sum of \ensuremat
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $\bar{u}$
 \end_inset
 
@@ -9465,11 +9555,7 @@ d\Theta_{c}=\frac{U^{2}}{R}\frac{ds}{U}=\frac{U}{R}ds
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $U$
 \end_inset
 
@@ -9546,7 +9632,7 @@ The computation of curvature Richardson number requires to calculate the
  For this we obtain the normals of the streamline on each point of the streamlin
 e using a constant cell size.
  An over-resolution of 
-\begin_inset Formula $2.5\times10^{-5}m$
+\begin_inset Formula $2.5\times10^{-5}\,\text{m}$
 \end_inset
 
  is maintained to avoid numerical discrepancies.
@@ -9877,7 +9963,7 @@ M^{*}(l)=\int_{0}^{l}Ri_{f}ds
 \end_layout
 
 \begin_layout Plain Layout
-where, 
+where 
 \begin_inset Formula $l$
 \end_inset
 
@@ -10021,11 +10107,7 @@ Acoustic perturbations are essentially perturbations of the pressure field
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $\frac{D}{Dt}=\frac{\partial}{\partial t}+\mathbf{u}\cdot\nabla$
 \end_inset
 
@@ -10149,7 +10231,6 @@ literal "false"
  There also exist a region with acoustic shadow in the upstream of the slat
  since the geometry shadows the radiation unless the wave number is small
  enough to enable diffraction.
- 
 \end_layout
 
 \begin_layout Standard
@@ -10174,11 +10255,7 @@ The dilatation field also has drawbacks visualizing data on the grids with
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $\rho_{0}$
 \end_inset
 
@@ -10215,12 +10292,13 @@ reference "fig:DensityRate-1"
 .
  The acoustic field thus visualized shows majorly high frequency wavefronts
  which have an approximate wavelength of 
-\begin_inset Formula $\lambda=0.008\,m$
+\begin_inset Formula $\lambda=0.008\,\text{m}$
 \end_inset
 
 .
  This corresponds to acoustic waves of frequency higher than 
-\begin_inset Formula $50\,kHz$
+\begin_inset Formula $50\,\text{kHz}$$ $
+
 \end_inset
 
 .
@@ -10383,11 +10461,14 @@ The mesh refinement at the trailing edge with the shed vortices crossing
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Unsteady pressure field visualized using density rate 
+The unsteady dilatation field is visualized using the normalized time derivative
+ of the density, 
 \begin_inset Formula $-\frac{1}{\rho}\frac{d\rho}{dt}$
 \end_inset
 
- 
+.
+ This representation is strictly valid only in the absence of mean convective
+ flow, where the material derivative reduces to the temporal derivative.
 \end_layout
 
 \end_inset
@@ -10400,17 +10481,17 @@ Unsteady pressure field visualized using density rate
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Filtered pressure fields
 \end_layout
 
 \begin_layout Standard
 To study the acoustic modes of particular frequency, the unsteady pressure
- fields can be subjected to Fourier filtering.
+ fields can be bandpassed to extract relevant frequencies only.
  For this we choose to apply the filter for the pressure field on a 2D plane
  recording around the slat cove region for frequencies corresponding to
  the broadband hump at the 
-\begin_inset Formula $885\,Hz$
+\begin_inset Formula $885\,\text{Hz}$
 \end_inset
 
 , and the tonal peaks at 
@@ -10422,7 +10503,7 @@ To study the acoustic modes of particular frequency, the unsteady pressure
 \end_inset
 
  and 
-\begin_inset Formula $3540\,Hz$
+\begin_inset Formula $3540\,\text{Hz}$
 \end_inset
 
 .
@@ -10442,6 +10523,8 @@ noprefix "false"
  The left side plots highlight the hydrodynamic pressure fluctuation at
  the select frequency inside the cove region, and right side plots highlight
  the acoustic field around the HLD over a larger domain.
+ A better separation of the flow fields are not possible using FFT related
+ tools tools available at the moment.
 \end_layout
 
 \begin_layout Standard
@@ -10490,7 +10573,7 @@ status open
 
 \begin_layout Plain Layout
 Filter pass at 
-\begin_inset Formula $885\,Hz$
+\begin_inset Formula $885\,\text{Hz}$
 \end_inset
 
  corresponding to the low frequency broadband hump.
@@ -10553,7 +10636,7 @@ status open
 
 \begin_layout Plain Layout
 Filter pass at 
-\begin_inset Formula $1771\,Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
  corresponding to the first tonal peak.
@@ -10616,7 +10699,7 @@ status open
 
 \begin_layout Plain Layout
 Filter pass at 
-\begin_inset Formula $2655\,Hz$
+\begin_inset Formula $2655\,\text{Hz}$
 \end_inset
 
  corresponding to the the second tonal peak.
@@ -10679,7 +10762,7 @@ status open
 
 \begin_layout Plain Layout
 Filter pass at 
-\begin_inset Formula $3450\,Hz$
+\begin_inset Formula $3450\,\text{Hz}$
 \end_inset
 
  corresponding to the the third tonal peak.
@@ -10751,7 +10834,7 @@ status collapsed
 
 \begin_layout Enumerate
 The filtered field corresponding to 
-\begin_inset Formula $885Hz$
+\begin_inset Formula $885\text{Hz}$
 \end_inset
 
  has two dominant lobes near the impingement location as shown in Fig.
@@ -10829,7 +10912,7 @@ noprefix "false"
  layer with the lowest frequency having the largest lobes.
  For higher frequencies, the lobes grow smaller, however traverses with
  a constant convection velocity of approximately 
-\begin_inset Formula $23m/sm/s$
+\begin_inset Formula $23\,\text{m/s}$
 \end_inset
 
 .
@@ -10854,18 +10937,18 @@ The dynamics of acoustic waves can also be noted to be strongly coupled
  The radiated wavefronts upstream of slat trailing edge outside the cove
  also have their center precisely at the slat trailing edge.
  For the case of 
-\begin_inset Formula $885Hz$
+\begin_inset Formula $885\text{Hz}$
 \end_inset
 
 , the center of radiation is more ambiguous due to the fact that the wavelength
  at this frequency is 
-\begin_inset Formula $0.38m$
+\begin_inset Formula $0.38\text{m}$
 \end_inset
 
 , roughly one order of magnitude higher than the slat chord.
  Hence this tone, along with the other characteristics tones less than approxima
 tely 
-\begin_inset Formula $9kHzkHz$
+\begin_inset Formula $9\text{kHz}$
 \end_inset
 
 , cannot form a standing wave in the 2D plane of slat cove flow between
@@ -10879,7 +10962,7 @@ The tonal wavefronts for the higher frequencies are notably centered at
  the slat trailing edge with a directivity normal to the tangent of the
  upper wall.
  The trailing edge of the VALIANT geometry has a thickness of 
-\begin_inset Formula $1.7mm$
+\begin_inset Formula $1.7\text{m}m$
 \end_inset
 
  and is hence not exactly a pointed edge as in the case of the cusp.
@@ -10899,35 +10982,38 @@ The tonal wavefronts for the higher frequencies are notably centered at
 
 \begin_layout Enumerate
 The hydrodynamic pressure in the slat cove for all tone frequencies of 
-\begin_inset Formula $1771\,Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
  and above extracted shows a spatially growing wave along the shear layer.
  These waves represent the pressure fluctuation induced by the convected
- vorticity generated near the cusp.
-\end_layout
-
-\begin_layout Enumerate
-The dynamic visualization of impingement of these spatial waves on the trailing
- edge suggests that they are in-phase with the acoustic source for corresponding
- frequency near the trailing edge for the tones at 
-\begin_inset Formula $1771\,Hz$
-\end_inset
-
- and above.
- This re-validates the fact that impingement of vortices are responsible
- for the acoustic wave generation and subsequent Rossiter mechanism.
+ vorticity of spanwise coherent structures generated near the cusp.
+ The mode structures convect at the corresponding phase velocity.
 \end_layout
 
 \begin_layout Enumerate
 The hydrodynamic oscillation at the slat TE for 
-\begin_inset Formula $885\,Hz$
+\begin_inset Formula $885\,\text{Hz}$
 \end_inset
 
  shows persistent elongated lobes along the shedding direction.
  These lobes represent pressure fluctuations that due to the vortex shedding
  and is responsible for the flapping motion of the shear layer at the slat
  TE.
+\end_layout
+
+\begin_layout Enumerate
+The acoustic fields show that a dipole like source can be safely assumed
+ on the slat trailing edge.
+ The radiated field can be clearly identified to have opposing phase centered
+ at the slat TE.
+ The axis of the dipole is also observed to be aligned with the local normal
+ to the slat TE wall at the edge.
+ The radiation towards the suction side can be identified to have dipole
+ like radiation pattern, but the pressure side lobe is strongly distorted
+ by the shape of the cove.
+ The hydrodynamic component present at the TE also mask the acoustic radiation
+ at the slat TE at the inner side making clearer discernment difficult.
 \end_layout
 
 \begin_layout Section
@@ -11072,11 +11158,12 @@ status collapsed
 
 \begin_layout Plain Layout
 For this, the pressure field is sampled at a rate of 
-\begin_inset Formula $180405\,Hz$
+\begin_inset Formula $180405\,\text{Hz}$
 \end_inset
 
 , allowing to obtain the spectra upto 
-\begin_inset Formula $90\,kHz$
+\begin_inset Formula $90\,\text{kHz}$$ $
+
 \end_inset
 
  by the Nyquist criteria
@@ -11114,7 +11201,7 @@ $
  averaging windows and a linear trend line is used to remove the mean from
  each window to obtain the fluctuating component of the pressure.
  The PSD is then obtained with a resolution of 
-\begin_inset Formula $22\,Hz$
+\begin_inset Formula $22\,\text{Hz}$
 \end_inset
 
 .
@@ -11163,11 +11250,11 @@ status collapsed
 From analyzing the data, the recordings from probes on the leading edge
  of the slat shows strong similarity with the far-field acoustic spectra.
  Probes 1, 3, and 5, shows the the first main tone at 
-\begin_inset Formula $1771\,Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
  although with less sharpness than the second tone at 
-\begin_inset Formula $2655\,Hz$
+\begin_inset Formula $2655\,\text{Hz}$
 \end_inset
 
 .
@@ -11186,11 +11273,11 @@ For probes inside the slat cove, namely, Probe 6, 8, 10, and 11, the obtained
  spectra shows a progressive behavior.
  The spectra for Probe 6 which is close to the slat cusp shows the second
  tonal peak at 
-\begin_inset Formula $2655\,Hz$
+\begin_inset Formula $2655\,\text{Hz}$
 \end_inset
 
  as the dominant tone and the first tone at 
-\begin_inset Formula $1771\,Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
  is shadowed by the low frequency fluctuations arising from the behavior
@@ -11203,7 +11290,7 @@ For probes inside the slat cove, namely, Probe 6, 8, 10, and 11, the obtained
 , the tones are completely dominated by steady noise from the impinging
  vortex structures.
  The overall low frequency noise below 
-\begin_inset Formula $885\,Hz$
+\begin_inset Formula $885\,\text{Hz}$
 \end_inset
 
  also increases obscuring the hump at this frequency corresponding to the
@@ -12064,15 +12151,11 @@ noprefix "false"
 \begin_inset Formula $9$
 \end_inset
 
-, 
+, and 
 \begin_inset Formula $10$
 \end_inset
 
-, and 
-\begin_inset Formula $13$
-\end_inset
-
- from Fig.
+, from Fig.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:wp_coords-1"
@@ -12340,11 +12423,11 @@ noprefix "false"
 
 , it can be noted that the spanwise modulations are reproduced in the low
  frequency part of the spectra particularly above 
-\begin_inset Formula $200\,Hz$
+\begin_inset Formula $200\,\text{Hz}$
 \end_inset
 
  and below 
-\begin_inset Formula $1000\,Hz$
+\begin_inset Formula $1000\,\text{Hz}$
 \end_inset
 
 .
@@ -12407,12 +12490,12 @@ Apart from the spanwise modulated behavior, the presence of the tones at
 \end_inset
 
  and 
-\begin_inset Formula $3450\,Hz$
+\begin_inset Formula $3450\,\text{Hz}$
 \end_inset
 
  can be seen to be present irrespective of the spanwise location.
  The first tonal peak at 
-\begin_inset Formula $1771\,Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
  however seems to be more susceptible to the spanwise modulations particularly
@@ -12430,7 +12513,7 @@ Apart from the spanwise modulated behavior, the presence of the tones at
 
 .
  For the low frequency hump at 
-\begin_inset Formula $885\,Hz$
+\begin_inset Formula $885\,\text{Hz}$
 \end_inset
 
 , the wall pressure spectra is not able to provide a clear identification,
@@ -12482,7 +12565,7 @@ noprefix "false"
 
 , it is clear that the flow near the cusp has spanwise modulated pressure
  oscillations around 
-\begin_inset Formula $885\,Hz$
+\begin_inset Formula $885\,\text{Hz}$
 \end_inset
 
  corresponding to the low frequency hump in the far-field acoustic spectra.
@@ -12553,10 +12636,6 @@ name "fig:hotwireprobelocations"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -12820,13 +12899,13 @@ reference "fig:averagehotwiseSLmag"
 \end_inset
 
  concurs with the mean inflow velocity of 
-\begin_inset Formula $50m/sm/s$
+\begin_inset Formula $50\,\text{m/s}$
 \end_inset
 
 , and the deceleration due to presence of the main-element outside of the
  cove region.
  The mean recirculation velocity near the cusp is obtained as 
-\begin_inset Formula $15m/sm/s$
+\begin_inset Formula $15\,\text{m/s}$
 \end_inset
 
 , which also concurs with Fig.
@@ -12842,7 +12921,7 @@ noprefix "false"
 .
  The velocity magnitude profiles are also largely spanwise invariant outside
  the cove and have a deviation of 
-\begin_inset Formula $\pm5m/sm/s$
+\begin_inset Formula $\pm5\,\text{m/s}$
 \end_inset
 
  inside the recirculation.
@@ -12863,7 +12942,7 @@ noprefix "false"
 , the region outside the cove region shows negligible variation whereas
  for the region inside the cove, the velocity switched signs with a peak
  amplitudes of 
-\begin_inset Formula $7m/sm/s$
+\begin_inset Formula $7\,\text{m/s}$
 \end_inset
 
 , suggesting that the spanwise modulation is the main contributor to total
@@ -13255,18 +13334,18 @@ noprefix "false"
 
 , the fluctuation related to tonal peaks in the acoustic spectra can be
  identified for 
-\begin_inset Formula $1771Hz$
+\begin_inset Formula $1771\,\text{Hz}$
 \end_inset
 
  and above.
  The low frequency hump at 
-\begin_inset Formula $885Hz$
+\begin_inset Formula $885\,\text{Hz}$
 \end_inset
 
  is however absent.
  For probes 14 and higher, it can be noted that the spanwise velocity shows
  a consistent oscillation between 
-\begin_inset Formula $200-300Hz$
+\begin_inset Formula $200-300\,\text{Hz}$
 \end_inset
 
  across multiple probe locations along the span.
@@ -13292,7 +13371,7 @@ noprefix "false"
 
 , the peaks corresponding to acoustic frequencies are hardly distinguishable
  but instead hot spots for a frequency of 
-\begin_inset Formula $200Hz$
+\begin_inset Formula $200\,\text{Hz}$
 \end_inset
 
  can be noticed.
@@ -13327,23 +13406,23 @@ Such a periodic bursting if present may affect the acoustics.
  Furthermore, for Probe 20, which is placed deeper into the cove inside
  the shear layer, the spectral content shows increased activity at the same
  frequency of 
-\begin_inset Formula $200Hz$
+\begin_inset Formula $200\,\text{Hz}$
 \end_inset
 
 .
  Here the averaged spanwise velocity modulation is also with a higher amplitude
  approximately 
-\begin_inset Formula $7m/sm/s$
+\begin_inset Formula $7\,\text{m/s}$
 \end_inset
 
 , thereby having a higher power level for the low frequency fluctuations
  including 
-\begin_inset Formula $200Hz$
+\begin_inset Formula $200\,\text{Hz}$
 \end_inset
 
 .
  The higher energy levels at 
-\begin_inset Formula $200Hz$
+\begin_inset Formula $200\,\text{Hz}$
 \end_inset
 
  for this location is clearly distinguishable from neighboring frequencies
@@ -13409,17 +13488,17 @@ noprefix "false"
 \end_inset
 
 , the spanwise modulation of the frequency range between 
-\begin_inset Formula $700Hz$
+\begin_inset Formula $700\,\text{Hz}$
 \end_inset
 
  and 
-\begin_inset Formula $1000Hz$
+\begin_inset Formula $1000\,\text{Hz}$
 \end_inset
 
  are also notable.
  This also suggests that there is a spanwise inhomogeneity in the hydrodynamic
  fluctuations at 
-\begin_inset Formula $885Hz$
+\begin_inset Formula $885\text{Hz}$
 \end_inset
 
 .
@@ -13662,7 +13741,7 @@ noprefix "false"
  is a canonical phenomena in signal processing.
  Correspondingly, an estimation of the Strouhal number for modulating frequency
  of 
-\begin_inset Formula $200Hz$
+\begin_inset Formula $200\,\text{Hz}$
 \end_inset
 
  for the given slat chord yields 
@@ -13707,7 +13786,7 @@ literal "false"
 
  for the 30P30N HLD geometry.
  The experiment had a free field velocity of 
-\begin_inset Formula $30m/sm/s$
+\begin_inset Formula $30\,\text{m/s}$
 \end_inset
 
 , 
@@ -13858,7 +13937,7 @@ status open
 
 \begin_layout Plain Layout
 Time stamp
-\begin_inset Formula $0.214s$
+\begin_inset Formula $0.214\text{s}$
 \end_inset
 
 
@@ -13896,7 +13975,7 @@ status open
 
 \begin_layout Plain Layout
 Time stamp 
-\begin_inset Formula $0.219s$
+\begin_inset Formula $0.219\text{s}$
 \end_inset
 
 
@@ -13946,11 +14025,11 @@ Furthermore, from the inspection of data recorded from the high fidelity
  a bursting of this spanwise coherent isocontour, itself arising from the
  spanwise vorticity of the early shear layer, can be identified.
  Snapshots of the flow separated in time by a time interval of 
-\begin_inset Formula $0.005s$
+\begin_inset Formula $0.005\,\text{s}$
 \end_inset
 
  corresponding to the frequency for 
-\begin_inset Formula $200Hz$
+\begin_inset Formula $200\,\text{Hz}$
 \end_inset
 
  are shown in Fig.
@@ -13992,7 +14071,7 @@ In this chapter, we presented the numerical investigation and major findings
 \end_inset
 
  against an inflow of 
-\begin_inset Formula $50m/sm/s$
+\begin_inset Formula $50\,\text{m/s}$
 \end_inset
 
  at a chord based Reynolds number of 

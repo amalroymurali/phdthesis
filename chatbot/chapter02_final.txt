@@ -615,7 +615,7 @@ literal "false"
  vorticity from the cusp while being convected towards the trailing edge.
  Moreover, given that for the high speed ejection at the slat gap, the vortex
  shedding noise is at the very high frequency range of 
-\begin_inset Formula $20 kHzkHz$
+\begin_inset Formula $20 kHz$
 \end_inset
 
 , it does not interact directly with the characteristic resonance mechanisms

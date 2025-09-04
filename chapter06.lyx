@@ -3191,11 +3191,7 @@ The shape of mean shear layer of the slat is best captured by the distribution
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $n$
 \end_inset
 
@@ -4361,11 +4357,7 @@ R & =\left[\left(\frac{\partial^{2}x}{\partial s^{2}}\right)^{2}+\left(\frac{\pa
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where, 
+where 
 \begin_inset Formula $s$
 \end_inset
 
@@ -7090,10 +7082,8 @@ R_{f}=\frac{\frac{2U}{R}}{\frac{dU}{dy}+\frac{U}{R}}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-where, 
+\size default
+where 
 \begin_inset Formula $U$
 \end_inset
 
