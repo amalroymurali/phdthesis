@@ -1,0 +1,3272 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/amurali/Desktop/DRARM_Thesis_2024/Thesis_draft/
+\textclass report
+\begin_preamble
+\usepackage{lmodern}
+
+\usepackage{tcolorbox}
+\usepackage{listings}
+\tcbuselibrary{listingsutf8}
+\newtcolorbox{codebox}{
+  colback=black!5!white,
+  colframe=black!75!white,
+  listing only,
+  listing options={basicstyle=\ttfamily, language=Python}
+}
+\end_preamble
+\use_default_options false
+\master Thesis_Manuscript_ARM.lyx
+\begin_modules
+theorems-ams
+theorems-ams-extended
+fixltx2e
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+Style CodeBox
+  Margin      Static
+  LatexType   Environment
+  LatexName   codebox
+  Font
+    Family     Typewriter
+  EndFont
+End
+\end_local_layout
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "beraserif" "default"
+\font_sans "default" "default"
+\font_typewriter "beramono" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command bibtex
+\index_command default
+\float_placement th
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "PhD Thesis Draft"
+\pdf_author "Ama Roy Murali"
+\pdf_subject "Noise prediction for high lift devices"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=red, urlcolor=blue, citecolor=blue, pdfstartview={FitH}, hyperfootnotes=false, unicode=true"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style unsrtnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\rightmargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+LBM and CAA
+\end_layout
+
+\begin_layout Section
+Acoustic Pulse Propagation
+\end_layout
+
+\begin_layout Subsection
+Wave Propagation according to Linearized Navier-Stokes
+\end_layout
+
+\begin_layout Standard
+A reduced form of linearized Navier-Stokes equation that captures the adiabatic
+ sound propagation in an isothermal fluid can be written of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left(c_{0}^{2}+\left[\frac{4}{3}\nu+\nu_{B}\right]\frac{\partial}{\partial t}\right)\nabla^{2}P^{\prime}=\frac{\partial^{2}P^{\prime}}{\partial t^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which represent a lossy wave equation.
+ Here 
+\begin_inset Formula $c_{0}$
+\end_inset
+
+ is the thermodynamic speed of sound, 
+\begin_inset Formula $\nu=\mu/\rho_{0}$
+\end_inset
+
+ is the kinematic shear viscosity and 
+\begin_inset Formula $\nu_{B}=\mu_{B}/\rho_{0}$
+\end_inset
+
+ is the kinematic bulk viscosity of the fluid.
+ It has been shown by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dellar2001"
+literal "false"
+
+\end_inset
+
+ that the kinematic bulk viscosity in LBM-BGK isothermal model is 
+\begin_inset Formula $\nu_{B}=2\nu/3$
+\end_inset
+
+ and hence the effective viscosity is 
+\begin_inset Formula $\left[\frac{4}{3}\nu+\nu_{B}\right]=2\nu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The equation is thus 
+\begin_inset Formula 
+\begin{equation}
+\left(c_{0}^{2}+2\nu\frac{\partial}{\partial t}\right)\nabla^{2}P^{\prime}=\frac{\partial^{2}P^{\prime}}{\partial t^{2}}\label{eq:effectiveNSac}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here a definition of the viscous relaxation time, 
+\begin_inset Formula $\tau_{s}$
+\end_inset
+
+ can be useful and is defined as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tau_{s}=\left(\frac{4}{3}\eta+\eta_{B}\right)/\rho_{0}c^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and typical values of this quantity are approximately 
+\begin_inset Formula $10^{-10}s$
+\end_inset
+
+ for gases and 
+\begin_inset Formula $10^{-12}s$
+\end_inset
+
+ in liquids.
+ Now, a plane wave solution can be assumed of the form 
+\begin_inset Formula 
+\begin{equation}
+P'=\hat{A}\exp\left[i\left(\hat{k}x-\hat{\omega}t\right)\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On substituting this equation to Eq.
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:effectiveNSac"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ one obtains the dispersion relation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left(c_{0}^{2}-i\hat{\omega}2\nu\right)\hat{k}^{2}=\hat{\omega}^{2}\label{eq:dispersion_relation}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Temporal Analysis
+\end_layout
+
+\begin_layout Standard
+Here if 
+\begin_inset Formula $\hat{k}$
+\end_inset
+
+ is prescribed as an arbitrary real wave number vector 
+\begin_inset Formula $k$
+\end_inset
+
+, a discretised version of Eq.
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:effectiveNSac"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ reduces to a generalized eigen value problem.
+ The analytical solution for this problem was described by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Marie2009"
+literal "false"
+
+\end_inset
+
+ and is of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\hat{\omega}=-ik^{2}\nu\pm kc_{o}\sqrt{1-\left(k\nu/c_{0}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The solutions thus represent the acoustic modes propogating with phase speeds
+ 
+\begin_inset Formula $c_{T}=Re(\hat{\omega})/k$
+\end_inset
+
+ and temporal dissipation 
+\begin_inset Formula $\alpha_{T}=-Im(\hat{\omega})$
+\end_inset
+
+, hence of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P^{\prime}=\hat{A}\exp\left(-\alpha_{T}t\right)\exp\left[ik\left(x-c_{T}t\right)\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cccc}
+c_{T}=c_{o}\sqrt{1-\left(\frac{k\nu}{c_{0}}\right)^{2}} & and & \alpha_{T}=k^{2}\nu\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Spatial Analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Spatial-Analysis"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If instead of prescribing a real spatial wave number, we can specify a real
+ frequency 
+\begin_inset Formula $\hat{\omega}$
+\end_inset
+
+, and Eq.
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:dispersion_relation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ can be solved for the complex wave number 
+\begin_inset Formula $\hat{k}$
+\end_inset
+
+ to get 
+\begin_inset Formula $\hat{k}=\pm\frac{\omega}{\sqrt{c_{0}^{2}-i\omega2\nu}}$
+\end_inset
+
+.
+ In practice, this captures the distortion in the wavelength and decay of
+ amplitude as the plane wave of fixed frequency propagates in space.
+ Now, the phase speed is given by 
+\begin_inset Formula $c_{S}=\omega/Re(\hat{k})$
+\end_inset
+
+ and spatial dissipation rate as 
+\begin_inset Formula $\alpha_{S}=Im(\hat{k})$
+\end_inset
+
+, thereby giving the form of propagating wave solution as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P^{\prime}=\hat{A}\exp\left(-\alpha_{S}x\right)\exp\left[i\omega\left(x/c_{S}-t\right)\right]\label{eq:plane_wave_soln}
+\end{equation}
+
+\end_inset
+
+where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+c_{S}=\sqrt{2}c_{0}\sqrt{\frac{1+\left(\omega\tau_{S}\right)^{2}}{\sqrt{1+\left(\omega\tau_{S}\right)^{2}}+1}}\text{ and }\alpha_{S}=\frac{\omega}{\sqrt{2}c_{0}}\sqrt{\frac{\sqrt{1+\left(\omega\tau_{S}\right)^{2}}-1}{1+\left(\omega\tau_{S}\right)^{2}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Gaster Transformation
+\end_layout
+
+\begin_layout Standard
+Gaster transformation deals with relating the spatial and temporal formulations.
+ If we assume that the spatial wavenumber 
+\begin_inset Formula $\hat{k}$
+\end_inset
+
+ and temporal frequency 
+\begin_inset Formula $\hat{\omega}$
+\end_inset
+
+ are both analytic functions of each other in the complex domain, then Cauchy-Ri
+emann equations can be used used to show that 
+\begin_inset Formula $Re(\hat{k}_{spatial})\approx Re(\hat{k}_{temporal})$
+\end_inset
+
+ if we assume that 
+\begin_inset Formula $Re(\hat{\omega}_{spatial})\approx Re(\hat{\omega}_{temporal})$
+\end_inset
+
+ and neglect higher order terms.
+ Then the temporal and spatial dissipation rates satisfy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\alpha_{T}}{\alpha_{S}}=C_{g}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $C_{g}$
+\end_inset
+
+ is the group velocity defined as 
+\begin_inset Formula $C_{g}=\frac{\partial Re(\hat{\omega})}{\partial Re(\hat{k})}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Useful approximation for Isothermal Adiabatic Pulse Propagation
+\end_layout
+
+\begin_layout Standard
+With the above three piece wise analyses, we can make approximations for
+ the case of a typical fluid whose kinematic viscosity 
+\begin_inset Formula $\nu=1.5\times10^{-5}m^{2}/s$
+\end_inset
+
+ and thermodynamic sound speed is 
+\begin_inset Formula $c_{0}=343m/s$
+\end_inset
+
+.
+ Here the terms 
+\begin_inset Formula $\omega\tau$
+\end_inset
+
+ and 
+\begin_inset Formula $k\nu/c_{0}$
+\end_inset
+
+ are of the order of 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+.
+ Hence the phase velocities and dissipation rates from temporal analysis
+ reduces to 
+\begin_inset Formula $c_{T}\approx c_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{T}\approx k^{2}\nu$
+\end_inset
+
+ whereas the spatial sound speed and dissipation rates from spatial analysis
+ reduces to 
+\begin_inset Formula $c_{S}\approx c_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{S}\approx\frac{\omega^{2}}{2c_{0}}\tau_{s}=\frac{\omega^{2}}{c_{0}}\frac{\nu}{c_{0}^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+FWH Surface Tests
+\end_layout
+
+\begin_layout Subsubsection
+Oval Surfaces
+\end_layout
+
+\begin_layout Standard
+An oval shaped surface is first tested which is placed close to the airfoil
+ to obtain a close fit to the surface, but large enough to contain the ejected
+ vortices from the slat cove.
+ The surface mesh used for recording the data are shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Visualization-of-FWH"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The surface together with the airfoil and a slice of the dilatation field
+ are shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Visualization-of-FWH-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The upper and lower surface data are visualized in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:FWHSurface"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tbph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWHSurfaceGMSH_mesh_merge.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Surface geometry with structured meshing to enable calculation using TurbAcAn
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Visualization-of-FWH"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/TeX_files_old_use_Thesis_draft/figs/DilatationwithFWHSurface.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schematic of the surface placement along with airfoil and the dilatation
+ field 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Visualization-of-FWH-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Oval FWH surface geometry and placement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As can be noted, while using the oval surface, the farfield prediction at
+ the suction side tends to generate spurious noise in frequencies greater
+ than 
+\begin_inset Formula $5kHz$
+\end_inset
+
+.
+ This is attributed to the effect of vorticity structures crossing the FWH
+ surface which makes the quadrupole source terms significant
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mendez2013"
+literal "false"
+
+\end_inset
+
+ and needs to be included in the calculation.
+ However, the volume integrals are computationally inefficient and instead
+ surface truncation or data averaging is done such that neglecting them
+ generates non-significant errors.
+ As can be noted in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:truncatedfwhspectra"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the spurious hump disappears in the calculated spectra if the surface
+ is truncated at the downstream edge region.
+ 
+\end_layout
+
+\begin_layout Standard
+This truncation, however, also cause a drop in the levels for broadband
+ range.
+ On comparing the sound levels in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:OvalFWHSurface"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:truncatedfwhspectra"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the drop in levels are approximately 
+\begin_inset Formula $4.5dB$
+\end_inset
+
+, on average, suggesting that the contribution for farfield sound from the
+ truncated region is significant across the range.
+ A further truncation of the surface to use only the bottom surface shows
+ that a further filtering of the high frequency range is obtained but with
+ little to no further loss in the broadband levels.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+For very low frequency, the levels drop with surface truncation and is attribute
+d to the fact that in the FWH routine, the fluctuating pressure is obtained
+ by subtracting a uniform mean pressure from the FWH surface recording.
+ This mean pressure is not the locally averaged pressure for each node and
+ hence leads to an erroneous DC component in the predicted PSD.
+ 
+\color black
+Nevertheless,
+\color inherit
+ very low frequencies typically 
+\begin_inset Formula $<600Hz$
+\end_inset
+
+ are not considered amenable to interpretation in the experimental data
+ as well due to the presence of jet shear layer noise and other background
+ noises in the experimental setup.
+ Also since these additional sources are absent in the simplified simulation,
+ levels at low frequencies are expected to be lower than the experiment.
+ 
+\end_layout
+
+\begin_layout Standard
+On further visualization of the vorticity in the suction side using the
+ Q-criterion, it can be seen that the upper side of the surface inevitably
+ cross the path of large scale vortex structures with small magnitude of
+ vorticity.
+ This is visualized in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:qcrit_fwh_oval_large_vorticity"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ using isocontours of a low value of 
+\begin_inset Formula $Q_{c}$
+\end_inset
+
+ with 
+\begin_inset Formula $\frac{Q_{c}}{M^{2}}=200$
+\end_inset
+
+.
+ To avoid this problem we update the FWH surface using a larger C shaped
+ surface that will allow for the upper surface to be placed farther from
+ the HLD.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+The upper and lower surface regions contribute differently to the observer
+ on the suction and pressure side of the main element.
+ This can be seen in the prediction made for an observer at the suction
+ side by using only the bottom side of the surface.
+ The bottom surface recovers the same levels as of the experiment giving
+ excellent agreement for the higher frequencies.
+ The tone levels are identical with the surface truncated downstream only,
+ whereas the lower frequencies below 
+\begin_inset Formula $800Hz$
+\end_inset
+
+ drops further.
+ The contribution to the suction side observers from the top surface is
+ found to be of lower amplitude than the lower surface and hence the negligible
+ contribution to the spectra.
+ The FWH calculation is implemented such that there involves
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/Shared_Newton/Pics for Marc/DensityRate2.png
+	lyxscale 20
+	width 11cm
+	height 11cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Visualization of density variation 
+\begin_inset Formula $\Delta\rho$
+\end_inset
+
+ over a time step corresponding to the FWH sampling rate of 360 kHz showing
+ the radiation of density perturbations from the slat cove and the trailing
+ edge.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tb
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWHOval_Upper.png
+	lyxscale 25
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Suction side 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FWHDensityGradienttop"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWHOval_Lower.png
+	lyxscale 25
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pressure side 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FWHDensityGradientbottom"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWHOval_Front.png
+	lyxscale 25
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Upstream region 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FWHDensityGradientfront"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWHOval_Rear.png
+	lyxscale 25
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Downstream region 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FWHDensityGradientrear"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Density gradient (temporal) on the oval FWH surface 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FWHSurface"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement ph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/Shared_Newton/Pics for Marc/FWH_FullSurface_NoTruncation/FWH_truncsurf_B258U258.png
+	lyxscale 20
+	width 5cm
+	height 5cm
+	keepAspectRatio
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/amurali/Desktop/Shared_Newton/Pics for Marc/FWH_FullSurface_NoTruncation/FWH_ECL_Observer4.png
+	lyxscale 20
+	width 9cm
+	height 9cm
+	keepAspectRatio
+	BoundingBox 0bp 50bp 917bp 558bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The full FWH surface without truncation and resulting prediction.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:OvalFWHSurface"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/Shared_Newton/Pics for Marc/FWH_FullSurface_Truncated_Near_TE/FWH_truncsurf_B246U246.png
+	lyxscale 20
+	width 5cm
+	height 5cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 611bp 372bp
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/amurali/Desktop/Shared_Newton/Pics for Marc/FWH_FullSurface_Truncated_Near_TE/FWH_ECL_Observer4.png
+	lyxscale 20
+	width 9cm
+	height 9cm
+	keepAspectRatio
+	BoundingBox 0bp 50bp 917bp 558bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The truncated FWH surface with open trailing edge and resulting prediction
+ showing a reduced low and high frequency contents.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:truncatedfwhspectra"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/Shared_Newton/Pics for Marc/FWH_Bottom_Surface_Only_Truncated_Near_TE/FWH_truncsurf_B246U0.png
+	lyxscale 20
+	width 5cm
+	height 5cm
+	keepAspectRatio
+	BoundingBox 0bp 0bp 611bp 372bp
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/amurali/Desktop/Shared_Newton/Pics for Marc/FWH_Bottom_Surface_Only_Truncated_Near_TE/FWH_ECL_Observer4.png
+	lyxscale 20
+	width 9cm
+	height 9cm
+	keepAspectRatio
+	BoundingBox 0bp 50bp 917bp 558bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The truncated FWH surface with only bottom surface and resulting prediction
+ showing similar result to truncated full surface but with reduced low frequency
+ contents.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FWHlower"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Farfield spectra obtained using the oval FWH surface compared to 1) a simulation
+ of the same HLD while simulated by including the wind tunnel geometry and
+ 2) the experimental data from VALIANT program
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Farfield spectra obtained using the oval FWH surface compared to 1) a simulation
+ of the same HLD while simulated by including the wind tunnel geometry and
+ 2) the experimental data from VALIANT program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/Shared_Newton/Pics for Marc/Schematic Mesh and FWH surface2.png
+	lyxscale 25
+	width 11cm
+	height 11cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Flow visualization to demonstrate the low vorticity structures crossing
+ the upper side of FWH surface.
+ Isocontours of Q criterion 
+\begin_inset Formula $\frac{Q_{c}}{M^{2}}=200$
+\end_inset
+
+ is used to identify the structures and are colored by logarithm of vorticity
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:qcrit_fwh_oval_large_vorticity"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Flow visualization to demonstrate the low vorticity structures crossing
+ the upper side of FWH surface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Details of simulation that includes the Wind Tunnel Geometry:
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Details-of-WTunnelsimulation"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Wind Tunnel Simulation:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The complete configuration of the wind tunnel setup of the original VALIANT
+ experiment, which includes the converging duct and the lateral support
+ plates, were simulated using the same simulation parameters of the free
+ stream simulation.
+ This simulation was setup by Airbus engineers (Dr.
+ Maxime Itasse and Dr.
+ Florian Guiho) and was reproduced at the ECL facility for the purpose of
+ testing the version of the code for producing reference data.
+ The full simulation requires significantly larger compute resources than
+ free stream simulation since the three dimensional shear layers from the
+ wind tunnel need to be resolved adequately to avoid spurious effects.
+ Hence its needs a few adaptations which make the free stream simulation
+ computationally cheaper while maintaining the same fidelity as when including
+ the wind tunnel.
+ As such, the wind tunnel simulation has the following differences from
+ the free stream case:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter06_figs/WindTunnel.png
+	lyxscale 20
+	width 9cm
+	height 9cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:simdomain"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter06_figs/WindTunnelImageWithFWH.png
+	lyxscale 20
+	width 9cm
+	height 9cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wtsim_fwh_placement"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wind tunnel simulation setup in ProLB.
+ A) The simulation domain of the wind tunnel geometry with the tunnel and
+ HLD installed.
+ b) Wind tunnel geometry with the FWH surface placed inside the flow
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Wind tunnel simulation setup in ProLB
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter06_figs/WindTunnelDrawing.png
+	lyxscale 30
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dimensions of the wind tunnel nozzle exit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The total physical time of wind tunnel simulation is 
+\begin_inset Formula $0.078s$
+\end_inset
+
+, in comparison to 
+\begin_inset Formula $0.2s$
+\end_inset
+
+ in the standard free stream case.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The spanwise length of the domain is 1 chord length, i.e.
+ 
+\begin_inset Formula $0.3m$
+\end_inset
+
+ for wind tunnel simulation whereas it is 
+\begin_inset Formula $0.2m$
+\end_inset
+
+ for free flow simulations.
+\end_layout
+
+\begin_layout Enumerate
+Spanwise boundary conditions are set to wall boundaries with no slip at
+ the supporting wall surface and uses a wall model.
+ In free flow simulation, periodic conditions are applied on spanwise boundaries
+ to mimic an infinite spanwise domain.
+\end_layout
+
+\begin_layout Enumerate
+The experimental setup has a nozzle geometry which creates an unsteady shear
+ layer around the airfoil whereas the free flow simulations have only the
+ airfoil surface as a solid generating turbulence and vorticity.
+\end_layout
+
+\begin_layout Enumerate
+For the case of simulation with the inclusion of tunnel geometry, the coordinate
+ axis are chosen differently.
+ The flow is now aligned such that the downstream axis is along the X-coordinate
+ axis and the spanwise direction is along the Y-coordinate axis.
+\end_layout
+
+\begin_layout Standard
+Consequently, for spanwise periodic condition in the free stream case, the
+ acoustic domain is theoretically infinite allowing the waves to propagate
+ without being reflected by solid spanwise boundaries.
+ However, the periodic condition numerically copies the data between the
+ spanwise boundaries thereby enforcing congruence of the flow variables
+ at both boundaries.
+ Hence, although the domain is infinite for acoustic propagation, it may
+ trigger spurious periodic behaviors in the flow with wavelengths that confer
+ to the domain length.
+ Another effect of the spanwise periodic condition is that it tends to exert
+ spanwise homogeneity in the flow if the spanwise domain length is smaller
+ than that which would allow three dimensionality to develop.
+ This has been investigated in previous works for the same geometry as that
+ used in the present simulations
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Terracol2016"
+literal "false"
+
+\end_inset
+
+ and also for other HLD configurations
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Choudhari2007,Choudhari2011,Choudhari2017,Lockard2022,Zhang2024"
+literal "false"
+
+\end_inset
+
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Lockard2009"
+literal "false"
+
+\end_inset
+
+ showed that for the development of three-dimensionality of the coherent
+ structures in the cove region, a spanwise extend of 
+\begin_inset Formula $0.8c_{s}$
+\end_inset
+
+ is necessary.
+ For the current case simulated, this corresponds to a length of 
+\begin_inset Formula $0.0312m$
+\end_inset
+
+ while the actual simulated span length is 
+\begin_inset Formula $0.2m$
+\end_inset
+
+ corresponding to more than 6 times the suggested value.
+ Hence this factor is not expected to affect the features of the flow simulated
+ in our case and the three dimensionality is expected to develop unhindered.
+\end_layout
+
+\begin_layout Standard
+A schematic of the simulation setup using ProLB for the full simulation
+ is shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:simdomain"
+
+\end_inset
+
+ and the placement of FWH surface within the tunnel region is shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:wtsim_fwh_placement"
+
+\end_inset
+
+.
+ The FWH surface shape remains the same as the chosen C-shape surface from
+ Chapter 04, but is now placed inside the tunnel such that the shear layer
+ from the nozzle edges develops outside the FWH surface completely.
+ Additionally, with a reduced signal length, the computation leads to spectra
+ with a lower resolution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+The comparison of the wall pressure spectra obtained from wind tunnel simulation
+ against that from experiment are shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:FWH_ECLLBM-1"
+
+\end_inset
+
+.
+ A juxtaposition is provided for the farfield results from the original
+ full length Airbus simulation in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:FWH_AirbusLBM"
+
+\end_inset
+
+.
+ It can be noted that a good agreement is obtained regarding the tonal frequenci
+es in both cases.
+ For the SPL, the first tone at 
+\begin_inset Formula $1771Hz$
+\end_inset
+
+ tends to be captured adequately by the wind tunnel simulation whereas it
+ was almost vanishing in the free stream simulation.
+ A good agreement can be seen in general for all higher frequency tones
+ (not all harmonics) along with consistently higher broadband SPL simulations.
+ The higher SPL suggests that the pressure fluctuations in the cove are
+ more energetic in the simulations than the experiment.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/Shared_Newton/AOA18 Compare CP/Cp_comparison_OnlyAoA18_WithWT.png
+	lyxscale 20
+	width 12cm
+	height 12cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Coefficient of pressure 
+\begin_inset Formula $-C_{p}$
+\end_inset
+
+ over the surface of HLD obtained using the LBM simulations with and without
+ wind-tunnel setup included are compared against the experimental data 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Coefficient-of-pressure"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The mean wall pressure distribution obtained for the wind tunnel simulation
+ and the free stream simulation are shown in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Coefficient-of-pressure"
+
+\end_inset
+
+ in comparison with the same from experiment.
+ The wall pressure distribution on the slat and the pressure side of the
+ airfoils shows a good agreement with the experimental values for both cases.
+ However, there is a strong deviation of the suction peak at the leading
+ edge of airfoil for both airfoil and the slat, and delivers a value lower
+ than the experimental case.
+ The free flow simulation also shows an overall shift in the data due to
+ uncertainity arising from the mean pressure value 
+\begin_inset Formula $P_{0}$
+\end_inset
+
+ used in the experiment which is however not available (we therefore use
+ the standard pressure of 
+\begin_inset Formula $101325\,Pa$
+\end_inset
+
+).
+ 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+The discrepancies in the suction peak is hence suspected to be the effect
+ of irregularity in the measurement of inlet velocity, which in our investigatio
+ns was not uniform at the nozzle exit of the wind tunnel simulation, suggesting
+ that the potential effect of the airfoil distorts the inlet velocity profile.
+ The 
+\begin_inset Formula $U_{\infty}$
+\end_inset
+
+ value used can hence lead to an erroneous 
+\begin_inset Formula $C_{p}$
+\end_inset
+
+ value calculation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement tb
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWH_AirbusCaseECLSim/FWH_ECL_Observer0.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWH_AirbusCaseECLSim/FWH_ECL_Observer2.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWH_AirbusCaseECLSim/FWH_ECL_Observer4.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWH_AirbusCaseECLSim/FWH_ECL_Observer5.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWH_AirbusCaseECLSim/FWH_ECL_Observer7.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chapter03_figs/FWH_AirbusCaseECLSim/FWH_ECL_Observer9.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 9
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The sound pressure spectra obtained from the FWH analogy applied to the
+ ECL computation of the installed configuration: The physical time is 
+\begin_inset Formula $0.076\,s$
+\end_inset
+
+.
+ Signal spectra parameters: Total time 
+\begin_inset Formula $=0.04\,s$
+\end_inset
+
+, NFFT
+\begin_inset Formula $=2050$
+\end_inset
+
+, Sampling Freq.
+\begin_inset Formula $=180405\,Hz$
+\end_inset
+
+, N.Avg.
+\begin_inset Formula $=3$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta f=88\,Hz$
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FWH_ECLLBM-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The sound pressure spectra obtained from the FWH analogy applied to the
+ ECL computation of the installed configuration 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement tb
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter03/AirbusLaBSData/microphone/compare_against_exp/Comparison_ABUS_EXP_OA-45.0.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter03/AirbusLaBSData/microphone/compare_against_exp/Comparison_ABUS_EXP_OA-90.0.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter03/AirbusLaBSData/microphone/compare_against_exp/Comparison_ABUS_EXP_OA-135.0.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter03/AirbusLaBSData/microphone/compare_against_exp/Comparison_ABUS_EXP_OA45.0.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter03/AirbusLaBSData/microphone/compare_against_exp/Comparison_ABUS_EXP_OA90.0.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter03/AirbusLaBSData/microphone/compare_against_exp/Comparison_ABUS_EXP_OA135.0.png
+	lyxscale 20
+	width 7.5cm
+	height 7.5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 9
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The sound pressure spectra computed using simulation run by Airbus using
+ 
+\emph on
+ProLB
+\emph default
+ and FWH approach for the full wind-tunnel installation and for physical
+ time of 
+\begin_inset Formula $0.2s$
+\end_inset
+
+, obtaining a closer match between simulation and experiment.
+ Signal spectra parameters: Total time
+\begin_inset Formula $=0.2s$
+\end_inset
+
+, NFFT
+\begin_inset Formula $=8100$
+\end_inset
+
+, Sampling Freq.
+\begin_inset Formula $=180405Hz$
+\end_inset
+
+, N.Avg.
+\begin_inset Formula $=6$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta f=22Hz$
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FWH_AirbusLBM"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+The sound pressure spectra computed using simulation run by Airbus using
+ ProLB and FWH approach for the full wind-tunnel installation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For comparison of the spectra obtained using the simulation that includes
+ the wind-tunnel geometry against the experiment, the results are shown
+ in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:FWH_AirbusLBM"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ A good agreement of the farfield noise with experiment can be noted particularl
+y for the broadband noise levels in the range 
+\begin_inset Formula $1-10\,kHz$
+\end_inset
+
+.
+ The agreement is improved at the pressure side observers Probe 2 and 4,
+ which are below and upstream of the HLD (See Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:fwhobservers-1-1"
+
+\end_inset
+
+ in Chapter 04 for the probe locations).
+ This can be attributed to the effect of the plates affecting the directivity.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally, there is good agreement between the hi-fidelity simulation from
+ Airbus and the ECL simulation reproducing the same level of accuracy against
+ experimental data for capturing the noise source mechanisms thereby validating
+ the ECL framework to be deployed to study slat noise.
+\end_layout
+
+\begin_layout Section
+Auxiliary data from free flow simulation 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Auxiliary data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The free flow simulation of standard case discussed in Chapter 04 has few
+ auxiliary data which are relevant for the cove dynamics.
+ A more exhaustive set of wall pressure plots are given in Fig.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:wp_spectras_slat-1-1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:wp_spectras-mainelement-1-1"
+
+\end_inset
+
+ to show the variation of the spectra along the wall geometry.
+ As can be noted the wall pressure spectra along the wall shows a progressive
+ variation of the tonal peaks corresponding to the same in far-field spectra.
+ 
+\end_layout
+
+\begin_layout Standard
+For slat geometry, in region near the cusp the turbulent fluctuations are
+ weaker compared to the trailing edge and hence captures the tonal frequencies
+ with a higher level than the turbulent fluctuations.
+ Near the trailing edge, these tonal features are submerged by the stronger
+ levels of turbulence.
+\end_layout
+
+\begin_layout Standard
+For the main element, the strongest peak is seen for Probe 21 for 1771Hz,
+ corresponding to the first main tone.
+ This location is also close to the cusp.
+ For other probes which are farther from the cove but on the pressure side,
+ the tones are visible with progressively weakened levels towards the trailing
+ edge.
+ On the suction side, much like the slat trailing edge, the turbulent flow
+ submerges the tonal perturbations to render a largely broadband spectra.
+ Towards the main element trailing edge on the suction side, the periodic
+ perturbations from the cove are weak and represent the hydrodynamic perturbatio
+ns due to the reattached turbulence.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement ph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/Wall_Pressure_prob locations_PADDED.png
+	lyxscale 10
+	width 6cm
+	height 6cm
+	keepAspectRatio
+	BoundingBox 100bp 0bp 1204bp 954bp
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wall pressure sensor locations on the slat wall.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_coords_slat-2-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe1_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe3_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe5_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe6_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 6
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe9_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 9
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe10_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe11_span_num0.png
+	lyxscale 10
+	width 7cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 13
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wall pressure spectra for select probes on the slat wall placed along the
+ spanwise center plane 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_spectras_slat-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement ph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement ph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/Wall_Pressure_prob locations_mainelement.png
+	lyxscale 10
+	width 10.5cm
+	height 10.5cm
+	keepAspectRatio
+	BoundingBox 90bp 0bp 2294bp 1003bp
+	clip
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Select wall pressure sensor locations on the main element.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_coords_mainelement-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe14_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 14
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe16_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 16
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe19_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 19
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe21_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 21
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe23_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 23
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe24_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 24
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wall pressure spectra for select probes on the main element wall and on
+ spanwise center plane.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_spectras-mainelement-1-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Wall pressure spectra for select probes on the main element wall and on
+ spanwise center plane - set 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe25_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 25
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe26_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 26
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/amurali/Desktop/DRARM_Thesis_2024/processes/chapter10/SGP079/wp_probes_plot_data/probe27_span_num0.png
+	lyxscale 10
+	width 6.6cm
+	height 6.6cm
+	keepAspectRatio
+	groupId wp_probes_spectra_16_19_20_21_23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probe 27
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wall pressure spectra for select probes on the main element wall and on
+ spanwise center plane.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wp_spectras_mainelement2-1-1"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Wall pressure spectra for select probes on the main element wall and on
+ spanwise center plane - set 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "/home/amurali/Desktop/References/zoterolibrary"
+options "unsrtnat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
